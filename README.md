@@ -1,3 +1,6 @@
+
+# Towards a FAIR and open methodology at NIME [working title]
+
 ## Abstract
 
 
