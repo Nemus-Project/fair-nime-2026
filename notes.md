@@ -1,3 +1,35 @@
+## Curl NIME Papers
+
+```sh
+pdfgrep -P '\Wgit' -rli ./ | wc -l   
+pdfgrep -P '\b(git|github|gitlab)\b|(https?://|www\.)\S*(git|github|gitlab)\S*' -rli ./ | wc -l
+```
+
+http://google.com/search?q=site:https://nime.org/proceedings/2023/%20"git"%20OR%20"github"%20OR%20"gitlab"%20OR%20"bitbucket"
+
+```sh
+# 2025
+for i in {1..96}; do
+  curl "https://nime.org/proceedings/2025/nime2025_${i}.pdf" -O
+done
+
+# 2024
+for i in {1..94}; do
+  curl "https://nime.org/proceedings/2024/nime2024_${i}.pdf" -O  
+done
+
+# 2023
+for i in {1..99}; do
+  curl "https://nime.org/proceedings/2023/nime2023_${i}.pdf" -O  
+done
+
+# 2020
+for i in {1..99}; do
+  curl "https://www.nime.org/proceedings/2020/nime2020_paper${i}.pdf" -O
+done
+
+```
+
 ## intro
 
 
