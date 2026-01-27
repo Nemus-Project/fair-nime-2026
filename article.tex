@@ -6,6 +6,8 @@ Review A  of \cite{fiordelmondo_longevity_2024} shows usage of keywords related 
 
 projects may cite a github repsoiory but that does not mean the project itself is readily available. The fact it is not immediately apparent the open source nature of project is something that should be addressed.
 
+Actually Reviw B covers this
+
 \section{State of Open DMIs}
 
 Question: For all papers in NIME 2025, can I navigate from the paper directly to the source material.
@@ -19,10 +21,14 @@ for i in {1..96}; do
 done
 \end{verbatim}
 
+Only 2025 was considered as it is the most up to date digital research practice can be.
 
-Search carried out a manual keyword search each paper on each paper from NIME 2025, much in the same manner as  in \cite{fiordelmondo_longevity_2024} Review A . The keywords searched were `git', `source', `doi', `open', `http'. Upon failing to find any result, the paper was manually scan read to identify alternate methods of including a reference to a source repository.
 
+Search carried out a manual keyword search each paper on each paper from NIME 2025, much in the same manner as  in \cite{fiordelmondo_longevity_2024} Review B. The keywords searched were `git*',
+\footnote{wildcard to match github, gitlab or git in a URL, case insensitive}
+`source', and `doi'. 
 
+Upon failing to find any result, the paper was manually scan read to identify alternate methods of including a reference to a source repository.
 
 A manual search was undertaken as it the total number of papers (96) was small enough and any completely automated search would too easily miss  outliers in formatting, such as those who used a git host service other than github or where the relevant source reposotory would not be immediately apparent.
 
@@ -69,7 +75,7 @@ variety from source to pdf of a zine
 
 The process takes about three hours to complete
 
-Of the 96 papers from NIME 2025, 28 papers have a link to some kind of source in them though 50 papers make reference to `git,' `github,' or `gitlab.' Of the 96 papers only one \cite{studley_swimtunes_2025} has a digital archive with a DOI.
+Of the 96 papers from NIME 2025, 29 papers have a link to some kind of source in them though 50 papers make reference to `git,' `github,' or `gitlab.' Of the 96 papers only one \cite{studley_swimtunes_2025} has a digital archive with a DOI.
 
 
 \textit{Two Sonification Methods for the MindCube} but \url{https://github.com/mitmedialab/mindcube-rave} is empty except a README
@@ -80,9 +86,24 @@ What the repository or archive of the DMI should contain has already been covere
 
 What is fixed is that every project should at least have something. A paper is restrictive means to describe a DMI, there will always be some data, or source code, CAD files that are integral to its execution. 
 
-NIME provides a space in it's archive entry from which the DOI is taken. Of the 96, only 10 papers have supplementary files and these are exclusively videos.
+NIME provides a space in it's archive entry from which the DOI is taken. Of the 96, only 16 papers have supplementary files and these are exclusively videos.
 
 Dependencies!
+
+
+Missing but extant repositories,
+for which burden of locating them is placed on the reader, ambiguity, no longer findable and accessible
+Impact on longevity
+
+The burden to get it right is placed I. The author
+
+
+\subsection{Core principles}
+
+1. It should be easy to find a repository (version control or archival)
+2. if it exists, it should be in the paper
+3. open should be the default
+4.
 
 \section{An Open DMI}
 
@@ -116,11 +137,11 @@ Archiving provides a means by which a work can be cited.
 
 A DMI as a research product \cite{xxx} is an object that should be citable. The paper describes the object, it is not object itself and there are instances where citing the object is more applicable than citing the paper based around it.
 
-Archiving should provide a DOI with which to cite. Repositories may also provide a recommended citation, but this should very much be looked upon as a bandage to a broken system and not a solution. The very helpful citation file format provides a means to have a structure citation to software, but unhelpfully, is used to cite repository and not a specific documented version of the sofwtare (citation needed)
+Archiving should provide a DOI with which to cite. Repositories may also provide a recommended citation, but this should very much be looked upon as a bandage to a broken system and not a solution. The very helpful citation file format CFF provides a means to have a structure citation to software, but unhelpfully, integration with GitHub prompts the user to ``Cite this Repository'' \url{https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files} which, as already discussed, is something to be avoided.
 
 \subsection{limits in archiving modular projects}
 
-Problem with a modular process is that zenodo's integration does not support it or a llow for easy configuration.
+Problem with a modular process is that zenodo's integration does not support it or a allow for easy configuration.
 
 Would require the manual creation of the archive, copy the contents over. Alternatively, each submodule could be archived and a meta-archive simply contains reference to the constituent DOIs. This is not ideal but it is also not insurmaountable.
 
