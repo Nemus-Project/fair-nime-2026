@@ -127,3 +127,4 @@ From the 96 papers
 
 ### Papers with Repo or Archive link
 
+- nime2025_54
