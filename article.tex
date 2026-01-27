@@ -73,10 +73,9 @@ This shouldn't be allowed:
 [15] Roger Dannenberg and Ari Liloia. 2022. Global Drum Circle (Private Github Repository).
 
 
-\textit{Embedded Comparo: Small DSP Systems Side-by-Side} insists it has a GitHub repo. I can't find it
+\footnote{Or examples such as \textit{Embedded Comparo: Small DSP Systems Side-by-Side} where the git repository url is easily missed as a footnote hidden below references.}
 
 but something like \url{tinytouchinstruments.com} is incidentally open given the nature of Javascript so does not count.
-
 
 variety from source to pdf of a zine
 
@@ -84,15 +83,89 @@ variety from source to pdf of a zine
 
 The process takes about three hours to complete
 
-Of the 96 papers from NIME 2025, 29 papers have a link to some kind of source in them though 50 papers make reference to `git,' `github,' or `gitlab.' Of the 29 papers only one \cite{studley_swimtunes_2025} provided a DOI citable digital archive.
+Of the 96 papers from NIME 2025, 29 papers have a link to some kind of source in them though 50 papers make reference to `git,' `github,' or `gitlab.' Of the 29 papers only one \cite{studley_swimtunes_2025} provided a DOI citable digital archive. 
 
-Platform: 26 used github
+Authors of papers that were empty or inaccessible and in all cases a alternative was provided.
+
+In most cases there was a clear desire to make the work accessible, but with no clear format the link was overlooked.
+Two repositories were private and subsequently made available, one repository had simply used the wrong link and alternate was provided.
+For one repository, the authors were unreachable. Finally, one repository was found through a simple search. Including these papers which had intent, the total is 34 repositories.
+
+Platform: 
+GitHub: 26
+Other :  3
+
+Including these repositories with the original 26 we find the overwhelmingly GitHub as the preferred platform, which was the trend identified in \citet{fiordelmondo_towards_2025}. 
+
+Platform: 
+GitHub: 30
+Other :  4
 
 
-Placement:
+URL Placement:
+
+Footnote: 18
+Body 7
+references 2
+appendix 3
+
+inc missing
+Footnote: 21
+Body 8
+references 2
+appendix 3
 
 
+Breaking footnotes further:
 
+9 first page
+5 second page
+4 third page
+1 fourth page
+3 last page
+
+The use of git in 50+ papers out the 96 demonstrates a familiarity. 
+
+Show what usage is like in 2023 and 2024. The goal is show to what degree there is a familiarity with git version control
+
+same could be done for zenodo.
+
+
+looking at the last 6 years
+2025 96 papers   
+pdfgrep:50
+2024 94 papers   
+pdfgrep:42
+2023 99 papers   
+pdfgrep: 54
+2022 56 papers   
+pdfgrep: 24
+2021 88 papers
+pdfgrep:33
+2020 99 papers
+pdfgrep: 29
+
+
+\begin{table}
+    \centering
+    \begin{tabular}{r|cccccc}
+        \textbf{Year}      & 2016 & 2017 & 2018 & 2019 & 2020 & 2021 & 2022 & 2023 & 2024 & 2025 \\ \hline
+        \textbf{\# Papers} & 16   & 25   & 24   & 29   & 29   & 33   & 24   & 54   & 42   & 50   \\ \hline
+        \textbf{\% Overall}& 18   & 24   & 26   & 32   & 29   & 38   & 43   & 54   & 44   & 50   \\ 
+    \end{tabular}
+    \caption{Number of papers in which a git repository is reference and the (rounded) percentage that represents overall of the papers from that year}
+    \label{tab:git_occurences}
+\end{table}
+
+
+An individual author / project may employ prolific use of repositories, which would skew the data, though \citet{fiordelmondo_towards_2025} shows a clear trend towards the adoption of the git version control software. 
+What is important is perhaps not the number of occurrences, but whether a paper has relied on the technology at all. 
+The number of NIME papers referencing a git repository is broken down in Table~\ref{tab:git_occurences}, for the last 6 years. 
+
+Occurrences obtained by searching case-insensitive regular expression \texttt{\\Wgit}, which will capture `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' but also urls like \textt{https:/\textbf{/git}lab.com/} or \texttt{oeyvind\textbf{.git}hub.io} 
+\footnote{recursively case-insensitive search the directory of PDF files \verb$pdfgrep -P '\Wgit' -rli ./ | wc -l$}
+
+% NOTE: this should include the papers that were disqualified
 
 \textit{Two Sonification Methods for the MindCube} but \url{https://github.com/mitmedialab/mindcube-rave} is empty except a README
 
