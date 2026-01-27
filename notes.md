@@ -163,11 +163,17 @@ From the 96 papers
 
 All of these _have_ repositories
 
-| id          | paper              | State   | reason          | url                                                           | page | placement | context                                                    |
-| ----------- | ------------------ | ------- | --------------- | ------------------------------------------------------------- | ---- | --------- | ---------------------------------------------------------- |
-| nime2025_60 | Cicadas            | auth    |                 | http://gitea.offig.com/lfsadmin/Cicadas                       | 2    | body      | Full code for the generative algorithm is available at     |
-| nime2025_79 | Drum Tao           | empty   |                 | https://red- x- silver.github.io/the- drum- machine- of- tao/ | 1    | footnote  | Results from a prototype are available for listening1      |
-| nime2025_74 | Mindcube           | empty   | wrong repo      | https://github.com/mitmedialab/mindcube- rave                 | 3    | footnote  | An implementation of this mapping can be found on GitHub1. |
-| nime2025_91 | glitchgate         | private |                 | https://github.com/ijc8/glitchgate                            | 1    | footnote  | The source code for glitchgate is available at             |
-|             | Global drum circle | private | "unpublishable" | https://github.com/rbdannenberg/gdc                           |      |           |                                                            |
-| nime2025_92 |                    | missing | extant          | https://github.com/ccrma/smuck                                |      |           |                                                            |
+| id          | paper      | State   | reason     | url                                                     | page | placement | context                                                    |
+| ----------- | ---------- | ------- | ---------- | ------------------------------------------------------- | ---- | --------- | ---------------------------------------------------------- |
+| nime2025_60 | Cicadas    | auth    |            | http://gitea.offig.com/lfsadmin/Cicadas                 | 2    | body      | Full code for the generative algorithm is available at     |
+| nime2025_79 | Drum Tao   | empty   |            | https://red-x-silver.github.io/the-drum-machine-of-tao/ | 1    | footnote  | Results from a prototype are available for listening1      |
+| nime2025_74 | Mindcube   | empty   | wrong repo | https://github.com/mitmedialab/mindcube- rave           | 3    | footnote  | An implementation of this mapping can be found on GitHub1. |
+| nime2025_91 | glitchgate | private |            | https://github.com/ijc8/glitchgate                      | 1    | footnote  | The source code for glitchgate is available at             |
+| nime2025_92 | Smuck      | missing | extant     | https://github.com/ccrma/smuck                          |      |           |                                                            |
+
+## In references
+	
+| id          | paper              | State   | reason          | url                                 | page | placement  | context                                                                                |
+| ----------- | ------------------ | ------- | --------------- | ----------------------------------- | ---- | ---------- | -------------------------------------------------------------------------------------- |
+| nime2025_69 | Global drum circle | private | "unpublishable" | https://github.com/rbdannenberg/gdc |      | references | Roger Dannenberg and Ari Liloia. 2022. Global Drum Circle (Private Github Repository). |
+
