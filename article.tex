@@ -1,16 +1,25 @@
 \section{Introduction}
 
+Over the past few decades there has been a growing academic movement for an `open methodology' of findable, accessible, interoperable,  reproducible (FAIR), and sustainable digital research \cite{go_fair_2016}.
+Open and FAIR research practice is vital to ensure transparency, validation, re-use and access within academic research.
+The movement has led to an increased awareness across the research community and the establishment of accepted best-practice frameworks \cite{smith_software_2016}. The focus of these frameworks has predominantly been towards digital research practice in the sciences \cite{unesco_open_2021}.
+
 \section{Related Work}
 
-Review A  of \cite{fiordelmondo_longevity_2024} shows usage of keywords related to version control repsotories. What is not controlled for os that repsotory may be mentioned, but there are not necessarily the repsotory for the project being described.
+Review A  of \cite{fiordelmondo_longevity_2024} shows usage of keywords related to version control repositories. 
+Review B explores the repositories pertinent to the project being discussed.
 
-projects may cite a github repsoiory but that does not mean the project itself is readily available. The fact it is not immediately apparent the open source nature of project is something that should be addressed.
+projects may cite a github repository but that does not mean the project itself is readily available. The fact it is not immediately apparent the open source nature of project is something that should be addressed.
 
-Actually Reviw B covers this
 
 \section{State of Open DMIs}
 
 Question: For all papers in NIME 2025, can I navigate from the paper directly to the source material.
+
+Question is not whether the source is buildable / executable or even complete, just if there is a source repository. source repository can be a direct link to a version control repo or a static digital archive.
+
+An empty repository would be disqualidfied.
+
 Source material defined as the material pertanent to the paper without, in a version control format, digital archive or ideally both.
 
 All 96 papers from NIME 2025 can be downloaded locally with a zshell instruction
@@ -75,7 +84,14 @@ variety from source to pdf of a zine
 
 The process takes about three hours to complete
 
-Of the 96 papers from NIME 2025, 29 papers have a link to some kind of source in them though 50 papers make reference to `git,' `github,' or `gitlab.' Of the 96 papers only one \cite{studley_swimtunes_2025} has a digital archive with a DOI.
+Of the 96 papers from NIME 2025, 29 papers have a link to some kind of source in them though 50 papers make reference to `git,' `github,' or `gitlab.' Of the 29 papers only one \cite{studley_swimtunes_2025} provided a DOI citable digital archive.
+
+Platform: 26 used github
+
+
+Placement:
+
+
 
 
 \textit{Two Sonification Methods for the MindCube} but \url{https://github.com/mitmedialab/mindcube-rave} is empty except a README
@@ -172,10 +188,10 @@ The resistance is very much one of awareness and skill aquisition. Contributors 
 
 \subsection{Software Documentation}
 
-Following \textcite{procida_diataxis_2025}, four complementary forms of
+Following \citet{procida_diataxis_2025}, four complementary forms of
 documentation can be distinguished: Tutorials, How-to guides, Explanation, and
 Reference. These forms naturally divide into two audiences: user-facing and
-developer-facing. Adapting \textcite{procida_diataxis_2025}, developer-facing
+developer-facing. Adapting \citet{procida_diataxis_2025}, developer-facing
 documentation lies in the How-to and Reference categories, while user-facing
 documentation is found in Tutorials and Explanation. This division is not
 strict, as the binary of `user' and `developer' rarely holds true in practice;
@@ -193,7 +209,7 @@ Even so, generated API references should not substitute for user manuals
 
 Best practice emphasises the importance of documentation
 \cite{smith_software_2016}, though it is less prescriptive about form and depth.
-\textcite{writethedocs_sowftware_2025} offers comprehensive guidance; a
+\citet{writethedocs_sowftware_2025} offers comprehensive guidance; a
 pragmatic rule is that documentation should enable you to still ``understand
 your code in six months'' \cite{writethedocs_sowftware_2025}, a principle echoed
 in reproducibility studies \cite{perkel_challenge_2020}. Using the
@@ -206,9 +222,9 @@ level of digital archiving, but a release archive does not necessitate a DOI.
 DOIs should be assigned both to the software as a whole and to individual
 releases \cite{smith_software_2016}; licences should be clearly stated and
 OSI-compliant \cite{hong_choosing_2025}. To better support complex software
-citation, \textcite{druskat_citation_2021} introduced the Citation File Format
+citation, \citet{druskat_citation_2021} introduced the Citation File Format
 (CFF), which standardises metadata for software citations and is supported by
-both GitHub and Zenodo. Recommendations in \textcite{fiordelmondo_towards_2025}
+both GitHub and Zenodo. Recommendations in \citet{fiordelmondo_towards_2025}
 extend this to hardware projects, with tools for citation
 \cite{spaaks_cffconvert_2021}. Beyond these essentials (contribution policies,
 issue tracking, codes of conduct), more advanced practices presuppose an active
@@ -219,22 +235,22 @@ repository.
 
 There has been a concerted effort to address the problem of archiving and open-sourcing of DMI over the past 10 years \cite{mcpherson_nimehub_2016,fiordelmondo_longevity_2024,fiordelmondo_towards_2025}. This is not a challenge constrained to just DMI, but is also being addressed as part of the growing open hardware movement.
 Open hardware, like open software, is the provision of making electronics designs accessible allowing fabrication outside of a central manufacturer.
-\textcite{mcpherson_nimehub_2016} and \textcite{calegario_documentation_2021} outline largely the same principles as that of the Open Source Hardware Association in 2013 \cite{oshwa_best_2013}, that  unlike software, open hardware cannot be simply distributed as a licence and set of source files (Figure~\ref{fig:osh-taxonomy}), lest it fall afoul of ``openwashing.'' 
+\citet{mcpherson_nimehub_2016} and \citet{calegario_documentation_2021} outline largely the same principles as that of the Open Source Hardware Association in 2013 \cite{oshwa_best_2013}, that  unlike software, open hardware cannot be simply distributed as a licence and set of source files (Figure~\ref{fig:osh-taxonomy}), lest it fall afoul of ``openwashing.'' 
 \footnote{when a project  ``is claimed to be open source whereas no intention to publish product-related information is given'' \cite{bonvoisin_source_2017}.}  
 
 \begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{img/bonvoisin_source_2017-open-hardware.png}
-    \caption[Taxonomy of openness]{Taxonomy of openness from \textcite[Figure~1]{bonvoisin_source_2017}.}
+    \caption[Taxonomy of openness]{Taxonomy of openness from \citet[Figure~1]{bonvoisin_source_2017}.}
     \label{fig:osh-taxonomy}
 \end{figure}
 
-Open source hardware has great potential benefits for use in academia \cite{oellermann_open_2022} and those same benefits can extent to the heritage sector. \textcite{mcpherson_nimehub_2016} rightfully raises concerns of tackling hardware obsolescence and how that is tackled as part of the archiving process. Proprietary systems limit the potential for innovation or reproducibility and, when these systems fail, repairs rely on the original manufacturer who may have ceased support or production of replacement parts \cite{oellermann_open_2022}.
+Open source hardware has great potential benefits for use in academia \cite{oellermann_open_2022} and those same benefits can extent to the heritage sector. \citet{mcpherson_nimehub_2016} rightfully raises concerns of tackling hardware obsolescence and how that is tackled as part of the archiving process. Proprietary systems limit the potential for innovation or reproducibility and, when these systems fail, repairs rely on the original manufacturer who may have ceased support or production of replacement parts \cite{oellermann_open_2022}.
 To facilitate reproduction of hardware, it should be self-evident but, any form of archiving and provision of access to source material makes the task much more feasible. Reproduction is made even easier by incorporating open hardware.
 
-This highlights a core problem with digital cultural heritage, which is if we rely on proprietary system for digital conservation, then they will be locked in an ecosystem which is designed to chase change. If heritage institutions are using proprietary digital systems \cite{innocente_framework_2023} they should be aware of their choice of digital infrastructure and the implications that will have on a project's longevity. As \textcite{bonvoisin_source_2017} coined ``openwashing'' likewise with digital conservation we run a risk of ``heritagewashing'' where digital projects claim to serve the conservation of cultural heritage, but are in fact ephemera. That is not to say that ephemeral heritage projects are forbidden, but this should be a conscious choice made at a project's inception and not one applied at a point in the future when the task of archiving a work becomes too great. An open methodology needs to be `baked-in' to the research process and it is not something trivially applied after the fact. It is of course better to do it afterwards than not at all, but the information at stake also constitutes the development process, not just the end product. The point at which a project is abandoned is not the key point of record--which, given their `living' status, is likely to have undergone some further modifications.
+This highlights a core problem with digital cultural heritage, which is if we rely on proprietary system for digital conservation, then they will be locked in an ecosystem which is designed to chase change. If heritage institutions are using proprietary digital systems \cite{innocente_framework_2023} they should be aware of their choice of digital infrastructure and the implications that will have on a project's longevity. As \citet{bonvoisin_source_2017} coined ``openwashing'' likewise with digital conservation we run a risk of ``heritagewashing'' where digital projects claim to serve the conservation of cultural heritage, but are in fact ephemera. That is not to say that ephemeral heritage projects are forbidden, but this should be a conscious choice made at a project's inception and not one applied at a point in the future when the task of archiving a work becomes too great. An open methodology needs to be `baked-in' to the research process and it is not something trivially applied after the fact. It is of course better to do it afterwards than not at all, but the information at stake also constitutes the development process, not just the end product. The point at which a project is abandoned is not the key point of record--which, given their `living' status, is likely to have undergone some further modifications.
 
-Both \textcite{mcpherson_nimehub_2016} and \textcite{fiordelmondo_towards_2025} approach hardware archiving in a repository format. \textcite{mcpherson_nimehub_2016} proposed a workshop with the intention to create a a central repository (or database) for DMI designs. Part of that workshop's primary eight goals were the FAIR adjacent aims of encouraging reproducibility, open access and encouraging a normalised practice of documentation. Both \textcite{mcpherson_nimehub_2016} and \cite{fiordelmondo_towards_2025} raise the issue of repository structure with the latter proposing a a prescriptive measure which can be applied to any DMI project. Research output in the form of open hardware or open software can and should take advantage of the platforms available for distribution of the work,
+Both \citet{mcpherson_nimehub_2016} and \citet{fiordelmondo_towards_2025} approach hardware archiving in a repository format. \citet{mcpherson_nimehub_2016} proposed a workshop with the intention to create a a central repository (or database) for DMI designs. Part of that workshop's primary eight goals were the FAIR adjacent aims of encouraging reproducibility, open access and encouraging a normalised practice of documentation. Both \citet{mcpherson_nimehub_2016} and \cite{fiordelmondo_towards_2025} raise the issue of repository structure with the latter proposing a a prescriptive measure which can be applied to any DMI project. Research output in the form of open hardware or open software can and should take advantage of the platforms available for distribution of the work,
 \footnote{such as GitHub, GitLab for source code or Thingiverse for 3D models \cite{oshwa_best_2013}.}
 but the work still needs to be citable \cite{smith_software_2016}, and cross-reference-able \cite{stall_journal_2023} if it is to be built upon.
 
