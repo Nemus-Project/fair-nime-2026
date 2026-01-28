@@ -6,21 +6,51 @@ The movement has led to an increased awareness across the research community and
 
 \section{Related Work}
 
+
+workshops looking at Open NIME research:
+
+\begin{enumerate}
+\item \citet{mcpherson_nimehub_2016}
+\item \citet{jensenius_open_2019}
+\item \citet{jensenius_nime_2020}
+\end{enumerate}
+
+% \citet{vallis_shift_2010}
+
+looking at longevity of research \citet{fiordelmondo_longevity_2024}
+replicability \cite{calegario_documentation_2021}
+
+work replicating previous NIME's \cite{west_towards_2025}
+
+
+
 Review A  of \cite{fiordelmondo_longevity_2024} shows usage of keywords related to version control repositories. 
 Review B explores the repositories pertinent to the project being discussed.
 
 projects may cite a github repository but that does not mean the project itself is readily available. The fact it is not immediately apparent the open source nature of project is something that should be addressed.
+]
+NIME has had a dedication to making its proceedings publicly available (under a CC by 4.0) from its very inception
 
+
+as remarked in \citet{calegario_documentation_2021} one can follow the path of \cite{ajin_rebuilding_2019} who created the sponge, and if your lucky, you may even find the original source \url{https://github.com/marierm/sponge-general}.
 
 \section{State of Open DMIs}
 
-Question: For all papers in NIME 2025, can I navigate from the paper directly to the source material.
+Instructing university students on the use of micro-controllers and electronics for creative applications. NIME archive presents a wealth of ideas and open source projects from which students can draw inspirations and iterate upon. 
+Far too often, the source is only ``open'' on condition that it can be located in the first instance. This raised the question: ``For all papers in NIME, how many can I navigate from the paper directly to the source material.''
+
+The recreation of a NIME has focussed on goal of using it musical practice \cite{ajin_rebuilding_2019, masu_nime_2023, west_towards_2025}. Equally valid is the recreation of a NIME for knowledge and development of craft \cite{calegario_documentation_2021}
+
+NIME has some 2000+ projects available in its open access archive. and open source research practice has changed since 2001. 
+The question was narrowed to just NIME 2025 as it represents the bleeding edge of research practice as it has been informed from previous work covering open source hardware, software, and NIME specifically. 
 
 Question is not whether the source is buildable / executable or even complete, just if there is a source repository. source repository can be a direct link to a version control repo or a static digital archive.
 
 An empty repository would be disqualidfied.
 
-Source material defined as the material pertanent to the paper without, in a version control format, digital archive or ideally both.
+Source material defined as the material pertinent to the paper without, in a version control format, digital archive or ideally both.
+
+
 
 % All 96 papers from NIME 2025 can be downloaded locally with a zshell instruction
 % \begin{verbatim}
@@ -31,10 +61,12 @@ Source material defined as the material pertanent to the paper without, in a ver
 
 Only 2025 was considered as it is the most up to date digital research practice can be.
 
-
-Search carried out a manual keyword search each paper on each paper from NIME 2025, much in the same manner as  in \cite{fiordelmondo_longevity_2024} Review B. The keywords searched were `git*',
+Search carried out a manual keyword search each paper on each paper from NIME 2025, much in the same manner as  in \citet{calegario_documentation_2021} and \citet{fiordelmondo_longevity_2024} Review B. The keywords searched were `git*',
 \footnote{wildcard to match github, gitlab or git in a URL, case insensitive}
 `source', and `doi'. 
+
+
+\cite{calegario_documentation_2021} outlines what should be included and \citet{fiordelmondo_longevity_2024}  provides a template based up on it to reduce the cognitive labour to carry it out.
 
 Upon failing to find any result, the paper was manually scan read to identify alternate methods of including a reference to a source repository.
 
@@ -90,35 +122,19 @@ In most cases there was a clear desire to make the work accessible, but with no 
 Two repositories were private and subsequently made available, one repository had simply used the wrong link and alternate was provided.
 For one repository, the authors were unreachable. Finally, one repository was found through a simple search. Including these papers which had intent, the total is 34 repositories.
 
-Platform: 
-GitHub: 26
-Other :  3
-
-Including these repositories with the original 26 we find the overwhelmingly GitHub as the preferred platform, which was the trend identified in \citet{fiordelmondo_towards_2025}. 
 
 Platform: 
 GitHub: 30
 Other :  4
 
-
-URL Placement:
-
-Footnote: 18
-Body 7
-references 2
-appendix 3
-
-inc missing
-Footnote: 21
-Body 8
-references 2
-appendix 3
+Including these repositories with the original 26, there are a total of 34 papers with clear intention of sharing source. Though not broken down by year, this is in keeping with the 33\% reported in \citet{calegario_documentation_2021}.
+Overwhelmingly GitHub as the preferred platform with 30 projects hosting a repository there, which was the trend identified in \citet{fiordelmondo_towards_2025}. 
 
 The use of git in 50+ papers out the 96 demonstrates a familiarity. 
 
-Show what usage is like in 2023 and 2024. The goal is show to what degree there is a familiarity with git version control
 
-same could be done for zenodo.
+
+% same could be done for zenodo.
 
 % \begin{table}
 %     \centering
@@ -130,6 +146,9 @@ same could be done for zenodo.
 %     \caption{Number of papers in which a git repository is reference and the (rounded) percentage that represents overall of the papers from that year}
 %     \label{tab:git_occurences}
 % \end{table}
+
+
+\citet{fiordelmondo_towards_2025} reports on the occurence of `git' related terms, to demonstrate to what degree there is a familiarity with git version control we should instead look at in how many papers a git repository is referenced across each year.
 
 \begin{table}
     \centering
@@ -156,14 +175,16 @@ same could be done for zenodo.
 An individual author / project may employ prolific use of repositories, which would skew the data, though \citet{fiordelmondo_towards_2025} shows a clear trend towards the adoption of the git version control software. 
 What is important is perhaps not the number of occurrences, but whether a paper has relied on the technology at all. 
 The number of NIME papers referencing a git repository is broken down in Table~\ref{tab:git_occurences}, for the last 10 years. 
-To get extract this data, the PDF version of the NIME papers were downloaded, categorised by year. The \texttt{pdfgrep}
-\footnote{https://gitlab.com/pdfgrep/pdfgrep/-/tags/v2.2.0} 
-software
+To get extract this data, the PDF version of the NIME papers were downloaded, categorised by year. The \texttt{pdfgrep} software \cite{deifel_pdfgrep_2024}
 
-Occurrences obtained by searching case-insensitive regular expression \texttt{\\Wgit}, which will capture `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' but also urls like \textt{https:/\textbf{/git}lab.com/} or \texttt{oeyvind\textbf{.git}hub.io} 
-\footnote{recursively case-insensitive search the directory of PDF files \verb$pdfgrep -P '\Wgit' -rli ./ | wc -l$}
+Occurrences obtained by searching case-insensitive regular expression \texttt{\\Wgit}, 
+which will capture `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' but also URLs 
+like \texttt{https:/\textbf{/git}lab.com/} 
+or \texttt{oeyvind\textbf{.git}hub.io} 
 
-This approach is not fool-proof and misses instance such as \citet{carter_sculpting_2025} where a GitHub repository is available, but it is the url nor the term `git' is reference directly in the text. As such the goal is demonstrate a rough trend of adoption.
+% \footnote{recursively case-insensitive search the directory of PDF files \verb$pdfgrep -P '\Wgit' -rli ./ | wc -l$}
+
+This approach is not fool-proof and misses instance such as \citet{carter_sculpting_2025} where a GitHub repository is available, but it is the url nor the term `git' is reference directly in the text. The result demonstrate a rough trend of increasing familiarity, though over the last few years the .
 
 Table~\ref{tab:git_placement} shows how authors from NIME 2025 approached the siddemination of their source work. By far the  most common is a URL footnote. Breaking this down further, 7 papers provided a footnote URL in the first page an 11 on a later page.
 
@@ -197,6 +218,12 @@ The burden to get it right is placed I. The author
 4.
 
 \section{An Open DMI}
+
+both \citet{calegario_documentation_2021} and \citet{fiordelmondo_longevity_2024} present the idea of a single, unified repository containing all elements. 
+Elements such as library dependencies may not be from the original author and other parts may be repurposed from existing projects.
+Each element of a DMI may change and to facilitate development and reproducibility a more modular approach is proposed.
+
+
 
 \subsection{Version Control $\neq$ Archiving}
 
@@ -244,9 +271,21 @@ Designing Sensory NIME for Autism: ``Open-source development initiatives should 
 scalability and inclusivity.''
 
 
-Sharing with a wider community enables the possibility of research breaking out beyond the confines of its original life span. Enables the chance for more meaningful user studies by reducing the barriers to accessing an interface. Ideas can be iterated upon, built upon previous work.
+Sharing with a wider community enables the possibility of research breaking out beyond the confines of its original life span. Enables the chance for more meaningful user evaluation \cite{calegario_documentation_2021} by reducing the barriers to accessing an interface. Ideas can be iterated upon, built upon previous work.
 
 \section{Recommendations}\label{sec:recommendations}
+rather than focussing on a central repository \citet{mcpherson_nimehub_2016}, electing replicating officers \citet{calegario_documentation_2021} or conforming to standard format \citet{fiordelmondo_towards_2025} we can look at solution that are much simpler, but have a much wider impact
+
+clear there is a desire to share work, offload the burden on choosing the most effective way to dissemintate, or the reader in locating the work, the solution would be to standarddise one, possibly two field that are in the papers template text, and in the metadata.
+
+Part of the submission, the work can marked as closed source, if that is necessary but a mandatory field for project URL or DOI would curtail the open source agnosticism and make the choice a much more deliberate one.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{}
+    \caption{Caption}
+    \label{fig:placeholder}
+\end{figure}
 
 Aiming for some standardised template or central repository sets a high bar that the community is npt ready to meet. We may be missing even just the obvious solutions.
 One can find the authors of a paper easily. Supplementary material in the form of a zenodo archive has a space on the NIME website, but it is clearly under utilised.
@@ -258,7 +297,9 @@ For academic work, an open first approach should be the goal standard as recomme
 
 for example: SMucK: Symbolic Music in ChucK is perfectly easy to find with a search, but it is missing any kind of link in the paper! (disqualified)
 
-The resistance is very much one of awareness and skill aquisition. Contributors are far more likely to follow the parctice set out by there peers and their mentors. Change comes from above, and from the side and we should lead by example.
+The resistance is very much one of awareness and skill aquisition. Contributors are far more likely to follow the practice set out by there peers and their mentors. Change comes from above, and from the side and we should lead by example.
+
+
 
 
 \section{Relevant parts from thesis}
@@ -321,12 +362,12 @@ Open hardware, like open software, is the provision of making electronics design
 \citet{mcpherson_nimehub_2016} and \citet{calegario_documentation_2021} outline largely the same principles as that of the Open Source Hardware Association in 2013 \cite{oshwa_best_2013}, that  unlike software, open hardware cannot be simply distributed as a licence and set of source files (Figure~\ref{fig:osh-taxonomy}), lest it fall afoul of ``openwashing.'' 
 \footnote{when a project  ``is claimed to be open source whereas no intention to publish product-related information is given'' \cite{bonvoisin_source_2017}.}  
 
-\begin{figure}
+\begin{figure*}
     \centering
-    \includegraphics[width=0.9\linewidth]{image/bonvoisin_source_2017-open-hardware.png}
+    \includegraphics[width=0.9\linewidth]{images/bonvoisin_source_2017-open-hardware.png}
     \caption[Taxonomy of openness]{Taxonomy of openness from \citet[Figure~1]{bonvoisin_source_2017}.}
     \label{fig:osh-taxonomy}
-\end{figure}
+\end{figure*}
 
 Open source hardware has great potential benefits for use in academia \cite{oellermann_open_2022} and those same benefits can extent to the heritage sector. \citet{mcpherson_nimehub_2016} rightfully raises concerns of tackling hardware obsolescence and how that is tackled as part of the archiving process. Proprietary systems limit the potential for innovation or reproducibility and, when these systems fail, repairs rely on the original manufacturer who may have ceased support or production of replacement parts \cite{oellermann_open_2022}.
 To facilitate reproduction of hardware, it should be self-evident but, any form of archiving and provision of access to source material makes the task much more feasible. Reproduction is made even easier by incorporating open hardware.
@@ -344,26 +385,30 @@ Parallel to the physical design, attention was given to documentation and dissem
 \begin{figure}
 \centering
     \begin{tikzpicture}[
-      box/.style = {draw, minimum width=3cm, minimum height=1.5cm, align=center},
+      box/.style = {draw, minimum width=0.2\linewidth, minimum height=1.5cm, align=center},
       arrow/.style = {-latex', thick}
     ]
     
-    \node[box] (box1) {Firmware\\sub-module};
-    \node[box, right=of box1] (box2) {CAD\\sub-module};
-    \node[box, right=of box2] (box3) {Model Data\\sub-module};
-    \node[box, below=2cm of box2] (bottom) {Interface\\meta-repository};
+    % \node[box] (box1) {Firmware\\sub-module};
+    % \node[box, right=of box1] (box2) {CAD\\sub-module};
+    % \node[box, right=of box2] (box3) {Model Data\\sub-module};
+    % \node[box, below=2cm of box2] (bottom) {Interface\\meta-repository};
+
+    \node[box] (box1) {Firmware};
+    \node[box, right=of box1] (box2) {Schematics};
+    \node[box, right=of box2] (box3) {Enclosure};
+    \node[box, below=2cm of box2] (bottom) {Interface};
     
     \draw[arrow] (bottom.north) -- ++(0,1) -| (box1.south);
     \draw[arrow] (bottom.north) -- ++(0,1) -| (box2.south);
     \draw[arrow] (bottom.north) -- ++(0,1) -| (box3.south);
     
-    
     \end{tikzpicture}
-    \caption{Interface git repository and its submodules.}
+    \caption{The DMI is divided into three submodules each representing the firmware, electronics schematics and enlosure modelling data. These submodules are collected into a single repository that represents the interface.}
     \label{fig:repo-relation}
 \end{figure}
 
-Archiving e xposed a few practical challenges. Zenodo’s GitHub integration does not yet handle meta-repositories, requiring separate DOIs for each submodule with cross-references \cite{zenodo_1036_2025}. Likewise, the future of CAD data is tied to software sustainability: the discontinuation of Autodesk EAGLE \cite{autodesk_eagle_2024} effectively freezes its XML format, though conversion to KiCad remains available \cite{kicad_eagle_2024}. These lessons emphasise that openness depends not only on licensing but also on the careful selection of formats and hosting infrastructure.
+Archiving exposed a few practical challenges. Zenodo’s GitHub integration does not yet handle meta-repositories, requiring separate DOIs for each submodule with cross-references \cite{zenodo_1036_2025}. Likewise, the future of CAD data is tied to software sustainability: the discontinuation of Autodesk EAGLE \cite{autodesk_eagle_2024} effectively freezes its XML format, though conversion to KiCad remains available \cite{kicad_eagle_2024}. These lessons emphasise that openness depends not only on licensing but also on the careful selection of formats and hosting infrastructure.
 
 
 fits in to the wider practice of citing digital research output, be it software, hardware, or data. The process very quickly becomes messy which is more often than not as the ideal is of a standard citation is not available.
@@ -373,7 +418,18 @@ This has been the case for this paper, and likely many papers at this years NIME
 % What is a clear order of precedence for citing sowftare?
 A clear order of precedence
 
-DOI to the archive of the relevant version
-Citation File Format
-Suggested citation format
-URL to the version repository
+\begin{itemize}
+\item DOI to the archive of the relevant version
+\item SoftWare Hash IDentifier (SWHID) \cite{softwareheritage_archive_2025}
+\item Citation File Format \cite{druskat_citation_2021}
+\item Suggested citation format
+\item Version-specific repository URL
+\item General project URL
+\end{itemize}
+
+When citing software or data, precedence should favour a citation that prioritises longevity and version specificity over those that merely indicate location.
+
+SoftWare Hash IDentifier (SWHID) ISO/IEC international standard 18670 on April 23, 2025.
+Is passive, requires the repository be public and cannot guarantee that submodules have also been ingested. 
+
+Like the web archive, this should be looked upon as a last ditch and a much more active and deliberate archiving approach should be taken
