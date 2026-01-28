@@ -28,6 +28,29 @@ for i in {1..99}; do
   curl "https://www.nime.org/proceedings/2020/nime2020_paper${i}.pdf" -O
 done
 
+
+for i in {1..88}; do
+  curl "https://www.nime.org/proceedings/2019/nime2019_paper${(l:3::0:)i}.pdf" -O
+done
+
+for i in {1..92}; do
+  curl "https://www.nime.org/proceedings/2018/nime2018_paper${(l:4::0:)i}.pdf" -O
+done
+
+
+for i in {1..105}; do
+  curl "https://www.nime.org/proceedings/2017/nime2017_paper${(l:4::0:)i}.pdf" -O  
+done
+
+
+for i in {1..87}; do
+  curl "https://www.nime.org/proceedings/2016/nime2016_paper${(l:4::0:)i}.pdf" -O  
+done
+
+https://www.nime.org/proceedings/2017/nime2017_paper0105.pdf
+
+https://www.nime.org/proceedings/2018/nime2018_paper0092.pdf
+https://www.nime.org/proceedings/2016/nime2016_paper0087.pdf
 ```
 
 ## intro
