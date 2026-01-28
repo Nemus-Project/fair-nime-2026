@@ -22,13 +22,12 @@ An empty repository would be disqualidfied.
 
 Source material defined as the material pertanent to the paper without, in a version control format, digital archive or ideally both.
 
-All 96 papers from NIME 2025 can be downloaded locally with a zshell instruction
-
-\begin{verbatim}
-for i in {1..96}; do
-  curl "https://nime.org/proceedings/2025/nime2025_${i}.pdf" -O
-done
-\end{verbatim}
+% All 96 papers from NIME 2025 can be downloaded locally with a zshell instruction
+% \begin{verbatim}
+% for i in {1..96}; do
+%   curl "https://nime.org/proceedings/2025/nime2025_${i}.pdf" -O
+% done
+% \end{verbatim}
 
 Only 2025 was considered as it is the most up to date digital research practice can be.
 
@@ -115,60 +114,61 @@ Body 8
 references 2
 appendix 3
 
-
-Breaking footnotes further:
-
-9 first page
-5 second page
-4 third page
-1 fourth page
-3 last page
-
 The use of git in 50+ papers out the 96 demonstrates a familiarity. 
 
 Show what usage is like in 2023 and 2024. The goal is show to what degree there is a familiarity with git version control
 
 same could be done for zenodo.
 
-
-looking at the last 6 years
-2025 96 papers   
-pdfgrep:50
-2024 94 papers   
-pdfgrep:42
-2023 99 papers   
-pdfgrep: 54
-2022 56 papers   
-pdfgrep: 24
-2021 88 papers
-pdfgrep:33
-2020 99 papers
-pdfgrep: 29
-
+% \begin{table}
+%     \centering
+%     \begin{tabular}{r|cccccccccc}
+%         \textbf{Year}      & 2016 & 2017 & 2018 & 2019 & 2020 & 2021 & 2022 & 2023 & 2024 & 2025 \\ \hline
+%         \textbf{\# Papers} & 16   & 25   & 24   & 29   & 29   & 33   & 24   & 54   & 42   & 50   \\ \hline
+%         \textbf{\% Overall}& 18   & 24   & 26   & 32   & 29   & 38   & 43   & 54   & 44   & 50   \\ 
+%     \end{tabular}
+%     \caption{Number of papers in which a git repository is reference and the (rounded) percentage that represents overall of the papers from that year}
+%     \label{tab:git_occurences}
+% \end{table}
 
 \begin{table}
     \centering
-    \begin{tabular}{r|cccccc}
-        \textbf{Year}      & 2016 & 2017 & 2018 & 2019 & 2020 & 2021 & 2022 & 2023 & 2024 & 2025 \\ \hline
+    \begin{tabular}{r|cccccccccc}
+        \textbf{Year}      & \textit{16} & \textit{17} & \textit{18} & \textit{19} & \textit{20} & \textit{21} & \textit{22} & \textit{23} & \textit{24} & \textit{25} \\ \hline
         \textbf{\# Papers} & 16   & 25   & 24   & 29   & 29   & 33   & 24   & 54   & 42   & 50   \\ \hline
         \textbf{\% Overall}& 18   & 24   & 26   & 32   & 29   & 38   & 43   & 54   & 44   & 50   \\ 
     \end{tabular}
-    \caption{Number of papers in which a git repository is reference and the (rounded) percentage that represents overall of the papers from that year}
+    \caption{Number of NIME papers which referenced at least one git repository over the last 10 years. The percentage of papers overall is rounded to the nearest integer.}
     \label{tab:git_occurences}
 \end{table}
 
 
+\begin{table}
+    \centering
+    \begin{tabular}{r|cccc}
+        \textbf{Placement} & Footnote & Body & Citation & Appendix \\ \hline
+        \textbf{\# Papers} & 21       & 8    & 2        & 3        \\
+    \end{tabular}
+    \caption{Methods for disseminating source URL in NIME 2025 papers.}
+    \label{tab:git_placement}
+\end{table}
+
 An individual author / project may employ prolific use of repositories, which would skew the data, though \citet{fiordelmondo_towards_2025} shows a clear trend towards the adoption of the git version control software. 
 What is important is perhaps not the number of occurrences, but whether a paper has relied on the technology at all. 
-The number of NIME papers referencing a git repository is broken down in Table~\ref{tab:git_occurences}, for the last 6 years. 
+The number of NIME papers referencing a git repository is broken down in Table~\ref{tab:git_occurences}, for the last 10 years. 
+To get extract this data, the PDF version of the NIME papers were downloaded, categorised by year. The \texttt{pdfgrep}
+\footnote{https://gitlab.com/pdfgrep/pdfgrep/-/tags/v2.2.0} 
+software
 
 Occurrences obtained by searching case-insensitive regular expression \texttt{\\Wgit}, which will capture `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' but also urls like \textt{https:/\textbf{/git}lab.com/} or \texttt{oeyvind\textbf{.git}hub.io} 
 \footnote{recursively case-insensitive search the directory of PDF files \verb$pdfgrep -P '\Wgit' -rli ./ | wc -l$}
 
-
 This approach is not fool-proof and misses instance such as \citet{carter_sculpting_2025} where a GitHub repository is available, but it is the url nor the term `git' is reference directly in the text. As such the goal is demonstrate a rough trend of adoption.
 
-% NOTE: this should include the papers that were disqualified
+Table~\ref{tab:git_placement} shows how authors from NIME 2025 approached the siddemination of their source work. By far the  most common is a URL footnote. Breaking this down further, 7 papers provided a footnote URL in the first page an 11 on a later page.
+
+This is not a call to conform to this as standard practice, but the variation in placement shows there is no universal strategy by which the community has aligned. 
+A suggested solution to address this is covered in section \ref{sec:recommendations}.
 
 \textit{Two Sonification Methods for the MindCube} but \url{https://github.com/mitmedialab/mindcube-rave} is empty except a README
 
@@ -181,7 +181,6 @@ What is fixed is that every project should at least have something. A paper is r
 NIME provides a space in it's archive entry from which the DOI is taken. Of the 96, only 16 papers have supplementary files and these are exclusively videos.
 
 Dependencies!
-
 
 Missing but extant repositories,
 for which burden of locating them is placed on the reader, ambiguity, no longer findable and accessible
@@ -203,19 +202,19 @@ The burden to get it right is placed I. The author
 
 a version control repository is not an archive.
 
-longevity of a version control repository should be treated cautiously especiually when it is privately owned. institutes could do more to provide these kind of services, but that is a separate discussion.
+longevity of a version control repository should be treated cautiously especially when it is privately owned. institutes could do more to provide these kind of services, but that is a separate discussion.
 
-Version control allows a project to be explored in time. The version partaining to the project should be tagged, of course, but a version control repository is a living document.
+Version control allows a project to be explored in time. The version pertaining to the project should be tagged, of course, but a version control repository is a living document.
 
 The content of a version control repository is alive and its location is ephemeral. A digital archive's content is static and location permanent.
 
-Version control repository ideal for idea that iterate and where there is a desire to navigate a project's preogression in time.
+Version control repository ideal for idea that iterate and where there is a desire to navigate a project's progression in time.
 
 For citing work, given their static and permanent nature, archives and DOIs should be used.
 
 
 \subsection{modular approach to version control}
-relates to dependencies, but the speicifc instance where a dependency is one created from the same author(s) or another project that is open source
+relates to dependencies, but the specific instance where a dependency is one created from the same author(s) or another project that is open source
 
 can describe the project in terms of parts that may be swapped. The burden of redundant replication is lifted, without sacrificing the traceability.
 
@@ -241,11 +240,13 @@ Would require the manual creation of the archive, copy the contents over. Altern
 
 Reluctance to share, anecdotally is that a work is `in-progress' which should be seen as a benefit. The appearance that work is in a highly finished polished state can be intimidating. the goal of NIME is should not always be to have a completed idea but to discuss ideas in progress. If that were the case we would \textit{only} be sharing pictures and archives, once something is finished, what isthere kef6t to discuss.
 
+Designing Sensory NIME for Autism: ``Open-source development initiatives should be encouraged to foster 
+scalability and inclusivity.''
 
 
-Designing Sensory NIME for Autism: ``Open-source development initiatives should be encouraged to foster scalability and inclusivity.''
+Sharing with a wider community enables the possibility of research breaking out beyond the confines of its original life span. Enables the chance for more meaningful user studies by reducing the barriers to accessing an interface. Ideas can be iterated upon, built upon previous work.
 
-\section{Recommendations}
+\section{Recommendations}\label{sec:recommendations}
 
 Aiming for some standardised template or central repository sets a high bar that the community is npt ready to meet. We may be missing even just the obvious solutions.
 One can find the authors of a paper easily. Supplementary material in the form of a zenodo archive has a space on the NIME website, but it is clearly under utilised.
@@ -307,6 +308,12 @@ issue tracking, codes of conduct), more advanced practices presuppose an active
 repository.
 
 
+\subsubsection{Software Documentation Practice}
+
+The documentation practice for a project may also reveal something within the author's own perception of the work.
+Documentation that leans heavily towards \textit{Reference} in the diataxis framework \citet{procida_diataxis_2025} are concerned with the technical understanding and modification of the work, something that is still in progress.
+In the same framework, ``Tutorial'' documentation view the work is static, when the user's primary concern is with utilising the work. Through this lens we can assess a NIME and perhaps understand the intention for growth or reuse.
+
 \subsection{Open Source Practice}
 
 There has been a concerted effort to address the problem of archiving and open-sourcing of DMI over the past 10 years \cite{mcpherson_nimehub_2016,fiordelmondo_longevity_2024,fiordelmondo_towards_2025}. This is not a challenge constrained to just DMI, but is also being addressed as part of the growing open hardware movement.
@@ -316,7 +323,7 @@ Open hardware, like open software, is the provision of making electronics design
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.9\linewidth]{img/bonvoisin_source_2017-open-hardware.png}
+    \includegraphics[width=0.9\linewidth]{image/bonvoisin_source_2017-open-hardware.png}
     \caption[Taxonomy of openness]{Taxonomy of openness from \citet[Figure~1]{bonvoisin_source_2017}.}
     \label{fig:osh-taxonomy}
 \end{figure}
@@ -356,6 +363,17 @@ Parallel to the physical design, attention was given to documentation and dissem
     \label{fig:repo-relation}
 \end{figure}
 
-Archiving exposed a few practical challenges. Zenodo’s GitHub integration does not yet handle meta-repositories, requiring separate DOIs for each submodule with cross-references \cite{zenodo_1036_2025}. Likewise, the future of CAD data is tied to software sustainability: the discontinuation of Autodesk EAGLE \cite{autodesk_eagle_2024} effectively freezes its XML format, though conversion to KiCad remains available \cite{kicad_eagle_2024}. These lessons emphasise that openness depends not only on licensing but also on the careful selection of formats and hosting infrastructure.
+Archiving e xposed a few practical challenges. Zenodo’s GitHub integration does not yet handle meta-repositories, requiring separate DOIs for each submodule with cross-references \cite{zenodo_1036_2025}. Likewise, the future of CAD data is tied to software sustainability: the discontinuation of Autodesk EAGLE \cite{autodesk_eagle_2024} effectively freezes its XML format, though conversion to KiCad remains available \cite{kicad_eagle_2024}. These lessons emphasise that openness depends not only on licensing but also on the careful selection of formats and hosting infrastructure.
 
 
+fits in to the wider practice of citing digital research output, be it software, hardware, or data. The process very quickly becomes messy which is more often than not as the ideal is of a standard citation is not available.
+
+This has been the case for this paper, and likely many papers at this years NIME.
+
+% What is a clear order of precedence for citing sowftare?
+A clear order of precedence
+
+DOI to the archive of the relevant version
+Citation File Format
+Suggested citation format
+URL to the version repository
