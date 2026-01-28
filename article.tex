@@ -165,6 +165,9 @@ The number of NIME papers referencing a git repository is broken down in Table~\
 Occurrences obtained by searching case-insensitive regular expression \texttt{\\Wgit}, which will capture `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' but also urls like \textt{https:/\textbf{/git}lab.com/} or \texttt{oeyvind\textbf{.git}hub.io} 
 \footnote{recursively case-insensitive search the directory of PDF files \verb$pdfgrep -P '\Wgit' -rli ./ | wc -l$}
 
+
+This approach is not fool-proof and misses instance such as \citet{carter_sculpting_2025} where a GitHub repository is available, but it is the url nor the term `git' is reference directly in the text. As such the goal is demonstrate a rough trend of adoption.
+
 % NOTE: this should include the papers that were disqualified
 
 \textit{Two Sonification Methods for the MindCube} but \url{https://github.com/mitmedialab/mindcube-rave} is empty except a README
