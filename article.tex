@@ -6,6 +6,29 @@ The movement has led to an increased awareness across the research community and
 
 \section{Related Work}
 
+There has been a concerted effort to address the problem of archiving and open-sourcing of DMI over the past 10 years \cite{mcpherson_nimehub_2016,fiordelmondo_longevity_2024,fiordelmondo_towards_2025}. This is not a challenge constrained to just DMI, but is also being addressed as part of the growing open hardware movement.
+Open hardware, like open software, is the provision of making electronics designs accessible allowing fabrication outside of a central manufacturer.
+\citet{mcpherson_nimehub_2016} and \citet{calegario_documentation_2021} outline largely the same principles as that of the Open Source Hardware Association in 2013 \cite{oshwa_best_2013}, that  unlike software, open hardware cannot be simply distributed as a licence and set of source files (Figure~\ref{fig:osh-taxonomy}), lest it fall afoul of ``openwashing.'' 
+\footnote{when a project  ``is claimed to be open source whereas no intention to publish product-related information is given'' \cite{bonvoisin_source_2017}.}  
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.9\linewidth]{images/bonvoisin_source_2017-open-hardware.png}
+    \caption[Taxonomy of openness]{Taxonomy of openness from \citet[Figure~1]{bonvoisin_source_2017}.}
+    \label{fig:osh-taxonomy}
+\end{figure*}
+
+Open source hardware has great potential benefits for use in academia \cite{oellermann_open_2022} and those same benefits can extent to the heritage sector. \citet{mcpherson_nimehub_2016} rightfully raises concerns of tackling hardware obsolescence and how that is tackled as part of the archiving process. Proprietary systems limit the potential for innovation or reproducibility and, when these systems fail, repairs rely on the original manufacturer who may have ceased support or production of replacement parts \cite{oellermann_open_2022}.
+To facilitate reproduction of hardware, it should be self-evident but, any form of archiving and provision of access to source material makes the task much more feasible. Reproduction is made even easier by incorporating open hardware.
+
+This highlights a core problem with digital cultural heritage, which is if we rely on proprietary system for digital conservation, then they will be locked in an ecosystem which is designed to chase change. If heritage institutions are using proprietary digital systems \cite{innocente_framework_2023} they should be aware of their choice of digital infrastructure and the implications that will have on a project's longevity. As \citet{bonvoisin_source_2017} coined ``openwashing'' likewise with digital conservation we run a risk of ``heritagewashing'' where digital projects claim to serve the conservation of cultural heritage, but are in fact ephemera. That is not to say that ephemeral heritage projects are forbidden, but this should be a conscious choice made at a project's inception and not one applied at a point in the future when the task of archiving a work becomes too great. An open methodology needs to be `baked-in' to the research process and it is not something trivially applied after the fact. It is of course better to do it afterwards than not at all, but the information at stake also constitutes the development process, not just the end product. The point at which a project is abandoned is not the key point of record--which, given their `living' status, is likely to have undergone some further modifications.
+
+Both \citet{mcpherson_nimehub_2016} and \citet{fiordelmondo_towards_2025} approach hardware archiving in a repository format. \citet{mcpherson_nimehub_2016} proposed a workshop with the intention to create a a central repository (or database) for DMI designs. Part of that workshop's primary eight goals were the FAIR adjacent aims of encouraging reproducibility, open access and encouraging a normalised practice of documentation. Both \citet{mcpherson_nimehub_2016} and \cite{fiordelmondo_towards_2025} raise the issue of repository structure with the latter proposing a a prescriptive measure which can be applied to any DMI project. Research output in the form of open hardware or open software can and should take advantage of the platforms available for distribution of the work,
+\footnote{such as GitHub, GitLab for source code or Thingiverse for 3D models \cite{oshwa_best_2013}.}
+but the work still needs to be citable \cite{smith_software_2016}, and cross-reference-able \cite{stall_journal_2023} if it is to be built upon.
+
+The limitation here is assuming that the constituent parts of a DMI are a collective to archive and version controlled. This is true to some degree, there is a complete artefact to be documented, but it is very much made of constituent parts that develop and are swapped out. There is the interface, the electronics, and the firmware, whose versions current and old can be used in all number of combinations of versions. Keeping these components contained to a single version control repository limits their modularity and potential for reuse.
+
 
 workshops looking at Open NIME research:
 
@@ -221,6 +244,10 @@ The burden to get it right is placed I. The author
 
 At nemus realised limitation, keyboard \citet{hamilton_augmentation_2025_activities} had progressed, old links no longer pointed to the keyboard structure of project changing,  two distinct application, one for the museum an another of future research. Bu both used mostly same material. Version tagging helped but how to reference for a paper that would not be misleading. A gitial archive of the sing meta solves citation a reference to repo solves outdated links as the metas repo contains submodules. The links for nine 2025 now no longer accurately reflect the state of the keyboard at that time.
 
+Parallel to the physical design, attention was given to documentation and dissemination. Following DMI documentation guidelines \cite{calegario_documentation_2021} and open-science practice \cite{stall_journal_2023}, the entire project was archived: source code, firmware, bill of materials, CAD schematics, STL models, photographs, and build instructions were placed in public repositories. The material is organised into three submodules---\emph{Firmware} \cite{hamilton_firmware_2025}, \emph{CAD} \cite{hamilton_cad_2025}, and \emph{Model Data} \cite{hamilton_models_2025}---combined via a meta-repository (Figure~\ref{fig:repo-relation}). This structure allows individual components (e.g., a PCB or an optical sensor) to be reused or substituted without restructuring the entire system.
+
+\subsection{Modular Source}
+
 Git repo with a single commit hosting static files is no better than serving through a website link to a zip file or a cloud storage (e.g. google drive) link. It does provide potential for greater utility with issues that are tied to the work.
 
 Since Submodules are just a reference to a commit to another repository, the data weight is far smaller than if large sweeping changes in source code or dependencies were stored in the git commit history. There is no requirement for the repositories to share the same platform, and reference will function so long as the upstream repository is accessible.
@@ -230,9 +257,66 @@ Such an approach aligns closely with the FAIR principles as it promotes code reu
 both \citet{calegario_documentation_2021} and \citet{fiordelmondo_longevity_2024} present the idea of a single, unified repository containing all elements. 
 Elements such as library dependencies may not be from the original author and other parts may be repurposed from existing projects.
 Each element of a DMI may change and to facilitate development and reproducibility a more modular approach is proposed.
-Shallow submodules allow for only the relevant code for that commit to be pulled from the upstream repository meaning the full data weight of the entire repository is not needed.
-Relevant for the ability to compartmentalise auto generated documentation which can be served from a sub-repository branch, but not clog up the  code base of the meta repository.
-This was the case with the firmware \footnote{\url{https://nemus-project.github.io/harpsichord-interface-firmware/docs/html/}} for interface in \citet{hamilton_augmentation_2025_activities}.
+
+Modular source code is aided by the git version control software through its submodules functionality \citet{git_submodule_2025}.
+
+relates to dependencies, but the specific instance where a dependency is one created from the same author(s) or another project that is open source
+
+can describe the project in terms of parts that may be swapped. The burden of redundant replication is lifted, without sacrificing the traceability.
+
+\subsection{Version Control}
+
+The interface project highlighted limitations within the archiving frameworks that are currently available. A benefit of the Zenodo archive is its integration to GitHub. This allows a single project to be simultaneously maintained and archived for citation from a single location.
+Unfortunately, the GitHub integration for Zenodo does not currently provide a means for meta-repositories to be archived correctly \cite{zenodo_1036_2025}. This limitation necessitates the generation of a separate DOI for each component submodule, all of which reference the meta-repository.
+
+\begin{figure}
+\centering
+    \begin{tikzpicture}[
+      box/.style = {draw, minimum width=0.2\linewidth, minimum height=0.5cm, align=center},
+      arrow/.style = {-latex', thick}
+    ]
+    
+    % \node[box] (box1) {Firmware\\sub-module};
+    % \node[box, right=of box1] (box2) {CAD\\sub-module};
+    % \node[box, right=of box2] (box3) {Model Data\\sub-module};
+    % \node[box, below=2cm of box2] (bottom) {Interface\\meta-repository};
+
+    \node[box] (box1) {\textbf{Firmware}};
+    \node[box, right=of box1] (box2) {\textbf{Schematics}};
+    \node[box, right=of box2] (box3) {\textbf{Enclosure}};
+    \node[box, below=1cm of box2] (bottom) {\textbf{Interface}\\Meta Repository};
+    
+    \draw[arrow] (bottom.north) -- ++(0,0.5) -| (box1.south);
+    \draw[arrow] (bottom.north) -- ++(0,0.5) -| (box2.south);
+    \draw[arrow] (bottom.north) -- ++(0,0.5) -| (box3.south);
+    
+    \end{tikzpicture}
+    \caption{The DMI is divided into three submodules each representing the firmware, electronics schematics and enlosure modelling data. These submodules are collected into a single repository that represents the interface.}
+    \label{fig:repo-relation}
+\end{figure}
+
+\subsection{Archiving}
+
+Archiving provides a means by which a work can be cited.
+
+A DMI as a research product \cite{xxx} is an object that should be citable. The paper describes the object, it is not object itself and there are instances where citing the object is more applicable than citing the paper based around it.
+
+Archiving should provide a DOI with which to cite. Repositories may also provide a recommended citation, but this should very much be looked upon as a bandage to a broken system and not a solution. The very helpful citation file format CFF provides a means to have a structure citation to software, but unhelpfully, integration with GitHub prompts the user to ``Cite this Repository'' \url{https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files} which, as already discussed, is something to be avoided.
+
+Archiving exposed a few practical challenges. Zenodo’s GitHub integration does not yet handle meta-repositories, requiring separate DOIs for each submodule with cross-references \cite{zenodo_1036_2025}. Likewise, the future of CAD data is tied to software sustainability: the discontinuation of Autodesk EAGLE \cite{autodesk_eagle_2024} effectively freezes its XML format, though conversion to KiCad remains available \cite{kicad_eagle_2024}. These lessons emphasise that openness depends not only on licensing but also on the careful selection of formats and hosting infrastructure.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/modular_archive_1.pdf}
+    \caption{Zenodo's GitHub integration does not include data in submodules. Alternative process is to archive each submodule at the relevant version and then archive the meta repository which contains the separate DOIs.}
+    \label{fig:zenodo-github-integration}
+\end{figure}
+
+\subsubsection{limits in archiving modular projects}
+
+Problem with a modular process is that zenodo's integration does not support it or a allow for easy configuration.
+
+Would require the manual creation of the archive, copy the contents over. Alternatively, each submodule could be archived and a meta-archive simply contains reference to the constituent DOIs. This is not ideal but it is also not insurmaountable.
 
 
 
@@ -250,74 +334,7 @@ Version control repository ideal for idea that iterate and where there is a desi
 
 For citing work, given their static and permanent nature, archives and DOIs should be used.
 
-
-\subsection{modular approach to version control}
-relates to dependencies, but the specific instance where a dependency is one created from the same author(s) or another project that is open source
-
-can describe the project in terms of parts that may be swapped. The burden of redundant replication is lifted, without sacrificing the traceability.
-
-
-The interface project highlighted limitations within the archiving frameworks that are currently available. A benefit of the Zenodo archive is its integration to GitHub. This allows a single project to be simultaneously maintained and archived for citation from a single location.
-Unfortunately, the GitHub integration for Zenodo does not currently provide a means for meta-repositories to be archived correctly \cite{zenodo_1036_2025}. This limitation necessitates the generation of a separate DOI for each component submodule, all of which reference the meta-repository.
-
-\subsection{Citable work}
-
-Archiving provides a means by which a work can be cited.
-
-A DMI as a research product \cite{xxx} is an object that should be citable. The paper describes the object, it is not object itself and there are instances where citing the object is more applicable than citing the paper based around it.
-
-Archiving should provide a DOI with which to cite. Repositories may also provide a recommended citation, but this should very much be looked upon as a bandage to a broken system and not a solution. The very helpful citation file format CFF provides a means to have a structure citation to software, but unhelpfully, integration with GitHub prompts the user to ``Cite this Repository'' \url{https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files} which, as already discussed, is something to be avoided.
-
-\subsection{limits in archiving modular projects}
-
-Problem with a modular process is that zenodo's integration does not support it or a allow for easy configuration.
-
-Would require the manual creation of the archive, copy the contents over. Alternatively, each submodule could be archived and a meta-archive simply contains reference to the constituent DOIs. This is not ideal but it is also not insurmaountable.
-
-\section{Concluding Remarks}
-
-Reluctance to share, anecdotally is that a work is `in-progress' which should be seen as a benefit. The appearance that work is in a highly finished polished state can be intimidating. the goal of NIME is should not always be to have a completed idea but to discuss ideas in progress. If that were the case we would \textit{only} be sharing pictures and archives, once something is finished, what isthere kef6t to discuss.
-
-Designing Sensory NIME for Autism: ``Open-source development initiatives should be encouraged to foster 
-scalability and inclusivity.''
-
-
-Sharing with a wider community enables the possibility of research breaking out beyond the confines of its original life span. Enables the chance for more meaningful user evaluation \cite{calegario_documentation_2021} by reducing the barriers to accessing an interface. Ideas can be iterated upon, built upon previous work.
-
-\section{Recommendations}\label{sec:recommendations}
-rather than focussing on a central repository \citet{mcpherson_nimehub_2016}, electing replicating officers \citet{calegario_documentation_2021} or conforming to standard format \citet{fiordelmondo_towards_2025} we can look at solution that are much simpler, but have a much wider impact
-
-clear there is a desire to share work, offload the burden on choosing the most effective way to disseminate, or the reader in locating the work, the solution would be to standardise one, possibly two field that are in the papers template text, and in the metadata.
-
-Part of the submission, the work can marked as closed source, if that is necessary but a mandatory field for project URL or DOI would curtail the open source agnosticism and make the choice a much more deliberate one.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{images/open-example.pdf}\\
-    \vspace{0.5cm}
-    \includegraphics[width=\linewidth]{images/closed-example.pdf}    
-    \caption{Project details as a standard field in the paper template, in the same manner of the title and authors, would allow for quick identification of the project status and files. These details are not obligatory and could be withheld, but the choice to do so becomes deliberate.}
-    \label{fig:project-details}
-\end{figure}
-
-Aiming for some standardised template or central repository sets a high bar that the community is npt ready to meet. We may be missing even just the obvious solutions.
-One can find the authors of a paper easily. Supplementary material in the form of a zenodo archive has a space on the NIME website, but it is clearly under utilised.
-
-In the same way one can open a per and see immediately the title, authors, there should be a space for
-a DOI to the source for which the material pertains or a notice in cases where the the work is either proprietary or the material has some other ethical restrictions.
-
-For academic work, an open first approach should be the goal standard as recommended in the open science and FAIR principles. Closed by default because of a clear path to sign-post a repository is a huge waste.
-
-for example: SMucK: Symbolic Music in ChucK is perfectly easy to find with a search, but it is missing any kind of link in the paper! (disqualified)
-
-The resistance is very much one of awareness and skill aquisition. Contributors are far more likely to follow the practice set out by there peers and their mentors. Change comes from above, and from the side and we should lead by example.
-
-
-
-
-\section{Relevant parts from thesis}
-
-\subsection{Software Documentation}
+\subsection{Documentation}
 
 Following \citet{procida_diataxis_2025}, four complementary forms of
 documentation can be distinguished: Tutorials, How-to guides, Explanation, and
@@ -361,6 +378,10 @@ extend this to hardware projects, with tools for citation
 issue tracking, codes of conduct), more advanced practices presuppose an active
 repository.
 
+Shallow submodules allow for only the relevant code for that commit to be pulled from the upstream repository meaning the full data weight of the entire repository is not needed.
+Relevant for the ability to compartmentalise auto generated documentation which can be served from a sub-repository branch, but not clog up the  code base of the meta repository.
+This was the case with the firmware \footnote{\url{https://nemus-project.github.io/harpsichord-interface-firmware/docs/html/}} for interface in \citet{hamilton_augmentation_2025_activities}.
+
 
 \subsubsection{Software Documentation Practice}
 
@@ -368,67 +389,45 @@ The documentation practice for a project may also reveal something within the au
 Documentation that leans heavily towards \textit{Reference} in the diataxis framework \citet{procida_diataxis_2025} are concerned with the technical understanding and modification of the work, something that is still in progress.
 In the same framework, ``Tutorial'' documentation view the work is static, when the user's primary concern is with utilising the work. Through this lens we can assess a NIME and perhaps understand the intention for growth or reuse.
 
-\subsection{Open Source Practice}
+\section{Concluding Remarks}
 
-There has been a concerted effort to address the problem of archiving and open-sourcing of DMI over the past 10 years \cite{mcpherson_nimehub_2016,fiordelmondo_longevity_2024,fiordelmondo_towards_2025}. This is not a challenge constrained to just DMI, but is also being addressed as part of the growing open hardware movement.
-Open hardware, like open software, is the provision of making electronics designs accessible allowing fabrication outside of a central manufacturer.
-\citet{mcpherson_nimehub_2016} and \citet{calegario_documentation_2021} outline largely the same principles as that of the Open Source Hardware Association in 2013 \cite{oshwa_best_2013}, that  unlike software, open hardware cannot be simply distributed as a licence and set of source files (Figure~\ref{fig:osh-taxonomy}), lest it fall afoul of ``openwashing.'' 
-\footnote{when a project  ``is claimed to be open source whereas no intention to publish product-related information is given'' \cite{bonvoisin_source_2017}.}  
+Reluctance to share, anecdotally is that a work is `in-progress' which should be seen as a benefit. The appearance that work is in a highly finished polished state can be intimidating. the goal of NIME is should not always be to have a completed idea but to discuss ideas in progress. If that were the case we would \textit{only} be sharing pictures and archives, once something is finished, what isthere kef6t to discuss.
 
-\begin{figure*}
-    \centering
-    \includegraphics[width=0.9\linewidth]{images/bonvoisin_source_2017-open-hardware.png}
-    \caption[Taxonomy of openness]{Taxonomy of openness from \citet[Figure~1]{bonvoisin_source_2017}.}
-    \label{fig:osh-taxonomy}
-\end{figure*}
+Designing Sensory NIME for Autism: ``Open-source development initiatives should be encouraged to foster 
+scalability and inclusivity.''
 
-Open source hardware has great potential benefits for use in academia \cite{oellermann_open_2022} and those same benefits can extent to the heritage sector. \citet{mcpherson_nimehub_2016} rightfully raises concerns of tackling hardware obsolescence and how that is tackled as part of the archiving process. Proprietary systems limit the potential for innovation or reproducibility and, when these systems fail, repairs rely on the original manufacturer who may have ceased support or production of replacement parts \cite{oellermann_open_2022}.
-To facilitate reproduction of hardware, it should be self-evident but, any form of archiving and provision of access to source material makes the task much more feasible. Reproduction is made even easier by incorporating open hardware.
 
-This highlights a core problem with digital cultural heritage, which is if we rely on proprietary system for digital conservation, then they will be locked in an ecosystem which is designed to chase change. If heritage institutions are using proprietary digital systems \cite{innocente_framework_2023} they should be aware of their choice of digital infrastructure and the implications that will have on a project's longevity. As \citet{bonvoisin_source_2017} coined ``openwashing'' likewise with digital conservation we run a risk of ``heritagewashing'' where digital projects claim to serve the conservation of cultural heritage, but are in fact ephemera. That is not to say that ephemeral heritage projects are forbidden, but this should be a conscious choice made at a project's inception and not one applied at a point in the future when the task of archiving a work becomes too great. An open methodology needs to be `baked-in' to the research process and it is not something trivially applied after the fact. It is of course better to do it afterwards than not at all, but the information at stake also constitutes the development process, not just the end product. The point at which a project is abandoned is not the key point of record--which, given their `living' status, is likely to have undergone some further modifications.
+Sharing with a wider community enables the possibility of research breaking out beyond the confines of its original life span. Enables the chance for more meaningful user evaluation \cite{calegario_documentation_2021} by reducing the barriers to accessing an interface. Ideas can be iterated upon, built upon previous work.
 
-Both \citet{mcpherson_nimehub_2016} and \citet{fiordelmondo_towards_2025} approach hardware archiving in a repository format. \citet{mcpherson_nimehub_2016} proposed a workshop with the intention to create a a central repository (or database) for DMI designs. Part of that workshop's primary eight goals were the FAIR adjacent aims of encouraging reproducibility, open access and encouraging a normalised practice of documentation. Both \citet{mcpherson_nimehub_2016} and \cite{fiordelmondo_towards_2025} raise the issue of repository structure with the latter proposing a a prescriptive measure which can be applied to any DMI project. Research output in the form of open hardware or open software can and should take advantage of the platforms available for distribution of the work,
-\footnote{such as GitHub, GitLab for source code or Thingiverse for 3D models \cite{oshwa_best_2013}.}
-but the work still needs to be citable \cite{smith_software_2016}, and cross-reference-able \cite{stall_journal_2023} if it is to be built upon.
+\section{Recommendations}\label{sec:recommendations}
+rather than focussing on a central repository \citet{mcpherson_nimehub_2016}, electing replicating officers \citet{calegario_documentation_2021} or conforming to standard format \citet{fiordelmondo_towards_2025} we can look at solution that are much simpler, but have a much wider impact
 
-The limitation here is assuming that the constituent parts of a DMI are a collective to archive and version controlled. This is true to some degree, there is a complete artefact to be documented, but it is very much made of constituent parts that develop and are swapped out. There is the interface, the electronics, and the firmware, whose versions current and old can be used in all number of combinations of versions. Keeping these components contained to a single version control repository limits their modularity and potential for reuse.
+clear there is a desire to share work, offload the burden on choosing the most effective way to disseminate, or the reader in locating the work, the solution would be to standardise one, possibly two field that are in the papers template text, and in the metadata.
 
-Parallel to the physical design, attention was given to documentation and dissemination. Following DMI documentation guidelines \cite{calegario_documentation_2021} and open-science practice \cite{stall_journal_2023}, the entire project was archived: source code, firmware, bill of materials, CAD schematics, STL models, photographs, and build instructions were placed in public repositories. The material is organised into three submodules---\emph{Firmware} \cite{hamilton_firmware_2025}, \emph{CAD} \cite{hamilton_cad_2025}, and \emph{Model Data} \cite{hamilton_models_2025}---combined via a meta-repository (Figure~\ref{fig:repo-relation}). This structure allows individual components (e.g., a PCB or an optical sensor) to be reused or substituted without restructuring the entire system.
-
-\begin{figure}
-\centering
-    \begin{tikzpicture}[
-      box/.style = {draw, minimum width=0.2\linewidth, minimum height=0.5cm, align=center},
-      arrow/.style = {-latex', thick}
-    ]
-    
-    % \node[box] (box1) {Firmware\\sub-module};
-    % \node[box, right=of box1] (box2) {CAD\\sub-module};
-    % \node[box, right=of box2] (box3) {Model Data\\sub-module};
-    % \node[box, below=2cm of box2] (bottom) {Interface\\meta-repository};
-
-    \node[box] (box1) {\textbf{Firmware}};
-    \node[box, right=of box1] (box2) {\textbf{Schematics}};
-    \node[box, right=of box2] (box3) {\textbf{Enclosure}};
-    \node[box, below=1cm of box2] (bottom) {\textbf{Interface}\\Meta Repository};
-    
-    \draw[arrow] (bottom.north) -- ++(0,0.5) -| (box1.south);
-    \draw[arrow] (bottom.north) -- ++(0,0.5) -| (box2.south);
-    \draw[arrow] (bottom.north) -- ++(0,0.5) -| (box3.south);
-    
-    \end{tikzpicture}
-    \caption{The DMI is divided into three submodules each representing the firmware, electronics schematics and enlosure modelling data. These submodules are collected into a single repository that represents the interface.}
-    \label{fig:repo-relation}
-\end{figure}
-
-Archiving exposed a few practical challenges. Zenodo’s GitHub integration does not yet handle meta-repositories, requiring separate DOIs for each submodule with cross-references \cite{zenodo_1036_2025}. Likewise, the future of CAD data is tied to software sustainability: the discontinuation of Autodesk EAGLE \cite{autodesk_eagle_2024} effectively freezes its XML format, though conversion to KiCad remains available \cite{kicad_eagle_2024}. These lessons emphasise that openness depends not only on licensing but also on the careful selection of formats and hosting infrastructure.
+Part of the submission, the work can marked as closed source, if that is necessary but a mandatory field for project URL or DOI would curtail the open source agnosticism and make the choice a much more deliberate one.
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{images/modular_archive_1.pdf}
-    \caption{Zenodo's GitHub integration does not include data in submodules. Alternative process is to archive each submodule at the relevant version and then archive the meta repository which contains the separate DOIs.}
-    \label{fig:zenodo-github-integration}
+    \includegraphics[width=\linewidth]{images/open-example.pdf}\\
+    \vspace{0.5cm}
+    \includegraphics[width=\linewidth]{images/closed-example.pdf}    
+    \caption{Project details as a standard field in the paper template, in the same manner of the title and authors, would allow for quick identification of the project status and files. These details are not obligatory and could be withheld, but the choice to do so becomes deliberate.}
+    \label{fig:project-details}
 \end{figure}
+
+Aiming for some standardised template or central repository sets a high bar that the community is npt ready to meet. We may be missing even just the obvious solutions.
+One can find the authors of a paper easily. Supplementary material in the form of a zenodo archive has a space on the NIME website, but it is clearly under utilised.
+
+In the same way one can open a per and see immediately the title, authors, there should be a space for
+a DOI to the source for which the material pertains or a notice in cases where the the work is either proprietary or the material has some other ethical restrictions.
+
+For academic work, an open first approach should be the goal standard as recommended in the open science and FAIR principles. Closed by default because of a clear path to sign-post a repository is a huge waste.
+
+for example: SMucK: Symbolic Music in ChucK is perfectly easy to find with a search, but it is missing any kind of link in the paper! (disqualified)
+
+The resistance is very much one of awareness and skill aquisition. Contributors are far more likely to follow the practice set out by there peers and their mentors. Change comes from above, and from the side and we should lead by example.
+
+
 
 fits in to the wider practice of citing digital research output, be it software, hardware, or data. The process very quickly becomes messy which is more often than not as the ideal is of a standard citation is not available.
 
