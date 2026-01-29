@@ -217,11 +217,22 @@ The burden to get it right is placed I. The author
 3. open should be the default
 4.
 
-\section{An Open DMI}
+\section{An Open Methodology for DMIs}
+
+At nemus realised limitation, keyboard \citet{hamilton_augmentation_2025_activities} had progressed, old links no longer pointed to the keyboard structure of project changing,  two distinct application, one for the museum an another of future research. Bu both used mostly same material. Version tagging helped but how to reference for a paper that would not be misleading. A gitial archive of the sing meta solves citation a reference to repo solves outdated links as the metas repo contains submodules. The links for nine 2025 now no longer accurately reflect the state of the keyboard at that time.
+
+Git repo with a single commit hosting static files is no better than serving through a website link to a zip file or a cloud storage (e.g. google drive) link. It does provide potential for greater utility with issues that are tied to the work.
+
+Since Submodules are just a reference to a commit to another repository, the data weight is far smaller than if large sweeping changes in source code or dependencies were stored in the git commit history. There is no requirement for the repositories to share the same platform, and reference will function so long as the upstream repository is accessible.
+
+Such an approach aligns closely with the FAIR principles as it promotes code reuse, interoperability, as well as seamless attribution.
 
 both \citet{calegario_documentation_2021} and \citet{fiordelmondo_longevity_2024} present the idea of a single, unified repository containing all elements. 
 Elements such as library dependencies may not be from the original author and other parts may be repurposed from existing projects.
 Each element of a DMI may change and to facilitate development and reproducibility a more modular approach is proposed.
+Shallow submodules allow for only the relevant code for that commit to be pulled from the upstream repository meaning the full data weight of the entire repository is not needed.
+Relevant for the ability to compartmentalise auto generated documentation which can be served from a sub-repository branch, but not clog up the  code base of the meta repository.
+This was the case with the firmware \footnote{\url{https://nemus-project.github.io/harpsichord-interface-firmware/docs/html/}} for interface in \citet{hamilton_augmentation_2025_activities}.
 
 
 
@@ -276,16 +287,17 @@ Sharing with a wider community enables the possibility of research breaking out 
 \section{Recommendations}\label{sec:recommendations}
 rather than focussing on a central repository \citet{mcpherson_nimehub_2016}, electing replicating officers \citet{calegario_documentation_2021} or conforming to standard format \citet{fiordelmondo_towards_2025} we can look at solution that are much simpler, but have a much wider impact
 
-clear there is a desire to share work, offload the burden on choosing the most effective way to dissemintate, or the reader in locating the work, the solution would be to standarddise one, possibly two field that are in the papers template text, and in the metadata.
+clear there is a desire to share work, offload the burden on choosing the most effective way to disseminate, or the reader in locating the work, the solution would be to standardise one, possibly two field that are in the papers template text, and in the metadata.
 
 Part of the submission, the work can marked as closed source, if that is necessary but a mandatory field for project URL or DOI would curtail the open source agnosticism and make the choice a much more deliberate one.
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{images/open-example.pdf}\\
+    \vspace{0.5cm}
     \includegraphics[width=\linewidth]{images/closed-example.pdf}    
-    \caption{Caption}
-    \label{fig:Project details as a standard field in the paper template would allow for quick identification of the project status and files. These details are not obligatory and could be witheld, but the choice to do so becomes deliberate.}
+    \caption{Project details as a standard field in the paper template, in the same manner of the title and authors, would allow for quick identification of the project status and files. These details are not obligatory and could be withheld, but the choice to do so becomes deliberate.}
+    \label{fig:project-details}
 \end{figure}
 
 Aiming for some standardised template or central repository sets a high bar that the community is npt ready to meet. We may be missing even just the obvious solutions.
@@ -386,7 +398,7 @@ Parallel to the physical design, attention was given to documentation and dissem
 \begin{figure}
 \centering
     \begin{tikzpicture}[
-      box/.style = {draw, minimum width=0.2\linewidth, minimum height=1.5cm, align=center},
+      box/.style = {draw, minimum width=0.2\linewidth, minimum height=0.5cm, align=center},
       arrow/.style = {-latex', thick}
     ]
     
@@ -395,14 +407,14 @@ Parallel to the physical design, attention was given to documentation and dissem
     % \node[box, right=of box2] (box3) {Model Data\\sub-module};
     % \node[box, below=2cm of box2] (bottom) {Interface\\meta-repository};
 
-    \node[box] (box1) {Firmware};
-    \node[box, right=of box1] (box2) {Schematics};
-    \node[box, right=of box2] (box3) {Enclosure};
-    \node[box, below=2cm of box2] (bottom) {Interface};
+    \node[box] (box1) {\textbf{Firmware}};
+    \node[box, right=of box1] (box2) {\textbf{Schematics}};
+    \node[box, right=of box2] (box3) {\textbf{Enclosure}};
+    \node[box, below=1cm of box2] (bottom) {\textbf{Interface}\\Meta Repository};
     
-    \draw[arrow] (bottom.north) -- ++(0,1) -| (box1.south);
-    \draw[arrow] (bottom.north) -- ++(0,1) -| (box2.south);
-    \draw[arrow] (bottom.north) -- ++(0,1) -| (box3.south);
+    \draw[arrow] (bottom.north) -- ++(0,0.5) -| (box1.south);
+    \draw[arrow] (bottom.north) -- ++(0,0.5) -| (box2.south);
+    \draw[arrow] (bottom.north) -- ++(0,0.5) -| (box3.south);
     
     \end{tikzpicture}
     \caption{The DMI is divided into three submodules each representing the firmware, electronics schematics and enlosure modelling data. These submodules are collected into a single repository that represents the interface.}
@@ -411,6 +423,12 @@ Parallel to the physical design, attention was given to documentation and dissem
 
 Archiving exposed a few practical challenges. Zenodo’s GitHub integration does not yet handle meta-repositories, requiring separate DOIs for each submodule with cross-references \cite{zenodo_1036_2025}. Likewise, the future of CAD data is tied to software sustainability: the discontinuation of Autodesk EAGLE \cite{autodesk_eagle_2024} effectively freezes its XML format, though conversion to KiCad remains available \cite{kicad_eagle_2024}. These lessons emphasise that openness depends not only on licensing but also on the careful selection of formats and hosting infrastructure.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/modular_archive_1.pdf}
+    \caption{Zenodo's GitHub integration does not include data in submodules. Alternative process is to archive each submodule at the relevant version and then archive the meta repository which contains the separate DOIs.}
+    \label{fig:zenodo-github-integration}
+\end{figure}
 
 fits in to the wider practice of citing digital research output, be it software, hardware, or data. The process very quickly becomes messy which is more often than not as the ideal is of a standard citation is not available.
 
