@@ -4,7 +4,7 @@ Over the past few decades there has been a growing academic movement for an `ope
 Open and FAIR research practice is vital to ensure transparency, validation, re-use and access within academic research.
 The movement has led to an increased awareness across the research community and the establishment of accepted best-practice frameworks \cite{smith_software_2016}. The focus of these frameworks has predominantly been towards digital research practice in the sciences \cite{unesco_open_2021}.
 
-\section{Related Work}
+\section{Open Research at NIME}
 
 There has been a concerted effort to address the problem of archiving and open-sourcing of DMI over the past 10 years \cite{mcpherson_nimehub_2016,fiordelmondo_longevity_2024,fiordelmondo_towards_2025}. This is not a challenge constrained to just DMI, but is also being addressed as part of the growing open hardware movement.
 Open hardware, like open software, is the provision of making electronics designs accessible allowing fabrication outside of a central manufacturer.
@@ -17,6 +17,8 @@ Open hardware, like open software, is the provision of making electronics design
     \caption[Taxonomy of openness]{Taxonomy of openness from \citet[Figure~1]{bonvoisin_source_2017}.}
     \label{fig:osh-taxonomy}
 \end{figure*}
+
+\subsection{Previous Work}
 
 Open source hardware has great potential benefits for use in academia \cite{oellermann_open_2022} and those same benefits can extent to the heritage sector. \citet{mcpherson_nimehub_2016} rightfully raises concerns of tackling hardware obsolescence and how that is tackled as part of the archiving process. Proprietary systems limit the potential for innovation or reproducibility and, when these systems fail, repairs rely on the original manufacturer who may have ceased support or production of replacement parts \cite{oellermann_open_2022}.
 To facilitate reproduction of hardware, it should be self-evident but, any form of archiving and provision of access to source material makes the task much more feasible. Reproduction is made even easier by incorporating open hardware.
@@ -57,132 +59,42 @@ NIME has had a dedication to making its proceedings publicly available (under a 
 
 as remarked in \citet{calegario_documentation_2021} one can follow the path of \cite{ajin_rebuilding_2019} who created the sponge, and if your lucky, you may even find the original source \url{https://github.com/marierm/sponge-general}.
 
-\section{State of Open DMIs}
-
-Instructing university students on the use of micro-controllers and electronics for creative applications. NIME archive presents a wealth of ideas and open source projects from which students can draw inspirations and iterate upon. 
-Far too often, the source is only ``open'' on condition that it can be located in the first instance. This raised the question: ``For all papers in NIME, how many can I navigate from the paper directly to the source material.''
-
 The recreation of a NIME has focussed on goal of using it musical practice \cite{ajin_rebuilding_2019, masu_nime_2023, west_towards_2025}. Equally valid is the recreation of a NIME for knowledge and development of craft \cite{calegario_documentation_2021}
 
-NIME has some 2000+ projects available in its open access archive. and open source research practice has changed since 2001. 
-The question was narrowed to just NIME 2025 as it represents the bleeding edge of research practice as it has been informed from previous work covering open source hardware, software, and NIME specifically. 
-
-Question is not whether the source is buildable / executable or even complete, just if there is a source repository. source repository can be a direct link to a version control repo or a static digital archive.
-
-An empty repository would be disqualidfied.
-
-Source material defined as the material pertinent to the paper without, in a version control format, digital archive or ideally both.
 
 
 
-% All 96 papers from NIME 2025 can be downloaded locally with a zshell instruction
-% \begin{verbatim}
-% for i in {1..96}; do
-%   curl "https://nime.org/proceedings/2025/nime2025_${i}.pdf" -O
-% done
-% \end{verbatim}
+\subsection{Current State of Open DMIs}\label{sec:current-state}
 
-Only 2025 was considered as it is the most up to date digital research practice can be.
-
-Search carried out a manual keyword search each paper on each paper from NIME 2025, much in the same manner as  in \citet{calegario_documentation_2021} and \citet{fiordelmondo_longevity_2024} Review B. The keywords searched were `git*',
-\footnote{wildcard to match github, gitlab or git in a URL, case insensitive}
-`source', and `doi'. 
+While instructing university students, the NIME archive has offered a valuable resource for creative applications on the use of micro-controllers, electronics and computer programming. NIME has 2000+ projects available in its open-access archive from which students can draw inspirations and iterate upon. Though many of the projects are open source, far too often this is only on condition that the source can be located in the first place. This raised two questions, the first of which was ``For all papers in NIME, for how many can the source be navigated to from the paper directly?''
 
 
-\cite{calegario_documentation_2021} outlines what should be included and \citet{fiordelmondo_longevity_2024}  provides a template based up on it to reduce the cognitive labour to carry it out.
+\subsubsection{Question 1: Navigating to Source}
+To answer the question, the scope of the search was limited to papers from NIME 2025 on which a keyword search was carried out.
+Open source research practice has changed since 2001 and the guidance for best-practice academia has developed, from the recommendations in academic open science \cite{go_fair_2016,unesco_open_2021}, open hardware \cite{oshwa_best_2013} and more specifically open research practice at NIME \cite{mcpherson_nimehub_2016,jensenius_open_2019,fiordelmondo_longevity_2024}.
+NIME 2025 should therefore represent the `bleeding edge' of open research practice as it will has been informed from guidance available up until this point.
 
-Upon failing to find any result, the paper was manually scan read to identify alternate methods of including a reference to a source repository.
+The method used by \citet{calegario_documentation_2021} and Review B from \citet{fiordelmondo_longevity_2024} were used as a starting point for the search. 
+Keywords searched included a wildcard ``git*'' (to flag variants such as GitHub and GitLab) as well as
+``source,'' ``code,'' and ``doi''.  Upon failing to find any result, the paper was manually skim read to identify alternate methods of including a reference to a source repository.
+When a link to source material was found, the URL was recorded alongside the context in which it appeared as well as the page number.
 
-A manual search was undertaken as it the total number of papers (96) was small enough and any completely automated search would too easily miss  outliers in formatting, such as those who used a git host service other than github or where the relevant source reposotory would not be immediately apparent.
+The sum total 96 of papers from 2025 was small enough that a semi-manual approach was achievable in just over three hours. 
+% Deriving the context of the URLs would also be much more involved when analysing the the PDF files. 
+The rule for what qualified was not whether the source is buildable / executable or even complete, but rather there was a clear intention from the author(s) to make the core source of the project open.
+The search aimed to be as forgiving as possible and any completely automated search would like miss instances where the source URLs were not immediately apparent \citet{nime2025_21,nime2025_32}.
 
-Some generosity was given during the search process. There were cases where there was no direct hyperlink, but the url can be ascertained and written manually. Latex formatting and PDF readers may unfairly scramble or edit a url, such as for xxx
+Papers with no direct hyperlink, but that included a URL from which the source could be obtained qualified \cite{nime2025_10,nime2025_16,nime2025_21,nime2025_37,nime2025_67}.
+Cases where the hyperlink was broken in the PDF but could be easily ascertained and written manually qualified \cite{nime2025_58, nime2025_62}.
+\footnote{\citet{nime2025_58} has a space in its source URL and \cite{nime2025_62} has missing underscores, \url{https://github.com/MetaBow/MetaBoard} instead of  \url{https://github.com/MetaBow/_MetaBoard_} }
 
-There has to be intent and success. So \url{https://github.com/algomusic/Max-Silence- Noise} from \textbf{Maximum Silence to Noise: Sound synthesis for responsive gestural control} with its space in the url \textit{does} count, as the url can be ascertained. \url{https://gitea.offig.com/lfsadmin/Cicadas.git} from \textit{A Synthetic Cicada Soundscape Controlled by Breath} does \textit{not} count as it is behind authentication.
+There were five instances where the link to the repository were unreachable, either requiring authentication or a private repository, or the repository was completely empty. 
+The authors were contacted and four out of five have provided an alternative at time of writing.
+These repositories are counted, but the recommendations for avoiding such occurrences are covered in Section~\ref{sec:recommendations}.
 
-other case from MetaBow: Gesture Mapping in Immersive Sonic Environments \url{https://github.com/MetaBow/MetaBoard} instead of  \url{https://github.com/MetaBow/_MetaBoard_} 
-
-(Note, Being generous where applicable linking to a site that links to the source
-
-This helped catch instances such as for 
-Longevity of Deep Generative Models in NIME: Challenges and Practices for Reactivation and 
-
-\begin{enumerate}
-\item \url{https://vault.oddworlds.org/s/634PXnGcoQmqStL}
-\item \url{https://www.alternatural.nz/conference-media}
-\item Live Improvisation with Fine-Tuned Generative AI: A Musical Metacreation Approach \url{https://github.com/MAz-Codes/sao-silence-remover} is only part of the process, but non-zero
-\end{enumerate}
-
-\url{gitea.offig.com/lfsadmin/Cicadas} doesn't count as it is behind a pay wall and \url{https://github.com/ijc8/glitchgate} as it is unreachable (and likely just still marked private)
-\textit{Synthesizing Music with Logic Gate Networks}
-sonicolour with a link to a google site to a link to a git repository that contains a zip file \textit{does} count
-
-\url{https://github.com/Samson026/LibPdIntegrationForAndroid} from \textit{Luna: An AR Musical Instrument on the Meta Quest 2} does not count as it it a constituent part, but not the whole
-
-\textit{Roger Dannenberg and Ari Liloia. 2022. Global Drum Circle (Private Github Repository).} is that allowed
-
-Exploiting Latency In The Design Of A Networked Music Performance System For Percussive Collective Improvisation
-
-This shouldn't be allowed:
-
-[15] Roger Dannenberg and Ari Liloia. 2022. Global Drum Circle (Private Github Repository).
-
-
-\footnote{Or examples such as \textit{Embedded Comparo: Small DSP Systems Side-by-Side} where the git repository url is easily missed as a footnote hidden below references.}
-
-but something like \url{tinytouchinstruments.com} is incidentally open given the nature of Javascript so does not count.
-
-variety from source to pdf of a zine
-
-\url{https://github.com/mayacaren/ViVo} missing dependencies, for instance, thats fine, there is at least something 
-
-The process takes about three hours to complete
-
-Of the 96 papers from NIME 2025, 29 papers have a link to some kind of source in them though 50 papers make reference to `git,' `github,' or `gitlab.' Of the 29 papers only one \cite{studley_swimtunes_2025} provided a DOI citable digital archive. 
-
-Authors of papers that were empty or inaccessible and in all cases a alternative was provided.
-
-In most cases there was a clear desire to make the work accessible, but with no clear format the link was overlooked.
-Two repositories were private and subsequently made available, one repository had simply used the wrong link and alternate was provided.
-For one repository, the authors were unreachable. Finally, one repository was found through a simple search. Including these papers which had intent, the total is 34 repositories.
-
-
-Platform: 
-GitHub: 30
-Other :  4
-
-Including these repositories with the original 26, there are a total of 34 papers with clear intention of sharing source. Though not broken down by year, this is in keeping with the 33\% reported in \citet{calegario_documentation_2021}.
+Of the 96 papers from NIME 2025, there are a total of 34 (\~35\%) that have a clear intention of sharing source, be it software, datasets or even zines\citet{nime2025_42}. This is in keeping with the 33\% reported in \citet{calegario_documentation_2021} which applied a similar process to papers from 2018--2020.
 Overwhelmingly GitHub as the preferred platform with 30 projects hosting a repository there, which was the trend identified in \citet{fiordelmondo_towards_2025}. 
-
-The use of git in 50+ papers out the 96 demonstrates a familiarity. 
-
-
-
-% same could be done for zenodo.
-
-% \begin{table}
-%     \centering
-%     \begin{tabular}{r|cccccccccc}
-%         \textbf{Year}      & 2016 & 2017 & 2018 & 2019 & 2020 & 2021 & 2022 & 2023 & 2024 & 2025 \\ \hline
-%         \textbf{\# Papers} & 16   & 25   & 24   & 29   & 29   & 33   & 24   & 54   & 42   & 50   \\ \hline
-%         \textbf{\% Overall}& 18   & 24   & 26   & 32   & 29   & 38   & 43   & 54   & 44   & 50   \\ 
-%     \end{tabular}
-%     \caption{Number of papers in which a git repository is reference and the (rounded) percentage that represents overall of the papers from that year}
-%     \label{tab:git_occurences}
-% \end{table}
-
-
-\citet{fiordelmondo_towards_2025} reports on the occurence of `git' related terms, to demonstrate to what degree there is a familiarity with git version control we should instead look at in how many papers a git repository is referenced across each year.
-
-\begin{table}
-    \centering
-    \begin{tabular}{r|cccccccccc}
-        \textbf{Year}      & \textit{16} & \textit{17} & \textit{18} & \textit{19} & \textit{20} & \textit{21} & \textit{22} & \textit{23} & \textit{24} & \textit{25} \\ \hline
-        \textbf{\# Papers} & 16   & 25   & 24   & 29   & 29   & 33   & 24   & 54   & 42   & 50   \\ \hline
-        \textbf{\% Overall}& 18   & 24   & 26   & 32   & 29   & 38   & 43   & 54   & 44   & 50   \\ 
-    \end{tabular}
-    \caption{Number of NIME papers which referenced at least one git repository over the last 10 years. The percentage of papers overall is rounded to the nearest integer.}
-    \label{tab:git_occurences}
-\end{table}
+Of the 34 papers only one provided a citable digital archive with a DOI \cite{studley_swimtunes_2025}.
 
 
 \begin{table}
@@ -195,50 +107,122 @@ The use of git in 50+ papers out the 96 demonstrates a familiarity.
     \label{tab:git_placement}
 \end{table}
 
-An individual author / project may employ prolific use of repositories, which would skew the data, though \citet{fiordelmondo_towards_2025} shows a clear trend towards the adoption of the git version control software. 
-What is important is perhaps not the number of occurrences, but whether a paper has relied on the technology at all. 
+
+Table~\ref{tab:git_placement} shows how authors from NIME 2025 chose to disseminate source URLs and by far the  most common is a URL in a footnote. Broken down further, 7 papers provided a URL in footnote on the first page an remaining 11 on a later page.
+
+\subsubsection{Question 2: Adoption of Open Source}
+
+The second question was based on analysis by \citet{fiordelmondo_towards_2025} which showed the occurrence of terms related to open source repositories, such as ``git'' and ``repository.''
+% Since the search was based on occurrence, it could be skewed by individual with prolific use or citation of open source repositories. 
+An individual author / project may employ prolific use of repositories, which would skew the data. Although \citet{fiordelmondo_towards_2025} shows a clear trend towards the adoption of git, a second search was carried out to find to what degree there is a familiarity with git version control we should instead look at in how many papers a git repository is referenced across each year.
+ 
+% What is important is perhaps not the number of occurrences, but whether a paper has relied on the technology at all. 
+
+The PDFs from NIME proceedings were downloaded and separated into directories by year.
+Each directory was search for files in which there was an occurrence of git repository. Using the \texttt{pdfgrep} software \cite{deifel_pdfgrep_2024}, papers were searching case-insensitive regular expression \texttt{\\Wgit},
+which would capture `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' but also URLs  like \texttt{https:/\textbf{/git}lab.com/}  or \texttt{oeyvind\textbf{.git}hub.io}.
+The list of papers were in which there was a match was counted for each year and shown in Table~\ref{tab:git_occurences}.
+
+in them though 50 papers make reference to `git,' `github,' or `gitlab.'  
+
+The use of git in 50+ papers out the 96 demonstrates a familiarity. 
+
+\begin{table}
+    \centering
+    \begin{tabular}{r|cccccccccc}
+        \textbf{Year}      & \textit{16} & \textit{17} & \textit{18} & \textit{19} & \textit{20} & \textit{21} & \textit{22} & \textit{23} & \textit{24} & \textit{25} \\ \hline
+        \textbf{\# Papers} & 16   & 25   & 24   & 29   & 29   & 33   & 24   & 54   & 42   & 50   \\ \hline
+        \textbf{\% Overall}& 18   & 24   & 26   & 32   & 29   & 38   & 43   & 54   & 44   & 50   \\ 
+    \end{tabular}
+    \caption{Number of NIME papers which referenced at least one git repository over the last 10 years. The percentage of papers overall is rounded to the nearest integer.}
+    \label{tab:git_occurences}
+\end{table}
+
 The number of NIME papers referencing a git repository is broken down in Table~\ref{tab:git_occurences}, for the last 10 years. 
-To get extract this data, the PDF version of the NIME papers were downloaded, categorised by year. The \texttt{pdfgrep} software \cite{deifel_pdfgrep_2024}
 
-Occurrences obtained by searching case-insensitive regular expression \texttt{\\Wgit}, 
-which will capture `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' but also URLs 
-like \texttt{https:/\textbf{/git}lab.com/} 
-or \texttt{oeyvind\textbf{.git}hub.io} 
+This approach is not fool-proof and misses instance such as \citet{carter_sculpting_2025} where a GitHub repository is available, but it is the url nor the term `git' is reference directly in the text. The result demonstrate a rough trend of increasing familiarity, though over the last few years.
 
-% \footnote{recursively case-insensitive search the directory of PDF files \verb$pdfgrep -P '\Wgit' -rli ./ | wc -l$}
+\citet{fiordelmondo_towards_2025}
+\begin{quote}
+    To contextualise the “github” keyword, we excluded the links referring to GitHub’s web pages, usually in the form \url{https://username.github.io}
+\end{quote}
 
-This approach is not fool-proof and misses instance such as \citet{carter_sculpting_2025} where a GitHub repository is available, but it is the url nor the term `git' is reference directly in the text. The result demonstrate a rough trend of increasing familiarity, though over the last few years the .
+This search purposefully did not exclude \texttt{github.io} webpages as these results would still suggest usage or some familiarity with GitHub and git software.
 
-Table~\ref{tab:git_placement} shows how authors from NIME 2025 approached the siddemination of their source work. By far the  most common is a URL footnote. Breaking this down further, 7 papers provided a footnote URL in the first page an 11 on a later page.
+Search should be the sum of columns in Table~1 of \citet{fiordelmondo_towards_2025}, but search was not able to produce results nearly as high. A manual search was undertaken to confirm, unless there were searches conducted with information outside the paper, there is no information that would suggest the usage count was as hi as they are for 2022 and 2023
 
-This is not a call to conform to this as standard practice, but the variation in placement shows there is no universal strategy by which the community has aligned. 
-A suggested solution to address this is covered in section \ref{sec:recommendations}.
+% Have not confirmed with 2024
 
-\textit{Two Sonification Methods for the MindCube} but \url{https://github.com/mitmedialab/mindcube-rave} is empty except a README
+% \textit{Two Sonification Methods for the MindCube} but \url{https://github.com/mitmedialab/mindcube-rave} is empty except a README
 
-as does \textit{The Drum Machine of Tao}
+% as does \textit{The Drum Machine of Tao}
 
-What the repository or archive of the DMI should contain has already been covered elsewhere, the specific contents are not fixed and will change from project to project
+ 
+The contents and structure of a project repository are flexible, and there is little value in being overly prescriptive, especially given the diversity of papers submitted to NIME. Nevertheless, in the vast majority of cases, a paper can benefit the reader’s understanding through the inclusion of some form of digital material. 
+In the course of creating a paper for NIME, which leans so heavily into digital technology there will inevitably in the course of creation be by product, things that made not specifically for the purpose of documentation but made just as part of the process. 
 
-What is fixed is that every project should at least have something. A paper is restrictive means to describe a DMI, there will always be some data, or source code, CAD files that are integral to its execution. 
+A CAD file for a laser cut enclosure, or PCB, the anonymised results from a user evaluation in a csv file, the python script for generating a plot, the data used to create that plot, the regular expressions used analyse a body of text. The list can go on.
+
+% Tacit Knowledge
+Digital research products — the datasets, source code, design files and other artifacts often treated as disposable by researchers — are actually essential for understanding how a project was built and why key decisions were made. These research products will have encoded within the tacit knowledge of engineering practice \citet{schindler_expertise_2015} that are rarely documented but valuable for skill acquisition and future understanding.
+
+A traditional paper alone is often a limited means of describing a Digital Musical Interface and accompanying  data, source code, or CAD files are essential to deeper understanding.
 
 NIME provides a space in it's archive entry from which the DOI is taken. Of the 96, only 16 papers have supplementary files and these are exclusively videos.
 
-Dependencies!
+% Dependencies!
 
-Missing but extant repositories,
-for which burden of locating them is placed on the reader, ambiguity, no longer findable and accessible
-Impact on longevity
+% Missing but extant repositories,
+% for which burden of locating them is placed on the reader, ambiguity, no longer findable and accessible
+% Impact on longevity
 
-The burden to get it right is placed I. The author
+% The burden to get it right is placed I. The author
+
+% A suggested methodology through the case study of a DMI.
+
+% \subsubsection{Missing Repos [Notes]}
+% \url{https://gitea.offig.com/lfsadmin/Cicadas.git} from \textit{A Synthetic Cicada Soundscape Controlled by Breath} does \textit{not} count as it is behind authentication.
+% \url{https://github.com/ijc8/glitchgate} as it is unreachable (and likely just still marked private)
+% \textit{Synthesizing Music with Logic Gate Networks}
+% \begin{enumerate}
+% \item Live Improvisation with Fine-Tuned Generative AI: A Musical Metacreation Approach \url{https://github.com/MAz-Codes/sao-silence-remover} is only part of the process, but non-zero
+% \end{enumerate}
+% sonicolour with a link to a google site to a link to a git repository that contains a zip file \textit{does} count
+% \url{https://github.com/Samson026/LibPdIntegrationForAndroid} from \textit{Luna: An AR Musical Instrument on the Meta Quest 2} does not count as it it a constituent part, but not the whole
+% \textit{Roger Dannenberg and Ari Liloia. 2022. Global Drum Circle (Private Github Repository).} is that allowed
+% Exploiting Latency In The Design Of A Networked Music Performance System For Percussive Collective Improvisation
+% This shouldn't be allowed:
+% [15] Roger Dannenberg and Ari Liloia. 2022. Global Drum Circle (Private Github Repository).
+
+% but something like \url{tinytouchinstruments.com} is incidentally open given the nature of Javascript so does not count.
+
+% \url{https://github.com/mayacaren/ViVo} missing dependencies, for instance, thats fine, there is at least something 
 
 
-\subsection{Core principles}
+% Similar questions have been asked previously. \cite{calegario_documentation_2021} outlines what should be included and \citet{fiordelmondo_longevity_2024}  provides a template based up on it to reduce the cognitive labour to carry it out.
+% Both informed the approach taken to searching through material.
 
-1. It should be easy to find a repository (version control or archival)
-2. if it exists, it should be in the paper
-3. open should be the default
-4.
+% \citet{calegario_documentation_2021} and \citet{fiordelmondo_towards_2025} exploring the usage and dissemination of open source projects at NIME. 
+
+% Only 2025 was considered as it is the most up to date digital research practice can be.
+
+
+% \cite{calegario_documentation_2021} outlines what should be included and \citet{fiordelmondo_longevity_2024}  provides a template based up on it to reduce the cognitive labour to carry it out.
+
+% An empty repository would be disqualidfied.
+% Source material defined as the material pertinent to the paper without, in a version control format, digital archive or ideally both.
+% To begin answering this question, NIME papers from the last 10 years of NIME proceedings were downloaded.
+% All 96 papers from NIME 2025 can be downloaded locally with a zshell instruction
+% \begin{verbatim}
+% for i in {1..96}; do
+%   curl "https://nime.org/proceedings/2025/nime2025_${i}.pdf" -O
+% done
+% \end{verbatim}
+
+
+% The process takes about three hours to complete
+
+
 
 \section{An Open Methodology for DMIs}
 
@@ -399,10 +383,39 @@ scalability and inclusivity.''
 
 Sharing with a wider community enables the possibility of research breaking out beyond the confines of its original life span. Enables the chance for more meaningful user evaluation \cite{calegario_documentation_2021} by reducing the barriers to accessing an interface. Ideas can be iterated upon, built upon previous work.
 
+Source material varies from schematics to zine \cite{nime2025_42}.
+
+% \subsection{Core principles}
+
+% 1. It should be easy to find a repository (version control or archival)
+% 2. if it exists, it should be in the paper
+% 3. open should be the default
+% 4.
+
+
 \section{Recommendations}\label{sec:recommendations}
+
+What the repository or archive of the DMI should contain has already been covered elsewhere, the specific contents are not fixed and will change from project to project
+
 rather than focussing on a central repository \citet{mcpherson_nimehub_2016}, electing replicating officers \citet{calegario_documentation_2021} or conforming to standard format \citet{fiordelmondo_towards_2025} we can look at solution that are much simpler, but have a much wider impact
 
 clear there is a desire to share work, offload the burden on choosing the most effective way to disseminate, or the reader in locating the work, the solution would be to standardise one, possibly two field that are in the papers template text, and in the metadata.
+
+The burden to choose a format on the author and burden of finding it on the reader as opposed to an agreed format understood by both parties.
+
+
+Table~\ref{tab:git_placement}
+This is not a call to conform to this as standard practice, but the variation in placement shows there is no universal strategy by which the community has aligned. 
+A suggested solution to address this is covered in section \ref{sec:recommendations}.
+
+
+Section~\ref{sec:current-state}
+In most cases there was a clear desire to make the work accessible, but with no clear format the link was overlooked.
+Two repositories were private and subsequently made available, one repository had simply used the wrong link and alternate was provided.
+For one repository, the authors were unreachable. Finally, one repository was found through a simple search. Including these papers which had intent, the total is 34 repositories.
+
+\footnote{Or examples such as \textit{Embedded Comparo: Small DSP Systems Side-by-Side} where the git repository url is easily missed as a footnote hidden below references.}
+
 
 Part of the submission, the work can marked as closed source, if that is necessary but a mandatory field for project URL or DOI would curtail the open source agnosticism and make the choice a much more deliberate one.
 
@@ -425,8 +438,7 @@ For academic work, an open first approach should be the goal standard as recomme
 
 for example: SMucK: Symbolic Music in ChucK is perfectly easy to find with a search, but it is missing any kind of link in the paper! (disqualified)
 
-The resistance is very much one of awareness and skill aquisition. Contributors are far more likely to follow the practice set out by there peers and their mentors. Change comes from above, and from the side and we should lead by example.
-
+A standard metadata entry would ease future analysis.
 
 
 fits in to the wider practice of citing digital research output, be it software, hardware, or data. The process very quickly becomes messy which is more often than not as the ideal is of a standard citation is not available.
@@ -451,3 +463,7 @@ SoftWare Hash IDentifier (SWHID) ISO/IEC international standard 18670 on April 2
 Is passive, requires the repository be public and cannot guarantee that submodules have also been ingested. 
 
 Like the web archive, this should be looked upon as a last ditch and a much more active and deliberate archiving approach should be taken
+
+
+The resistance is very much one of awareness and skill acquisition. Contributors are far more likely to follow the practice set out by there peers and their mentors. Change comes from above, and from the side and we should lead by example.
+
