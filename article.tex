@@ -1,69 +1,49 @@
 \section{Introduction}
 
-Over the past few decades there has been a growing academic movement for an `open methodology' \cite{nosek_scientific_2012}, findable, accessible, interoperable, reproducible (FAIR), and sustainable digital research \cite{go_fair_2016}.
-Open and FAIR research practice is vital to ensure transparency, validation, re-use and access within academic research.
-The movement has led to an increased awareness across the research community and the establishment of accepted best-practice frameworks \cite{smith_software_2016}. The focus of these frameworks has predominantly been towards digital research practice in the sciences \cite{unesco_open_2021}.
+Over the past decade there has been a growing movement in academia towards adopting an ``open methodology'' \cite{nosek_scientific_2012}, open science
+ \cite{unesco_open_2021} and FAIR (findable, accessible, interoperable, reproducible) \cite{go_fair_2016} digital research.
+The adoption of these principles can be put under the umbrella of `open research practice,' which is vital to ensure transparency, validation, re-use and access within academic research.
+The movement has led to an increased awareness across research communities and the establishment of accepted best-practice frameworks \cite{smith_software_2016}. The focus of these frameworks has predominantly been towards digital research practice in the sciences \cite{unesco_open_2021}.
+but is beginning to see adoption within the humanities.
 
 
-Paper discusses how open research looks at current open research practice at NIME and what could be developed in order to engage wider communities.
+\textbf{Central Argument:} 
+\begin{itemize}
+    \item there is educational value in recreating and iterating on previous work \cite{dasgupta_remixing_2016}. 
+    \item Creative applications of technology fosters learning of technical skills \cite{sharmin_creativity_2021, marin_computational_2024}. 
+    \item There is a (growing) open source movement at NIME
+    \item Authors are having to decide the format in how they disseminate source repositories. 
+    \item but the work can sometimes be too tricky to find. 
+    \item NIME is potentially missing an opportunity to engage with a community of new developers, 
+    \item Inaction is easier than action, which might explain under adoption.
+    \item the contents of a repository don't need to be perfect, sharing is ``good enough.''     
+\end{itemize}
+
+Ambiguity in how to disseminate source creates friction in the process of finding it and as a result it will be more difficult to engage with it.
+
+Paper discusses how open research looks at current open research practice at NIME and what could be developed an the missed opportunities to engage with wider community of new creative developers.
 
 \section{Open Research at NIME}
 
-There has been a concerted effort to address the problem of archiving and open-sourcing of DMI over the past 10 years \cite{mcpherson_nimehub_2016,fiordelmondo_longevity_2024,fiordelmondo_towards_2025}. This is not a challenge constrained to just DMI, but is also being addressed as part of the growing open hardware movement.
-Open hardware, like open software, is the provision of making electronics designs accessible allowing fabrication outside of a central manufacturer.
-\citet{mcpherson_nimehub_2016} and \citet{calegario_documentation_2021} outline largely the same principles as that of the Open Source Hardware Association in 2013 \cite{oshwa_best_2013}, that  unlike software, open hardware cannot be simply distributed as a licence and set of source files (Figure~\ref{fig:osh-taxonomy}), lest it fall afoul of ``openwashing.'' 
-\footnote{when a project  ``is claimed to be open source whereas no intention to publish product-related information is given'' \cite{bonvoisin_source_2017}.}  
-That is not to say that projects are forbidden, but this should be a conscious choice made at a project's inception and not one applied at a point in the future when the task of archiving a work becomes too great.
-
-\begin{figure*}
-    \centering
-    \includegraphics[width=0.9\linewidth]{images/bonvoisin_source_2017-open-hardware.png}
-    \caption[Taxonomy of openness]{Taxonomy of openness from \citet[Figure~1]{bonvoisin_source_2017}.}
-    \label{fig:osh-taxonomy}
-\end{figure*}
-
-\subsection{Previous Work}
-
-Open source hardware has great potential benefits for use in academia \cite{oellermann_open_2022} and those same benefits can extent to the heritage sector. \citet{mcpherson_nimehub_2016} rightfully raises concerns of tackling hardware obsolescence and how that is tackled as part of the archiving process. Proprietary systems limit the potential for innovation or reproducibility and, when these systems fail, repairs rely on the original manufacturer who may have ceased support or production of replacement parts \cite{oellermann_open_2022}.
-To facilitate reproduction of hardware, it should be self-evident but, any form of archiving and provision of access to source material makes the task much more feasible. Reproduction is made even easier by incorporating open hardware.
- 
-An open methodology needs to be `baked-in' to the research process and it is not something trivially applied after the fact. It is of course better to do it afterwards than not at all, but the information at stake also constitutes the development process, not just the end product. The point at which a project is abandoned is not the key point of record.
-
-Both \citet{mcpherson_nimehub_2016} and \citet{fiordelmondo_towards_2025} approach hardware archiving in a repository format. \citet{mcpherson_nimehub_2016} proposed a workshop with the intention to create a a central repository (or database) for DMI designs. Part of that workshop's primary eight goals were the FAIR adjacent aims of encouraging reproducibility, open access and encouraging a normalised practice of documentation. Both \citet{mcpherson_nimehub_2016} and \cite{fiordelmondo_towards_2025} raise the issue of repository structure with the latter proposing a a prescriptive measure which can be applied to any DMI project. Research output in the form of open hardware or open software can and should take advantage of the platforms available for distribution of the work,
-\footnote{such as GitHub, GitLab for source code or Thingiverse for 3D models \cite{oshwa_best_2013}.}
-but the work still needs to be citable \cite{smith_software_2016}, and cross-reference-able \cite{stall_journal_2023} if it is to be built upon.
-
-The limitation here is assuming that the constituent parts of a DMI are a collective to archive and version controlled. This is true to some degree, there is a complete artefact to be documented, but it is very much made of constituent parts that develop and are swapped out. There is the interface, the electronics, and the firmware, whose versions current and old can be used in all number of combinations of versions. Keeping these components contained to a single version control repository limits their modularity and potential for reuse.
-
-
-workshops looking at Open NIME research:
-
-\begin{enumerate}
-\item \citet{mcpherson_nimehub_2016}
-\item \citet{jensenius_open_2019}
-\item \citet{jensenius_nime_2020}
-\end{enumerate}
-
-% \citet{vallis_shift_2010}
-
-looking at longevity of research \citet{fiordelmondo_longevity_2024}
-replicability \cite{calegario_documentation_2021}
-
-work replicating previous NIME's \cite{west_towards_2025}
-
-
-
-Review A  of \cite{fiordelmondo_longevity_2024} shows usage of keywords related to version control repositories. 
-Review B explores the repositories pertinent to the project being discussed.
-
-projects may cite a github repository but that does not mean the project itself is readily available. The fact it is not immediately apparent the open source nature of project is something that should be addressed.
-
 NIME has had a dedication to making its proceedings publicly available (under a CC by 4.0) from its very inception
+% as remarked in \citet{calegario_documentation_2021} one can follow the path of \cite{ajin_rebuilding_2019} who created the sponge, and if your lucky, you may even find the original source \url{https://github.com/marierm/sponge-general}.
+There has been a concerted effort to address the problem of archiving and open sourcing of projects at NIME over the past 10 years. \citet{mcpherson_nimehub_2016} from 2016 was the first discussion on open research practice, the intention to create a a central repository (or database) for DMI designs. Part of that workshop's primary eight goals were the FAIR adjacent aims of encouraging reproducibility, open access and encouraging a normalised practice of documentation. The NIMEhub did not ultimately manifest, but the workshop has sparked further discussion of open research at NIME \cite{jensenius_open_2019, jensenius_nime_2020}.
+The focus of open research at NIME has tended towards methodologies applicable to open hardware \citet{calegario_documentation_2021, fiordelmondo_towards_2025}, the provision of making electronics designs accessible allowing fabrication outside of a central manufacturer.
+Unlike software, open hardware cannot be simply distributed as a licence and set of source code files \cite{oshwa_best_2013} lest it fall afoul of ``openwashing,'' when a project  ``is claimed to be open source whereas no intention to publish product-related information is given'' \cite{bonvoisin_source_2017}. That is not to say that ephemeral or closed source projects are forbidden, but the decision to identify as such should be a conscious one.
+To facilitate reproduction of hardware, it should be self-evident but, any form of archiving and provision of access to source material makes the task much more feasible. Reproduction is made even easier by incorporating open hardware.
 
-as remarked in \citet{calegario_documentation_2021} one can follow the path of \cite{ajin_rebuilding_2019} who created the sponge, and if your lucky, you may even find the original source \url{https://github.com/marierm/sponge-general}.
-
+Both \citet{mcpherson_nimehub_2016} and \cite{fiordelmondo_towards_2025} raise the issue of repository structure with the latter proposing a a prescriptive measure which can be applied to any DMI project. Research output in the form of open hardware or open software can and should take advantage of the platforms available for distribution of the work,
+% An open methodology needs to be `baked-in' to the research process and it is not something trivially applied after the fact. It is of course better to do it afterwards than not at all, but the information at stake also constitutes the development process, not just the end product. The point at which a project is abandoned is not the key point of record.
+but the work still needs to be citable \cite{smith_software_2016}, and cross-reference-able \cite{stall_journal_2023} if it is to be built upon.
 The recreation of a NIME has focussed on goal of using it musical practice \cite{ajin_rebuilding_2019, masu_nime_2023, west_towards_2025}. Equally valid is the recreation of a NIME for knowledge and development of craft \cite{calegario_documentation_2021}
 
+% looking at longevity of research \citet{fiordelmondo_longevity_2024}
+% replicability \cite{calegario_documentation_2021}
+% work replicating previous NIME's \cite{west_towards_2025}
+% Review A  of \cite{fiordelmondo_longevity_2024} shows usage of keywords related to version control repositories. 
+% Review B explores the repositories pertinent to the project being discussed.
+
+% projects may cite a github repository but that does not mean the project itself is readily available. The fact it is not immediately apparent the open source nature of project is something that should be addressed.
 
 \subsection{Current State of Open DMIs}\label{sec:current-state}
 
@@ -71,6 +51,7 @@ While instructing university students, the NIME archive has offered a valuable r
 
 
 \subsubsection{Question 1: Navigating to Source}
+
 To answer the question, the scope of the search was limited to papers from NIME 2025 on which a keyword search was carried out.
 Open source research practice has changed since 2001 and the guidance for best-practice academia has developed, from the recommendations in academic open science \cite{go_fair_2016,unesco_open_2021}, open hardware \cite{oshwa_best_2013} and more specifically open research practice at NIME \cite{mcpherson_nimehub_2016,jensenius_open_2019,fiordelmondo_longevity_2024}.
 NIME 2025 should therefore represent the `bleeding edge' of open research practice as it will has been informed from guidance available up until this point.
@@ -80,6 +61,16 @@ Keywords searched included a wildcard ``git*'' (to flag variants such as GitHub 
 ``source,'' ``code,'' and ``doi''.  Upon failing to find any result, the paper was manually skim read to identify alternate methods of including a reference to a source repository.
 When a link to source material was found, the URL was recorded alongside the context in which it appeared as well as the page number.
 
+\begin{table}[b]
+    \centering
+    \begin{tabular}{r|cccc}
+        \textbf{Placement} & Footnote & Body & Citation & Appendix \\ \hline
+        \textbf{Papers} & 21       & 8    & 2        & 3        \\
+    \end{tabular}
+    \caption{Methods for disseminating source URL in NIME 2025 papers.}
+    \label{tab:git_placement}
+\end{table}
+
 The sum total 96 of papers from 2025 was small enough that a semi-manual approach was achievable in just over three hours. 
 % Deriving the context of the URLs would also be much more involved when analysing the the PDF files. 
 The rule for what qualified was not whether the source is buildable / executable or even complete, but rather there was a clear intention from the author(s) to make the core source of the project open.
@@ -87,29 +78,13 @@ The search aimed to be as forgiving as possible and any completely automated sea
 
 Papers with no direct hyperlink, but that included a URL from which the source could be obtained qualified \cite{nime2025_10,nime2025_16,nime2025_21,nime2025_37,nime2025_67}.
 Cases where the hyperlink was broken in the PDF but could be easily ascertained and written manually qualified \cite{nime2025_58, nime2025_62}.
-\footnote{\citet{nime2025_58} has a space in its source URL and \cite{nime2025_62} has missing underscores, \url{https://github.com/MetaBow/MetaBoard} instead of  \url{https://github.com/MetaBow/_MetaBoard_} }
-
-There were five instances where the link to the repository were unreachable, either requiring authentication or a private repository, or the repository was completely empty. 
+% \footnote{\citet{nime2025_58} has a space in its source URL and \cite{nime2025_62} has missing underscores, \url{https://github.com/MetaBow/MetaBoard} instead of  \url{https://github.com/MetaBow/_MetaBoard_} }
+There were five instances where the repository was unreachable from the link, either requiring authentication or a private repository, the repository was completely empty or a link was missing but a web search of the project name yielded the result in the first page.
 The authors were contacted and four out of five have provided an alternative at time of writing.
-These repositories are counted, but the recommendations for avoiding such occurrences are covered in Section~\ref{sec:recommendations}.
+These repositories all qualified, but illustrate the potential pitfalls in an unstandardised system for reference project repositories.
 
-Of the 96 papers from NIME 2025, there are a total of 34 (\~35\%) that have a clear intention of sharing source, be it software, datasets or even zines\citet{nime2025_42}. This is in keeping with the 33\% reported in \citet{calegario_documentation_2021} which applied a similar process to papers from 2018--2020.
-Overwhelmingly GitHub as the preferred platform with 30 projects hosting a repository there, which was the trend identified in \citet{fiordelmondo_towards_2025}. 
-Of the 34 papers only one provided a citable digital archive with a DOI \cite{studley_swimtunes_2025}.
-
-
-\begin{table}
-    \centering
-    \begin{tabular}{r|cccc}
-        \textbf{Placement} & Footnote & Body & Citation & Appendix \\ \hline
-        \textbf{\# Papers} & 21       & 8    & 2        & 3        \\
-    \end{tabular}
-    \caption{Methods for disseminating source URL in NIME 2025 papers.}
-    \label{tab:git_placement}
-\end{table}
-
-
-Table~\ref{tab:git_placement} shows how authors from NIME 2025 chose to disseminate source URLs and by far the  most common is a URL in a footnote. Broken down further, 7 papers provided a URL in footnote on the first page an remaining 11 on a later page.
+Of the 96 papers from NIME 2025, there are a total of 34 that have an intention of sharing their source, be it software, datasets or even zines \cite{nime2025_42}. This is in keeping with the 33\% reported in \citet{calegario_documentation_2021} which applied a similar process to papers from 2018--2020.
+Overwhelmingly GitHub is the preferred repository platform with 30 projects hosting a repository there, which was the trend identified in \citet{fiordelmondo_towards_2025}. Table~\ref{tab:git_placement} shows how authors from NIME 2025 chose to disseminate source URLs and by far the  most common is a URL in a footnote. Broken down further, 7 papers provided a URL in footnote on the first page an remaining 11 on a later page.
 
 \subsubsection{Question 2: Adoption of Open Source}
 
@@ -122,9 +97,8 @@ An individual author / project may employ prolific use of repositories, which wo
 % What is important is perhaps not the number of occurrences, but whether a paper has relied on the technology at all. 
 
 The PDFs from NIME proceedings were downloaded and separated into directories by year.
-Each directory was search for files in which there was an occurrence of git repository. Using the \texttt{pdfgrep} software \cite{deifel_pdfgrep_2024}, papers were searching case-insensitive regular expression \texttt{\\Wgit},
-which would capture `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' but also URLs  like \texttt{https:/\textbf{/git}lab.com/}  or \texttt{oeyvind\textbf{.git}hub.io}.
-The list of papers were in which there was a match was counted for each year and shown in Table~\ref{tab:git_occurences}.
+Each directory was search for files in which there was an occurrence of git repository. Using the \texttt{pdfgrep} software \cite{deifel_pdfgrep_2024}, papers were searching case-insensitive regular expression \texttt{\textbackslash Wgit},
+which captures `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' but also URLs  like \texttt{https:/\textbf{/git}lab.com/}. A deviation from \cite{fiordelmondo_towards_2025} was to include \texttt{github.io} webpages in the results as it would suggest usage or familiarity with GitHub and git software. The list of papers were in which there was a match was counted for each year and shown in Table~\ref{tab:git_occurences}.
 
 in them though 50 papers make reference to `git,' `github,' or `gitlab.'  
 
@@ -134,7 +108,7 @@ The use of git in 50+ papers out the 96 demonstrates a familiarity.
     \centering
     \begin{tabular}{r|cccccccccc}
         \textbf{Year}      & \textit{16} & \textit{17} & \textit{18} & \textit{19} & \textit{20} & \textit{21} & \textit{22} & \textit{23} & \textit{24} & \textit{25} \\ \hline
-        \textbf{\# Papers} & 16   & 25   & 24   & 29   & 29   & 33   & 24   & 54   & 42   & 50   \\ \hline
+        \textbf{Papers} & 16   & 25   & 24   & 29   & 29   & 33   & 24   & 54   & 42   & 50   \\ \hline
         \textbf{\% Overall}& 18   & 24   & 26   & 32   & 29   & 38   & 43   & 54   & 44   & 50   \\ 
     \end{tabular}
     \caption{Number of NIME papers which referenced at least one git repository over the last 10 years. The percentage of papers overall is rounded to the nearest integer.}
@@ -150,7 +124,6 @@ This approach is not fool-proof and misses instance such as \citet{carter_sculpt
 %     To contextualise the “github” keyword, we excluded the links referring to GitHub’s web pages, usually in the form \url{https://username.github.io}
 % \end{quote}
 
-A deviation from \cite{fiordelmondo_towards_2025} was to not exclude \texttt{github.io} webpages as these results would still suggest usage or some familiarity with GitHub and git software.
 
 Search should be the sum of columns in Table~1 of \citet{fiordelmondo_towards_2025}, but search was not able to produce results nearly as high. A manual search was undertaken to confirm, unless there were searches conducted with information outside the paper, there is no information that would suggest the usage count was as hi as they are for 2022 and 2023
 
@@ -179,10 +152,10 @@ Digital research products — the datasets, source code, design files and other 
 
 
 \begin{quote}
-    Authors cannot identify and report every detail that may be important in a method, but many more parts of the methodology can be shared outside of the report itself.
+    Authors cannot identify and report every detail that may be important in a method, but many more parts of the methodology can be shared outside of the report itself. (\citet{nosek_scientific_2012})
 \end{quote}
 
-\citet{nosek_scientific_2012}. We already do this with video, but the 
+We already do this with video, but the 
 
 % \citet{burns_document_2021}
 % \begin{quote}
@@ -202,7 +175,9 @@ A traditional paper alone is often a limited means of describing a Digital Music
 
 At nemus realised limitation, keyboard \citet{hamilton_augmentation_2025_activities} had progressed, old links no longer pointed to the keyboard structure of project changing,  two distinct application, one for the museum an another of future research. Bu both used mostly same material. Version tagging helped but how to reference for a paper that would not be misleading. A digital archive of the sing meta solves citation a reference to repo solves outdated links as the metas repo contains submodules. The links for nine 2025 now no longer accurately reflect the state of the keyboard at that time.
 
-Parallel to the physical design, attention was given to documentation and dissemination. Following DMI documentation guidelines \cite{calegario_documentation_2021} and open-science practice \cite{stall_journal_2023}, the entire project was archived: source code, firmware, bill of materials, CAD schematics, STL models, photographs, and build instructions were placed in public repositories. The material is organised into three submodules---\emph{Firmware} \cite{hamilton_firmware_2025}, \emph{CAD} \cite{hamilton_cad_2025}, and \emph{Model Data} \cite{hamilton_models_2025}---combined via a meta-repository (Figure~\ref{fig:repo-relation}). This structure allows individual components (e.g., a PCB or an optical sensor) to be reused or substituted without restructuring the entire system.
+Parallel to the physical design, attention was given to documentation and dissemination. Following DMI documentation guidelines \cite{calegario_documentation_2021} and open-science practice \cite{stall_journal_2023}, the entire project was archived: source code, firmware, bill of materials, CAD schematics, STL models, photographs, and build instructions were placed in public repositories. The material is organised into three submodules --- \emph{Firmware} \cite{hamilton_firmware_2025}, \emph{CAD} \cite{hamilton_cad_2025}, and \emph{Model Data} \cite{hamilton_models_2025} --- combined via a meta-repository (Figure~\ref{fig:repo-relation}). This structure allows individual components (e.g., a PCB or an optical sensor) to be reused or substituted without restructuring the entire system.
+
+% The limitation here is assuming that the constituent parts of a DMI are a collective to archive and version controlled. This is true to some degree, there is a complete artefact to be documented, but it is made of constituent parts that can be develop in isolation and are swapped out. There is the interface, the electronics, and the firmware, whose versions current and old can be used in all number of combinations of versions. Keeping these components contained to a single version control repository limits their modularity and potential for reuse.
 
 \subsection{Modular Source}
 
@@ -279,21 +254,6 @@ Problem with a modular process is that zenodo's integration does not support it 
 Would require the manual creation of the archive, copy the contents over. Alternatively, each submodule could be archived and a meta-archive simply contains reference to the constituent DOIs. This is not ideal but it is also not insurmaountable.
 
 
-
-\subsection{Version Control $\neq$ Archiving}
-
-a version control repository is not an archive.
-
-longevity of a version control repository should be treated cautiously especially when it is privately owned. institutes could do more to provide these kind of services, but that is a separate discussion.
-
-Version control allows a project to be explored in time. The version pertaining to the project should be tagged, of course, but a version control repository is a living document.
-
-The content of a version control repository is alive and its location is ephemeral. A digital archive's content is static and location permanent.
-
-Version control repository ideal for idea that iterate and where there is a desire to navigate a project's progression in time.
-
-For citing work, given their static and permanent nature, archives and DOIs should be used.
-
 \subsection{Documentation}
 
 Following \citet{procida_diataxis_2025}, four complementary forms of
@@ -357,7 +317,7 @@ In the same framework, ``Tutorial'' documentation view the work is static, when 
 %  But somone needed to explain it
 
 
-\section{Concluding Remarks}
+\section{Conclusions}
 
 Reluctance to share, anecdotally is that a work is `in-progress' which should be seen as a benefit. The appearance that work is in a highly finished polished state can be intimidating. the goal of NIME is should not always be to have a completed idea but to discuss ideas in progress. If that were the case we would \textit{only} be sharing pictures and archives, once something is finished, what isthere kef6t to discuss.
 
@@ -406,7 +366,7 @@ Source material varies from schematics to zine \cite{nime2025_42}.
 % 4.
 
 
-\section{Recommendations}\label{sec:recommendations}
+\subsection{Recommendations}\label{sec:recommendations}
 
 What the repository or archive of the DMI should contain has already been covered elsewhere, the specific contents are not fixed and will change from project to project
 
@@ -462,8 +422,14 @@ fits in to the wider practice of citing digital research output, be it software,
 
 This has been the case for this paper, and likely many papers at this years NIME.
 
+\subsection{Future Discussion}
+
+Impactful on future engagement is archiving practice.
+Of the 34 papers only one provided a citable digital archive with a DOI \cite{studley_swimtunes_2025}.
 % What is a clear order of precedence for citing sowftare?
 A clear order of precedence
+
+
 
 \begin{itemize}
 \item DOI to the archive of the relevant version
@@ -487,3 +453,17 @@ Like the web archive, this should be looked upon as a last ditch and a much more
 %% good-enough practice before best practice
 The resistance is very much one of awareness and skill acquisition. Contributors are far more likely to follow the practice set out by there peers and their mentors. Change comes from above, and from the side and we should lead by example.
 
+
+% \subsection{Version Control $\neq$ Archiving}
+
+% a version control repository is not an archive.
+
+% longevity of a version control repository should be treated cautiously especially when it is privately owned. institutes could do more to provide these kind of services, but that is a separate discussion.
+
+% Version control allows a project to be explored in time. The version pertaining to the project should be tagged, of course, but a version control repository is a living document.
+
+% The content of a version control repository is alive and its location is ephemeral. A digital archive's content is static and location permanent.
+
+% Version control repository ideal for idea that iterate and where there is a desire to navigate a project's progression in time.
+
+% For citing work, given their static and permanent nature, archives and DOIs should be used.
