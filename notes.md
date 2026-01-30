@@ -1,12 +1,6 @@
-## Curl NIME Papers
+## NIME 2025 AUdit
 
-```sh
-pdfgrep -P '\Wgit' -rli . | wc -l   
-pdfgrep -P '\b(git|github|gitlab)\b|(https?://|www\.)\S*(git|github|gitlab)\S*' -rli ./ | wc -l
-```
-
-http://google.com/search?q=site:https://nime.org/proceedings/2023/%20"git"%20OR%20"github"%20OR%20"gitlab"%20OR%20"bitbucket"
-
+### Downloading NIME papers
 ```sh
 # 2025
 for i in {1..96}; do
@@ -28,138 +22,47 @@ for i in {1..99}; do
   curl "https://www.nime.org/proceedings/2020/nime2020_paper${i}.pdf" -O
 done
 
-
+# 2019
 for i in {1..88}; do
   curl "https://www.nime.org/proceedings/2019/nime2019_paper${(l:3::0:)i}.pdf" -O
 done
 
+# 2018
 for i in {1..92}; do
   curl "https://www.nime.org/proceedings/2018/nime2018_paper${(l:4::0:)i}.pdf" -O
 done
 
-
+# 2017
 for i in {1..105}; do
   curl "https://www.nime.org/proceedings/2017/nime2017_paper${(l:4::0:)i}.pdf" -O  
 done
 
-
+# 2016
 for i in {1..87}; do
   curl "https://www.nime.org/proceedings/2016/nime2016_paper${(l:4::0:)i}.pdf" -O  
 done
-
-https://www.nime.org/proceedings/2017/nime2017_paper0105.pdf
-
-https://www.nime.org/proceedings/2018/nime2018_paper0092.pdf
-https://www.nime.org/proceedings/2016/nime2016_paper0087.pdf
 ```
 
-## intro
+NIME 2021 and 2022 are a little more involved to pull the pdfs.
+Can `curl` a PubPub article with 
 
+```
+https://nime.pubpub.org/pub/<PAPER_ID>/download/pdf
+```
 
-## prev research
+The list of PAPER_IDs was pulled from the bib files on the [NIME bibliography git](https://github.com/NIME-conference/NIME-bibliography/tree/master)
 
-follwoing up or recreating previous nies becomes archival research. tryin to find the coorect resources, dusting off the old links or querying the way back machine for now dead links.
+### Grepping
 
-This becomes digital archaelogy fast, and this not the unearthing of resources long forgotten for hundreds of year, but research barely into double figures of years old.
+```sh
+pdfgrep -P '\Wgit' -rli . | wc -l   
+```
 
-This is not a way to approach resarch, this is not how all other research would be expected to behave.
+which return a result the same as 
 
-(maybe from the old journal system of buying journals and charging for back issues, but that was to meet the overheads in labour required to facilitate those issues which in a digigtal world should be entirely trivial, this was on the face not meant to be a for profit academic system, so the idea that digital research can be held to the same standard as what it was to find old research from a pre-digital age is disingenuous.)
-
-## modular methodology
-
-rather an prescriptive approach of a single template repository or collective repository, a modular system is proposed.
-
-DMI's can be considered to be made from multiple components. Be that materials, process, software / firmware.
-
-ratherthan a template repository, a DMI's components, if the DMI is not ephemeral, have some version control
-
-Not a central repository, but the inclusion of a DMI should be the default.
-
-
-For the NEMUS project haptic interface [], a modular approach was taken.
-
-The device was split into three rpositorys, a central meta-repository
-each element could very piossibly be swapped if another interface design was used, a separate firmware system created or a different sensor system employed. But there still a record of what the instrument was at the point with each component capable of being supplanted without being discarded and records lost.
-
-
-\subsection{Open Methods}\label{sec:open-methods}
-
-Addressing digital musical instrument conservation requires frameworks that
-account for preservation, access, and reuse. Open Science
-\cite{unesco_open_2021} provides a foundation by promoting the open sharing not
-only of results%
-\footnote{Examples include original research outputs, research data, software,
-source code, workflows and protocols, and digital representations of pictorial
-and graphical materials \cite{unesco_open_2021}.} but also of the processes
-through which those results are obtained. Digital technologies make such
-openness feasible, yet they also necessitate structure. The FAIR
-principles---Findable, Accessible, Interoperable, Reusable---offer a practical
-framework for managing digital assets \cite{wilkinson_fair_2016}:
-
-\begin{itemize}
-	\item \textbf{Findability:} digital assets should include rich metadata and
-	      persistent identifiers.
-	\item \textbf{Accessibility:} access protocols should be open, free, and
-	      universally implementable.
-	\item \textbf{Interoperability:} data and tools should integrate seamlessly
-	      across heterogeneous systems with minimal effort.
-	\item \textbf{Reusability:} assets should be released with clear, accessible
-	      licensing and provenance.
-\end{itemize}
-
-For software, FAIR also implies citability \cite{soito_citations_2016}. This
-requires coordinated action by authors \cite{smith_software_2016}, by those
-citing software \cite{katz_recognizing_2021}, and by journals that must
-cross-reference software artefacts \cite{stall_journal_2023}. Open software is
-ideally ``living,'' yet research demands that specific versions remain
-discoverable and stable. Version control systems (e.g., \texttt{git}) allow
-releases to be tagged, while public repositories (e.g., GitHub) enhance
-discoverability. For long-term reference, archival deposition (e.g., Zenodo)
-provides persistent identifiers (DOIs) \cite{smith_software_2016,
-stall_journal_2023}.
-
-Persistence is one dimension of sustainability; reproducibility is the other
-\cite{perkel_challenge_2020}. Software should remain functional in the future
-despite changes in languages, libraries, and hardware---and despite more mundane
-obstacles such as incomplete documentation \cite{robert_reproducibility_2020}.
-
-\subsection{Reproducibility}\label{hardware-reproducibility}
-
-Digitally designed `hardware' introduces additional challenges. In digital
-musical instrument (DMI) design, long-term reuse remains difficult
-\cite{fiordelmondo_towards_2025}. Hardware projects typically combine electronic
-schematics, CAD/CAM assets, bills of materials, and assembly or operation
-documentation; these components must be archived together within a
-well-structured repository \cite{calegario_documentation_2021}. CAD formats and
-toolchains themselves pose preservation risks. During the course of this thesis,
-Autodesk announced the discontinuation of the EAGLE EDA tool
-\cite{autodesk_eagle_2024}, effective July~2026. A deliberate decision was made
-to continue using EAGLE’s XML-based format: much as the end-of-life of Python~2
-``calcified'' that environment for archival purposes \cite{rougier_loupe_2020},
-EAGLE’s stable format remains processable by other tools such as KiCad
-\cite{kicad_eagle_2024}.
-
-\textcite{perkel_challenge_2020} aggregates guidance from the ReScience~C
-ten-year challenge on reviving decade-old research software. Its key
-recommendations---version control, archival deposition, and explicit
-documentation---align with broader best practices \cite{smith_software_2016,
-stall_journal_2023}.
-
-All digital assets associated with this thesis are released under the GPLv3
-licence, following recommendations to grant permissions as openly as possible
-\cite{stall_journal_2023}. GPLv3 permits copying, distribution, and
-modification, with the stipulation that derivatives remain under the same
-licence \cite{gplv3}. Repositories were structured in accordance with guidance
-from the Software Sustainability Institute and were subsequently reviewed by the
-Institute at the University of Edinburgh \cite{ssi_online_2025}.
-
-
-##
-
-## 2025 Audit
-
-From the 96 papers
+```sh
+pdfgrep -P '\b(git|github|gitlab)\b|(https?://|www\.)\S*(git|github|gitlab)\S*' -rli ./ | wc -l
+```
 
 ### Zenodo Archives with Video files
 
@@ -181,6 +84,8 @@ From the 96 papers
 - https://zenodo.org/records/15699671
 
 ### Papers with Repo or Archive link
+
+See [`./data/papers_with_repos.csv`](./data/papers_with_repos.csv), a pipe separated list of papers, repos and their context.
 
 - nime2025_9
 - nime2025_10
@@ -212,11 +117,9 @@ From the 96 papers
 - nime2025_90
 - nime2025_93
 
-
-
 ### Missing Repos
 
-All of these _have_ repositories
+All of these _have_ repositories, just not accessible
 
 | id          | paper      | State   | reason     | url                                                     | page | placement | context                                                    |
 | ----------- | ---------- | ------- | ---------- | ------------------------------------------------------- | ---- | --------- | ---------------------------------------------------------- |
@@ -226,7 +129,7 @@ All of these _have_ repositories
 | nime2025_91 | glitchgate | private |            | https://github.com/ijc8/glitchgate                      | 1    | footnote  | The source code for glitchgate is available at             |
 | nime2025_92 | Smuck      | missing | extant     | https://github.com/ccrma/smuck                          |      |           |                                                            |
 
-## In references
+###  Repos inaccessible in References
 	
 | id          | paper              | State   | reason          | url                                 | page | placement  | context                                                                                |
 | ----------- | ------------------ | ------- | --------------- | ----------------------------------- | ---- | ---------- | -------------------------------------------------------------------------------------- |
