@@ -1,7 +1,7 @@
 ## Curl NIME Papers
 
 ```sh
-pdfgrep -P '\Wgit' -rli ./ | wc -l   
+pdfgrep -P '\Wgit' -rli . | wc -l   
 pdfgrep -P '\b(git|github|gitlab)\b|(https?://|www\.)\S*(git|github|gitlab)\S*' -rli ./ | wc -l
 ```
 
