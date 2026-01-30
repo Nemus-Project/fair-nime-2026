@@ -1,5 +1,8 @@
 # Abstract
 
+Since its inception, NIME has been committed to open-access research, with a strong tradition of open-source practice running through its history. In the context of the NIME 2026 theme of communities, this paper examines current open research practices at NIME and explores how they might be developed to better engage a new generation of creators beyond the conference itself.
+Through an analysis of NIME 2025 proceedings, we assess how source materials—including software, hardware designs, data, and documentation—are shared, discovered, and cited. The analysis reveals a growing familiarity with open-source tools, alongside persistent barriers to discoverability, reuse, and long-term access.
+Drawing on the documentation and dissemination process of a recent NIME project, the paper outlines a deliberate and visible open methodology that treats Digital Musical Interfaces as evolving, reusable research objects rather than closed artefacts tied solely to a publication. The paper concludes with a reflection on current limitations and offers practical recommendations for lowering barriers to the reuse and recreation of NIMEs, framing “good-enough” open research practice as a key mechanism for wider participation, knowledge exchange, and long-term cultural impact.
 
 
 
