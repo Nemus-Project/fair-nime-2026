@@ -25,10 +25,10 @@ Paper discusses how open research looks at current open research practice at NIM
 
 \section{Open Research at NIME}
 
-NIME has had a dedication to making its proceedings publicly available (under a CC by 4.0) from its very inception
+From its inception, NIME has had a dedication to making its proceedings open access under a CC by 4.0 licence.
 % as remarked in \citet{calegario_documentation_2021} one can follow the path of \cite{ajin_rebuilding_2019} who created the sponge, and if your lucky, you may even find the original source \url{https://github.com/marierm/sponge-general}.
-There has been a concerted effort to address the problem of archiving and open sourcing of projects at NIME over the past 10 years. \citet{mcpherson_nimehub_2016} from 2016 was the first discussion on open research practice, the intention to create a a central repository (or database) for DMI designs. Part of that workshop's primary eight goals were the FAIR adjacent aims of encouraging reproducibility, open access and encouraging a normalised practice of documentation. The NIMEhub did not ultimately manifest, but the workshop has sparked further discussion of open research at NIME \cite{jensenius_open_2019, jensenius_nime_2020}.
-The focus of open research at NIME has tended towards methodologies applicable to open hardware \citet{calegario_documentation_2021, fiordelmondo_towards_2025}, the provision of making electronics designs accessible allowing fabrication outside of a central manufacturer.
+Likewise for the projects at NIME have had a tradition of open research practice and there has been a ongoing discussion on how to best foster and formalise and open source culture. \citet{mcpherson_nimehub_2016} from 2016 was one of the first discussion an open and reproducible research practice. Part of that workshop's primary eight goals were the FAIR adjacent aims of encouraging reproducibility, open access and encouraging a normalised practice of documentation. A central topic for discussion during the workshop was the creation of a central repository for DMI designs. The NIMEhub did not ultimately manifest, but the workshop has sparked further discussion of open research at NIME \cite{jensenius_open_2019, jensenius_nime_2020}.
+The discussion of open research at NIME has tended towards methodologies applicable to open hardware \citet{calegario_documentation_2021, fiordelmondo_towards_2025}, the provision of making electronics designs accessible allowing fabrication outside of a central manufacturer.
 Unlike software, open hardware cannot be simply distributed as a licence and set of source code files \cite{oshwa_best_2013} lest it fall afoul of ``openwashing,'' when a project  ``is claimed to be open source whereas no intention to publish product-related information is given'' \cite{bonvoisin_source_2017}. That is not to say that ephemeral or closed source projects are forbidden, but the decision to identify as such should be a conscious one.
 To facilitate reproduction of hardware, it should be self-evident but, any form of archiving and provision of access to source material makes the task much more feasible. Reproduction is made even easier by incorporating open hardware.
 
@@ -47,21 +47,21 @@ The recreation of a NIME has focussed on goal of using it musical practice \cite
 
 \subsection{Current State of Open DMIs}\label{sec:current-state}
 
-While instructing university students, the NIME archive has offered a valuable resource for creative applications on the use of micro-controllers, electronics and computer programming. NIME has 2000+ projects available in its open-access archive from which students can draw inspirations and iterate upon. Though many of the projects are open source, far too often this is only on condition that the source can be located in the first place. This raised two questions, the first of which was ``For all papers in NIME, for how many can the source be navigated to from the paper directly?''
-
+In the cours of instructing university students, the NIME archive has been a valuable resource for exploring creative applications on the use of micro-controllers, electronics and computer programming. NIME has 2000+ projects available in its open-access archive from which students can draw inspirations and iterate upon. Though many of the projects are open source, far too often this is only on condition that the source can be located in the first place. Prompted by the analysis in \citet{calegario_documentation_2021} and \citet{fiordelmondo_towards_2025}, two questions were raised. The first question is ``For all papers in NIME, for how many can the source be navigated to from the paper directly?'' Secondly, ``to what degree has open source practice been adopted at NIME?'' In particular, since the initial discussion of NIMEhub in 2016. Through answering these question, we may find a method in which we can foster greater open research practice and subsequently engage with a wider community outside of NIME.
 
 \subsubsection{Question 1: Navigating to Source}
 
-To answer the question, the scope of the search was limited to papers from NIME 2025 on which a keyword search was carried out.
+To answer the first question, a search was conducted on the NIME proceedings of 2025. 
 Open source research practice has changed since 2001 and the guidance for best-practice academia has developed, from the recommendations in academic open science \cite{go_fair_2016,unesco_open_2021}, open hardware \cite{oshwa_best_2013} and more specifically open research practice at NIME \cite{mcpherson_nimehub_2016,jensenius_open_2019,fiordelmondo_longevity_2024}.
 NIME 2025 should therefore represent the `bleeding edge' of open research practice as it will has been informed from guidance available up until this point.
 
-The method used by \citet{calegario_documentation_2021} and Review B from \citet{fiordelmondo_longevity_2024} were used as a starting point for the search. 
-Keywords searched included a wildcard ``git*'' (to flag variants such as GitHub and GitLab) as well as
-``source,'' ``code,'' and ``doi''.  Upon failing to find any result, the paper was manually skim read to identify alternate methods of including a reference to a source repository.
-When a link to source material was found, the URL was recorded alongside the context in which it appeared as well as the page number.
+The method used by \citet{calegario_documentation_2021} and Review B from \citet{fiordelmondo_longevity_2024} were used as a starting point search for inclusion of a URL in a paper that would lead the reader to the project's source material. 
+It was not critical that the source be buildable, executable or even complete, but rather that there had been a clear intention from the author(s) to make the project open by sharing some additional material in a repository representing the work of the paper.
+The search aimed to be as forgiving as possible and any completely automated search would like miss instances where the source URLs were not immediately apparent \cite{nime2025_21,nime2025_32}.
 
-\begin{table}[b]
+The search started with wildcard ``git*'' which would match git URLs and usage of terms GitHub and GitLab that may be used to identify a repository link. If no results were found, additional searches were made using keywords ``source,'' ``code,'' ``http,''  and ``doi''. Upon failing to find any result, the paper was manually skim read to identify if an alternate method was use to reference the source repository. If a link to source material was found, the URL was recorded alongside the context in which it appeared as well as the page number. NIME 2025 consisted of a total of 96 papers. This was small enough that a semi-manual approach of the entire proceedings was achievable in just over three hours. 
+
+\begin{table}
     \centering
     \begin{tabular}{r|cccc}
         \textbf{Placement} & Footnote & Body & Citation & Appendix \\ \hline
@@ -71,107 +71,87 @@ When a link to source material was found, the URL was recorded alongside the con
     \label{tab:git_placement}
 \end{table}
 
-The sum total 96 of papers from 2025 was small enough that a semi-manual approach was achievable in just over three hours. 
-% Deriving the context of the URLs would also be much more involved when analysing the the PDF files. 
-The rule for what qualified was not whether the source is buildable / executable or even complete, but rather there was a clear intention from the author(s) to make the core source of the project open.
-The search aimed to be as forgiving as possible and any completely automated search would like miss instances where the source URLs were not immediately apparent \citet{nime2025_21,nime2025_32}.
-
-Papers with no direct hyperlink, but that included a URL from which the source could be obtained qualified \cite{nime2025_10,nime2025_16,nime2025_21,nime2025_37,nime2025_67}.
-Cases where the hyperlink was broken in the PDF but could be easily ascertained and written manually qualified \cite{nime2025_58, nime2025_62}.
+The standards for what qualified as a link to the project source were deliberately broad.
+Papers that included a URL to a web page that contained a subsequent link to source qualified \cite{nime2025_10,nime2025_16,nime2025_21,nime2025_37,nime2025_67}.
+Cases where the hyperlink was broken in the PDF, but could be easily ascertained and written manually, qualified \cite{nime2025_58, nime2025_62}.
 % \footnote{\citet{nime2025_58} has a space in its source URL and \cite{nime2025_62} has missing underscores, \url{https://github.com/MetaBow/MetaBoard} instead of  \url{https://github.com/MetaBow/_MetaBoard_} }
-There were five instances where the repository was unreachable from the link, either requiring authentication or a private repository, the repository was completely empty or a link was missing but a web search of the project name yielded the result in the first page.
-The authors were contacted and four out of five have provided an alternative at time of writing.
-These repositories all qualified, but illustrate the potential pitfalls in an unstandardised system for reference project repositories.
+There were four instances where the repository was unreachable from the link or the repository was completely empty. In one instance the repository link was missing entirely, but a web search of the project name yielded the result in the first page. The authors were contacted and four out of five have provided an alternative at time of writing. These repositories all qualified and are included in the total. 
+% but illustrate the potential pitfalls in an unstandardised system for reference project repositories.
 
 Of the 96 papers from NIME 2025, there are a total of 34 that have an intention of sharing their source, be it software, datasets or even zines \cite{nime2025_42}. This is in keeping with the 33\% reported in \citet{calegario_documentation_2021} which applied a similar process to papers from 2018--2020.
-Overwhelmingly GitHub is the preferred repository platform with 30 projects hosting a repository there, which was the trend identified in \citet{fiordelmondo_towards_2025}. Table~\ref{tab:git_placement} shows how authors from NIME 2025 chose to disseminate source URLs and by far the  most common is a URL in a footnote. Broken down further, 7 papers provided a URL in footnote on the first page an remaining 11 on a later page.
+Overwhelmingly GitHub is the preferred repository platform with 30 projects hosting a repository there, which was the trend identified in \citet{fiordelmondo_towards_2025}. Table~\ref{tab:git_placement} shows how authors from NIME 2025 chose to disseminate source URLs and by far the  most common is a URL in a footnote. Broken down further, 7 papers provided a URL in footnote on the first page and the remaining 11 in a footnote on a later page.
 
 \subsubsection{Question 2: Adoption of Open Source}
 
-The second question was based on analysis by \citet{fiordelmondo_towards_2025} which showed the occurrence of terms related to open source repositories, such as ``git'' and ``repository.''
+Analysis to answer the second question was based on the method in \citet{fiordelmondo_towards_2025}, which showed the occurrence of terms related to open source repositories, such as ``git'' and ``repository'' in NIME proceedings from 2001 to 2024.
+Results from a method based on occurrence could be skewed where there is prolific use of repositories by an individual paper. The familiarity with git version control in NIME would more appropriately evaluated by examining the number of papers that reference a git repository.
 
 % Since the search was based on occurrence, it could be skewed by individual with prolific use or citation of open source repositories. 
-
-An individual author / project may employ prolific use of repositories, which would skew the data. Although \citet{fiordelmondo_towards_2025} shows a clear trend towards the adoption of git, a second search was carried out to find to what degree there is a familiarity with git version control we should instead look at in how many papers a git repository is referenced across each year.
- 
 % What is important is perhaps not the number of occurrences, but whether a paper has relied on the technology at all. 
 
-The PDFs from NIME proceedings were downloaded and separated into directories by year.
-Each directory was search for files in which there was an occurrence of git repository. Using the \texttt{pdfgrep} software \cite{deifel_pdfgrep_2024}, papers were searching case-insensitive regular expression \texttt{\textbackslash Wgit},
-which captures `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' but also URLs  like \texttt{https:/\textbf{/git}lab.com/}. A deviation from \cite{fiordelmondo_towards_2025} was to include \texttt{github.io} webpages in the results as it would suggest usage or familiarity with GitHub and git software. The list of papers were in which there was a match was counted for each year and shown in Table~\ref{tab:git_occurences}.
+To achieve this, the PDFs for NIME proceedings from 2016 to 2025 were downloaded, separated into directories by year.
+Each directory was search for the number of files in which there was a reference to a git repository. The search was carried out using the open source \texttt{pdfgrep} software \cite{deifel_pdfgrep_2024} and case-insensitive regular expression of \texttt{\textbackslash Wgit}. The search would match occurrences of `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' as well as their urls  like \texttt{https:/\textbf{/git}lab.com/}. One deviation from \cite{fiordelmondo_towards_2025} was to include \texttt{github.io} webpages in the results as it would suggest usage or familiarity with GitHub and git software. It is not uncommon for authors to link to their own project via a GitHub hosted webpage (e.g., \texttt{user.github.io/project}) from which the repository URL can be inferred if not linked to directly on the site. The number of NIME papers referencing a git repository, and the percentage of the total they represent, is shown in Table~\ref{tab:git_occurences}.  This search approach is not foolproof and can miss instances, such as in \citet{carter_sculpting_2025}, where a project repository exists but neither the term `git' appears in the URL nor is it referenced directly in the text. 
 
-in them though 50 papers make reference to `git,' `github,' or `gitlab.'  
-
-The use of git in 50+ papers out the 96 demonstrates a familiarity. 
-
-\begin{table}
+\begin{table}[b]
     \centering
     \begin{tabular}{r|cccccccccc}
         \textbf{Year}      & \textit{16} & \textit{17} & \textit{18} & \textit{19} & \textit{20} & \textit{21} & \textit{22} & \textit{23} & \textit{24} & \textit{25} \\ \hline
-        \textbf{Papers} & 16   & 25   & 24   & 29   & 29   & 33   & 24   & 54   & 42   & 50   \\ \hline
+        \textbf{Papers}    & 16   & 25   & 24   & 29   & 29   & 33   & 24   & 54   & 42   & 50   \\ \hline
         \textbf{\% Overall}& 18   & 24   & 26   & 32   & 29   & 38   & 43   & 54   & 44   & 50   \\ 
     \end{tabular}
     \caption{Number of NIME papers which referenced at least one git repository over the last 10 years. The percentage of papers overall is rounded to the nearest integer.}
     \label{tab:git_occurences}
 \end{table}
 
-The number of NIME papers referencing a git repository is broken down in Table~\ref{tab:git_occurences}, for the last 10 years. 
 
-This approach is not fool-proof and misses instance such as \citet{carter_sculpting_2025} where a GitHub repository is available, but it is the url nor the term `git' is reference directly in the text. The result demonstrate a rough trend of increasing familiarity, though over the last few years.
-
-% \cite{fiordelmondo_towards_2025}
-% \begin{quote}
-%     To contextualise the “github” keyword, we excluded the links referring to GitHub’s web pages, usually in the form \url{https://username.github.io}
-% \end{quote}
-
-
-Search should be the sum of columns in Table~1 of \citet{fiordelmondo_towards_2025}, but search was not able to produce results nearly as high. A manual search was undertaken to confirm, unless there were searches conducted with information outside the paper, there is no information that would suggest the usage count was as hi as they are for 2022 and 2023
-
-% Have not confirmed with 2024
-
-% \textit{Two Sonification Methods for the MindCube} but \url{https://github.com/mitmedialab/mindcube-rave} is empty except a README
-
-% as does \textit{The Drum Machine of Tao}
-
-%% Sentiment: That for the vast majority of papers, there will be something, and no matter how insignificant or messy, it may provide useful for future understanding
-%% 100% adoption is unrealstic, 34% is too low. 
-
- 
-The contents and structure of a project repository are flexible, and there is little value in being overly prescriptive, especially given the diversity of papers submitted to NIME. Nevertheless, in the vast majority of cases, a paper can benefit the reader’s understanding through the inclusion of some form of digital material. 
-In the course of creating a paper for NIME, which leans so heavily into digital technology there will inevitably in the course of creation be by product, things that made not specifically for the purpose of documentation but made just as part of the process. 
-
-A CAD file for a laser cut enclosure, or PCB, the anonymised results from a user evaluation in a csv file, the python script for generating a plot, the data used to create that plot, the regular expressions used analyse a body of text. The list can go on.
-
-%% Tacit Knowledge
-% \cite{schindler_expertise_2015} 
-% ``tacit knowledge is assumed to be represented in routinized practices, which are carried
-% out in a non-articulate manner (Sennett, 2008, p. 50).''
-% papers are explicit knowledge, but can be an answer without the question, a question that might only be illicited from the source material.
-
-Digital research products — the datasets, source code, design files and other artifacts often treated as disposable by researchers — are actually essential for understanding how a project was built and why key decisions were made. These research products will have encoded within the tacit knowledge of engineering practice \citet{schindler_expertise_2015} that are rarely documented but valuable for skill acquisition and future understanding.
-
-
-\begin{quote}
-    Authors cannot identify and report every detail that may be important in a method, but many more parts of the methodology can be shared outside of the report itself. (\citet{nosek_scientific_2012})
-\end{quote}
-
-We already do this with video, but the 
-
-% \citet{burns_document_2021}
-% \begin{quote}
-%     Although this has long been true, the expectations for
-% documentation, from the document, have only increased. In the past, when science was offline, it
-% was perhaps sufficient to publish a report of an experiment or a study, but now there is a growing
-% expectation, and a growing industry, to publish a reproducible work flow, to make the research
-% (or lab) notes, software code and scripts, data and and other items publicly available and thus
-% depict in the documentation the know-how process of knowledge production.26 This has likewise
-% added a burden on the scientist as well as on the infrastructure that supports scientific
-% communication, like libraries.
-% \end{quote}
-
-A traditional paper alone is often a limited means of describing a Digital Musical Interface and accompanying data, source code, or CAD files are essential to a deeper understanding. Th next section looks at the open methodology through the process of documenting a recent NIME, its limitations and what has been developed since the submission.
+\begin{tikzpicture}
+    \begin{axis}[
+        width=\linewidth,
+        height=7cm,
+        xlabel={Year},
+        ylabel={\% of Total Papers Referencing Git},
+        ymin=0, ymax=60,
+        xmin=16, xmax=25,
+        xtick={16,17,18,19,20,21,22,23,24,25},
+        ytick={0,10,20,30,40,50,60},
+        grid=major,
+        grid style={dashed,gray!30},
+        % legend pos=north west,
+        title={NIME Papers Referencing Git Repositories},
+        % legend style={draw=none},
+        thick,
+        % hide legend, 
+    ]    
+    \addplot[
+        color=blue,
+        mark=*,
+        smooth
+    ] coordinates {
+        (16,18)
+        (17,24)
+        (18,26)
+        (19,32)
+        (20,29)
+        (21,38)
+        (22,43)
+        (23,54)
+        (24,44)
+        (25,50)
+    };
+    % \addlegendentry{\% Overall}
+    \end{axis}
+\end{tikzpicture}
 
 \section{An Open Methodology for DMIs}
+
+\textbf{Main Points}
+
+\begin{itemize}
+    \item rarely discuss open research practice in depth
+    \item to further understand an open methodology, discuss a specific instance through the harpsichord project
+    \item flag some of limitation
+    \item and explain how they are being addressed
+\end{itemize}
 
 At nemus realised limitation, keyboard \citet{hamilton_augmentation_2025_activities} had progressed, old links no longer pointed to the keyboard structure of project changing,  two distinct application, one for the museum an another of future research. Bu both used mostly same material. Version tagging helped but how to reference for a paper that would not be misleading. A digital archive of the sing meta solves citation a reference to repo solves outdated links as the metas repo contains submodules. The links for nine 2025 now no longer accurately reflect the state of the keyboard at that time.
 
@@ -368,6 +348,54 @@ Source material varies from schematics to zine \cite{nime2025_42}.
 
 \subsection{Recommendations}\label{sec:recommendations}
 
+% Search should be the sum of columns in Table~1 of \citet{fiordelmondo_towards_2025}, but search was not able to produce results nearly as high. A manual search was undertaken to confirm, unless there were searches conducted with information outside the paper, there is no information that would suggest the usage count was as high as they are for 2022 and 2023
+
+% \cite{fiordelmondo_towards_2025}
+% \begin{quote}
+%     To contextualise the “github” keyword, we excluded the links referring to GitHub’s web pages, usually in the form \url{https://username.github.io}
+% \end{quote}
+
+% Have not confirmed with 2024
+
+% \textit{Two Sonification Methods for the MindCube} but \url{https://github.com/mitmedialab/mindcube-rave} is empty except a README
+
+% as does \textit{The Drum Machine of Tao}
+
+%% Sentiment: That for the vast majority of papers, there will be something, and no matter how insignificant or messy, it may provide useful for future understanding
+%% 100% adoption is unrealstic, 34% is too low. 
+
+ 
+The contents and structure of a project repository are flexible, and there is little value in being overly prescriptive, especially given the diversity of papers submitted to NIME. Nevertheless, in the vast majority of cases, a paper can benefit the reader’s understanding through the inclusion of some form of digital material.  In the course of creating a paper for NIME, which leans so heavily into digital technology there will inevitably in the course of creation be by product, things that made not specifically for the purpose of documentation but made just as part of the process. 
+A CAD file for a laser cut enclosure, or PCB, the anonymised results from a user evaluation in a csv file, the python script for generating a plot, the data used to create that plot, the regular expressions used analyse a body of text. The list can go on.
+
+%% Tacit Knowledge
+% \cite{schindler_expertise_2015} 
+% ``tacit knowledge is assumed to be represented in routinized practices, which are carried
+% out in a non-articulate manner (Sennett, 2008, p. 50).''
+% papers are explicit knowledge, but can be an answer without the question, a question that might only be illicited from the source material.
+
+Digital research products — the datasets, source code, design files and other artifacts often treated as disposable by researchers — are actually essential for understanding how a project was built and why key decisions were made. These research products will have encoded within the tacit knowledge of engineering practice \citet{schindler_expertise_2015} that are rarely documented but valuable for skill acquisition and future understanding.
+
+\begin{quote}
+    Authors cannot identify and report every detail that may be important in a method, but many more parts of the methodology can be shared outside of the report itself. (\citet{nosek_scientific_2012})
+\end{quote}
+
+% We already do this with video, but the 
+
+% \citet{burns_document_2021}
+% \begin{quote}
+%     Although this has long been true, the expectations for
+% documentation, from the document, have only increased. In the past, when science was offline, it
+% was perhaps sufficient to publish a report of an experiment or a study, but now there is a growing
+% expectation, and a growing industry, to publish a reproducible work flow, to make the research
+% (or lab) notes, software code and scripts, data and and other items publicly available and thus
+% depict in the documentation the know-how process of knowledge production.26 This has likewise
+% added a burden on the scientist as well as on the infrastructure that supports scientific
+% communication, like libraries.
+% \end{quote}
+
+A traditional paper alone is often a limited means of describing a Digital Musical Interface and accompanying data, source code, or CAD files are essential to a deeper understanding. Th next section looks at the open methodology through the process of documenting a recent NIME, its limitations and what has been developed since the submission.
+
 What the repository or archive of the DMI should contain has already been covered elsewhere, the specific contents are not fixed and will change from project to project
 
 rather than focussing on a central repository \citet{mcpherson_nimehub_2016}, electing replicating officers \citet{calegario_documentation_2021} or conforming to standard format \citet{fiordelmondo_towards_2025} we can look at solution that are much simpler, but have a much wider impact
@@ -428,8 +456,6 @@ Impactful on future engagement is archiving practice.
 Of the 34 papers only one provided a citable digital archive with a DOI \cite{studley_swimtunes_2025}.
 % What is a clear order of precedence for citing sowftare?
 A clear order of precedence
-
-
 
 \begin{itemize}
 \item DOI to the archive of the relevant version
