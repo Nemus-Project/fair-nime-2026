@@ -118,21 +118,16 @@ mkdir 2001
 for file in $(cat nime2001.csv); do
   curl "https://www.nime.org/proceedings/2001/${file}" -o "2001/${file}"
 done
-
-
-for i in {2001..2025}; do
-  cd "${i}"
-  echo $(pwd) "${i}"
-  pdfgrep -P '\Wgit' -rli . | wc -l 
-  ls | wc -l     
-  cd -
-done
 ```
 
-
-
-        https://www.nime.org/proceedings/2015/nime2015_103.pdf
-        https://www.nime.org/proceedings/2015/nime2015_103.pdf
+### Counting for plot
+```
+for i in {2001..2025}; do
+  cd "${i}"
+  echo "${i}",$(( $(pdfgrep -P 'github' -rli . | wc -l) * 100 / $(ls | wc -l) ))
+  cd - > /dev/null
+done
+```
 
 NIME 2021 and 2022 are a little more involved to pull the pdfs.
 Can `curl` a PubPub article with 
