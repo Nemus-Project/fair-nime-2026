@@ -1,4 +1,4 @@
-## NIME 2025 AUdit
+## NIME 2025 Audit
 
 ### Downloading NIME papers
 ```sh
@@ -42,6 +42,97 @@ for i in {1..87}; do
   curl "https://www.nime.org/proceedings/2016/nime2016_paper${(l:4::0:)i}.pdf" -O  
 done
 ```
+```
+for file in $(cat nime2015.csv); do
+  curl "https://www.nime.org/proceedings/2015/${file}" -o "2015/${file}"
+done
+for file in $(cat nime2014.csv); do
+  curl "https://www.nime.org/proceedings/2014/${file}" -o "2014/${file}"
+done
+
+for file in $(cat nime2013.csv); do
+  curl "https://www.nime.org/proceedings/2013/${file}" -o "2013/${file}"
+done
+
+for file in $(cat nime2012.csv); do
+  curl "https://www.nime.org/proceedings/2012/${file}" -o "2012/${file}"
+done
+
+for file in $(cat nime2011.csv); do
+  curl "https://www.nime.org/proceedings/2011/${file}" -o "2011/${file}"
+done
+
+for file in $(cat nime2010.csv); do
+  curl "https://www.nime.org/proceedings/2010/${file}" -o "2010/${file}"
+done
+
+for file in $(cat nime2009.csv); do
+  curl "https://www.nime.org/proceedings/2009/${file}" -o "2009/${file}"
+done
+
+for file in $(cat nime2008.csv); do
+  curl "https://www.nime.org/proceedings/2008/${file}" -o "2008/${file}"
+done
+
+
+for file in $(cat nime2008.csv); do
+  curl "https://www.nime.org/proceedings/2008/${file}" -o "2008/${file}"
+done
+
+mkdir 2007
+for file in $(cat nime2007.csv); do
+  curl "https://www.nime.org/proceedings/2007/${file}" -o "2007/${file}"
+done
+
+mkdir 2006
+for file in $(cat nime2006.csv); do
+  curl "https://www.nime.org/proceedings/2006/${file}" -o "2006/${file}"
+done
+
+mkdir 2006
+for file in $(cat nime2006.csv); do
+  curl "https://www.nime.org/proceedings/2006/${file}" -o "2006/${file}"
+done
+
+mkdir 2005
+for file in $(cat nime2005.csv); do
+  curl "https://www.nime.org/proceedings/2005/${file}" -o "2005/${file}"
+done
+
+mkdir 2004
+for file in $(cat nime2004.csv); do
+  curl "https://www.nime.org/proceedings/2004/${file}" -o "2004/${file}"
+done
+
+mkdir 2003
+for file in $(cat nime2003.csv); do
+  curl "https://www.nime.org/proceedings/2003/${file}" -o "2003/${file}"
+done
+
+mkdir 2002
+for file in $(cat nime2002.csv); do
+  curl "https://www.nime.org/proceedings/2002/${file}" -o "2002/${file}"
+done
+
+mkdir 2001
+for file in $(cat nime2001.csv); do
+  curl "https://www.nime.org/proceedings/2001/${file}" -o "2001/${file}"
+done
+
+
+for i in {2001..2025}; do
+  cd "${i}"
+  echo $(pwd) "${i}"
+  pdfgrep -P '\Wgit' -rli . | wc -l 
+  ls | wc -l     
+  cd -
+done
+```
+
+
+
+        https://www.nime.org/proceedings/2015/nime2015_103.pdf
+        https://www.nime.org/proceedings/2015/nime2015_103.pdf
 
 NIME 2021 and 2022 are a little more involved to pull the pdfs.
 Can `curl` a PubPub article with 
