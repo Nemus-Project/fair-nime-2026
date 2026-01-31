@@ -83,30 +83,21 @@ Overwhelmingly GitHub is the preferred repository platform with 30 projects host
 
 \subsubsection{Question 2: Adoption of Open Source}
 
-Analysis to answer the second question was based on the method in \citet{fiordelmondo_towards_2025}, which showed the occurrence of terms related to open source repositories, such as ``git'' and ``repository'' in NIME proceedings from 2001 to 2024.
-Results from a method based on occurrence could be skewed where there is prolific use of repositories by an individual paper. The familiarity with git version control in NIME would more appropriately evaluated by examining the number of papers that reference a git repository.
+% \begin{table}[b]
+%     \centering
+%     \begin{tabular}{r|cccccccccc}
+%         \textbf{Year}      & \textit{16} & \textit{17} & \textit{18} & \textit{19} & \textit{20} & \textit{21} & \textit{22} & \textit{23} & \textit{24} & \textit{25} \\ \hline
+%         \textbf{Papers}    & 16   & 25   & 24   & 29   & 29   & 33   & 24   & 54   & 42   & 50   \\ \hline
+%         \textbf{\% Overall}& 18   & 24   & 26   & 32   & 29   & 38   & 43   & 54   & 44   & 50   \\ 
+%     \end{tabular}
+%     \caption{Number of NIME papers which referenced at least one git repository over the last 10 years. The percentage of papers overall is rounded to the nearest integer.}
+%     \label{tab:git_occurences}
+% \end{table}
 
-% Since the search was based on occurrence, it could be skewed by individual with prolific use or citation of open source repositories. 
-% What is important is perhaps not the number of occurrences, but whether a paper has relied on the technology at all. 
-
-To achieve this, the PDFs for NIME proceedings from 2016 to 2025 were downloaded, separated into directories by year.
-Each directory was search for the number of files in which there was a reference to a git repository. The search was carried out using the open source \texttt{pdfgrep} software \cite{deifel_pdfgrep_2024} and case-insensitive regular expression of \texttt{\textbackslash Wgit}. The search would match occurrences of `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' as well as their urls  like \texttt{https:/\textbf{/git}lab.com/}. One deviation from \cite{fiordelmondo_towards_2025} was to include \texttt{github.io} webpages in the results as it would suggest usage or familiarity with GitHub and git software. It is not uncommon for authors to link to their own project via a GitHub hosted webpage (e.g., \texttt{user.github.io/project}) from which the repository URL can be inferred if not linked to directly on the site. The number of NIME papers referencing a git repository, and the percentage of the total they represent, is shown in Table~\ref{tab:git_occurences}.  This search approach is not foolproof and can miss instances, such as in \citet{carter_sculpting_2025}, where a project repository exists but neither the term `git' appears in the URL nor is it referenced directly in the text. 
-
-\begin{table}[b]
-    \centering
-    \begin{tabular}{r|cccccccccc}
-        \textbf{Year}      & \textit{16} & \textit{17} & \textit{18} & \textit{19} & \textit{20} & \textit{21} & \textit{22} & \textit{23} & \textit{24} & \textit{25} \\ \hline
-        \textbf{Papers}    & 16   & 25   & 24   & 29   & 29   & 33   & 24   & 54   & 42   & 50   \\ \hline
-        \textbf{\% Overall}& 18   & 24   & 26   & 32   & 29   & 38   & 43   & 54   & 44   & 50   \\ 
-    \end{tabular}
-    \caption{Number of NIME papers which referenced at least one git repository over the last 10 years. The percentage of papers overall is rounded to the nearest integer.}
-    \label{tab:git_occurences}
-\end{table}
-
-
+\begin{figure}
 \begin{tikzpicture}
     \begin{axis}[
-        width=\linewidth,
+        width=\columnwidth,
         height=7cm,
         xlabel={Year},
         ylabel={\% of Total Papers Referencing Git},
@@ -116,11 +107,9 @@ Each directory was search for the number of files in which there was a reference
         ytick={0,10,20,30,40,50,60},
         grid=major,
         grid style={dashed,gray!30},
-        % legend pos=north west,
+        % legend pos=north west,        
         title={NIME Papers Referencing Git Repositories},
-        % legend style={draw=none},
         thick,
-        % hide legend, 
     ]    
     \addplot[
         color=blue,
@@ -138,9 +127,21 @@ Each directory was search for the number of files in which there was a reference
         (24,44)
         (25,50)
     };
-    % \addlegendentry{\% Overall}
     \end{axis}
 \end{tikzpicture}
+\caption{Yearly percentage of NIME papers 2016 -- 2025 which referenced at least one git repository.}
+\label{}
+\end{figure}
+
+Analysis to answer the second question was based on the method in \citet{fiordelmondo_towards_2025}, which showed the occurrence of terms related to open source repositories, such as ``git'' and ``repository'' in NIME proceedings from 2001 to 2024.
+Results from a method based on occurrence could be skewed where there is prolific use of repositories by an individual paper. The familiarity with git version control in NIME would more appropriately evaluated by examining the number of papers that reference a git repository.
+
+% Since the search was based on occurrence, it could be skewed by individual with prolific use or citation of open source repositories. 
+% What is important is perhaps not the number of occurrences, but whether a paper has relied on the technology at all. 
+
+To achieve this, the PDFs for NIME proceedings from 2016 to 2025 were downloaded, separated into directories by year.
+Each directory was search for the number of files in which there was a reference to a git repository. The search was carried out using the open source \texttt{pdfgrep} software \cite{deifel_pdfgrep_2024} and case-insensitive regular expression of \texttt{\textbackslash Wgit}. The search would match occurrences of `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' as well as their urls  like \texttt{https:/\textbf{/git}lab.com/}. One deviation from \cite{fiordelmondo_towards_2025} was to include \texttt{github.io} webpages in the results as it would suggest usage or familiarity with GitHub and git software. It is not uncommon for authors to link to their own project via a GitHub hosted webpage (e.g., \texttt{user.github.io/project}) from which the repository URL can be inferred if not linked to directly on the site. The number of NIME papers referencing a git repository, and the percentage of the total they represent, is shown in Table~\ref{tab:git_occurences}.  This search approach is not foolproof and can miss instances, such as in \citet{carter_sculpting_2025}, where a project repository exists but neither the term `git' appears in the URL nor is it referenced directly in the text. 
+
 
 \section{An Open Methodology for DMIs}
 
@@ -153,36 +154,35 @@ Each directory was search for the number of files in which there was a reference
     \item and explain how they are being addressed
 \end{itemize}
 
-At nemus realised limitation, keyboard \citet{hamilton_augmentation_2025_activities} had progressed, old links no longer pointed to the keyboard structure of project changing,  two distinct application, one for the museum an another of future research. Bu both used mostly same material. Version tagging helped but how to reference for a paper that would not be misleading. A digital archive of the sing meta solves citation a reference to repo solves outdated links as the metas repo contains submodules. The links for nine 2025 now no longer accurately reflect the state of the keyboard at that time.
+The section discusses the open methodology applied to the interface described in \citet{hamilton_augmentation_2025_activities}. The interface was created as part of the NEMUS project, which has a dedication to making all digital research products open source.
+From early on it was apparent that given the involvement of the project, simple open sourcing was not enough and the project aimed to incorporate best open research practices in the early stages of development \cite{chen_open_2019}.
 
-Parallel to the physical design, attention was given to documentation and dissemination. Following DMI documentation guidelines \cite{calegario_documentation_2021} and open-science practice \cite{stall_journal_2023}, the entire project was archived: source code, firmware, bill of materials, CAD schematics, STL models, photographs, and build instructions were placed in public repositories. The material is organised into three submodules --- \emph{Firmware} \cite{hamilton_firmware_2025}, \emph{CAD} \cite{hamilton_cad_2025}, and \emph{Model Data} \cite{hamilton_models_2025} --- combined via a meta-repository (Figure~\ref{fig:repo-relation}). This structure allows individual components (e.g., a PCB or an optical sensor) to be reused or substituted without restructuring the entire system.
+Using the \citep{ssi_checklist_2018} checklist, the core requirements for an open research
+software project are: publicly available source code, a version control system
+(VCS), user and developer documentation, an OSI-compliant licence, and
+persistent identifiers (typically DOIs). A public VCS implies source
+availability, though the reverse is not guaranteed. Likewise, a DOI implies some
+level of digital archiving, but a release archive does not necessitate a DOI.
+DOIs should be assigned both to the software as a whole and to individual
+releases \cite{smith_software_2016}; licences should be clearly stated and
+OSI-compliant \cite{hong_choosing_2025}. To better support complex software
+citation, \citet{druskat_citation_2021} introduced the Citation File Format
+(CFF), which standardises metadata for software citations and is supported by
+both GitHub and Zenodo. Recommendations in \citet{fiordelmondo_towards_2025}
+extend this to hardware projects, with tools for citation
+\cite{spaaks_cffconvert_2021}. Beyond these essentials (contribution policies,
+issue tracking, codes of conduct), more advanced practices presuppose an active
+repository.
 
-% The limitation here is assuming that the constituent parts of a DMI are a collective to archive and version controlled. This is true to some degree, there is a complete artefact to be documented, but it is made of constituent parts that can be develop in isolation and are swapped out. There is the interface, the electronics, and the firmware, whose versions current and old can be used in all number of combinations of versions. Keeping these components contained to a single version control repository limits their modularity and potential for reuse.
+Five key areas were identified that constitute `best-practice' in open research:
 
-\subsection{Modular Source}
-
-Git repo with a single commit hosting static files is no better than serving through a website link to a zip file or a cloud storage (e.g. google drive) link. It does provide potential for greater utility with issues that are tied to the work.
-
-Since Submodules are just a reference to a commit to another repository, the data weight is far smaller than if large sweeping changes in source code or dependencies were stored in the git commit history. There is no requirement for the repositories to share the same platform, and reference will function so long as the upstream repository is accessible.
-
-Such an approach aligns closely with the FAIR principles as it promotes code reuse, interoperability, as well as seamless attribution.
-
-both \citet{calegario_documentation_2021} and \citet{fiordelmondo_longevity_2024} present the idea of a single, unified repository containing all elements. 
-Elements such as library dependencies may not be from the original author and other parts may be repurposed from existing projects.
-Each element of a DMI may change and to facilitate development and reproducibility a more modular approach is proposed.
-
-Modular source code is aided by the git version control software through its submodules functionality \citet{git_submodule_2025}.
-
-relates to dependencies, but the specific instance where a dependency is one created from the same author(s) or another project that is open source
-
-can describe the project in terms of parts that may be swapped. The burden of redundant replication is lifted, without sacrificing the traceability.
-
-The aim is not to be reductionist ``by lieu of ... components'' \cite{burns_documents_2021}, quite the opposite, that sokething can be more than the some of its parts.
-
-\subsection{Version Control}
-
-The interface project highlighted limitations within the archiving frameworks that are currently available. A benefit of the Zenodo archive is its integration to GitHub. This allows a single project to be simultaneously maintained and archived for citation from a single location.
-Unfortunately, the GitHub integration for Zenodo does not currently provide a means for meta-repositories to be archived correctly \cite{zenodo_1036_2025}. This limitation necessitates the generation of a separate DOI for each component submodule, all of which reference the meta-repository.
+\begin{enumerate}
+    \item Source: Defining all the components that constitute the project source
+    \item Version Control: the system for  tracking changes to the source over time
+    \item Archive: the system for digitally archiving for longevity and citablility through digital object identifier (DOI).
+    \item Documentation: Tutorials, Reference, Explanation, How-To guides
+    \item License: Terms under which the work can be used, modified, and shared 
+\end{enumerate}
 
 \begin{figure}
 \centering
@@ -210,15 +210,20 @@ Unfortunately, the GitHub integration for Zenodo does not currently provide a me
     \label{fig:repo-relation}
 \end{figure}
 
-\subsection{Archiving}
 
-Archiving provides a means by which a work can be cited.
+Much of the open sourcing had to carried out as the project developed. This resulted in some instances where what was initially implemented was no longer relevant or must be adapted. 
+Rather than a single, unified code base \cite{calegario_documentation_2021, fiordelmondo_longevity_2024} the source of project was divided into three components --- \emph{Firmware} \cite{hamilton_firmware_2025}, \emph{CAD} \cite{hamilton_cad_2025}, and \emph{Model Data} \cite{hamilton_models_2025}. Such an approach aligns closely with the FAIR principles as it promotes code reuse, interoperability, as well as seamless attribution.
+For the original paper the links to the individual project repositories were included. As the project developed, two distinct interfaces were created with different applications. One interface was for installation at San Colombano while a second model was created for use within research at the NEMUS project and the University of Bologna. Both interfaces use the same core components, but at separate phases in their development.
 
-A DMI as a research product \cite{xxx} is an object that should be citable. The paper describes the object, it is not object itself and there are instances where citing the object is more applicable than citing the paper based around it.
+This means that the original links are now no longer an accurate representation of the interface as presented in the paper. To address this, the individual repositories were reference under a single `meta repository' (Figure~\ref{fig:repo-relation}). Referencing is achieved using git's submodules functionality \citet{git_submodule_2025}. The benefit of such an approach is two fold. 
+To navigate the different states of the project in time, only a single URL needs to be shared. The individual submodules can be updated or swapped out entirely.
+Version tagging is used to demarcate distinct versions of the interface, allowing for easier navigation.
+Shallow submodules allow for only the relevant code for that commit to be pulled from the upstream repository meaning the full data weight of the entire repository is not needed.
 
-Archiving should provide a DOI with which to cite. Repositories may also provide a recommended citation, but this should very much be looked upon as a bandage to a broken system and not a solution. The very helpful citation file format CFF provides a means to have a structure citation to software, but unhelpfully, integration with GitHub prompts the user to ``Cite this Repository'' \url{https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files} which, as already discussed, is something to be avoided.
+The function of each component also shifted over time. The CAD component transitioned into files for electronic schematics and PCB manufacture, while the Model component has changed into a repository of documents describing measurements of the enclosure. Renaming either repository would break previous links to the work. The directory name of submodules can be changed in the meta repository, but this situation emphasised the importance of archiving the work.
+Rather than referencing through URLs to a git repository, the project was archived using CERN's digital archiving platform Zenodo \cite{zenodo_2013}. Archiving exposed a few practical challenges. Zenodo’s GitHub integration does not yet handle meta-repositories, requiring separate DOIs for each submodule with cross-references \cite{zenodo_1036_2025} (Figure~\ref{fig:zenodo-github-integration}).
+Likewise, the future of CAD data is tied to software sustainability: the discontinuation of Autodesk EAGLE \cite{autodesk_eagle_2024} effectively freezes its XML format, though conversion to KiCad remains available \cite{kicad_eagle_2024}. These lessons emphasise that openness depends not only on version control and archiving but also on the careful selection of formats and hosting infrastructure.
 
-Archiving exposed a few practical challenges. Zenodo’s GitHub integration does not yet handle meta-repositories, requiring separate DOIs for each submodule with cross-references \cite{zenodo_1036_2025}. Likewise, the future of CAD data is tied to software sustainability: the discontinuation of Autodesk EAGLE \cite{autodesk_eagle_2024} effectively freezes its XML format, though conversion to KiCad remains available \cite{kicad_eagle_2024}. These lessons emphasise that openness depends not only on licensing but also on the careful selection of formats and hosting infrastructure.
 
 \begin{figure}
     \centering
@@ -227,77 +232,22 @@ Archiving exposed a few practical challenges. Zenodo’s GitHub integration does
     \label{fig:zenodo-github-integration}
 \end{figure}
 
-\subsubsection{limits in archiving modular projects}
+% \subsection{Documentation}
 
-Problem with a modular process is that zenodo's integration does not support it or a allow for easy configuration.
-
-Would require the manual creation of the archive, copy the contents over. Alternatively, each submodule could be archived and a meta-archive simply contains reference to the constituent DOIs. This is not ideal but it is also not insurmaountable.
-
-
-\subsection{Documentation}
-
-Following \citet{procida_diataxis_2025}, four complementary forms of
-documentation can be distinguished: Tutorials, How-to guides, Explanation, and
-Reference. These forms naturally divide into two audiences: user-facing and
-developer-facing. Adapting \citet{procida_diataxis_2025}, developer-facing
-documentation lies in the How-to and Reference categories, while user-facing
-documentation is found in Tutorials and Explanation. This division is not
-strict, as the binary of `user' and `developer' rarely holds true in practice;
-rather, audiences exist along a continuum. Reference documentation can be
-generated from source annotations to avoid duplication and support automation.
-Across M\textsc{atlab}, Python, and C\textsc{++}, multiple conventions coexist
-\cite{vanrossum_pep8_2001, goodger_pep257_2001}, supported by tooling ecosystems
-such as Doxygen, Sphinx, and HeaderDoc.%
-\footnote{See the Stack Overflow Data Explorer for indicative tag counts:
-\url{https://data.stackexchange.com/stackoverflow/query/1069131/get-all-tags}.}
-Even so, generated API references should not substitute for user manuals
-\cite[Section~6.2]{stallman_gnu_1992}, though this is often the case
-\cite{procida_diataxis_2025}.%
-\footnote{\url{https://diataxis.fr/reference/}}
-
+Documentation for the project is still under construction. 
+The firmware was documented as it was created using the Doxygen documentation system \cite{beningo_documenting_2017}, but this does not fill the role of a user manual \cite{stallman_gnu_1992,procida_diataxis_2025}.
 Best practice emphasises the importance of documentation
 \cite{smith_software_2016}, though it is less prescriptive about form and depth.
 \citet{writethedocs_sowftware_2025} offers comprehensive guidance; a
 pragmatic rule is that documentation should enable you to still ``understand
 your code in six months'' \cite{writethedocs_sowftware_2025}, a principle echoed
-in reproducibility studies \cite{perkel_challenge_2020}. Using the
-\citep{ssi_checklist_2018} checklist, the core requirements for an open research
-software project are: publicly available source code, a version control system
-(VCS), user and developer documentation, an OSI-compliant licence, and
-persistent identifiers (typically DOIs). A public VCS implies source
-availability, though the reverse is not guaranteed. Likewise, a DOI implies some
-level of digital archiving, but a release archive does not necessitate a DOI.
-DOIs should be assigned both to the software as a whole and to individual
-releases \cite{smith_software_2016}; licences should be clearly stated and
-OSI-compliant \cite{hong_choosing_2025}. To better support complex software
-citation, \citet{druskat_citation_2021} introduced the Citation File Format
-(CFF), which standardises metadata for software citations and is supported by
-both GitHub and Zenodo. Recommendations in \citet{fiordelmondo_towards_2025}
-extend this to hardware projects, with tools for citation
-\cite{spaaks_cffconvert_2021}. Beyond these essentials (contribution policies,
-issue tracking, codes of conduct), more advanced practices presuppose an active
-repository.
+in reproducibility studies \cite{perkel_challenge_2020}.
 
-Shallow submodules allow for only the relevant code for that commit to be pulled from the upstream repository meaning the full data weight of the entire repository is not needed.
-Relevant for the ability to compartmentalise auto generated documentation which can be served from a sub-repository branch, but not clog up the  code base of the meta repository.
-This was the case with the firmware \footnote{\url{https://nemus-project.github.io/harpsichord-interface-firmware/docs/html/}} for interface in \citet{hamilton_augmentation_2025_activities}.
+% Documenting all aspects of the work is a considerable undertaking and the constantly developing nature makes it difficult to archive accurately until it is in a much later stage. procida_diataxis_2025The documentation practice for a project may also reveal something within the author's own perception of the work.
+% Documentation that leans heavily towards \textit{Reference} in the diataxis framework \citet{procida_diataxis_2025} are concerned with the technical understanding and modification of the work, something that is still in progress.
+% In the same framework, ``Tutorial'' documentation view the work is static, when the user's primary concern is with utilising the work. Through this lens we may be able analyse a NIME and understand the intention for growth or reuse.
 
-
-\subsubsection{Software Documentation Practice}
-
-The documentation practice for a project may also reveal something within the author's own perception of the work.
-Documentation that leans heavily towards \textit{Reference} in the diataxis framework \citet{procida_diataxis_2025} are concerned with the technical understanding and modification of the work, something that is still in progress.
-In the same framework, ``Tutorial'' documentation view the work is static, when the user's primary concern is with utilising the work. Through this lens we can assess a NIME and perhaps understand the intention for growth or reuse.
-
-% \cite{burns_documents_2021}
-% \begin{quote}
-%     Case in point: I highly doubt anyone
-% has learned to ride a bike by reading an instruction manual.
-% \end{quote}
-%  But somone needed to explain it
-
-
-\section{Conclusions}
+\section{Discussion}
 
 Reluctance to share, anecdotally is that a work is `in-progress' which should be seen as a benefit. The appearance that work is in a highly finished polished state can be intimidating. the goal of NIME is should not always be to have a completed idea but to discuss ideas in progress. If that were the case we would \textit{only} be sharing pictures and archives, once something is finished, what isthere kef6t to discuss.
 
@@ -307,7 +257,9 @@ scalability and inclusivity.''
 
 Sharing with a wider community enables the possibility of research breaking out beyond the confines of its original life span. Enables the chance for more meaningful user evaluation \cite{calegario_documentation_2021} by reducing the barriers to accessing an interface. Ideas can be iterated upon, built upon previous work.
 
-Source material varies from schematics to zine \cite{nime2025_42}.
+Source material varies from schematics, survey data \cite{nime2019_Lepri}, to zine \cite{nime2025_42}.
+
+Sometimes what is marked as additional media actually contains the source \cite{nime2016_Barrett}.
 
 % \citet{burns_documents_2021}
 % \begin{quote}
@@ -473,11 +425,23 @@ Is passive, requires the repository be public and cannot guarantee that submodul
 
 Like the web archive, this should be looked upon as a last ditch and a much more active and deliberate archiving approach should be taken
 
+A DMI as a research product \cite{xxx} is an object that should be citable. The paper describes the object, it is not object itself and there are instances where citing the object is more applicable than citing the paper based around it.
+
+Archiving should provide a DOI with which to cite. Repositories may also provide a recommended citation, but this should very much be looked upon as a bandage to a broken system and not a solution. The very helpful citation file format CFF provides a means to have a structure citation to software, but unhelpfully, integration with GitHub prompts the user to ``Cite this Repository'' \url{https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files} which, as already discussed, is something to be avoided.
+
+\subsubsection{limits in archiving modular projects}
+
+Problem with a modular process is that zenodo's integration does not support it or a allow for easy configuration.
+
+Would require the manual creation of the archive, copy the contents over. Alternatively, each submodule could be archived and a meta-archive simply contains reference to the constituent DOIs. This is not ideal but it is also not insurmaountable.
+
+
 %% Sentiment: The intention is end on note that acknowledges that this isn't zero effort, but it is worth while. That nothing will improve if we do nothing. 
 %% The sentiment is also that there is an implicit high bar and far to few are meeting it, so we should lower to an _explicit_. 
 %% Perfect is the enemy of good, 
 %% good-enough practice before best practice
 The resistance is very much one of awareness and skill acquisition. Contributors are far more likely to follow the practice set out by there peers and their mentors. Change comes from above, and from the side and we should lead by example.
+
 
 
 % \subsection{Version Control $\neq$ Archiving}

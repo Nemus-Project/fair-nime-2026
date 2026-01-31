@@ -10,6 +10,51 @@
 
 \section{Notes on papers}
 
+% At nemus realised limitation, keyboard \citet{hamilton_augmentation_2025_activities} had progressed, old links no longer pointed to the keyboard structure of project changing,  two distinct application, one for the museum an another of future research. But both used mostly same material. Version tagging helped but how to reference for a paper that would not be misleading. A digital archive of the sing meta solves citation a reference to repo solves outdated links as the metas repo contains submodules. The links for nine 2025 now no longer accurately reflect the state of the keyboard at that time.
+
+% Parallel to the physical design, attention was given to documentation and dissemination. Following DMI documentation guidelines \cite{calegario_documentation_2021} and open-science practice \cite{stall_journal_2023}, the entire project was archived: source code, firmware, bill of materials, CAD schematics, STL models, photographs, and build instructions were placed in public repositories. The material is organised into three submodules --- \emph{Firmware} \cite{hamilton_firmware_2025}, \emph{CAD} \cite{hamilton_cad_2025}, and \emph{Model Data} \cite{hamilton_models_2025} --- combined via a meta-repository (Figure~\ref{fig:repo-relation}). This structure allows individual components (e.g., a PCB or an optical sensor) to be reused or substituted without restructuring the entire system.
+
+% The limitation here is assuming that the constituent parts of a DMI are a collective to archive and version controlled. This is true to some degree, there is a complete artefact to be documented, but it is made of constituent parts that can be develop in isolation and are swapped out. There is the interface, the electronics, and the firmware, whose versions current and old can be used in all number of combinations of versions. Keeping these components contained to a single version control repository limits their modularity and potential for reuse.
+
+% \subsection{Modular Source}
+
+% Git repo with a single commit hosting static files is no better than serving through a website link to a zip file or a cloud storage (e.g. google drive) link. It does provide potential for greater utility with issues that are tied to the work.
+
+% Since Submodules are just a reference to a commit to another repository, the data weight is far smaller than if large sweeping changes in source code or dependencies were stored in the git commit history. There is no requirement for the repositories to share the same platform, and reference will function so long as the upstream repository is accessible.
+
+% Both \citet{calegario_documentation_2021} and \citet{fiordelmondo_longevity_2024} present the idea of a single, unified repository containing all elements. 
+% Elements such as library dependencies may not be from the original author and other parts may be repurposed from existing projects.
+% Each element of a DMI may change and to facilitate development and reproducibility a more modular approach is proposed.
+
+% Modular source code is aided by the git version control software through its submodules functionality \citet{git_submodule_2025}.
+
+% relates to dependencies, but the specific instance where a dependency is one created from the same author(s) or another project that is open source
+
+% can describe the project in terms of parts that may be swapped. The burden of redundant replication is lifted, without sacrificing the traceability.
+
+% The aim is not to be reductionist ``by lieu of ... components'' \cite{burns_documents_2021}, quite the opposite, that something can be more than the some of its parts.
+
+% \subsection{Version Control}
+
+% The interface project highlighted limitations within the archiving frameworks that are currently available. A benefit of the Zenodo archive is its integration to GitHub. This allows a single project to be simultaneously maintained and archived for citation from a single location.
+% Unfortunately, the GitHub integration for Zenodo does not currently provide a means for meta-repositories to be archived correctly \cite{zenodo_1036_2025}. This limitation necessitates the generation of a separate DOI for each component submodule, all of which reference the meta-repository.
+% \subsection{Archiving}
+
+% Archiving provides a means by which a work can be cited.
+
+% \subsubsection{Software Documentation Practice}
+
+% The documentation practice for a project may also reveal something within the author's own perception of the work.
+% Documentation that leans heavily towards \textit{Reference} in the diataxis framework \citet{procida_diataxis_2025} are concerned with the technical understanding and modification of the work, something that is still in progress.
+% In the same framework, ``Tutorial'' documentation view the work is static, when the user's primary concern is with utilising the work. Through this lens we can assess a NIME and perhaps understand the intention for growth or reuse.
+
+% \cite{burns_documents_2021}
+% \begin{quote}
+%     Case in point: I highly doubt anyone
+% has learned to ride a bike by reading an instruction manual.
+% \end{quote}
+%  But somone needed to explain it
+
 
 \subsection{\cite{fiordelmondo_towards_2025}}
 ``The need for documentation that goes beyond just publishing an article (which is still an important document) has been ad- vocated to promote critical discourse [3, 8]''
