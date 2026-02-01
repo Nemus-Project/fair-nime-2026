@@ -120,14 +120,61 @@ for file in $(cat nime2001.csv); do
 done
 ```
 
+### trimming
+
+```sh
+pdfgrep -P '\Wgit(?!hub|lab|ch|imation|ter|udinal|arr|al|aroo|a\b)' -ri .
+pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)' -ri .
+```
+
 ### Counting for plot
+
+for general git refrences
+
+
 ```
 for i in {2001..2025}; do
   cd "${i}"
-  echo "${i}",$(( $(pdfgrep -P 'github' -rli . | wc -l) * 100 / $(ls | wc -l) ))
+  echo "(${i: -2}",$(( $(pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)' -rli . | wc -l) * 100 / $(ls | wc -l) ))")"
   cd - > /dev/null
 done
 ```
+
+for i in {2001..2025}; do
+  cd "${i}"
+  echo "(${i: -2}",$(pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)' -rli . | wc -l)")"
+  cd - > /dev/null
+done
+
+
+For GitHub reference
+```
+for i in {2001..2025}; do
+  cd "${i}"
+  echo "(${i: -2}",$(( $(pdfgrep -P 'github' -rli . | wc -l) * 100 / $(ls | wc -l) ))")"
+  cd - > /dev/null
+done
+```
+
+
+Pure mad dead brilliant git occurences
+```sh
+for i in {2001..2025}; do
+  cd "${i}"
+  echo "(${i: -2}", $(pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)' -ri . | wc -l)")"
+  cd - > /dev/null
+done
+```
+
+
+for i in {2001..2025}; do
+  cd "${i}"
+  echo "${i}" $(pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)' -rciH . | grep -v ':0$' | sort -t: -k2,2nr | head -3)
+  echo ""
+  cd - > /dev/null
+done
+
+
 
 NIME 2021 and 2022 are a little more involved to pull the pdfs.
 Can `curl` a PubPub article with 
