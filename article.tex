@@ -32,7 +32,7 @@ The discussion of open research at NIME has tended towards methodologies applica
 Unlike software, open hardware cannot be simply distributed as a licence and set of source code files \cite{oshwa_best_2013} lest it fall afoul of ``openwashing,'' when a project  ``is claimed to be open source whereas no intention to publish product-related information is given'' \cite{bonvoisin_source_2017}. That is not to say that ephemeral or closed source projects are forbidden, but the decision to identify as such should be a conscious one.
 To facilitate reproduction of hardware, it should be self-evident but, any form of archiving and provision of access to source material makes the task much more feasible. Reproduction is made even easier by incorporating open hardware.
 
-Both \citet{mcpherson_nimehub_2016} and \cite{fiordelmondo_towards_2025} raise the issue of repository structure with the latter proposing a a prescriptive measure which can be applied to any DMI project. Research output in the form of open hardware or open software can and should take advantage of the platforms available for distribution of the work,
+Both \citet{mcpherson_nimehub_2016} and \citet{fiordelmondo_towards_2025} raise the issue of repository structure with the latter proposing a a prescriptive measure which can be applied to any DMI project. Research output in the form of open hardware or open software can and should take advantage of the platforms available for distribution of the work,
 % An open methodology needs to be `baked-in' to the research process and it is not something trivially applied after the fact. It is of course better to do it afterwards than not at all, but the information at stake also constitutes the development process, not just the end product. The point at which a project is abandoned is not the key point of record.
 but the work still needs to be citable \cite{smith_software_2016}, and cross-reference-able \cite{stall_journal_2023} if it is to be built upon.
 The recreation of a NIME has focussed on goal of using it musical practice \cite{ajin_rebuilding_2019, masu_nime_2023, west_towards_2025}. Equally valid is the recreation of a NIME for knowledge and development of craft \cite{calegario_documentation_2021}
@@ -61,18 +61,34 @@ The search aimed to be as forgiving as possible and any completely automated sea
 
 The search started with wildcard ``git*'' which would match git URLs and usage of terms GitHub and GitLab that may be used to identify a repository link. If no results were found, additional searches were made using keywords ``source,'' ``code,'' ``http,''  and ``doi''. Upon failing to find any result, the paper was manually skim read to identify if an alternate method was use to reference the source repository. If a link to source material was found, the URL was recorded alongside the context in which it appeared as well as the page number. NIME 2025 consisted of a total of 96 papers. This was small enough that a semi-manual approach of the entire proceedings was achievable in just over three hours.
 
+% \begin{table}
+%     \centering
+%     \begin{tabular}{r|ccccc|c}
+%                     & Footnote & Body & Cit. & App. & Miss. & Total (\%) \\ \hline
+%         \textbf{22} & 5     & 7    & 1    & 2    & 2     & 17   (30)  \\
+%         \textbf{23} & 12    & 8    & 1    & 1    & 3     & 25   (25)  \\
+%         \textbf{24} & 13    & 6    & 3    & 1    & 4     & 27   (29)  \\
+%         \textbf{25} & 21    & 8    & 2    & 3    & 6     & 40  (41)   \\
+%     \end{tabular}
+%     \caption{Methods for disseminating source URL in NIME 2022–2025 papers.}
+%     \label{tab:git_placement}
+% \end{table}
+
 \begin{table}
     \centering
-    \begin{tabular}{r|ccccc|c}
-        \textbf{Placement} & Footnote & Body & Citation & Appendix & Missing & Total (\%) \\ \hline
-        \textbf{2022}      & 5        & 7    & 1        & 2        & 2       & 17   (30)  \\
-        \textbf{2023}      & 12       & 8    & 1        & 1        & 3       & 25   (25)  \\
-        \textbf{2024}      & 13       & 6    & 3        & 1        & 4       & 27   (29)  \\
-        \textbf{2025}      & 21       & 8    & 2        & 3        & 6       & 40  (41)   \\
+    \begin{tabular}{r|cccc}
+                  & \textbf{2022} & \textbf{2023} & \textbf{2024} & \textbf{2025} \\ \hline
+        Footnote  & 5  & 12 & 13 & 21 \\
+        Body      & 7  & 8  & 6  & 8  \\
+        Citation  & 1  & 1  & 3  & 2  \\
+        Appendix  & 2  & 1  & 1  & 3  \\
+        Missing   & 2  & 3  & 4  & 6  \\ \hline
+        Total     & 17 (30\%) & 25 (25\%) & 27 (29\%) & 40 (41\%) \\
     \end{tabular}
-    \caption{Methods for disseminating source URL in NIME 2022--2025 papers.}
+    \caption{Methods for disseminating source URL in NIME 2022–2025 papers. The ``Missing'' count encompasses those papers whose URL was incorrect, repository was empty or had to be inferred from a web search.}
     \label{tab:git_placement}
 \end{table}
+
 
 % 2024 on link through bit.ly
 
