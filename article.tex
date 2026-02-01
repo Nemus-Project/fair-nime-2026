@@ -83,17 +83,6 @@ Overwhelmingly GitHub is the preferred repository platform with 30 projects host
 
 \subsubsection{Question 2: Adoption of Open Source}
 
-% \begin{table}[b]
-%     \centering
-%     \begin{tabular}{r|cccccccccc}
-%         \textbf{Year}      & \textit{16} & \textit{17} & \textit{18} & \textit{19} & \textit{20} & \textit{21} & \textit{22} & \textit{23} & \textit{24} & \textit{25} \\ \hline
-%         \textbf{Papers}    & 16   & 25   & 24   & 29   & 29   & 33   & 24   & 54   & 42   & 50   \\ \hline
-%         \textbf{\% Overall}& 18   & 24   & 26   & 32   & 29   & 38   & 43   & 54   & 44   & 50   \\ 
-%     \end{tabular}
-%     \caption{Number of NIME papers which referenced at least one git repository over the last 10 years. The percentage of papers overall is rounded to the nearest integer.}
-%     \label{tab:git_occurences}
-% \end{table}
-
 \begin{figure}
     \begin{tikzpicture}
         \begin{axis}[
@@ -101,11 +90,8 @@ Overwhelmingly GitHub is the preferred repository platform with 30 projects host
                 height=7cm,
                 xlabel={Year},
                 ylabel={\% of Total Papers},
-                ymin=0, ymax=60,
-                % xmin=16, xmax=25,
-                xmin=9, xmax=25,
-                % xtick={16,17,18,19,20,21,22,23,24,25},
-                % xtick={6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25},
+                ymin=0, ymax=60,                
+                xmin=9, xmax=25,       
                 xtick={9,11,13,15,17,19,21,23,25},
                 xticklabel={
                         20\pgfmathparse{int(\tick)}
@@ -123,25 +109,25 @@ Overwhelmingly GitHub is the preferred repository platform with 30 projects host
                 mark=*,
                 smooth
             ] coordinates {                    
-                    (9,0)
+                    (09,0)
                     (10,1)
-                    (11,4)
-                    (12,7)
+                    (11,3)
+                    (12,6)
                     (13,16)
-                    (14,16)
-                    (15,14)
-                    (16,18)
-                    (17,24)
-                    (18,26)
-                    (19,32)
+                    (14,14)
+                    (15,13)
+                    (16,19)
+                    (17,22)
+                    (18,25)
+                    (19,31)
                     (20,29)
-                    (21,38)
-                    (22,43)
-                    (23,54)
+                    (21,37)
+                    (22,42)
+                    (23,53)
                     (24,44)
-                    (25,50)
+                    (25,52)
                 };
-                \addlegendentry{Referencing any git}
+                \addlegendentry{Any git}
                 \addplot[
                 color=red,
                 mark=*,
@@ -165,24 +151,24 @@ Overwhelmingly GitHub is the preferred repository platform with 30 projects host
                     (24,43)
                     (25,48)
                 };
-                \addlegendentry{Referencing GitHub}
+                \addlegendentry{GitHub}
         \end{axis}
-    \end{tikzpicture}
-    % \caption{Yearly percentage of NIME papers 2016 -- 2025 which referenced at least one git repository.}
-    \caption{Yearly percentage of NIME papers 2009 -- 2025 which referenced at least one git repository and GitHub specifically. Since git's initial release was in 2005, NIME papers between 2001 -- 2009 contain no references to it.}
-    \label{}
+    \end{tikzpicture}    
+    \caption{Yearly percentage of NIME papers 2009 -- 2025 which referenced at least one git repository and GitHub specifically. The initial release of git  was in 2005 and NIME papers between 2001 -- 2009 contain no references to it.}
+    \label{fig:git_occurences}
 \end{figure}
 
-Analysis to answer the second question was based on the method in \citet{fiordelmondo_towards_2025}, which showed the occurrence of terms related to open source repositories, such as ``git'' and ``repository'' in NIME proceedings from 2001 to 2024.
-Results from a method based on occurrence could be skewed where there is prolific use of repositories by an individual paper. The familiarity with git version control in NIME would more appropriately evaluated by examining the number of papers that reference a git repository.
 
-% Since the search was based on occurrence, it could be skewed by individual with prolific use or citation of open source repositories. 
-% What is important is perhaps not the number of occurrences, but whether a paper has relied on the technology at all. 
 
+Analysis to answer the second question was based on the method in \citet{fiordelmondo_towards_2025}, which showed the number of papers of terms related to open source repositories, such as ``git'' and ``repository'' in NIME proceedings from 2001 to 2024.
 To achieve this, the PDFs for NIME proceedings from 2016 to 2025 were downloaded, separated into directories by year.
-Each directory was search for the number of files in which there was a reference to a git repository. The search was carried out using the open source \texttt{pdfgrep} software \cite{deifel_pdfgrep_2024} and case-insensitive regular expression of \texttt{\textbackslash Wgit}. The search would match occurrences of `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' as well as their urls  like \texttt{https:/\textbf{/git}lab.com/}. One deviation from \cite{fiordelmondo_towards_2025} was to include \texttt{github.io} webpages in the results as it would suggest usage or familiarity with GitHub and git software. It is not uncommon for authors to link to their own project via a GitHub hosted webpage (e.g., \texttt{user.github.io/project}) from which the repository URL can be inferred if not linked to directly on the site. The number of NIME papers referencing a git repository, and the percentage of the total they represent, is shown in Table~\ref{tab:git_occurences}.  This search approach is not foolproof and can miss instances, such as in \citet{carter_sculpting_2025}, where a project repository exists but neither the term `git' appears in the URL nor is it referenced directly in the text.
-% \footnote{Early results needed to be pruned with reference to gitaroo man}
+Each directory was search for the number of files in which there was a reference to a git repository. The search was carried out using the open source \texttt{pdfgrep} software \cite{deifel_pdfgrep_2024} and case-insensitive regular expression of \texttt{\textbackslash Wgit}. The search would match occurrences of `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' as well as their URLs  like \texttt{https:/\textbf{/git}hub.com/}. One deviation from \cite{fiordelmondo_towards_2025} was to include \texttt{github.io} webpages in the results as it would suggest usage or familiarity with GitHub and git software. It is not uncommon for authors to link to their own project via a GitHub hosted webpage (e.g., \texttt{user.github.io/project}) from which the repository URL can be inferred if not linked to directly on the site. 
+The percentage of NIME papers referencing a git repository each year is shown in Figure~\ref{fig:git_occurences}.  
 
+This search approach is not foolproof and can miss instances, such as in \citet{carter_sculpting_2025}, where a project repository exists but neither the term `git' appears in the URL nor is it referenced directly in the text.
+Figure~\ref{fig:git_occurences}  does show a strong overlap between git technology and GitHub. From which we can deduce that most interaction with the git technology is through the GitHub platform.
+The search was run multiple times over a directory containing all NIME papers to date, with progressively stricter constraints applied to reduce false positives. The process began with a search (\verb$pdfgrep -P '\Wgit(?!hub|lab)' -ri .$), which removed the majority of genuine matches and enabled more efficient identification of remaining false positives.
+Examples of false positives included words split across line breaks at “git” (e.g., legitimation broken into ``le-'' and ``\textbf{git}imation''), as well as unrelated terms such as ``gitaroo'' or ``gitarre.'' The search could not be overly restrictive, however, because it needed to retain valid matches such as ``gitorious,'' a git-based hosting service that was acquired by GitLab and discontinued in 2015 \cite{bjaanes_gitorious_2015}.
 
 \section{An Open Methodology for DMIs}
 
@@ -259,7 +245,6 @@ For the original paper the links to the individual project repositories were inc
 This means that the original links are now no longer an accurate representation of the interface as presented in the paper. To address this, the individual repositories were reference under a single `meta repository' (Figure~\ref{fig:repo-relation}). Referencing is achieved using git's submodules functionality \cite{git_submodule_2025}. The benefit of such an approach is two fold.
 To navigate the different states of the project in time, only a single URL needs to be shared. The individual submodules can be updated or swapped out entirely.
 Version tagging is used to demarcate distinct versions of the interface, allowing for easier navigation.
-Shallow submodules allow for only the relevant code for that commit to be pulled from the upstream repository meaning the full data weight of the entire repository is not needed.
 
 The function of each component also shifted over time. The CAD component transitioned into files for electronic schematics and PCB manufacture, while the Model component has changed into a repository of documents describing measurements of the enclosure. Renaming either repository would break previous links to the work. The directory name of submodules can be changed in the meta repository, but this situation emphasised the importance of archiving the work.
 Rather than referencing through URLs to a git repository, the project was archived using CERN's digital archiving platform Zenodo \cite{zenodo_2013}. Archiving exposed a few practical challenges. Zenodo’s GitHub integration does not yet handle meta-repositories, requiring separate DOIs for each submodule with cross-references \cite{zenodo_1036_2025} (Figure~\ref{fig:zenodo-github-integration}).
@@ -290,17 +275,32 @@ in reproducibility studies \cite{perkel_challenge_2020}.
 
 \section{Discussion}
 
-Reluctance to share, anecdotally is that a work is `in-progress' which should be seen as a benefit. The appearance that work is in a highly finished polished state can be intimidating. the goal of NIME is should not always be to have a completed idea but to discuss ideas in progress. If that were the case we would \textit{only} be sharing pictures and archives, once something is finished, what isthere kef6t to discuss.
+\textbf{Main Points}
+\begin{itemize}
+    \item Open Sourcing work is a growing trend at NIME
+    \item repository can be difficult to find
+    \begin{itemize}
+        \item there is room for error and repositories can be absent entirely
+    \end{itemize}
+    \item A submodule approach caters to the nature of open hardware and DMIs with their multiple elements
+    \begin{itemize}
+        \item submodules also allow a compositional approach and more directly include dependecies under a project umbrella.
+    \end{itemize}
+    \item a fully compliant open research practice is maybe unrealstic and potentially stiflling.
+\end{itemize}
 
-Designing Sensory NIME for Autism: ``Open-source development initiatives should be encouraged to foster
-scalability and inclusivity.''
+% Shallow submodules allowed for only the relevant code for that commit to be pulled from the upstream repository meaning the full data weight of the entire repository is not needed.
 
+% Reluctance to share, anecdotally is that a work is `in-progress' which should be seen as a benefit. The appearance that work is in a highly finished polished state can be intimidating. the goal of NIME is should not always be to have a completed idea but to discuss ideas in progress. If that were the case we would \textit{only} be sharing pictures and archives, once something is finished, what isthere kef6t to discuss.
 
-Sharing with a wider community enables the possibility of research breaking out beyond the confines of its original life span. Enables the chance for more meaningful user evaluation \cite{calegario_documentation_2021} by reducing the barriers to accessing an interface. Ideas can be iterated upon, built upon previous work.
+% Designing Sensory NIME for Autism: ``Open-source development initiatives should be encouraged to foster
+% scalability and inclusivity.''
 
-Source material varies from schematics, survey data \cite{nime2019_Lepri}, to zine \cite{nime2025_42}.
+% Sharing with a wider community enables the possibility of research breaking out beyond the confines of its original life span. Enables the chance for more meaningful user evaluation \cite{calegario_documentation_2021} by reducing the barriers to accessing an interface. Ideas can be iterated upon, built upon previous work.
 
-Sometimes what is marked as additional media actually contains the source \cite{nime2016_Barrett}.
+% Source material varies from schematics, survey data \cite{nime2019_Lepri}, to zine \cite{nime2025_42}.
+
+% Sometimes what is marked as additional media actually contains the source \cite{nime2016_Barrett}.
 
 % \citet{burns_documents_2021}
 % \begin{quote}
@@ -341,6 +341,16 @@ Sometimes what is marked as additional media actually contains the source \cite{
 
 \subsection{Recommendations}\label{sec:recommendations}
 
+\textbf{Main Points}
+\begin{itemize}
+    \item Ambiguity in disseminating repositories is clear. Including a standard field in paper template would address this
+    \item Ambiguity in analysing repo usage, technique employed in section 2 is not perfect, and data though generally representative andtry to control for outliers is not completely accurate. 
+    \begin{itemize}
+        \item it would also assist future analysis in repository trends and open source practice
+    \end{itemize}
+    \item Before focussing on best practice, aim for good enough
+\end{itemize}
+
 % Search should be the sum of columns in Table~1 of \citet{fiordelmondo_towards_2025}, but search was not able to produce results nearly as high. A manual search was undertaken to confirm, unless there were searches conducted with information outside the paper, there is no information that would suggest the usage count was as high as they are for 2022 and 2023
 
 % \cite{fiordelmondo_towards_2025}
@@ -358,8 +368,8 @@ Sometimes what is marked as additional media actually contains the source \cite{
 %% 100% adoption is unrealstic, 34% is too low. 
 
 
-The contents and structure of a project repository are flexible, and there is little value in being overly prescriptive, especially given the diversity of papers submitted to NIME. Nevertheless, in the vast majority of cases, a paper can benefit the reader’s understanding through the inclusion of some form of digital material.  In the course of creating a paper for NIME, which leans so heavily into digital technology there will inevitably in the course of creation be by product, things that made not specifically for the purpose of documentation but made just as part of the process.
-A CAD file for a laser cut enclosure, or PCB, the anonymised results from a user evaluation in a csv file, the python script for generating a plot, the data used to create that plot, the regular expressions used analyse a body of text. The list can go on.
+% The contents and structure of a project repository are flexible, and there is little value in being overly prescriptive, especially given the diversity of papers submitted to NIME. Nevertheless, in the vast majority of cases, a paper can benefit the reader’s understanding through the inclusion of some form of digital material.  In the course of creating a paper for NIME, which leans so heavily into digital technology there will inevitably in the course of creation be by product, things that made not specifically for the purpose of documentation but made just as part of the process.
+% A CAD file for a laser cut enclosure, or PCB, the anonymised results from a user evaluation in a csv file, the python script for generating a plot, the data used to create that plot, the regular expressions used analyse a body of text. The list can go on.
 
 %% Tacit Knowledge
 % \cite{schindler_expertise_2015} 
@@ -367,11 +377,11 @@ A CAD file for a laser cut enclosure, or PCB, the anonymised results from a user
 % out in a non-articulate manner (Sennett, 2008, p. 50).''
 % papers are explicit knowledge, but can be an answer without the question, a question that might only be illicited from the source material.
 
-Digital research products — the datasets, source code, design files and other artifacts often treated as disposable by researchers — are actually essential for understanding how a project was built and why key decisions were made. These research products will have encoded within the tacit knowledge of engineering practice \citet{schindler_expertise_2015} that are rarely documented but valuable for skill acquisition and future understanding.
+% Digital research products — the datasets, source code, design files and other artifacts often treated as disposable by researchers — are actually essential for understanding how a project was built and why key decisions were made. These research products will have encoded within the tacit knowledge of engineering practice \citet{schindler_expertise_2015} that are rarely documented but valuable for skill acquisition and future understanding.
 
-\begin{quote}
-    Authors cannot identify and report every detail that may be important in a method, but many more parts of the methodology can be shared outside of the report itself. (\citet{nosek_scientific_2012})
-\end{quote}
+% \begin{quote}
+%     Authors cannot identify and report every detail that may be important in a method, but many more parts of the methodology can be shared outside of the report itself. (\citet{nosek_scientific_2012})
+% \end{quote}
 
 % We already do this with video, but the 
 
@@ -387,102 +397,102 @@ Digital research products — the datasets, source code, design files and other 
 % communication, like libraries.
 % \end{quote}
 
-A traditional paper alone is often a limited means of describing a Digital Musical Interface and accompanying data, source code, or CAD files are essential to a deeper understanding. Th next section looks at the open methodology through the process of documenting a recent NIME, its limitations and what has been developed since the submission.
+% A traditional paper alone is often a limited means of describing a Digital Musical Interface and accompanying data, source code, or CAD files are essential to a deeper understanding. Th next section looks at the open methodology through the process of documenting a recent NIME, its limitations and what has been developed since the submission.
 
-What the repository or archive of the DMI should contain has already been covered elsewhere, the specific contents are not fixed and will change from project to project
+% What the repository or archive of the DMI should contain has already been covered elsewhere, the specific contents are not fixed and will change from project to project
 
-rather than focussing on a central repository \citet{mcpherson_nimehub_2016}, electing replicating officers \citet{calegario_documentation_2021} or conforming to standard format \citet{fiordelmondo_towards_2025} we can look at solution that are much simpler, but have a much wider impact
+% rather than focussing on a central repository \citet{mcpherson_nimehub_2016}, electing replicating officers \citet{calegario_documentation_2021} or conforming to standard format \citet{fiordelmondo_towards_2025} we can look at solution that are much simpler, but have a much wider impact
 
-clear there is a desire to share work, offload the burden on choosing the most effective way to disseminate, or the reader in locating the work, the solution would be to standardise one, possibly two field that are in the papers template text, and in the metadata.
+% clear there is a desire to share work, offload the burden on choosing the most effective way to disseminate, or the reader in locating the work, the solution would be to standardise one, possibly two field that are in the papers template text, and in the metadata.
 
-The burden to choose a format on the author and burden of finding it on the reader as opposed to an agreed format understood by both parties.
-
-
-Table~\ref{tab:git_placement}
-This is not a call to conform to this as standard practice, but the variation in placement shows there is no universal strategy by which the community has aligned.
-A suggested solution to address this is covered in section \ref{sec:recommendations}.
+% The burden to choose a format on the author and burden of finding it on the reader as opposed to an agreed format understood by both parties.
 
 
-Section~\ref{sec:current-state}
-In most cases there was a clear desire to make the work accessible, but with no clear format the link was overlooked.
-Two repositories were private and subsequently made available, one repository had simply used the wrong link and alternate was provided.
-For one repository, the authors were unreachable. Finally, one repository was found through a simple search. Including these papers which had intent, the total is 34 repositories.
+% Table~\ref{tab:git_placement}
+% This is not a call to conform to this as standard practice, but the variation in placement shows there is no universal strategy by which the community has aligned.
+% A suggested solution to address this is covered in section \ref{sec:recommendations}.
 
 
-\footnote{Or examples such as \textit{Embedded Comparo: Small DSP Systems Side-by-Side} where the git repository url is easily missed as a footnote hidden below references.}
-
-The infrastructure exists \url{https://arxiv.org/} and \url{https://zenodo.org/} are openly available and relevant, withthe latter the standard archive for NIME proceedings.
-\footnote{with the exception of 2022 and 2023 which use pubpub \url{https://nime.pubpub.org/previous-nimes}}
-Part of the submission, the work can marked as closed source, if that is necessary but a mandatory field for project URL or DOI would curtail the open source agnosticism and make the choice a much more deliberate one.
-
-NIME already provides a an entry in its metadata for an archive from which the paper's DOI is taken. Of the 96 NIME 2025 papers only 16 papers have supplementary files and these are exclusively videos.
-When source material is extant and there is a clear intention on sharing it, it would appear that some barrier is present which prevents or dissuades authors from sharing their supplementary material.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{images/open-example.png}\\
-    \vspace{0.5cm}
-    \includegraphics[width=\linewidth]{images/closed-example.png}
-    \caption{Project source as a standard field in the paper template, in the same manner of the title and authors, would allow for quick identification of the project status and files. These details are not obligatory and could be withheld, but the choice to do so becomes deliberate.}
-    \label{fig:project-details}
-\end{figure}
-
-Aiming for some standardised template or central repository sets a high bar that the community is npt ready to meet. We may be missing even just the obvious solutions.
-One can find the authors of a paper easily. Supplementary material in the form of a zenodo archive has a space on the NIME website, but it is clearly under utilised.
-
-In the same way one can open a per and see immediately the title, authors, there should be a space for
-a DOI to the source for which the material pertains or a notice in cases where the the work is either proprietary or the material has some other ethical restrictions.
-
-For academic work, an open first approach should be the goal standard as recommended in the open science and FAIR principles. Closed by default because of a clear path to sign-post a repository is a huge waste.
-
-for example: SMucK: Symbolic Music in ChucK is perfectly easy to find with a search, but it is missing any kind of link in the paper! (disqualified)
-
-A standard metadata entry would ease future analysis.
+% Section~\ref{sec:current-state}
+% In most cases there was a clear desire to make the work accessible, but with no clear format the link was overlooked.
+% Two repositories were private and subsequently made available, one repository had simply used the wrong link and alternate was provided.
+% For one repository, the authors were unreachable. Finally, one repository was found through a simple search. Including these papers which had intent, the total is 34 repositories.
 
 
-fits in to the wider practice of citing digital research output, be it software, hardware, or data. The process very quickly becomes messy which is more often than not as the ideal is of a standard citation is not available.
+% \footnote{Or examples such as \textit{Embedded Comparo: Small DSP Systems Side-by-Side} where the git repository url is easily missed as a footnote hidden below references.}
 
-This has been the case for this paper, and likely many papers at this years NIME.
+% The infrastructure exists \url{https://arxiv.org/} and \url{https://zenodo.org/} are openly available and relevant, withthe latter the standard archive for NIME proceedings.
+% \footnote{with the exception of 2022 and 2023 which use pubpub \url{https://nime.pubpub.org/previous-nimes}}
+% Part of the submission, the work can marked as closed source, if that is necessary but a mandatory field for project URL or DOI would curtail the open source agnosticism and make the choice a much more deliberate one.
 
-\subsection{Future Discussion}
+% NIME already provides a an entry in its metadata for an archive from which the paper's DOI is taken. Of the 96 NIME 2025 papers only 16 papers have supplementary files and these are exclusively videos.
+% When source material is extant and there is a clear intention on sharing it, it would appear that some barrier is present which prevents or dissuades authors from sharing their supplementary material.
 
-Impactful on future engagement is archiving practice.
-Of the 34 papers only one provided a citable digital archive with a DOI \cite{studley_swimtunes_2025}.
-% What is a clear order of precedence for citing sowftare?
-A clear order of precedence
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=\linewidth]{images/open-example.png}\\
+%     \vspace{0.5cm}
+%     \includegraphics[width=\linewidth]{images/closed-example.png}
+%     \caption{Project source as a standard field in the paper template, in the same manner of the title and authors, would allow for quick identification of the project status and files. These details are not obligatory and could be withheld, but the choice to do so becomes deliberate.}
+%     \label{fig:project-details}
+% \end{figure}
 
-\begin{itemize}
-    \item DOI to the archive of the relevant version
-    \item SoftWare Hash IDentifier (SWHID) \cite{softwareheritage_archive_2025}
-    \item Citation File Format \cite{druskat_citation_2021}
-    \item Suggested citation format
-    \item Version-specific repository URL
-    \item General project URL
-\end{itemize}
+% Aiming for some standardised template or central repository sets a high bar that the community is npt ready to meet. We may be missing even just the obvious solutions.
+% One can find the authors of a paper easily. Supplementary material in the form of a zenodo archive has a space on the NIME website, but it is clearly under utilised.
 
-When citing software or data, precedence should favour a citation that prioritises longevity and version specificity over those that merely indicate location.
+% In the same way one can open a per and see immediately the title, authors, there should be a space for
+% a DOI to the source for which the material pertains or a notice in cases where the the work is either proprietary or the material has some other ethical restrictions.
 
-SoftWare Hash IDentifier (SWHID) ISO/IEC international standard 18670 on April 23, 2025.
-Is passive, requires the repository be public and cannot guarantee that submodules have also been ingested.
+% For academic work, an open first approach should be the goal standard as recommended in the open science and FAIR principles. Closed by default because of a clear path to sign-post a repository is a huge waste.
 
-Like the web archive, this should be looked upon as a last ditch and a much more active and deliberate archiving approach should be taken
+% for example: SMucK: Symbolic Music in ChucK is perfectly easy to find with a search, but it is missing any kind of link in the paper! (disqualified)
 
-A DMI as a research product \cite{xxx} is an object that should be citable. The paper describes the object, it is not object itself and there are instances where citing the object is more applicable than citing the paper based around it.
-
-Archiving should provide a DOI with which to cite. Repositories may also provide a recommended citation, but this should very much be looked upon as a bandage to a broken system and not a solution. The very helpful citation file format CFF provides a means to have a structure citation to software, but unhelpfully, integration with GitHub prompts the user to ``Cite this Repository'' \url{https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files} which, as already discussed, is something to be avoided.
-
-\subsubsection{limits in archiving modular projects}
-
-Problem with a modular process is that zenodo's integration does not support it or a allow for easy configuration.
-
-Would require the manual creation of the archive, copy the contents over. Alternatively, each submodule could be archived and a meta-archive simply contains reference to the constituent DOIs. This is not ideal but it is also not insurmaountable.
+% A standard metadata entry would ease future analysis.
 
 
-%% Sentiment: The intention is end on note that acknowledges that this isn't zero effort, but it is worth while. That nothing will improve if we do nothing. 
-%% The sentiment is also that there is an implicit high bar and far to few are meeting it, so we should lower to an _explicit_. 
-%% Perfect is the enemy of good, 
-%% good-enough practice before best practice
-The resistance is very much one of awareness and skill acquisition. Contributors are far more likely to follow the practice set out by there peers and their mentors. Change comes from above, and from the side and we should lead by example.
+% fits in to the wider practice of citing digital research output, be it software, hardware, or data. The process very quickly becomes messy which is more often than not as the ideal is of a standard citation is not available.
+
+% This has been the case for this paper, and likely many papers at this years NIME.
+
+% \subsection{Future Discussion}
+
+% Impactful on future engagement is archiving practice.
+% Of the 34 papers only one provided a citable digital archive with a DOI \cite{studley_swimtunes_2025}.
+% % What is a clear order of precedence for citing sowftare?
+% A clear order of precedence
+
+% \begin{itemize}
+%     \item DOI to the archive of the relevant version
+%     \item SoftWare Hash IDentifier (SWHID) \cite{softwareheritage_archive_2025}
+%     \item Citation File Format \cite{druskat_citation_2021}
+%     \item Suggested citation format
+%     \item Version-specific repository URL
+%     \item General project URL
+% \end{itemize}
+
+% When citing software or data, precedence should favour a citation that prioritises longevity and version specificity over those that merely indicate location.
+
+% SoftWare Hash IDentifier (SWHID) ISO/IEC international standard 18670 on April 23, 2025.
+% Is passive, requires the repository be public and cannot guarantee that submodules have also been ingested.
+
+% Like the web archive, this should be looked upon as a last ditch and a much more active and deliberate archiving approach should be taken
+
+% A DMI as a research product \cite{xxx} is an object that should be citable. The paper describes the object, it is not object itself and there are instances where citing the object is more applicable than citing the paper based around it.
+
+% Archiving should provide a DOI with which to cite. Repositories may also provide a recommended citation, but this should very much be looked upon as a bandage to a broken system and not a solution. The very helpful citation file format CFF provides a means to have a structure citation to software, but unhelpfully, integration with GitHub prompts the user to ``Cite this Repository'' \url{https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files} which, as already discussed, is something to be avoided.
+
+% \subsubsection{limits in archiving modular projects}
+
+% Problem with a modular process is that zenodo's integration does not support it or a allow for easy configuration.
+
+% Would require the manual creation of the archive, copy the contents over. Alternatively, each submodule could be archived and a meta-archive simply contains reference to the constituent DOIs. This is not ideal but it is also not insurmaountable.
+
+
+% %% Sentiment: The intention is end on note that acknowledges that this isn't zero effort, but it is worth while. That nothing will improve if we do nothing. 
+% %% The sentiment is also that there is an implicit high bar and far to few are meeting it, so we should lower to an _explicit_. 
+% %% Perfect is the enemy of good, 
+% %% good-enough practice before best practice
+% The resistance is very much one of awareness and skill acquisition. Contributors are far more likely to follow the practice set out by there peers and their mentors. Change comes from above, and from the side and we should lead by example.
 
 
 
