@@ -1,18 +1,18 @@
-paper                                                     , repo                                                                                               , page , placement                     
-bchhb87h.pdf                                              , github.com/Daniel-Chin/A-V-H-General-Music-Tutoring-2022                                           ,      , appendix                      
-user-friendly-midi-in-the-web-browser.pdf                 , github.com/djipco/webmidi                                                                          ,      , inferred                      
-4b8l5iqc.pdf                                              , github.com/gibber-cc/gibber                                                                        , 18   , body                          
-langspil.pdf                                              , github.com/Intelligent-Instruments-Lab/proto-langspil                                              , 7    , footnote                      
-ttree.pdf                                                 , github.com/IDMIL/T-Tree/                                                                           ,      , appendix                      
-ludxkhhz.pdf                                              , github.com/Harri-Renney/-NIME2022---InstrumentOne github.com/Harri-Renney/NIME2022---InstrumentTwo ,      , footnote                      
-pitch-fingering-systems-and-the-search-for-perfection.pdf , github.com/DocSunset/pitch-fingering-brute                                                         ,      , body (hyperlink, unreachable) 
-3o62rlch.pdf                                              , https://github.com/sambilbow/polaris                                                               ,      , body                          
-jtdpakvp.pdf                                              , gitlab.com/ForceHost/ForceHost                                                                     , 26   , table                         
-mubone2022.pdf                                            , github.com/DocSunset/mubone                                                                        ,      , body                          
-z0lli2w0.pdf                                              , https://github.com/gewhere/bottom-up-live-coding                                                   ,      , footnote                      
-cavi.pdf                                                  , github.com/cerdemo/cavi                                                                            ,      , citation                      
-a6hj6dr4.pdf                                              , github.com/rodneydup/CHON                                                                          , last , body                          
-lrhx3rpu.pdf                                              , github.com/bboettcher3/Mapper4Live                                                                 , 1    , footnote                      
-r6v6lhyf.pdf                                              , github.com/jacksongoode/NIME-proceedings-analyzer                                                  ,      , footnote                      
-kanchayyupana.pdf                                         , https://github.com/lpatriciacadavid/Kanchay_Yupana_                                                ,      , inferred                      
-kmn0rbyp.pdf                                              , github.com/aceglia/biosiglive                                                                      , 11   , body                          
+paper,repo,page,placement                     
+bchhb87h.pdf,github.com/Daniel-Chin/A-V-H-General-Music-Tutoring-2022,,appendix                      
+user-friendly-midi-in-the-web-browser.pdf,github.com/djipco/webmidi,,inferred                      
+4b8l5iqc.pdf,github.com/gibber-cc/gibber,18,body                          
+langspil.pdf,github.com/Intelligent-Instruments-Lab/proto-langspil,7,footnote                      
+ttree.pdf,github.com/IDMIL/T-Tree/,,appendix                      
+ludxkhhz.pdf,github.com/Harri-Renney/-NIME2022---InstrumentOne github.com/Harri-Renney/NIME2022---InstrumentTwo,,footnote                      
+pitch-fingering-systems-and-the-search-for-perfection.pdf,github.com/DocSunset/pitch-fingering-brute,,body (hyperlink,unreachable) 
+3o62rlch.pdf,github.com/sambilbow/polaris,,body                          
+jtdpakvp.pdf,gitlab.com/ForceHost/ForceHost,26,table                         
+mubone2022.pdf,github.com/DocSunset/mubone,,body                          
+z0lli2w0.pdf,github.com/gewhere/bottom-up-live-coding,,footnote                      
+cavi.pdf,github.com/cerdemo/cavi,,citation                      
+a6hj6dr4.pdf,github.com/rodneydup/CHON,last,body                          
+lrhx3rpu.pdf,github.com/bboettcher3/Mapper4Live,1,footnote                      
+r6v6lhyf.pdf,github.com/jacksongoode/NIME-proceedings-analyzer,,footnote                      
+kanchayyupana.pdf,github.com/lpatriciacadavid/Kanchay_Yupana_,,inferred                      
+kmn0rbyp.pdf,github.com/aceglia/biosiglive,11,body                          

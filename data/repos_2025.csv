@@ -1,31 +1,36 @@
-paper       | Repo                                                                   | page | Placement     |  notes                          |
-nime2025_9  | https://github.com/BelaPlatform/pybela                                 | 1    | footnote      |                                 |
-nime2025_10 | http://fcaspe.github.io/BravePlugin                                    | 1    | footnote      |  page links to source           |
-nime2025_14 | https://github.com/nbrochec/nime2025                                   | 3    | footnote      |                                 |
-nime2025_15 | https://github.com/lewiswolf/drum-modal-feedback                       | 4    | footnote      |                                 |
-nime2025_16 | https://NIME2025OrganPerformance.github.io                             | last | body          |  page links to source           |
-nime2025_21 | https://www.alternatural.nz/conference-media                           | 1    | footnote      |  page links to source           |
-nime2025_32 | https://vault.oddworlds.org/s/634PXnGcoQmqStL                          | 1    | footnote      |                                 |
-nime2025_36 | https://github.com/victor-shepardson/living-looper                     | 2    | footnote      |                                 |
-nime2025_37 | https://brittneyjuliet.github.io/material-culture/                     | 2    | footnote      |  page links to source           |
-nime2025_38 | https://github.com/aschmidt99/Sparksichord_NIME2025                    |      | missing       |                                 |
-nime2025_39 | https://github.com/linneakirby/HAND                                    | last | appendix      |                                 |
-nime2025_40 | https://github.com/johnalettang/aquapella                              | 1    | body          |                                 |
-nime2025_42 | https://github.com/JohnMBowers/MisUsersManualZine)                     | 6    | body          |                                 |
-nime2025_48 | https://github.com/mayacaren/ViVo.git                                  | 2    | footnote      |                                 |
-nime2025_57 | https://github.com/DocSunset/sygaldry/                                 | 2    | footnote      |  subdirectory of larger project |
-nime2025_58 | https://github.com/algomusic/Max-Silence-Noise                         | 1    | footnote      |                                 |
-nime2025_59 | https://doi.org/10.5281/zenodo.15279103                                | last | appendix      |  zenodo archiveof a git repo    |
-nime2025_61 | https://github.com/Nemus-Project/harpsichord-interface-firmware        | 5    | body          |  1 of 3                         |
-nime2025_62 | https://github.com/MetaBow/MetaBoard                                   | last | references    |                                 |
-nime2025_64 | https://github.com/HybridInstrumentsLab/PanMan                         | 2    | body          |                                 |
-nime2025_65 | https://github.com/yannseznec/ys.granular                              | 1    | footnote      |                                 |
-nime2025_67 | https://sites.google.com/view/sonicolour-sc-1                          | 2    | footnote      |  link to repo on site           |
-nime2025_69 | https://github.com/arililoia-cmu/elbs_nime                             | 1    | body          |                                 |
-nime2025_72 | https://github.com/francesco-di-maggio/embedded-comparo                | last | footnote      |                                 |
-nime2025_73 | https://github.com/MINNE-WU/Gesture-Driven-Erhu                        | 3    | footnote      |                                 |
-nime2025_75 | https://github.com/moewe-audio/NEMO-acoustic-digital-hybrid-instrument | last | appendix      |                                 |
-nime2025_81 | https://github.com/CSCPadova/MTR-template                              | 6    | body;reference|                                 |
-nime2025_84 | https://github.com/mitmedialab/ai-harmonizer-nime2025                  | 1    | footnote      |                                 |
-nime2025_90 | https://github.com/ccrma/chump                                         | 3    | footnote      |                                 |
-nime2025_93 | https://github.com/matthewcaren/tiny-harmonizer                        | last | footnote      |                                 |
+paper,repo,page,Placement
+nime2025_9,github.com/BelaPlatform/pybela,1,footnote
+nime2025_10,fcaspe.github.io/BravePlugin,1,footnote
+nime2025_14,github.com/nbrochec/nime2025,3,footnote
+nime2025_15,github.com/lewiswolf/drum-modal-feedback,4,footnote
+nime2025_16,NIME2025OrganPerformance.github.io,last,body
+nime2025_21,www.alternatural.nz/conference-media,1,footnote
+nime2025_32,vault.oddworlds.org/s/634PXnGcoQmqStL,1,footnote
+nime2025_36,github.com/victor-shepardson/living-looper,2,footnote
+nime2025_37,brittneyjuliet.github.io/material-culture/,2,footnote
+nime2025_38,github.com/aschmidt99/Sparksichord_NIME2025,,missing
+nime2025_39,github.com/linneakirby/HAND,last,appendix
+nime2025_40,github.com/johnalettang/aquapella,1,body
+nime2025_42,github.com/JohnMBowers/MisUsersManualZine,6,body
+nime2025_48,github.com/mayacaren/ViVo.git,2,footnote
+nime2025_57,github.com/DocSunset/sygaldry/,2,footnote
+nime2025_58,github.com/algomusic/Max-Silence-Noise,1,footnote
+nime2025_59,doi.org/10.5281/zenodo.15279103,last,appendix
+nime2025_61,github.com/Nemus-Project/harpsichord-interface-firmware,5,body
+nime2025_62,github.com/MetaBow/MetaBoard,last,references
+nime2025_64,github.com/HybridInstrumentsLab/PanMan,2,body
+nime2025_65,github.com/yannseznec/ys.granular,1,footnote
+nime2025_67,sites.google.com/view/sonicolour-sc-1,2,footnote
+nime2025_69,github.com/arililoia-cmu/elbs_nime,1,body
+nime2025_72,github.com/francesco-di-maggio/embedded-comparo,last,footnote
+nime2025_73,github.com/MINNE-WU/Gesture-Driven-Erhu,3,footnote
+nime2025_75,github.com/moewe-audio/NEMO-acoustic-digital-hybrid-instrument,last,appendix
+nime2025_81,github.com/CSCPadova/MTR-template,6,body;reference
+nime2025_84,github.com/mitmedialab/ai-harmonizer-nime2025,1,footnote
+nime2025_90,github.com/ccrma/chump,3,footnote
+nime2025_93,github.com/matthewcaren/tiny-harmonizer,last,footnote
+nime2025_60,gitea.offig.com/lfsadmin/Cicadas,2,body (missing)
+nime2025_79,red-x-silver.github.io/the-drum-machine-of-tao/,1,footnote (missing)
+nime2025_74,github.com/mitmedialab/mindcube- rave,3,footnote (missing)
+nime2025_91,github.com/ijc8/glitchgate,1,footnote (missing)
+nime2025_92,github.com/ccrma/smuck,,missing
