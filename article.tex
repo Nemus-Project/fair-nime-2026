@@ -16,12 +16,14 @@ but is beginning to see adoption within the humanities.
     \item but the work can sometimes be too tricky to find.
     \item NIME is potentially missing an opportunity to engage with a community of new developers,
     \item Inaction is easier than action, which might explain under adoption.
-    \item the contents of a repository don't need to be perfect, sharing is ``good enough.''
+    \item the contents of a repository don't need to be perfect, sharing is ``good enough.'' \cite{jensenius_best_2021}
 \end{itemize}
 
 Ambiguity in how to disseminate source creates friction in the process of finding it and as a result it will be more difficult to engage with it.
 
 Paper discusses how open research looks at current open research practice at NIME and what could be developed an the missed opportunities to engage with wider community of new creative developers.
+
+...
 
 \section{Open Research at NIME}
 
@@ -147,23 +149,7 @@ Overwhelmingly GitHub is the preferred repository platform with 30 projects host
                 mark=*,
                 smooth
             ] coordinates {
-                    (09,0)
-                    (10,1)
-                    (11,3)
-                    (12,6)
-                    (13,16)
-                    (14,14)
-                    (15,13)
-                    (16,19)
-                    (17,22)
-                    (18,25)
-                    (19,31)
-                    (20,29)
-                    (21,37)
-                    (22,42)
-                    (23,53)
-                    (24,44)
-                    (25,52)
+(09,0) (10,1) (11,3) (12,6) (13,16) (14,14) (15,13) (16,19) (17,22) (18,25) (19,31) (20,29) (21,37) (22,42) (23,53) (24,44) (25,52)
                 };
             % \addlegendentry{Using Open Source}
             % \addplot[
@@ -171,23 +157,7 @@ Overwhelmingly GitHub is the preferred repository platform with 30 projects host
             %     mark=*,
             %     smooth
             % ] coordinates {
-            %         (9,0)
-            %         (10,0)
-            %         (11,1)
-            %         (12,6)
-            %         (13,16)
-            %         (14,14)
-            %         (15,13)
-            %         (16,19)
-            %         (17,22)
-            %         (18,23)
-            %         (19,28)
-            %         (20,29)
-            %         (21,36)
-            %         (22,41)
-            %         (23,52)
-            %         (24,43)
-            %         (25,48)
+% (9,0) (10,0) (11,1) (12,6) (13,16) (14,14) (15,13) (16,19) (17,22) (18,23) (19,28) (20,29) (21,36) (22,41) (23,52) (24,43) (25,48)
             %     };
             % \addlegendentry{GitHub}
             % \addlegendentry{Any git}
@@ -204,7 +174,14 @@ Overwhelmingly GitHub is the preferred repository platform with 30 projects host
             % (25, 35)
             %     };
             % \addlegendentry{Shared Open Source}
-
+% \addplot[
+%                 color=black,
+%                 mark=*,
+%                 smooth
+%             ] coordinates {        
+% (09,7) (10,19) (11,20) (12,18) (13,21) (14,29) (15,22) (16,27) (17,22) (18,17) (19,29) (20,29) (21,23) (22,42) (23,45) (24,27) (25,23)
+%     };
+            % \addlegendentry{open source}
         \end{axis}
     \end{tikzpicture}
     \caption{Yearly percentage of NIME papers 2009 -- 2025 which referenced at least one git repository. The initial release of git  was in 2005 and NIME papers between 2001 -- 2009 contain no references to it.}
@@ -214,11 +191,14 @@ Overwhelmingly GitHub is the preferred repository platform with 30 projects host
 Analysis to answer the second question was based on the method in \citet{fiordelmondo_towards_2025}, which showed the number of papers of terms related to open source repositories, such as ``git'' and ``repository'' in NIME proceedings from 2001 to 2024.
 To achieve this, the PDFs for NIME proceedings from 2016 to 2025 were downloaded, separated into directories by year.
 Each directory was search for the number of files in which there was a reference to a git repository. The search was carried out using the open source \texttt{pdfgrep} software \cite{deifel_pdfgrep_2024} and case-insensitive regular expression of \texttt{\textbackslash Wgit}. The search would match occurrences of `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' as well as their URLs  like \texttt{https:/\textbf{/git}hub.com/}. One deviation from \cite{fiordelmondo_towards_2025} was to include \texttt{github.io} webpages in the results as it would suggest usage or familiarity with GitHub and git software. It is not uncommon for authors to link to their own project via a GitHub hosted webpage (e.g., \texttt{user.github.io/project}) from which the repository URL can be inferred if not linked to directly on the site.
-The percentage of NIME papers referencing a git repository each year is shown in Figure~\ref{fig:git_occurences}. There is substantial overlap between git as a technology and GitHub as a platform, suggesting that most interactions with Git occur via GitHub. Put in context of Table~\ref{tab:git_placement}, the gap between usage of open source projects and publishing a projects source has gradually increased since NIME 2021.  
+The percentage of NIME papers referencing a git repository each year is shown in Figure~\ref{fig:git_occurences}.
+% Spike in 2023 may be partially answered with that years theme of `Frugal Music Innovation' emphasising `solving problems with the available resources' a theme with which usage of open source projects would fit.
+There is substantial overlap between git as a technology and GitHub as a platform, suggesting that most interactions with Git occur via GitHub. 
+Put in context of Table~\ref{tab:git_placement}, the gap between usage of open source projects and publishing a projects source has gradually increased since NIME 2021.  
 
 
 This search approach is not foolproof and can miss instances, such as in \citet{carter_sculpting_2025}, where a project repository exists but neither the term `git' appears in the URL nor is it referenced directly in the text.
-The search was run multiple times over a directory containing all NIME papers to date, with progressively stricter constraints applied to reduce false positives. The process began with a \texttt{pdfgrep} search which removed the majority of genuine matches and enabled more efficient pruning of the remaining false positives.
+The search was run multiple times over a directory containing all NIME papers to date, with progressively stricter constraints applied to reduce false positives. The process began with a \texttt{pdfgrep} search which removed the majority of genuine matches and enabled more efficient pruning of the remaining false positives.%
 \footnote{\texttt{pdfgrep -P '\textbackslash Wgit(?!hub|lab)' -ri .}}
 
 Examples of false positives were words split across line breaks at “git” (e.g., legitimation broken into ``le-'' and ``\textbf{git}imation''), as well as unrelated terms such as ``gitaroo'' or ``gitarre.'' 
@@ -242,7 +222,7 @@ From early on it was apparent that given the involvement of the project, simple 
 
 Using the \citep{ssi_checklist_2018} checklist, the core requirements for an open research
 software project are: publicly available source code, a version control system
-(VCS), user and developer documentation, an OSI-compliant licence, and
+(VCS), user and developer documentation, an Open Source Institute (OSI) compliant licence \cite{osi_licenses_2025}, and
 persistent identifiers (typically DOIs). A public VCS implies source
 availability, though the reverse is not guaranteed. Likewise, a DOI implies some
 level of digital archiving, but a release archive does not necessitate a DOI.
@@ -354,7 +334,7 @@ The burden is felt in three areas, the author for deciding how to disseminate, a
 
 Through the experience of developing a previous NIME, a submodules approach would be appear to be well-suited for hardware and multi-part projects as it allows for a single repository link to be shared.
 This is not trivial, and will require upskilling of the community which shifts a burden, rather than alleviating it.
-Simililarly there should not be a mandate to generate more documents lest we become, as \citet{burns_documents_2021} describes, reductionist by ``way of explaining things by lieu of their physical components'' and commiting "synecdochic fallacy."
+Simililarly there should not be a mandate to generate more documents lest we become, as \citet{burns_documents_2021} describes, reductionist by ``way of explaining things by lieu of their physical components'' and commiting "synecdochic fallacy," a NIME should be more than the sum of it or parts.
 
 But there is tacit knowledge in what has already been created as part of contributing a NIME.
 Given the percentages of the NIME community sharing open source work, it might be first advantageous to encourage greater adoption in meet good enough practice. 
@@ -490,10 +470,11 @@ By making it harder for students and their instructors to engage \cite{nime2021_
 \subsection{Future Discussion}
 
 \begin{quote}
-    Further discussion is needed about the specifics of such special calls, but we could inherit many of our current practices of peer-reviewing, creating referenceable DOIs within an Open Science repository, and having them presented at the conferences. This publication type should probably also have some new features, going beyond the PDF format and allowing for the many media we listed above. (\citet{calegario_documentation_2021})
+    Further discussion is needed about the specifics of such special calls, but we could inherit many of our current practices of peer-reviewing, creating referenceable DOIs within an Open Science repository, and having them presented at the conferences. This publication type should probably also have some new features, going beyond the PDF format and allowing for the many media we listed above.
 \end{quote}
+\raggedleft{--- \citet{calegario_documentation_2021}}
 
-
+\raggedright
 ...
 
 % The infrastructure exists \url{https://arxiv.org/} and \url{https://zenodo.org/} are openly available and relevant, withthe latter the standard archive for NIME proceedings.
