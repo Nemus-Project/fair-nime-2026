@@ -27,29 +27,34 @@ Paper discusses how open research looks at current open research practice at NIM
 
 \section{Open Research at NIME}
 
-From its inception, NIME has had a dedication to making its proceedings open access under a CC by 4.0 licence.
+Since its inception, NIME has been committed to making its proceedings openly accessible under a CC BY 4.0 licence.
+In parallel, research projects within the NIME community have developed a strong tradition of open research practice, accompanied by ongoing discussions on how to better support, formalise, and sustain open-source culture \cite{mcpherson_nimehub_2016}.
+Questions of replication \cite{calegario_documentation_2021}, iteration \cite{nime2021_4}, and long-term sustainability \citet{fiordelmondo_longevity_2024} have been recurring themes at NIME.
+This section reviews both past discussions and current practice in order to identify opportunities for strengthening open research practices within the NIME community.
+
+% As remarked in \citet{calegario_documentation_2021} one can follow the path of \cite{ajin_rebuilding_2019} who created the sponge, and if your lucky, you may even find the original source \url{https://github.com/marierm/sponge-general}.
 
 \subsection{Previous Analysis on Open Research at NIME}
-% as remarked in \citet{calegario_documentation_2021} one can follow the path of \cite{ajin_rebuilding_2019} who created the sponge, and if your lucky, you may even find the original source \url{https://github.com/marierm/sponge-general}.
-Likewise for the projects at NIME have had a tradition of open research practice and there has been a ongoing discussion on how to best foster and formalise and open source culture. \citet{mcpherson_nimehub_2016} from 2016 was one of the first discussion an open and reproducible research practice. Part of that workshop's primary eight goals were the FAIR adjacent aims of encouraging reproducibility, open access and encouraging a normalised practice of documentation. A central topic for discussion during the workshop was the creation of a central repository for DMI designs. The NIMEhub did not ultimately manifest, but the workshop has sparked further discussion of open research at NIME \cite{jensenius_open_2019, jensenius_nime_2020}.
+
+\citet{mcpherson_nimehub_2016} from 2016 was one of the first discussion an open and reproducible research practice. Part of that workshop's primary eight goals were the FAIR adjacent aims of encouraging reproducibility, open access and encouraging a normalised practice of documentation. 
+A central topic for discussion during the workshop was the creation of a central repository for DMI designs. The NIMEhub did not ultimately manifest, but the workshop has sparked further discussion of open research at NIME \cite{jensenius_open_2019, jensenius_nime_2020}.
 The discussion of open research at NIME has tended towards methodologies applicable to open hardware \citet{calegario_documentation_2021, fiordelmondo_towards_2025}, the provision of making electronics designs accessible allowing fabrication outside of a central manufacturer.
 Unlike software, open hardware cannot be simply distributed as a licence and set of source code files \cite{oshwa_best_2013} lest it fall afoul of ``openwashing,'' when a project  ``is claimed to be open source whereas no intention to publish product-related information is given'' \cite{bonvoisin_source_2017}. That is not to say that ephemeral or closed source projects are forbidden, but the decision to identify as such should be a conscious one.
-To facilitate reproduction of hardware, it should be self-evident but, any form of archiving and provision of access to source material makes the task much more feasible. Reproduction is made even easier by incorporating open hardware.
-
-% Recreating and iterating on work covered in \cite{nime2021_4}
+To facilitate reproduction of hardware, it should be self-evident but, any form of provision of access and archiving of source material makes the task much more feasible. 
 
 Both \citet{mcpherson_nimehub_2016} and \citet{fiordelmondo_towards_2025} raise the issue of repository structure with the latter proposing a a prescriptive measure which can be applied to any DMI project. Research output in the form of open hardware or open software can and should take advantage of the platforms available for distribution of the work,
-% An open methodology needs to be `baked-in' to the research process and it is not something trivially applied after the fact. It is of course better to do it afterwards than not at all, but the information at stake also constitutes the development process, not just the end product. The point at which a project is abandoned is not the key point of record.
-but the work still needs to be citable \cite{smith_software_2016}, and cross-reference-able \cite{stall_journal_2023} if it is to be built upon.
 The recreation of a NIME has focussed on goal of using it musical practice \cite{ajin_rebuilding_2019, masu_nime_2023, west_towards_2025}. Equally valid is the recreation of a NIME for knowledge and development of craft \cite{calegario_documentation_2021}
 
-% looking at longevity of research \citet{fiordelmondo_longevity_2024}
+% An open methodology needs to be `baked-in' to the research process and it is not something trivially applied after the fact. It is of course better to do it afterwards than not at all, but the information at stake also constitutes the development process, not just the end product. The point at which a project is abandoned is not the key point of record.
+
+% Reproduction is made even easier by incorporating an open hardware.
+% Recreating and iterating on work covered in \cite{nime2021_4}
 % replicability \cite{calegario_documentation_2021}
+% looking at longevity of research \citet{fiordelmondo_longevity_2024}
 % work replicating previous NIME's \cite{west_towards_2025}
 % Review A  of \cite{fiordelmondo_longevity_2024} shows usage of keywords related to version control repositories. 
 % Review B explores the repositories pertinent to the project being discussed.
 
-% projects may cite a github repository but that does not mean the project itself is readily available. The fact it is not immediately apparent the open source nature of project is something that should be addressed.
 
 \section{Analysis of Open Source Adoption at NIME}\label{sec:current-state}
 
@@ -480,11 +485,13 @@ By making it harder for students and their instructors to engage \cite{nime2021_
 
 % \raggedright
 
-Discussion of open source practice there is a wider discussion to be had on alignment with FAIR principles and digital archiving of projects. Given distributed nature of git, there is some more resilience to the problem of data loss. GitHub as a standard also has the infrastructure, but it should not be looked upon as a permanent storage solution, not for 20 or 30 years.  This is not just a salient topic for NIME, but all academic research.
+Discussion of open source practice there is a wider discussion to be had on alignment with FAIR principles and digital archiving of projects. Given distributed nature of git, there is some more resilience to the problem of data loss. GitHub as a standard also has the infrastructure, but it should not be looked upon as a permanent storage solution, not for 20 or 30 years. The project source for a NIME needs to be citable \cite{smith_software_2016}, and cross-reference-able \cite{stall_journal_2023} if it is to be built upon. This is not just a salient topic for NIME, but all academic research. 
 
 Digital archiving infrastructure exists in the form of \url{https://arxiv.org/} and \url{https://zenodo.org/} which are openly available. Zenodo is already utilised as the standard archive platform for NIME proceedings. Of the 96 NIME 2025 papers only 16 papers have supplementary files and these are exclusively videos and of the 36 papers with shared source,  one provided a citable digital archive with a DOI \cite{studley_swimtunes_2025}. Those ``going beyond the PDF format'' \cite{calegario_documentation_2021} are still in the minority an digital archiving remains under-adopted standard practice. NIME has potential to reach wider communities now, but it should also look towards the communities of the future.
 
 ...
+
+% projects may cite a github repository but that does not mean the project itself is readily available. The fact it is not immediately apparent the open source nature of project is something that should be addressed.
 
 % \footnote{with the exception of 2022 and 2023 which use pubpub \url{https://nime.pubpub.org/previous-nimes}}
 % Part of the submission, the work can marked as closed source, if that is necessary but a mandatory field for project URL or DOI would curtail the open source agnosticism and make the choice a much more deliberate one.
