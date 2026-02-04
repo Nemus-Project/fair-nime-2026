@@ -110,9 +110,9 @@ There were four instances where the repository was unreachable from the link or 
 \begin{table}
     \centering
     \begin{tabular}{r|ccccc}
-                & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} & \textbf{2025} \\ \hline
-        GitHub  & 20            & 16            & 22            & 26            & 32            \\
-        other   & 1             & 1             & 3             & 1             & 3             \\       
+               & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} & \textbf{2025} \\ \hline
+        GitHub & 20            & 16            & 22            & 26            & 32            \\
+        other  & 1             & 1             & 3             & 1             & 3             \\
     \end{tabular}
     \caption{Git service used to host project repositories at NIME.}
     \label{tab:git_type}
@@ -149,38 +149,36 @@ Overwhelmingly GitHub is the preferred repository platform with 30 projects host
                 mark=*,
                 smooth
             ] coordinates {
-(09,0) (10,1) (11,3) (12,6) (13,16) (14,14) (15,13) (16,19) (17,22) (18,25) (19,31) (20,29) (21,37) (22,42) (23,53) (24,44) (25,52)
+                    (09,0) (10,1) (11,3) (12,6) (13,16) (14,14) (15,13) (16,19) (17,22) (18,25) (19,31) (20,29) (21,37) (22,42) (23,53) (24,44) (25,52)
                 };
-            % \addlegendentry{Using Open Source}
+            % \addlegendentry{git}
             % \addplot[
             %     color=red,
             %     mark=*,
             %     smooth
             % ] coordinates {
-% (9,0) (10,0) (11,1) (12,6) (13,16) (14,14) (15,13) (16,19) (17,22) (18,23) (19,28) (20,29) (21,36) (22,41) (23,52) (24,43) (25,48)
+            %         (9,0) (10,0) (11,1) (12,6) (13,16) (14,14) (15,13) (16,19) (17,22) (18,23) (19,28) (20,29) (21,36) (22,41) (23,52) (24,43) (25,48)
             %     };
-            % \addlegendentry{GitHub}
-            % \addlegendentry{Any git}
-            
+            % \addlegendentry{GitHub}    
             % \addplot[
             %     color=violet,
             %     mark=*,
             %     smooth
             % ] coordinates {
-            % (21, 24)
-            % (22, 30)
-            % (23, 25)
-            % (24, 29)
-            % (25, 35)
+            %         (21, 24)
+            %         (22, 30)
+            %         (23, 25)
+            %         (24, 29)
+            %         (25, 35)
             %     };
             % \addlegendentry{Shared Open Source}
-% \addplot[
-%                 color=black,
-%                 mark=*,
-%                 smooth
-%             ] coordinates {        
-% (09,7) (10,19) (11,20) (12,18) (13,21) (14,29) (15,22) (16,27) (17,22) (18,17) (19,29) (20,29) (21,23) (22,42) (23,45) (24,27) (25,23)
-%     };
+            % \addplot[
+            %     color=black,
+            %     mark=*,
+            %     smooth
+            % ] coordinates {
+            %         (09,7) (10,19) (11,20) (12,18) (13,21) (14,29) (15,22) (16,27) (17,22) (18,17) (19,29) (20,29) (21,23) (22,42) (23,45) (24,27) (25,23)
+            %     };
             % \addlegendentry{open source}
         \end{axis}
     \end{tikzpicture}
@@ -193,15 +191,15 @@ To achieve this, the PDFs for NIME proceedings from 2016 to 2025 were downloaded
 Each directory was search for the number of files in which there was a reference to a git repository. The search was carried out using the open source \texttt{pdfgrep} software \cite{deifel_pdfgrep_2024} and case-insensitive regular expression of \texttt{\textbackslash Wgit}. The search would match occurrences of `git' and variants like `\textbf{Git}Hub' and `\textbf{Git}Lab' as well as their URLs  like \texttt{https:/\textbf{/git}hub.com/}. One deviation from \cite{fiordelmondo_towards_2025} was to include \texttt{github.io} webpages in the results as it would suggest usage or familiarity with GitHub and git software. It is not uncommon for authors to link to their own project via a GitHub hosted webpage (e.g., \texttt{user.github.io/project}) from which the repository URL can be inferred if not linked to directly on the site.
 The percentage of NIME papers referencing a git repository each year is shown in Figure~\ref{fig:git_occurences}.
 % Spike in 2023 may be partially answered with that years theme of `Frugal Music Innovation' emphasising `solving problems with the available resources' a theme with which usage of open source projects would fit.
-There is substantial overlap between git as a technology and GitHub as a platform, suggesting that most interactions with Git occur via GitHub. 
-Put in context of Table~\ref{tab:git_placement}, the gap between usage of open source projects and publishing a projects source has gradually increased since NIME 2021.  
+There is substantial overlap between git as a technology and GitHub as a platform, suggesting that most interactions with Git occur via GitHub.
+Put in context of Table~\ref{tab:git_placement}, the gap between usage of open source projects and publishing a projects source has gradually increased since NIME 2021.
 
 
 This search approach is not foolproof and can miss instances, such as in \citet{carter_sculpting_2025}, where a project repository exists but neither the term `git' appears in the URL nor is it referenced directly in the text.
 The search was run multiple times over a directory containing all NIME papers to date, with progressively stricter constraints applied to reduce false positives. The process began with a \texttt{pdfgrep} search which removed the majority of genuine matches and enabled more efficient pruning of the remaining false positives.%
 \footnote{\texttt{pdfgrep -P '\textbackslash Wgit(?!hub|lab)' -ri .}}
 
-Examples of false positives were words split across line breaks at “git” (e.g., legitimation broken into ``le-'' and ``\textbf{git}imation''), as well as unrelated terms such as ``gitaroo'' or ``gitarre.'' 
+Examples of false positives were words split across line breaks at “git” (e.g., legitimation broken into ``le-'' and ``\textbf{git}imation''), as well as unrelated terms such as ``gitaroo'' or ``gitarre.''
 The search could not be overly restrictive, however, because it needed to retain valid matches such as ``gitorious,'' a git-based hosting service that was acquired by GitLab and discontinued in 2015 \cite{bjaanes_gitorious_2015}.
 
 Second attempt using the toolkit from \citet{goode_toolkit_2022}
@@ -326,9 +324,9 @@ in reproducibility studies \cite{perkel_challenge_2020}.
 \end{itemize}
 
 \begin{quote}
-   Open-source development initiatives should be encouraged to foster scalability and inclusivity. \citet{nime2025_63}
+    Open-source development initiatives should be encouraged to foster scalability and inclusivity. \citet{nime2025_63}
 \end{quote}
-The review of open research practice at NIME in Section~\ref{sec:current-state} highlights a number of facts. There is a growing trend of adopting open source work within proceeding at NIME. There is also a growing trend of open source work, though the rate does not match that of usage. There does appear to be ambiguity in the authorship on how to disseminate project repositories. 
+The review of open research practice at NIME in Section~\ref{sec:current-state} highlights a number of facts. There is a growing trend of adopting open source work within proceeding at NIME. There is also a growing trend of open source work, though the rate does not match that of usage. There does appear to be ambiguity in the authorship on how to disseminate project repositories.
 The identification of theproject source on a lrage scale is quite involved. What might marked as a project site, may also lead to the source \cite{carter_sculpting_2025}, the URL may be obfuscated (e.g., through use of link shortening services) or the URL may be introduced as a link to additional media, but also contain source \cite{nime2016_Barrett}.
 The burden is felt in three areas, the author for deciding how to disseminate, analist for correct identification and ultimately the reader wishing to learn more.
 
@@ -337,7 +335,7 @@ This is not trivial, and will require upskilling of the community which shifts a
 Simililarly there should not be a mandate to generate more documents lest we become, as \citet{burns_documents_2021} describes, reductionist by ``way of explaining things by lieu of their physical components'' and commiting "synecdochic fallacy," a NIME should be more than the sum of it or parts.
 
 But there is tacit knowledge in what has already been created as part of contributing a NIME.
-Given the percentages of the NIME community sharing open source work, it might be first advantageous to encourage greater adoption in meet good enough practice. 
+Given the percentages of the NIME community sharing open source work, it might be first advantageous to encourage greater adoption in meet good enough practice.
 To `share what is already there' rather than explicitly creating documents for the sake of ``best-practice.''
 
 \begin{quote}
@@ -363,17 +361,17 @@ To `share what is already there' rather than explicitly creating documents for t
 \textbf{Main Points}
 \begin{itemize}
     \item add a standard field in paper template. manifold benefits
-    \begin{itemize}
-        \item encourage sharing Ambiguity in disseminating repositories is clear. I
-    \end{itemize}
-    \begin{itemize}
-        \item address Ambiguity in analysing repo usage, technique employed in section 2 is not perfect, and data though generally representative and try to control for outliers is not completely accurate.
-    \end{itemize}
+          \begin{itemize}
+              \item encourage sharing Ambiguity in disseminating repositories is clear. I
+          \end{itemize}
+          \begin{itemize}
+              \item address Ambiguity in analysing repo usage, technique employed in section 2 is not perfect, and data though generally representative and try to control for outliers is not completely accurate.
+          \end{itemize}
           \begin{itemize}
               \item it would also assist future analysis in repository trends and open source practice
-              \begin{itemize}
-                  \item current analysis requiring convoluted processing
-              \end{itemize}
+                    \begin{itemize}
+                        \item current analysis requiring convoluted processing
+                    \end{itemize}
               \item achievable
           \end{itemize}
     \item Before focussing on best practice, aim for good enough
@@ -388,7 +386,7 @@ To `share what is already there' rather than explicitly creating documents for t
     \label{fig:project-details}
 \end{figure}
 
-Moving forward one potential change that can be made to the NIME proceedings and paper submission process is the inclusion of a `project URL' field as a standard feature of the template and metadata (Figure~\ref{fig:project-details}). The benefits of such a change would be manifold. 
+Moving forward one potential change that can be made to the NIME proceedings and paper submission process is the inclusion of a `project URL' field as a standard feature of the template and metadata (Figure~\ref{fig:project-details}). The benefits of such a change would be manifold.
 To measure the impact of a NIME in a wider community something needs to be tracked.
 A project's source repository and its URL provide a means by which it usage can be tracked, but identifying them in the first place is time consuming especially if it is to be rigorous.
 Both \citet{calegario_documentation_2021, fiordelmondo_towards_2025} undertake very involved searches of the NIME archive to figure out if there is even a repository. It might be time to simplify the process of analysing open source practice at NIME. In the same manner that the NIME proceedings analyser can \cite{goode_toolkit_2022,nime2024_3} trivially extract authors and title data, the same should also be true for the location of the paper's source.
@@ -398,11 +396,11 @@ This should hopefully reduce the growing number of instances where a project URL
 
 Asking authors for a project URL may also provide a reminder to share there work when a repository is extant, but the opportunity to reference it directly has not arisen or has been cut, as is all too easy during the paper writing and editing process. This can be enforces in the same manner as the \texttt{Description} field for figures of the current NIME paper template \cite{nime_template_2023}.
 
-Whether this would make a difference, only implementation and time will tell. 
-The standard could be applied retroactively to the existing NIME archive. 
+Whether this would make a difference, only implementation and time will tell.
+The standard could be applied retroactively to the existing NIME archive.
 The data collected as part of this paper and its state at time of submission are openly available \cite{hamilton_fair_2026, hamilton_fair_archive_2026} to assist that process.
 
-Finally, the burden is removed from the reader to identify where the source code for project is located. If the NIME community needs to put in a large amount of effort to find it, then the same will be true for the readership and a wider audience.  
+Finally, the burden is removed from the reader to identify where the source code for project is located. If the NIME community needs to put in a large amount of effort to find it, then the same will be true for the readership and a wider audience.
 NIMEs provide a resource and archive for instructing students in creative engineering, electronics,  musicianship and HCI.
 By making it harder for students and their instructors to engage \cite{nime2021_26}, remix \cite{dasgupta_remixing_2016} and foster creativity foster \cite{sharmin_creativity_2021, marin_computational_2024} NIME may be missing out on a new community of contributors.
 

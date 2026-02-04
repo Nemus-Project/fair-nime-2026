@@ -156,6 +156,12 @@ for i in {2001..2025}; do
 done
 ```
 
+for i in {2001..2025}; do
+  cd "${i}"
+  echo "(${i: -2}",$(( $(pdfgrep -P '(open source|open-source)' -rli . | wc -l) * 100 / $(ls | wc -l) ))")"
+  cd - > /dev/null
+done
+
 
 Pure mad dead brilliant git occurences
 ```sh
