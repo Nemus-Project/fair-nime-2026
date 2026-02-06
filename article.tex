@@ -136,11 +136,35 @@ GitHub is by far the preferred repository platform (Table~\ref{tab:git_type}), h
             \addplot[
                 color=red,
                 mark=*,
-                 sharp plot
+                sharp plot
             ] coordinates {
                     (9,0) (10,0) (11,1) (12,6) (13,16) (14,14) (15,13) (16,19) (17,22) (18,23) (19,28) (20,29) (21,36) (22,41) (23,52) (24,43) (25,48)
                 };
-            \addlegendentry{GitHub}    
+            \addlegendentry{GitHub}             
+            % \addplot[
+            %     color=green,
+            %     mark=*,
+            %     sharp plot
+            % ] coordinates {
+            %         (09,0) (10,0) (11,1) (12,6) (13,15) (14,13) (15,13) (16,19) (17,19) (18,19) (19,28) (20,24) (21,34) (22,37) (23,47) (24,39) (25,41)
+            %     };
+            % \addlegendentry{GitHub no .io}  
+            % \addplot[
+            %     color=violet,
+            %     mark=*,
+            %     sharp plot
+            % ] coordinates {
+            %          (09,0) (10,1) (11,3) (12,6) (13,15) (14,14) (15,13) (16,19) (17,19) (18,20) (19,31) (20,24) (21,35) (22,39) (23,48) (24,40) (25,44)
+            %     };
+            % \addlegendentry{git no .io}  
+            % \addplot[
+            %     color=teal,
+            %     mark=*,
+            %     sharp plot
+            % ] coordinates {
+            %         (09,0) (10,0) (11,0) (12,0) (13,0) (14,2) (15,0) (16,1) (17,8) (18,6) (19,3) (20,11) (21,6) (22,8) (23,15) (24,12) (25,14)
+            %     };
+            % \addlegendentry{github.io}  
             \addplot[
                 color=blue,
                 mark=*,
@@ -177,7 +201,7 @@ GitHub is by far the preferred repository platform (Table~\ref{tab:git_type}), h
     \label{fig:git_occurences}
 \end{figure}
 
-To answer the second question, we downloaded the PDFs of NIME proceedings from 2016 to 2025 and organised them into directories by year. Each directory was searched for references to a Git repository using the open-source software \texttt{pdfgrep} \cite{deifel_pdfgrep_2024} with a case-insensitive regular expression \texttt{\textbackslash Wgit}, matching occurrences of git' and variants such as GitHub' and `GitLab', as well as URLs like \texttt{https:/\textbf{/git}hub.com/}. This approach follows the method of \citet{fiordelmondo_towards_2025}, which counted papers containing terms related to open source repositories from NIME proceedings 2001--2024. One deviation from the previous method was inclusion \texttt{github.io} links. The \texttt{github.io} URL was also  included since authors sometimes link to project pages hosted there and familiarity with git and GitHub can be inferred.  
+To answer the second question, we downloaded the PDFs of NIME proceedings from 2016 to 2025 and organised them into directories by year. Each directory was searched for references to a Git repository using the open-source software \texttt{pdfgrep} \cite{deifel_pdfgrep_2024} with a case-insensitive regular expression \texttt{\textbackslash Wgit}, matching occurrences of git' and variants such as `GitHub' and `GitLab', as well as URLs like \texttt{https:/\textbf{/git}hub.com/}. This approach follows the method of \citet{fiordelmondo_towards_2025}, which counted papers containing terms related to open source repositories from NIME proceedings 2001--2024. One deviation from the previous method was inclusion \texttt{github.io} links. The \texttt{github.io} URL was also  included since authors sometimes link to project pages hosted there and familiarity with git and GitHub can be inferred.  
 The resulting yearly percentages of NIME papers referencing a Git repository are shown in Figure~\ref{fig:git_occurences}.
 % Spike in 2023 may be partially answered with that years theme of `Frugal Music Innovation' emphasising `solving problems with the available resources' a theme with which usage of open source projects would fit.
 There is substantial overlap between git as a technology and GitHub as a platform, suggesting that most interactions with the git VCS occur via GitHub.
@@ -261,7 +285,7 @@ Much of the open sourcing had to be carried out as the project developed. This r
 Rather than a single, unified code base \cite{calegario_documentation_2021, fiordelmondo_longevity_2024} the source of project was divided into three components 
 \anon{--- \emph{Firmware} \cite{hamilton_firmware_2025}, \emph{CAD} \cite{hamilton_cad_2025}, and \emph{Model Data} \cite{hamilton_models_2025}}. 
 Such an approach aligns closely with the FAIR principles as it promotes code reuse, interoperability, as well as seamless attribution.
-For the original paper, the links to the individual project repositories were included. As the project developed, two distinct interfaces were created with different applications. One interface was for \anon{installation at San Colombano} while a second model was created for use within research at the \anon{NEMUS project} and the \anon{University of Bologna}. Both interfaces use the same core components, but at separate phases in their development.
+For the original paper, the links to the individual project repositories were included. As the project developed, two distinct interfaces were created with different applications. One interface was for \anon{installation at San Colombano} while a second model was created for use within research at the \anon{NEMUS project and the University of Bologna}. Both interfaces use the same core components, but at separate phases in their development.
 
 This means that the original links are now no longer an accurate representation of the interface as presented in the paper. To address this, the individual repositories were referenced under a single `meta repository' (Figure~\ref{fig:repo-relation}). Referencing is achieved using git's submodules functionality \cite{git_submodule_2025}. The benefit of such an approach is two fold.
 To navigate the different states of the project in time, only a single URL needs to be shared. The individual submodules can be updated or swapped out entirely.
