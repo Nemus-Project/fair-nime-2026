@@ -17,9 +17,9 @@ Over the past decade there has been a growing movement in academia towards adopt
 \cite{unesco_open_2021} and FAIR (findable, accessible, interoperable, reproducible) \cite{go_fair_2016} digital research.
 The adoption of these principles can be put under the umbrella of `open research practice,' which is vital to ensure transparency, validation, re-use and access within academic research.
 The movement has led to an increased awareness across research communities and the establishment of accepted best-practice frameworks \cite{smith_software_2016}. The focus of these frameworks has predominantly been towards digital research practice in the sciences \cite{unesco_open_2021}.
-but is beginning to see adoption within the humanities \citet{jensenius_best_2021}.
+but is beginning to see adoption within the humanities \cite{jensenius_best_2021}.
 
-The FAIR principles and open science are not just a benefit to the longevity and reuse of digital academic research and longevity, but also allows for wider study and recreation at an educational level. 
+The FAIR principles and open science are not just a benefit to the longevity and reuse of digital academic research, but also allows for wider study and recreation at an educational level. 
 Open research practice is not yet standard practice within the humanities \cite{taylor_shaping_2022}. 
 A means to address this is through teaching creative application of technology, which is more effective in learning technical skills. \cite{sharmin_creativity_2021, marin_computational_2024}.
 As a student, there is educational value in recreating and iterating on work as a means of learning skills through practice \cite{dasgupta_remixing_2016}. The benefits of `apprenticing' through DMI design and fabrication have already been demonstrated \cite{nime2021_26}.
@@ -33,7 +33,7 @@ As a student, there is educational value in recreating and iterating on work as 
 % papers are explicit knowledge, but can be an answer without the question, a question that might only be illicited from the source material.
 
 The source materials — the datasets, source code, design files and other artifacts often treated as disposable by researchers — are actually essential for understanding how a project was built and why key decisions were made. These research products will have encoded within the tacit knowledge of engineering practice \citet{schindler_expertise_2015} that are rarely documented but valuable for skill acquisition and future understanding.
-Currently, there appears to be ambiguity in how to organise and disseminate source material creates. This ambiguity creates friction in the process of finding the source material and, as a result, it is that much more difficult to engage with it. This paper discusses how open research looks at current open research practice at NIME and what could be developed and the missed opportunities to engage with wider community of new creative developers.
+Currently, there is no common framework for organising or sharing a paper's source material, making it harder to find and engage with the work. This paper discusses how open research looks at current open research practice at NIME and what could be developed and the missed opportunities to engage with wider community of new creative developers.
 
 \section{Open Research at NIME}
 
@@ -47,7 +47,7 @@ This section reviews both past discussions and current practice in order to iden
 \citet{mcpherson_nimehub_2016} from 2016 was one of the first discussions of an open and reproducible research practice. Part of that workshop's primary eight goals were the FAIR adjacent aims of encouraging reproducibility, open access and encouraging a normalised practice of documentation. 
 A central topic for discussion during the workshop was the creation of a central repository for DMI designs. The NIMEhub did not ultimately manifest, but the workshop has sparked further discussion of open research at NIME \cite{jensenius_open_2019, jensenius_nime_2020}.
 The discussion of open research at NIME has tended towards methodologies applicable to open hardware \citet{calegario_documentation_2021, fiordelmondo_towards_2025}, the provision of making electronics designs accessible allowing fabrication outside of a central manufacturer.
-Unlike software, open hardware cannot be simply distributed as a licence and set of source code files \cite{oshwa_best_2013} lest it fall afoul of ``openwashing,'' when a project  ``is claimed to be open source whereas no intention to publish product-related information is given'' \cite{bonvoisin_source_2017}. That is not to say that ephemeral or closed source projects are forbidden, but the decision to identify as such should be a conscious one.
+Unlike software, open hardware cannot be simply distributed as a licence and set of source code files \cite{oshwa_best_2013} lest it fall afoul of `openwashing,' when a project  ``is claimed to be open source whereas no intention to publish product-related information is given'' \cite{bonvoisin_source_2017}. That is not to say that ephemeral or closed source projects are forbidden, but the decision to identify as such should be a conscious one.
 To facilitate reproduction of hardware, it should be self-evident, but any form of provision of access and archiving of source material makes the task much more feasible. 
 
 Both \citet{mcpherson_nimehub_2016} and \citet{fiordelmondo_towards_2025} raise the issue of repository structure with the latter proposing aprescriptive measure which can be applied to any DMI project. Research output in the form of open hardware or open software can and should take advantage of the platforms available for distribution of the work,
@@ -64,9 +64,9 @@ To answer the first question, a search was conducted on the NIME proceedings of 
 Open source research practice has changed since 2001 and the guidance for best-practice academia has developed, from the recommendations in academic open science \cite{go_fair_2016,unesco_open_2021}, open hardware \cite{oshwa_best_2013} and more specifically open research practice at NIME \cite{mcpherson_nimehub_2016,jensenius_open_2019,fiordelmondo_longevity_2024}.
 NIME 2025 should therefore represent the `bleeding edge' of open research practice as it will has been informed from guidance available up until this point.
 
-The method used by \citet{calegario_documentation_2021} and Review B from \citet{fiordelmondo_longevity_2024} were used as a starting point search for inclusion of a URL in a paper that would lead the reader to the project's source material.
-It was not critical that the source be buildable, executable or even complete, but rather that there had been a clear intention from the author(s) to make the project open by sharing some additional material in a repository representing the work of the paper.
-The search aimed to be as forgiving as possible and any completely automated search would like miss instances where the source URLs were not immediately apparent \cite{nime2025_21,nime2025_32}.
+The presence of a URL in a paper was taken as a marker of the authors' intention to make the project accessible. Using this criterion, we followed the approach of \citet{calegario_documentation_2021} and Review B from \citet{fiordelmondo_longevity_2024} to guide our search for URLs pointing to project source material. It was not necessary that the source be buildable, executable, or complete—only that there was a clear effort to share additional material in a repository representing the work described in the paper.
+Over the past decade, the git version control system (VCS) has become a de facto standard for source repositories,, making source material links easier to identify.
+Nevertheless, the search was designed to be as forgiving as was practical, since not all papers contain or reference the term ``git'' or its variants with respect to their source repositories (e.g., \cite{carter_sculpting_2025, nime2025_32}).
 
 \begin{table}[b]
     \centering
@@ -101,7 +101,7 @@ The search started with the wildcard search ``git*'' which would match URLs of r
 % 2024 on link through bit.ly
 
 The standards for what qualified as a link to the project source were deliberately broad.
-Papers that included a URL to a web page that contained a subsequent link to source qualified \cite{nime2025_10,nime2025_16,nime2025_21,nime2025_37,nime2025_67}.
+Papers that included a URL to a web page that contained a subsequent link to source qualified \cite{nime2025_10,nime2025_16,carter_sculpting_2025,nime2025_37,nime2025_67}.
 Cases where the hyperlink was broken in the PDF, but could be easily ascertained and written manually, qualified \cite{nime2025_58, nime2025_62}.
 % \footnote{\citet{nime2025_58} has a space in its source URL and \cite{nime2025_62} has missing underscores, \url{https://github.com/MetaBow/MetaBoard} instead of  \url{https://github.com/MetaBow/_MetaBoard_} }
 There were four instances where the repository was unreachable from the link, or the repository was completely empty. In one instance, the repository link was missing entirely, but a web search of the project name yielded the result in the first page. The authors were contacted, and four out of five have provided an alternative at the time of writing. These repositories all qualified and are included in the total.
