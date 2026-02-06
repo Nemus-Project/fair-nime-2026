@@ -79,7 +79,7 @@ Nevertheless, the search was designed to be as forgiving as was practical, since
     \label{tab:git_type}
 \end{table}
 
-The search started with the wildcard search ``git*'' which would match URLs of repositories using the git version control system (VCS). The wildcard matches usage of associated URLs for online git services, such as GitHub and GitLab, that may be used to identify a repository link. If no results were found, additional searches were made using keywords ``source,'' ``code,'' ``http,''  and ``doi''. Upon failing to find any result, the paper was manually skim read to identify if an alternate method was used to reference the source repository. If a link to source material was found, the URL was recorded alongside the context in which it appeared as well as the page number. NIME 2021 -- 2025 consisted of a total of 433 papers. This was small enough that a semi-manual approach of the entire proceedings was achievable in just over ten hours. Since the process was partially manual, the figures reported here are representative rather than conclusive. There is a possibility of referenced repositories using alternative methods being overlooked, though an effort has been made to count them.
+The search started with the wildcard search ``git*'' which would match URLs of repositories using the git version control system (VCS). The wildcard matches usage of associated URLs for online git services, such as GitHub and GitLab, that may be used to identify a repository link. If no results were found, additional searches were made using keywords ``source,'' ``code,'' ``http,''  and ``doi''. Upon failing to find any result, the paper was manually skim read to identify if an alternate method was used to reference the source repository. If a link to source material was found, the URL was recorded alongside the context in which it appeared as well as the page number. NIME 2020 -- 2025 consisted of a total of 532 papers. This was small enough that a semi-manual approach of the entire proceedings was achievable in just over ten hours. Since the process was partially manual, the figures reported here are representative rather than conclusive. There is a possibility of referenced repositories using alternative methods being overlooked, though an effort has been made to count them.
 
 \begin{table}
     \centering
@@ -181,7 +181,7 @@ To answer the second question, we downloaded the PDFs of NIME proceedings from 2
 The resulting yearly percentages of NIME papers referencing a Git repository are shown in Figure~\ref{fig:git_occurences}.
 % Spike in 2023 may be partially answered with that years theme of `Frugal Music Innovation' emphasising `solving problems with the available resources' a theme with which usage of open source projects would fit.
 There is substantial overlap between git as a technology and GitHub as a platform, suggesting that most interactions with the git VCS occur via GitHub.
-Put in context of Table~\ref{tab:git_placement}, the gap between usage of open source projects and publishing a projects source has gradually increased since NIME 2021.
+Put in context of Table~\ref{tab:git_placement}, the gap between usage of open source projects and publishing a projects source has gradually increased since NIME 2020.
 
 
 This search approach is not foolproof and can miss instances, such as in \citet{carter_sculpting_2025}, where a project repository exists but neither the term `git' appears in the URL nor is it referenced directly in the text.
@@ -332,7 +332,7 @@ Given the percentages of the NIME community sharing open source work, it might b
 %     Tacit knowledge warns us against treating the digital document as if it is only a cobblestone. \cite{burns_documents_2021}
 % \end{quote}
 
-...
+
 
 % Shallow submodules allowed for only the relevant code for that commit to be pulled from the upstream repository meaning the full data weight of the entire repository is not needed.
 
@@ -369,13 +369,12 @@ Given the percentages of the NIME community sharing open source work, it might b
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{images/open-example.png}\\
+    \includegraphics[width=\linewidth]{images/open-anon.png}\\
     \vspace{0.5cm}
-    \includegraphics[width=\linewidth]{images/closed-example.png}
+    \includegraphics[width=\linewidth]{images/closed-anon.png}
     \caption{Project source as a standard field in the paper template, in the same manner of the title and authors, would allow for quick identification of the project status and files. These details are not obligatory and could be withheld, but the choice to do so becomes deliberate.}
     \label{fig:project-details}
 \end{figure}
-
 
 Moving forward one potential change that can be made to the NIME proceedings and paper submission process is the inclusion of a `project URL' field as a standard feature of the template and metadata (Figure~\ref{fig:project-details}). The benefits of such a change would be manifold.
 To measure the impact of a NIME in a wider community something needs to be tracked.
@@ -396,7 +395,7 @@ If the NIME community needs to put in a large amount of effort to find it, then 
 NIMEs provide a resource and archive for instructing students in creative engineering, electronics,  musicianship and HCI.
 By making it harder for students and their instructors to engage \cite{nime2021_26}, remix \cite{dasgupta_remixing_2016} and foster creativity foster \cite{sharmin_creativity_2021, marin_computational_2024} NIME may be missing out on a new community of contributors.
 
-% ...
+% 
 % Informally: most communities are unlikely to communicate through cross-references and DOIs.
 
 %% Sentiment: That for the vast majority of papers, there will be something, and no matter how insignificant or messy, it may provide useful for future understanding
@@ -472,7 +471,7 @@ Digital archiving infrastructure exists in the form of \url{https://arxiv.org/} 
 For NIME 2025, 16 papers include video-only supplementary files, and one provides a citable digital archive with a DOI \cite{studley_swimtunes_2025}.
 Those ``going beyond the PDF format'' \cite{calegario_documentation_2021} are still in the minority, and digital archiving remains an under-adopted standard practice. NIME has the potential to reach wider communities now, but it should also look towards the communities of the future.
 
-...
+
 
 % projects may cite a github repository but that does not mean the project itself is readily available. The fact it is not immediately apparent the open source nature of project is something that should be addressed.
 
