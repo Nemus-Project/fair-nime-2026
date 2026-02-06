@@ -47,8 +47,7 @@ This section reviews both past discussions and current practice in order to iden
 \citet{mcpherson_nimehub_2016} from 2016 was one of the first discussions of an open and reproducible research practice. Part of that workshop's primary eight goals were the FAIR adjacent aims of encouraging reproducibility, open access and encouraging a normalised practice of documentation. 
 A central topic for discussion during the workshop was the creation of a central repository for DMI designs. The NIMEhub did not ultimately manifest, but the workshop has sparked further discussion of open research at NIME \cite{jensenius_open_2019, jensenius_nime_2020}.
 The discussion of open research at NIME has tended towards methodologies applicable to open hardware \citet{calegario_documentation_2021, fiordelmondo_towards_2025}, the provision of making electronics designs accessible allowing fabrication outside of a central manufacturer.
-Unlike software, open hardware cannot be simply distributed as a licence and set of source code files \cite{oshwa_best_2013} lest it fall afoul of `openwashing,' when a project  ``is claimed to be open source whereas no intention to publish product-related information is given'' \cite{bonvoisin_source_2017}. That is not to say that ephemeral or closed source projects are forbidden, but the decision to identify as such should be a conscious one.
-To facilitate reproduction of hardware, it should be self-evident, but any form of provision of access and archiving of source material makes the task much more feasible. 
+Unlike software, open hardware cannot be simply distributed as a licence and set of source code files \cite{oshwa_best_2013} lest it fall afoul of `openwashing,' when a project  ``is claimed to be open source whereas no intention to publish product-related information is given'' \cite{bonvoisin_source_2017}. In practice, enabling the reproduction of hardware requires access to archived source materials which substantially lowers the barrier to understanding, remaking, and iterating on the authors' original idea.
 
 Both \citet{mcpherson_nimehub_2016} and \citet{fiordelmondo_towards_2025} raise the issue of repository structure with the latter proposing a prescriptive measure which can be applied to any DMI project. 
 Research output in the form of open hardware or open software can and should take advantage of the platforms available for distribution of the work.
@@ -93,10 +92,9 @@ The search started with the wildcard search ``git*'' which would match URLs of r
         % Total (\#) & 19            & 21            & 17            & 25            & 27            & 35            \\
         Total (\%) & 19            & 24            & 30            & 25            & 29            & 35            \\
     \end{tabular}
-    \caption{Methods used to share project source URLs in NIME 2020–2025 papers. Rows report the number of papers using each method; the final row shows the percentage of these represent for all papers for that year. ``Missing'' includes incorrect URLs, empty repositories, or links inferred via web search.}
+    \caption{Methods used to share project source URLs in NIME 2020–2025 papers. Rows report the number of papers using each method; the final row shows the percentage of these represent for all papers for that year. ``Missing'' includes incorrect URLs, empty repositories, or extant repositories inferred via web search at the time of analysis.}
     \label{tab:git_placement}
 \end{table}
-
 
 % 2024 on link through bit.ly
 
@@ -305,7 +303,7 @@ Likewise, the future of CAD data is tied to software sustainability: the discont
 
 % \subsection{Documentation}
 
-Documentation for the project is still remain in complete.
+Documentation for the project still remains incomplete.
 The firmware was documented as it was created using the Doxygen documentation system \cite{beningo_documenting_2017}, but this does not fill the role of a user manual \cite{stallman_gnu_1992,procida_diataxis_2025}.
 Best practice emphasises the importance of documentation \cite{smith_software_2016}, though it is less prescriptive about form and depth.
 \citet{writethedocs_sowftware_2025} offers comprehensive guidance. 
