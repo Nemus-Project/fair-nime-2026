@@ -421,10 +421,18 @@ Given the percentages of the NIME community sharing open source work, it might b
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{images/open-anon.png}\\
-    \vspace{0.5cm}
-    \includegraphics[width=\linewidth]{images/closed-anon.png}
-    \caption{Project source as a standard field in the paper template, in the same manner of the title and authors, would allow for quick identification of the project status and files. These details are not obligatory and could be withheld, but the choice to do so becomes deliberate.}
+    % \includegraphics[width=\linewidth]{images/open-anon.png}\\
+    \begin{subfigure}{\linewidth}
+        \includegraphics[trim=1.9cm 22.1cm 12cm 2.9cm, clip, width=\linewidth]{images/nime-example-open.pdf}
+        \caption{}
+    \end{subfigure}\\[0.5cm]  % <-- adds 1cm vertical space
+    % \vspace{1cm}  % <-- vertical space here
+    \begin{subfigure}{\linewidth}
+        \includegraphics[trim=1.9cm 22.1cm 12cm 2.9cm, clip, width=\linewidth]{images/nime-example-closed.pdf}
+        \caption{}
+    \end{subfigure}
+    
+    \caption{Project source as a standard field  in the paper template (a). These details are not obligatory (b) and could be withheld, but the choice to do so becomes a conscious one.}
     \label{fig:project-details}
 \end{figure}
 
@@ -445,7 +453,7 @@ The data collected as part of this paper and its state at time of submission are
 Finally, the burden is removed from the reader to identify where the source code for project is located. 
 If the NIME community needs to put in a large amount of effort to find it, then the same will be true for the readership and a wider audience.
 NIMEs provide a resource and archive for instructing students in creative engineering, electronics,  musicianship and HCI.
-By making it harder for students and their instructors to engage \cite{nime2021_26}, remix \cite{dasgupta_remixing_2016} and foster creativity foster \cite{sharmin_creativity_2021, marin_computational_2024} NIME may be missing out on a new community of contributors.
+By making it harder for students to engage \cite{nime2021_26}, remix \cite{dasgupta_remixing_2016} and foster creativity \cite{sharmin_creativity_2021, marin_computational_2024}, NIME may be missing out on a new community of contributors.
 
 % 
 % Informally: most communities are unlikely to communicate through cross-references and DOIs.
