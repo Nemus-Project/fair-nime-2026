@@ -22,16 +22,17 @@ While these frameworks have primarily focused on scientific research \cite{unesc
 
 The FAIR principles and open science are not just a benefit to the longevity and reuse of digital academic research, but they also allow for wider engagement, study and recreation  of research at an educational level. 
 Despite these benefits, open research practice is not yet standard practice within the humanities \cite{taylor_shaping_2022}. 
-The source materials — the datasets, source code, design files and other artifacts often treated as disposable by researchers — are actually essential for understanding how a project was built and why key decisions were made. These research products will have encoded within the tacit knowledge of engineering practice \citet{schindler_expertise_2015} that are rarely documented but valuable for skill acquisition and future understanding.
+The underlying materials of research—such as datasets, source code, design files, and other artefacts that are often regarded as disposable—are, in fact, critical for understanding how a project was constructed and the rationale behind key decisions. These research outputs embed tacit knowledge of engineering practice \cite{schindler_expertise_2015}, knowledge that is seldom explicitly documented yet remains highly valuable for skill development and future comprehension.
+
 
 As a student, there is educational value and knowledge to be gained in recreating and iterating on work as a means of learning skills through practice \cite{dasgupta_remixing_2016}. 
 The benefits of `apprenticing' through DMI design and fabrication have already been demonstrated \cite{nime2021_26}.
-Currently, there is no common framework for organising or sharing a paper's source material, making it harder to find and engage with the work. This paper discusses how open research looks at current open research practice at NIME and what could be developed and the missed opportunities to engage with wider community of new creative developers.
+Currently, there is no common framework for organising or sharing a paper's source material, making it harder to find and engage with the work. This paper examines current open research practices within NIME, identifying areas for further development and highlighting missed opportunities to engage a broader community of emerging creative developers.
+
 
 This paper first reviews work within the NIME community that addresses open research practice. 
-That work is then used to establish a framework for analysing the use of open source at NIME up to and including 2025. 
-This is followed by a case study drawn from NIME 2025, examining the open source practices employed during and after the conference. 
-Based on this analysis and case study, the paper concludes with recommendations aimed at strengthening open research practice and enabling NIME work to be more readily engaged with by a wider community of students and creators.
+That work is then used to establish a framework for analysing the use of open source at NIME through 2025. 
+This is followed by a case study from NIME 2025 that examines the open-source practices employed during and after the conference. Based on this analysis and case study, the paper concludes with recommendations aimed at strengthening open research practice and enabling NIME work to be more readily engaged with by a wider community of students, creators and researchers.
 
 % One way to address this shortfall adopting an open research practice is through teaching creative application of technology, which is more effective in fostering technical skills. \cite{sharmin_creativity_2021, marin_computational_2024}.
 
@@ -49,18 +50,17 @@ Based on this analysis and case study, the paper concludes with recommendations 
 
 Since its inception, NIME has been committed to making its proceedings openly accessible under a CC BY 4.0 licence.
 In parallel, research projects within the NIME community have developed a strong tradition of open research practice, accompanied by ongoing discussions on how to better support, formalise, and sustain open-source culture \cite{mcpherson_nimehub_2016}.
-Questions of replication \cite{calegario_documentation_2021}, iteration \cite{nime2021_4}, and long-term sustainability \citet{fiordelmondo_longevity_2024} have been recurring themes at NIME.
+Questions of replication \cite{calegario_documentation_2021}, iteration \cite{nime2021_4}, and long-term sustainability \cite{fiordelmondo_longevity_2024} have been recurring themes at NIME.
 This section reviews both past discussions and current practice in order to identify opportunities for strengthening open research practices within the NIME community.
 
-\citet{mcpherson_nimehub_2016} from 2016 was one of the first discussions of an open and reproducible research practice at NIME. Part of that workshop's primary eight goals were the FAIR adjacent aims of encouraging reproducibility, open access and encouraging a normalised practice of documentation. 
-A central topic for discussion during the workshop was the creation of a central repository for DMI designs. The NIMEhub did not ultimately manifest, but the workshop has sparked further discussion of open research at NIME \cite{jensenius_open_2019, jensenius_nime_2020}.
-The discussion of open research at NIME has tended towards methodologies applicable to open hardware \citet{calegario_documentation_2021, fiordelmondo_towards_2025}, the provision of making electronics designs accessible allowing fabrication outside of a central manufacturer.
-Unlike software, open hardware cannot be simply distributed as a licence and set of source code files \cite{oshwa_best_2013} lest it fall afoul of `openwashing,' when a project  ``is claimed to be open source whereas no intention to publish product-related information is given'' \cite{bonvoisin_source_2017}. In practice, enabling the reproduction of hardware requires access to archived source materials which substantially lowers the barrier to understanding, remaking, and iterating on the authors' original idea.
+\citet{mcpherson_nimehub_2016} presented one of the earliest discussions of open and reproducible research practices within the NIME community. Among the workshop’s eight primary goals were several aims adjacent to the FAIR principles, including encouraging reproducibility, promoting open access, and normalising documentation practices. A central focus of the workshop was the proposal of a shared repository for DMI designs. Although the NIMEhub itself did not ultimately materialise, the workshop catalysed ongoing discussion around open research at NIME \cite{jensenius_open_2019, jensenius_nime_2020}.
 
-Both \citet{mcpherson_nimehub_2016} and \citet{fiordelmondo_towards_2025} raise the issue of repository structure with the latter proposing a prescriptive measure which can be applied to any DMI project. 
-Research output in the form of open hardware or open software can and should take advantage of the platforms available for distribution of the work.
-Discussions of "recreating" a NIME have consistently centred on its use in musical practice \cite{ajin_rebuilding_2019, masu_nime_2023, west_towards_2025}. 
-Equally valid is recreating a NIME to gain operational knowledge and develop craft from through building \cite{calegario_documentation_2021} and not just through playing \cite{magnusson_epistemic_2009}.
+Subsequent discussions of open research at NIME have largely focused on methodologies relevant to open hardware \citep{calegario_documentation_2021, fiordelmondo_towards_2025}, particularly the accessibility of electronic designs that enable fabrication beyond a central manufacturer. Unlike software, open hardware cannot be effectively distributed solely through licensing and source files \citep{oshwa_best_2013} without risking ``openwashing,'' whereby a project is claimed to be open source despite the absence of published product-related information \citep{bonvoisin_source_2017}. In practice, supporting hardware reproducibility requires access to well-archived source materials, which significantly lowers the barriers to understanding, reconstructing, and iterating upon the original design.
+
+Both \citet{mcpherson_nimehub_2016} and \citet{fiordelmondo_towards_2025} highlight the importance of repository structure, with the latter proposing a prescriptive framework applicable across DMI projects. Research outputs in the form of open hardware or open software can, and should, leverage existing platforms designed for the distribution and maintenance of such work.
+
+Discussions of ``recreating'' a NIME have predominantly emphasised its role in musical practice \citep{ajin_rebuilding_2019, masu_nime_2023, west_towards_2025}. However, an equally valid motivation for recreation lies in acquiring operational knowledge and developing craft through the act of building itself \citep{calegario_documentation_2021}, rather than solely through performance or use \citep{magnusson_epistemic_2009}.
+
 
 \section{Analysis of Open Source Adoption at NIME}\label{sec:current-state}
 
@@ -137,9 +137,9 @@ An additional URL category---`missing'---was added to the search. The `missing' 
 These repositories qualified and are included in the total percentage of papers with source repositories for that year (Table~\ref{tab:git_placement}).
 % but illustrate the potential pitfalls in an unstandardised system for reference project repositories.
 
-Of the 96 papers from NIME 2025, there are a total of 34 that have an intention of sharing their source, be it software, datasets or even zines \cite{nime2025_42}. This is in keeping with the 33\% reported in \citet{calegario_documentation_2021}, which applied a similar process to papers from 2018--2020.
+Of the 96 papers from NIME 2025, 34 intend to share their source, whether software, datasets, or even zines \cite{nime2025_42}. This is in keeping with the 33\% reported in \citet{calegario_documentation_2021}, which applied a similar process to papers from 2018--2020.
 GitHub is by far the preferred repository platform (Table~\ref{tab:git_type}), hosting 32 projects and reflecting the trend observed by \citet{fiordelmondo_towards_2025}. 
-Table~\ref{tab:git_placement} shows the ways in which authors disseminated source URLs, with footnotes being the most common method. The practice of sharing source repositories has increased over the period considered, but so too have the number of instances of `missing' repositories.
+Table~\ref{tab:git_placement} shows the ways in which authors disseminated source URLs, with footnotes being the most common method. The practice of sharing source repositories has increased over the period considered, but so too has the number of instances of `missing' repositories.
 
 \subsection{Question 2: Adoption of Open Source}
 
@@ -164,12 +164,20 @@ Table~\ref{tab:git_placement} shows the ways in which authors disseminated sourc
                 title={NIME Papers Referencing Git Repositories},
                 thick,
             ]
+            % \addplot[
+            %     color=red,
+            %     mark=*,
+            %     sharp plot
+            % ] coordinates {
+            %         (9,0) (10,0) (11,1) (12,6) (13,16) (14,14) (15,13) (16,19) (17,22) (18,23) (19,28) (20,29) (21,36) (22,41) (23,52) (24,43) (25,48)
+            %     };
+            % \addlegendentry{GitHub}             
             \addplot[
                 color=red,
                 mark=*,
                 sharp plot
             ] coordinates {
-                    (9,0) (10,0) (11,1) (12,6) (13,16) (14,14) (15,13) (16,19) (17,22) (18,23) (19,28) (20,29) (21,36) (22,41) (23,52) (24,43) (25,48)
+                    (9,0) (10,1) (11,2) (12,6) (13,16) (14,14) (15,14) (16,19) (17,22) (18,24) (19,27) (20,29) (21,35) (22,43) (23,48) (24,44) (25,46)
                 };
             \addlegendentry{GitHub}             
             % \addplot[
@@ -224,14 +232,22 @@ Table~\ref{tab:git_placement} shows the ways in which authors disseminated sourc
             %         (09,7) (10,19) (11,20) (12,18) (13,21) (14,29) (15,22) (16,27) (17,22) (18,17) (19,29) (20,29) (21,23) (22,42) (23,45) (24,27) (25,23)
             %     };
             % \addlegendentry{open source}
+            % \addplot[
+            %     color=black,
+            %     mark=*,
+            %     smooth
+            % ] coordinates {
+            %         (09,0) (10,0) (11,2) (12,0) (13,0) (14,0) (15,0) (16,0) (17,0) (18,1) (19,3) (20,0) (21,1) (22,1) (23,1) (24,1) (25,3)
+            %     };
+            % \addlegendentry{git, no GitHub}
         \end{axis}
     \end{tikzpicture}
     
-    \caption{Yearly percentage of NIME papers (2009--2025) referencing GitHub, alongside papers containing at least one reference to git. Git was initially released in 2005 and NIME papers published between 2001 and 2009 contain no references to it. GitHub was launched in 2008 and does not appear in NIME publications until 2010.}
+    \caption{Yearly proportion of NIME papers (2009--2025) referencing exclusively GitHub, alongside papers containing at least one reference to any git system expressed as percentage of total. Git was initially released in 2005 and NIME papers published between 2001 and 2009 contain no references to it. GitHub was launched in 2008 and does not appear in NIME publications until 2010.}
     \label{fig:git_occurences}
 \end{figure}
 
-To answer the second question, all NIME paper proceedings were searched for references to a git repository with a case-insensitive regular expression \texttt{\textbackslash Wgit}, matching occurrences of git' and variants such as `GitHub' and `GitLab', as well as URLs like \texttt{https:/\textbf{/git}hub.com/}. 
+To answer the second question, all NIME paper proceedings were searched for references to a git repository with a case-insensitive regular expression \texttt{\textbackslash Wgit}, matching occurrences of git and variants such as `GitHub' and `GitLab', as well as URLs like \texttt{https:/\textbf{/git}hub.com/}. 
 This approach follows the method of \citet{fiordelmondo_towards_2025}, which counted papers containing terms related to open source repositories from NIME proceedings 2001--2024. 
 One deviation from the previous method was inclusion \texttt{github.io} links. The \texttt{github.io} URL was also  included since authors sometimes link to project pages hosted there and familiarity with git and GitHub can be inferred.  
 The resulting yearly percentages of NIME papers referencing a Git repository are shown in Figure~\ref{fig:git_occurences}.
@@ -247,6 +263,8 @@ The search was run multiple times over a directory containing all NIME papers to
 Examples of false positives were words split across line breaks at “git” (e.g., legitimation broken into ``le-'' and ``\textbf{git}imation''), as well as unrelated terms such as ``gitaroo'' or ``gitarre.''
 The search could not be overly restrictive, however, because it needed to retain valid matches such as ``gitorious,'' a git-based hosting service that was acquired by GitLab and discontinued in 2015 \cite{bjaanes_gitorious_2015}.
 
+
+
 \section{An Open Methodology for DMIs}
 
 % \textbf{Main Points}
@@ -257,10 +275,15 @@ The search could not be overly restrictive, however, because it needed to retain
 %     \item and explain how they are being addressed
 % \end{itemize}
 
-This section discusses the open methodology applied to the interface described in \anon{\citet{hamilton_augmentation_2025_activities}}. The interface was created as part of \anon{the NEMUS project} , which has a dedication to making all digital research products open source.
-From early on, it was apparent that, given the involvement of the project, simple open sourcing was not enough, and the project aimed to incorporate best open research practices in the early stages of development \cite{chen_open_2019}.
 
-Using the \citep{ssi_checklist_2018} checklist, the core requirements for an open research
+Section~\ref{sec:current-state} shows that open-source \emph{use} within NIME has grown steadily, yet the ability to \emph{locate} and \emph{reuse} project materials remains inconsistent. Even when authors intend to share, repository links may be missing, fragile, or indirect (Table~\ref{tab:git_placement}), and a non-trivial portion of projects can only be recovered through manual inference or external search. This adoption--practice gap suggests that the primary barrier is not a lack of willingness to be open, but rather the absence of shared conventions for packaging, signposting, and preserving the heterogeneous materials that constitute a DMI---firmware, schematics, enclosure models, datasets, and documentation. In other words, the challenge is less about whether a project is ``open'' in principle, and more about whether its constituent research products are \emph{findable and reconstructible} in practice. This becomes especially salient for DMIs, where reproducibility depends on multiple interdependent artefacts and where tacit knowledge is encoded across tools, file formats, and incremental design decisions. The remainder of the paper, therefore, shifts from measuring the current state of open-source referencing in the proceedings to demonstrating a concrete, end-to-end methodology for making a DMI's source navigable and citable over time.
+
+
+
+
+The case study is the open methodology applied to the interface described in \anon{\citet{hamilton_augmentation_2025_activities}}. The interface was created as part of \anon{the NEMUS project}, which is dedicated to making most digital research products open source. From early on, it was apparent that, given the project's involvement, simple open sourcing was not enough, and the project aimed to incorporate best open research practices from the outset \cite{chen_open_2019}.
+
+According to the \citet{ssi_checklist_2018} checklist, the core requirements for an open research
 software project are: publicly available source code, a VCS, user and developer documentation, an Open Source Institute (OSI) compliant licence \cite{osi_licenses_2025}, and
 persistent digital object identifiers (DOI). A public VCS implies source
 availability, though the reverse is not guaranteed. Likewise, a DOI implies some
@@ -319,7 +342,7 @@ Rather than a single, unified code base \cite{calegario_documentation_2021, fior
 Such an approach aligns closely with the FAIR principles as it promotes code reuse, interoperability, as well as seamless attribution.
 For the original paper, the links to the individual project repositories were included. As the project developed, two distinct interfaces were created with different applications. One interface was for \anon{installation at San Colombano} while a second model was created for use within research at the \anon{NEMUS project and the University of Bologna}. Both interfaces use the same core components, but at separate phases in their development.
 
-This means that the original links are now no longer an accurate representation of the interface as presented in the paper. To address this, the individual repositories were referenced under a single `meta repository' (Figure~\ref{fig:repo-relation}). Referencing is achieved using git's submodules functionality \cite{git_submodule_2025}. The benefit of such an approach is two fold.
+This means that the original links are no longer an accurate representation of the interface as presented in the paper. To address this, the individual repositories were referenced under a single `meta repository' (Figure~\ref{fig:repo-relation}). Referencing is achieved using git's submodules functionality \cite{git_submodule_2025}. The benefit of such an approach is two fold.
 To navigate the different states of the project in time, only a single URL needs to be shared. The individual submodules can be updated or swapped out entirely.
 Version tagging is used to demarcate distinct versions of the interface, allowing for easier navigation.
 
@@ -331,7 +354,7 @@ Likewise, the future of CAD data is tied to software sustainability: the discont
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{images/modular_archive_1.pdf}
-    \caption{Zenodo's GitHub integration does not include data in submodules. Alternative process is to archive each submodule at the relevant version and then archive the meta repository which contains the separate DOIs.}
+    \caption{Zenodo’s GitHub integration does not capture data stored in Git submodules. As an alternative, each submodule can be archived independently at the appropriate version, after which the meta-repository referencing these components can be archived, resulting in a collection of linked DOIs.}
     \label{fig:zenodo-github-integration}
 \end{figure}
 
