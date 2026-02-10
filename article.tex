@@ -32,7 +32,7 @@ Currently, there is no common framework for organising or sharing a paper's sour
 
 This paper first reviews work within the NIME community that addresses open research practice. 
 That work is then used to establish a framework for analysing the use of open source at NIME through 2025. 
-This is followed by a case study from NIME 2025 that examines the open-source practices employed during and after the conference. Based on this analysis and case study, the paper concludes with recommendations aimed at strengthening open research practice and enabling NIME work to be more readily engaged with by a wider community of students, creators and researchers.
+This is followed by a case study from NIME 2025 that examines the open source practices employed during and after the conference. Based on this analysis and case study, the paper concludes with recommendations aimed at strengthening open research practice and enabling NIME work to be more readily engaged with by a wider community of students, creators and researchers.
 
 % One way to address this shortfall adopting an open research practice is through teaching creative application of technology, which is more effective in fostering technical skills. \cite{sharmin_creativity_2021, marin_computational_2024}.
 
@@ -49,7 +49,7 @@ This is followed by a case study from NIME 2025 that examines the open-source pr
 % \section{Open Research at NIME}
 
 Since its inception, NIME has been committed to making its proceedings openly accessible under a CC BY 4.0 licence.
-In parallel, research projects within the NIME community have developed a strong tradition of open research practice, accompanied by ongoing discussions on how to better support, formalise, and sustain open-source culture \cite{mcpherson_nimehub_2016}.
+In parallel, research projects within the NIME community have developed a strong tradition of open research practice, accompanied by ongoing discussions on how to better support, formalise, and sustain open source culture \cite{mcpherson_nimehub_2016}.
 Questions of replication \cite{calegario_documentation_2021}, iteration \cite{nime2021_4}, and long-term sustainability \cite{fiordelmondo_longevity_2024} have been recurring themes at NIME.
 This section reviews both past discussions and current practice in order to identify opportunities for strengthening open research practices within the NIME community.
 
@@ -64,17 +64,23 @@ Discussions of ``recreating'' a NIME have predominantly emphasised its role in m
 
 \section{Analysis of Open Source Adoption at NIME}\label{sec:current-state}
 
-The NIME archive currently provides a valuable resource for those wishing to explore creative applications of micro-controllers, electronics and computer programming. 
-NIME has 2000+ projects available in its open-access archive from which students can draw inspirations and iterate upon. 
+% The NIME archive currently provides a valuable resource for those wishing to explore creative applications of micro-controllers, electronics and computer programming. 
+% NIME has 2000+ projects available in its open-access archive from which students can draw inspiration and iterate upon. 
+The NIME archive hosts 2,000+ open-access projects that support exploration and iteration in creative microcontroller, electronics, and programming practices.
 Though many of the projects are open source, far too often this is only on condition that the source can be located in the first place.
 Prompted by the analysis in \citet{calegario_documentation_2021} and \citet{fiordelmondo_towards_2025}, two questions were raised. 
-Firtly, ``For all papers in NIME, for how many can the source be navigated to from the paper directly?'' 
-Secondly, ``to what degree has open source practice been adopted at NIME?'' 
+
+\begin{enumerate}
+    \item ``How often do NIME papers link to source code?'' 
+    \item ``How prevalent is open-source practice at NIME?'' 
+\end{enumerate}
+% Firtly, ``For all papers in NIME, for how many can the source be navigated to from the paper directly?'' 
+% Secondly, ``to what degree has open source practice been adopted at NIME?'' 
 Answering these questions may reveal a method that encourages open research practice and fosters engagement with a wider community beyond NIME.
 
 Both questions would be answered through a search of the NIME proceedings up to 2025. 
 This first required the download of all PDF files in the NIME paper archive, which were organised into subdirectories by year.
-The text of the PDF files would then be searched using the the open-source software \texttt{pdfgrep} \cite{deifel_pdfgrep_2024}.
+The text of the PDF files would then be searched using the the open source software \texttt{pdfgrep} \cite{deifel_pdfgrep_2024}.
 
 \subsection{Question 1: Navigating to Source}
 
@@ -109,7 +115,7 @@ Since the process was partially manual, the figures reported here are representa
 There is a possibility of papers that referenced their repositories using alternative methods being overlooked, though an effort has been made to identify them.
 
 
-\begin{table}[b]
+\begin{table}
     \centering
     \begin{tabular}{r|cccccc}
                                   & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} & \textbf{2025} \\ \hline
@@ -127,6 +133,71 @@ There is a possibility of papers that referenced their repositories using altern
     \label{tab:git_placement}
 \end{table}
 
+%% Bar graph
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+                ybar stacked,
+                bar width=12pt,
+                width=\linewidth,
+                height=8.75cm,
+                ymin=0,
+                ymax=36,
+                ytick distance=5,
+                ylabel={Number of papers},
+                symbolic x coords={2020,2021,2022,2023,2024,2025},
+                xtick=data,
+                grid=major,
+                xmajorgrids=false,
+                grid style={dashed,gray!30},
+                legend style={
+                        at={(0.38,0.96)},
+                        anchor=north,
+                        legend columns=3
+                    },
+                nodes near coords,               
+                nodes near coords style={
+                    /pgf/number format/1000 sep={}, % optional formatting
+                    anchor=west,   % anchor the text
+                    xshift=4pt,    % shift it outside the bar
+                    text=black,    % color
+                },
+            ]
+
+            \addplot coordinates {
+                    (2020,8) (2021,12) (2022,5) (2023,12) (2024,13) (2025,18)
+                };
+            \addlegendentry{Footnote}
+
+            \addplot coordinates {
+                    (2020,9) (2021,5) (2022,7) (2023,8) (2024,6) (2025,6)
+                };
+            \addlegendentry{Body}
+
+            \addplot coordinates {
+                    (2020,0) (2021,2) (2022,1) (2023,1) (2024,3) (2025,2)
+                };
+            \addlegendentry{Citation}
+
+            \addplot coordinates {
+                    (2020,0) (2021,0) (2022,2) (2023,1) (2024,1) (2025,3)
+                };
+            \addlegendentry{Appendix}
+
+            \addplot [color=red,            
+            ] coordinates {
+                    (2020,2) (2021,2) (2022,2) (2023,3) (2024,4) (2025,6)
+                };
+            \addlegendentry{Missing}
+
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Methods used to share project source URLs in NIME 2020–2025 papers. ``Missing'' includes incorrect URLs, empty repositories, or extant repositories inferred via web search at the time of analysis.}
+    \label{fig:git_placement}
+\end{figure}
+
+
 % 2024 on link through bit.ly
 
 The standards for what qualified as a link to the project's source material were deliberately broad.
@@ -138,7 +209,16 @@ These repositories qualified and are included in the total percentage of papers 
 % but illustrate the potential pitfalls in an unstandardised system for reference project repositories.
 
 Of the 96 papers from NIME 2025, 34 intend to share their source, whether software, datasets, or even zines \cite{nime2025_42}. This is in keeping with the 33\% reported in \citet{calegario_documentation_2021}, which applied a similar process to papers from 2018--2020.
-GitHub is by far the preferred repository platform (Table~\ref{tab:git_type}), hosting 32 projects and reflecting the trend observed by \citet{fiordelmondo_towards_2025}. 
+%% NOTE: About GitHub and NIME
+% Table~\ref{tab:git_type} and Figure~\ref{fig:git_occurences} both show github as the dominent platform
+%  For Figure~\ref{fig:git_occurences}, a list of papers that reference github was created%
+% \footnote{\texttt{pdfgrep -P 'github' -rli .}}
+% this was crossed referenced with all papers tha reference GitHub and another usage of `git'.%
+% \footnote{\verb$pdfgrep -P 'github' -rli . | xargs  pdfgrep -P '(^|\W)git(?!ch|imation|ter|udinal|arr|al|aroo|a|hub\b)' -rli$}
+% After pruning false positives, the results were subtracted giving the data in Figure~\ref{fig:git_occurences}.
+% In many cases there is a complete overlap of git version control usage for the year.
+% In which case it can be safely called a de facto standard. %whether this \textit{good} thing is left unanswered, but it is certainly a behaviour in the community.
+GitHub is by far the preferred repository platform (Table~\ref{tab:git_type}), hosting 32 projects and reflecting the trend observed by \citet{fiordelmondo_towards_2025}.
 Table~\ref{tab:git_placement} shows the ways in which authors disseminated source URLs, with footnotes being the most common method. The practice of sharing source repositories has increased over the period considered, but so too has the number of instances of `missing' repositories.
 
 \subsection{Question 2: Adoption of Open Source}
@@ -154,8 +234,7 @@ Table~\ref{tab:git_placement} shows the ways in which authors disseminated sourc
                 xmin=9, xmax=25,
                 xtick={9,11,13,15,17,19,21,23,25},
                 xticklabel={
-                        20\pgfmathparse{int(\tick)}
-                        \ifnum\pgfmathresult<10 0\fi\pgfmathresult
+                        20\pgfmathparse{int(\tick)}\ifnum\pgfmathresult<10 0\fi\pgfmathresult
                     },
                 ytick={0,10,20,30,40,50,60},
                 grid=major,
@@ -163,83 +242,31 @@ Table~\ref{tab:git_placement} shows the ways in which authors disseminated sourc
                 legend pos=north west,
                 title={NIME Papers Referencing Git Repositories},
                 thick,
-            ]
-            % \addplot[
-            %     color=red,
-            %     mark=*,
-            %     sharp plot
-            % ] coordinates {
-            %         (9,0) (10,0) (11,1) (12,6) (13,16) (14,14) (15,13) (16,19) (17,22) (18,23) (19,28) (20,29) (21,36) (22,41) (23,52) (24,43) (25,48)
-            %     };
-            % \addlegendentry{GitHub}             
-            \addplot[
-                color=red,
+            ]           
+            \addplot+[
+                % color=red,
                 mark=*,
                 sharp plot
             ] coordinates {
                     (9,0) (10,1) (11,2) (12,6) (13,16) (14,14) (15,14) (16,19) (17,22) (18,24) (19,27) (20,29) (21,35) (22,43) (23,48) (24,44) (25,46)
                 };
-            \addlegendentry{GitHub}             
-            % \addplot[
-            %     color=green,
-            %     mark=*,
-            %     sharp plot
-            % ] coordinates {
-            %         (09,0) (10,0) (11,1) (12,6) (13,15) (14,13) (15,13) (16,19) (17,19) (18,19) (19,28) (20,24) (21,34) (22,37) (23,47) (24,39) (25,41)
-            %     };
-            % \addlegendentry{GitHub no .io}  
-            % \addplot[
-            %     color=violet,
-            %     mark=*,
-            %     sharp plot
-            % ] coordinates {
-            %          (09,0) (10,1) (11,3) (12,6) (13,15) (14,14) (15,13) (16,19) (17,19) (18,20) (19,31) (20,24) (21,35) (22,39) (23,48) (24,40) (25,44)
-            %     };
-            % \addlegendentry{git no .io}  
-            % \addplot[
-            %     color=teal,
-            %     mark=*,
-            %     sharp plot
-            % ] coordinates {
-            %         (09,0) (10,0) (11,0) (12,0) (13,0) (14,2) (15,0) (16,1) (17,8) (18,6) (19,3) (20,11) (21,6) (22,8) (23,15) (24,12) (25,14)
-            %     };
-            % \addlegendentry{github.io}  
-            \addplot[
-                color=blue,
+            \addlegendentry{GitHub}              
+            \addplot+[
+                % color=blue,
                 mark=*,
-                 sharp plot
+                sharp plot
             ] coordinates {
-                    (09,0) (10,1) (11,3) (12,6) (13,16) (14,14) (15,13) (16,19) (17,22) (18,25) (19,31) (20,29) (21,37) (22,42) (23,53) (24,44) (25,52)
+                    (09,0) (10,1) (11,3) (12,6) (13,16) (14,14) (15,14) (16,19) (17,22) (18,25) (19,31) (20,29) (21,37) (22,43) (23,53) (24,44) (25,52)
                 };
             \addlegendentry{git}
-            % \addplot[
-            %     color=violet,
-            %     mark=*,
-            %     smooth
-            % ] coordinates {
-            %         (21, 24)
-            %         (22, 30)
-            %         (23, 25)
-            %         (24, 29)
-            %         (25, 35)
-            %     };
-            % \addlegendentry{Shared Open Source}
-            % \addplot[
-            %     color=black,
-            %     mark=*,
-            %     smooth
-            % ] coordinates {
-            %         (09,7) (10,19) (11,20) (12,18) (13,21) (14,29) (15,22) (16,27) (17,22) (18,17) (19,29) (20,29) (21,23) (22,42) (23,45) (24,27) (25,23)
-            %     };
-            % \addlegendentry{open source}
-            % \addplot[
-            %     color=black,
-            %     mark=*,
-            %     smooth
-            % ] coordinates {
-            %         (09,0) (10,0) (11,2) (12,0) (13,0) (14,0) (15,0) (16,0) (17,0) (18,1) (19,3) (20,0) (21,1) (22,1) (23,1) (24,1) (25,3)
-            %     };
-            % \addlegendentry{git, no GitHub}
+             \addplot+[
+                % color=blue,
+                mark=*,
+                sharp plot
+            ] coordinates {
+                    (20,19) (21,24) (22,30) (23,25) (24,29) (25,36)
+                };
+            \addlegendentry{source}
         \end{axis}
     \end{tikzpicture}
     
@@ -276,9 +303,7 @@ The search could not be overly restrictive, however, because it needed to retain
 % \end{itemize}
 
 
-Section~\ref{sec:current-state} shows that open-source \emph{use} within NIME has grown steadily, yet the ability to \emph{locate} and \emph{reuse} project materials remains inconsistent. Even when authors intend to share, repository links may be missing, fragile, or indirect (Table~\ref{tab:git_placement}), and a non-trivial portion of projects can only be recovered through manual inference or external search. This adoption--practice gap suggests that the primary barrier is not a lack of willingness to be open, but rather the absence of shared conventions for packaging, signposting, and preserving the heterogeneous materials that constitute a DMI---firmware, schematics, enclosure models, datasets, and documentation. In other words, the challenge is less about whether a project is ``open'' in principle, and more about whether its constituent research products are \emph{findable and reconstructible} in practice. This becomes especially salient for DMIs, where reproducibility depends on multiple interdependent artefacts and where tacit knowledge is encoded across tools, file formats, and incremental design decisions. The remainder of the paper, therefore, shifts from measuring the current state of open-source referencing in the proceedings to demonstrating a concrete, end-to-end methodology for making a DMI's source navigable and citable over time.
-
-
+Section~\ref{sec:current-state} shows that open source \emph{use} within NIME has grown steadily, yet the ability to \emph{locate} and \emph{reuse} project materials remains inconsistent. Even when authors intend to share, repository links may be missing, fragile, or indirect (Table~\ref{tab:git_placement}), and a non-trivial portion of projects can only be recovered through manual inference or external search. This adoption--practice gap suggests that the primary barrier is not a lack of willingness to be open, but rather the absence of shared conventions for packaging, signposting, and preserving the heterogeneous materials that constitute a DMI---firmware, schematics, enclosure models, datasets, and documentation. In other words, the challenge is less about whether a project is ``open'' in principle, and more about whether its constituent research products are \emph{findable and reconstructible} in practice. This becomes especially salient for DMIs, where reproducibility depends on multiple interdependent artefacts and where tacit knowledge is encoded across tools, file formats, and incremental design decisions. The remainder of the paper, therefore, shifts from measuring the current state of open source referencing in the proceedings to demonstrating a concrete, end-to-end methodology for making a DMI's source navigable and citable over time.
 
 
 The case study is the open methodology applied to the interface described in \anon{\citet{hamilton_augmentation_2025_activities}}. The interface was created as part of \anon{the NEMUS project}, which is dedicated to making most digital research products open source. From early on, it was apparent that, given the project's involvement, simple open sourcing was not enough, and the project aimed to incorporate best open research practices from the outset \cite{chen_open_2019}.
@@ -336,15 +361,15 @@ Five key areas were identified that constitute `best-practice' in open research:
 \end{figure}
 
 
-Much of the open sourcing had to be carried out as the project developed. This resulted in some instances where what was initially implemented was no longer relevant or must be adapted.
-Rather than a single, unified code base \cite{calegario_documentation_2021, fiordelmondo_longevity_2024} the source of project was divided into three components 
+Much of the open sourcing had to be carried out as the project developed. This resulted in some instances in which what was initially implemented was no longer relevant or needed to be adapted.
+Rather than a single, unified code base \cite{calegario_documentation_2021, fiordelmondo_longevity_2024}, the source of project was divided into three components 
 \anon{--- \emph{Firmware} \cite{hamilton_firmware_2025}, \emph{CAD} \cite{hamilton_cad_2025}, and \emph{Model Data} \cite{hamilton_models_2025}}. 
 Such an approach aligns closely with the FAIR principles as it promotes code reuse, interoperability, as well as seamless attribution.
-For the original paper, the links to the individual project repositories were included. As the project developed, two distinct interfaces were created with different applications. One interface was for \anon{installation at San Colombano} while a second model was created for use within research at the \anon{NEMUS project and the University of Bologna}. Both interfaces use the same core components, but at separate phases in their development.
+For the original paper, the links to the individual project repositories were included. As the project developed, two distinct interfaces were created with different applications. One interface was for \anon{installation at San Colombano}, while a second model was created for use in research within the \anon{NEMUS project and the University of Bologna}. Both interfaces use the same core components, but at separate phases in their development.
 
-This means that the original links are no longer an accurate representation of the interface as presented in the paper. To address this, the individual repositories were referenced under a single `meta repository' (Figure~\ref{fig:repo-relation}). Referencing is achieved using git's submodules functionality \cite{git_submodule_2025}. The benefit of such an approach is two fold.
-To navigate the different states of the project in time, only a single URL needs to be shared. The individual submodules can be updated or swapped out entirely.
-Version tagging is used to demarcate distinct versions of the interface, allowing for easier navigation.
+This means the original links no longer accurately reflect the interface as presented in the paper. To address this, the individual repositories were referenced under a single `meta repository' (Figure~\ref{fig:repo-relation}). Referencing is achieved using git's submodules functionality \cite{git_submodule_2025}. The benefit of such an approach is two-fold.
+To navigate the project's states over time, only a single URL needs to be shared. The individual submodules can be updated or swapped out entirely.
+Version tagging demarcates distinct interface versions, making navigation easier.
 
 The function of each component also shifted over time. The CAD component transitioned into files for electronic schematics and PCB manufacture, while the Model component has changed into a repository of documents describing measurements of the enclosure. Renaming either repository would break previous links to the work. The directory name of submodules can be changed in the meta repository, but this situation emphasised the importance of archiving the work.
 Rather than referencing through URLs to a git repository, the project was archived using CERN's digital archiving platform Zenodo \cite{zenodo_2013}. Archiving exposed a few practical challenges. Zenodo’s GitHub integration does not yet handle meta-repositories, requiring separate DOIs for each submodule with cross-references \cite{zenodo_1036_2025} (Figure~\ref{fig:zenodo-github-integration}).
@@ -404,7 +429,7 @@ Similarly there should not be a mandate to generate more documents lest we becom
 Given the percentages of the NIME community sharing open source work, it might be first advantageous to encourage greater adoption to meet good enough practice \cite{jensenius_best_2021}.
 % To `share what is already there' rather than explicitly creating documents for the sake of ``best-practice.''
 % \begin{quote}
-%     Open-source development initiatives should be encouraged to foster scalability and inclusivity. \citet{nime2025_63}
+%     open source development initiatives should be encouraged to foster scalability and inclusivity. \citet{nime2025_63}
 % \end{quote}
 
 % \begin{quote}
