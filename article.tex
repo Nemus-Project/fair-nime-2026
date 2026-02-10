@@ -243,16 +243,16 @@ Table~\ref{tab:git_placement} shows the ways in which authors disseminated sourc
                 title={NIME Papers Referencing Git Repositories},
                 thick,
             ]           
-            \addplot+[
-                % color=red,
+            \addplot[
+                color=red,
                 mark=*,
                 sharp plot
             ] coordinates {
                     (9,0) (10,1) (11,2) (12,6) (13,16) (14,14) (15,14) (16,19) (17,22) (18,24) (19,27) (20,29) (21,35) (22,43) (23,48) (24,44) (25,46)
                 };
             \addlegendentry{GitHub}              
-            \addplot+[
-                % color=blue,
+            \addplot[
+                color=blue,
                 mark=*,
                 sharp plot
             ] coordinates {
@@ -270,7 +270,7 @@ Table~\ref{tab:git_placement} shows the ways in which authors disseminated sourc
         \end{axis}
     \end{tikzpicture}
     
-    \caption{Yearly proportion of NIME papers (2009--2025) referencing exclusively GitHub, alongside papers containing at least one reference to any git system expressed as percentage of total. Git was initially released in 2005 and NIME papers published between 2001 and 2009 contain no references to it. GitHub was launched in 2008 and does not appear in NIME publications until 2010.}
+    \caption{Yearly percentage of NIME papers (2009–2025) in three categories: papers referencing only GitHub as a git repository, papers referencing at least one git repository, and papers including a link to project source material. Each line shows the proportion of total papers in that year. Git was initially released in 2005 and NIME papers published between 2001 and 2009 contain no references to it. GitHub was launched in 2008 and does not appear in NIME publications until 2010.}
     \label{fig:git_occurences}
 \end{figure}
 
