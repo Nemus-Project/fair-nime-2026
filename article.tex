@@ -62,7 +62,7 @@ Both \citet{mcpherson_nimehub_2016} and \citet{fiordelmondo_towards_2025} highli
 Discussions of ``recreating'' a NIME have predominantly emphasised its role in musical practice \citep{ajin_rebuilding_2019, masu_nime_2023, west_towards_2025}. However, an equally valid motivation for recreation lies in acquiring operational knowledge and developing craft through the act of building itself \citep{calegario_documentation_2021}, rather than solely through performance or use \citep{magnusson_epistemic_2009}.
 
 
-\section{Analysis of Open Source Adoption at NIME}\label{sec:current-state}
+\section{Analysis of Open Research Practice at NIME}\label{sec:current-state}
 
 % The NIME archive currently provides a valuable resource for those wishing to explore creative applications of micro-controllers, electronics and computer programming. 
 % NIME has 2000+ projects available in its open-access archive from which students can draw inspiration and iterate upon. 
@@ -72,7 +72,7 @@ Prompted by the analysis in \citet{calegario_documentation_2021} and \citet{fior
 
 \begin{enumerate}
     \item ``How often do NIME papers link to source code?'' 
-    \item ``How prevalent is open-source practice at NIME?'' 
+    \item ``How prevalent is open source practice at NIME?'' 
 \end{enumerate}
 % Firtly, ``For all papers in NIME, for how many can the source be navigated to from the paper directly?'' 
 % Secondly, ``to what degree has open source practice been adopted at NIME?'' 
@@ -93,45 +93,34 @@ The presence of a URL in a paper --- that links to source material --- was taken
 Over the past decade, the git version control system (VCS) has become a de facto standard for source repositories, making source material links easier to identify.
 Nevertheless, the search was designed to be as forgiving as was practical, since not all papers contain or reference the term ``git'' or its variants with respect to their source repositories (e.g., \cite{carter_sculpting_2025, nime2025_32}).
 
-\begin{table}
-    \centering
-    \begin{tabular}{r|ccccc}
-               & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} & \textbf{2025} \\ \hline
-        GitHub & 20            & 16            & 22            & 26            & 32            \\
-        other  & 1             & 1             & 3             & 1             & 3             \\
-    \end{tabular}
-    \caption{Git service used to host project repositories at NIME.}
-    \label{tab:git_type}
-\end{table}
-
-
-The search began with the regular expression ``\textbackslash Wgit,'' which matches references to, and URLs of, repositories using the Git version control system (VCS).
+The search began with the regular expression ``\textbackslash Wgit,'' which matches references to, and URLs of, repositories using the git VCS.
 If no results were found, additional searches were made using keywords ``source,'' ``code,'' ``http,''  and ``doi''. 
 Each year's proceedings, from 2020 to 2025, were searched individually.
-When a link to a source repository was found, the URL and the context in which it was used were recorded, and the paper was removed from the search pool.
+When a link to a project's source repository was found, the URL and the context in which it was used were recorded, and the paper was removed from the search pool.
 Upon failing to find any result, the remaining papers from that year were manually read to identify if an alternate method was used to reference the source repository. 
-NIME 2020 -- 2025 consisted of a total of 532 papers. This was a small enough number that a semi-manual approach of the entire proceedings was achievable in just over ten hours. 
-Since the process was partially manual, the figures reported here are representative rather than conclusive. 
-There is a possibility of papers that referenced their repositories using alternative methods being overlooked, though an effort has been made to identify them.
+NIME 2020 -- 2025 consisted of a total of 532 papers. This was a small enough number that a combined automated/manual approach of the entire proceedings was achievable in just over ten hours. 
+While this combined approach substantially reduces the likelihood of missed references, the results should be interpreted as conservative estimates rather than exhaustive counts.
+% Since the process was partially manual, the figures reported here are representative rather than conclusive. 
+% There is a possibility of papers that referenced their repositories using alternative methods being overlooked, though an effort has been made to identify them.
 
 
-\begin{table}
-    \centering
-    \begin{tabular}{r|cccccc}
-                                  & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} & \textbf{2025} \\ \hline
-        Footnote                  & 8             & 12            & 5             & 12            & 13            & 18            \\
-        Body                      & 9             & 5             & 7             & 8             & 6             & 6             \\
-        Citation                  & 0             & 2             & 1             & 1             & 3             & 2             \\
-        Appendix                  & 0             & 0             & 2             & 1             & 1             & 3             \\
-        Missing                   & 2             & 2             & 2             & 3             & 4             & 6             \\ \hline
-        % \# of Papers              & 19            & 21            & 17            & 25            & 27            & 35            \\
-        % \% of Total [no missing] & 17            & 22            & 26            & 22            & 24            & 30            \\
-        % Total Papers            & 100           & 88            & 56            & 99            & 94            & 96            \\
-        \% of Total              & 19            & 24            & 30            & 25            & 29            & 36            \\
-    \end{tabular}
-    \caption{Methods used to share project source URLs in NIME 2020–2025 papers. Rows report the number of papers using each method; the final row shows the percentage of these represent for all papers for that year. ``Missing'' includes incorrect URLs, empty repositories, or extant repositories inferred via web search at the time of analysis.}
-    \label{tab:git_placement}
-\end{table}
+% \begin{table}
+%     \centering
+%     \begin{tabular}{r|cccccc}
+%                                   & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} & \textbf{2025} \\ \hline
+%         Footnote                  & 8             & 12            & 5             & 12            & 13            & 18            \\
+%         Body                      & 9             & 5             & 7             & 8             & 6             & 6             \\
+%         Citation                  & 0             & 2             & 1             & 1             & 3             & 2             \\
+%         Appendix                  & 0             & 0             & 2             & 1             & 1             & 3             \\
+%         Missing                   & 2             & 2             & 2             & 3             & 4             & 6             \\ \hline
+%         % \# of Papers              & 19            & 21            & 17            & 25            & 27            & 35            \\
+%         % \% of Total [no missing] & 17            & 22            & 26            & 22            & 24            & 30            \\
+%         % Total Papers            & 100           & 88            & 56            & 99            & 94            & 96            \\
+%         \% of Total              & 19            & 24            & 30            & 25            & 29            & 36            \\
+%     \end{tabular}
+%     \caption{Methods used to share project source URLs in NIME 2020–2025 papers. Rows report the number of papers using each method; the final row shows the percentage of these represent for all papers for that year. ``Missing'' includes incorrect URLs, empty repositories, or extant repositories inferred via web search at the time of analysis.}
+%     \label{tab:git_placement}
+% \end{table}
 
 %% Bar graph
 \begin{figure}
@@ -141,7 +130,7 @@ There is a possibility of papers that referenced their repositories using altern
                 ybar stacked,
                 bar width=12pt,
                 width=\linewidth,
-                height=8.75cm,
+                height=9.00cm,
                 ymin=0,
                 ymax=36,
                 ytick distance=5,
@@ -160,7 +149,7 @@ There is a possibility of papers that referenced their repositories using altern
                 nodes near coords style={
                     /pgf/number format/1000 sep={}, % optional formatting
                     anchor=west,   % anchor the text
-                    xshift=4pt,    % shift it outside the bar
+                    xshift=3.75pt,    % shift it outside the bar
                     text=black,    % color
                 },
             ]
@@ -202,24 +191,16 @@ There is a possibility of papers that referenced their repositories using altern
 
 The standards for what qualified as a link to the project's source material were deliberately broad.
 Papers that provided a URL to a web page, containing a link to the source, qualified (e.g., \cite{nime2025_10,nime2025_16,carter_sculpting_2025,nime2025_37,nime2025_67}).
-Cases where the hyperlink was broken in the PDF, but could be easily ascertained and typed manually, qualified (e.g., \cite{nime2025_58, nime2025_62}).
+Cases where the hyperlink was broken in the PDF, but the correct URL could be easily ascertained and typed manually, qualified (e.g., \cite{nime2025_58, nime2025_62}).
 % \footnote{\citet{nime2025_58} has a space in its source URL and \cite{nime2025_62} has missing underscores, \url{https://github.com/MetaBow/MetaBoard} instead of  \url{https://github.com/MetaBow/_MetaBoard_} }
-An additional URL category---`missing'---was added to the search. The `missing' category includes cases where the repository was unreachable, entirely empty, or the link was absent, but a web search for the project name returned the repository within the first page of results. 
-These repositories qualified and are included in the total percentage of papers with source repositories for that year (Table~\ref{tab:git_placement}).
+During the course of the search, an additional category---`missing'---was added. The `missing' category includes cases where the repository was unreachable, entirely empty, or the link was absent, but a web search for the project name returned the repository within the first page of results. 
+These repositories qualified and are included in the total percentage of papers with source repositories for that year.
 % but illustrate the potential pitfalls in an unstandardised system for reference project repositories.
 
-Of the 96 papers from NIME 2025, 34 intend to share their source, whether software, datasets, or even zines \cite{nime2025_42}. This is in keeping with the 33\% reported in \citet{calegario_documentation_2021}, which applied a similar process to papers from 2018--2020.
-%% NOTE: About GitHub and NIME
-% Table~\ref{tab:git_type} and Figure~\ref{fig:git_occurences} both show github as the dominent platform
-%  For Figure~\ref{fig:git_occurences}, a list of papers that reference github was created%
-% \footnote{\texttt{pdfgrep -P 'github' -rli .}}
-% this was crossed referenced with all papers tha reference GitHub and another usage of `git'.%
-% \footnote{\verb$pdfgrep -P 'github' -rli . | xargs  pdfgrep -P '(^|\W)git(?!ch|imation|ter|udinal|arr|al|aroo|a|hub\b)' -rli$}
-% After pruning false positives, the results were subtracted giving the data in Figure~\ref{fig:git_occurences}.
-% In many cases there is a complete overlap of git version control usage for the year.
-% In which case it can be safely called a de facto standard. %whether this \textit{good} thing is left unanswered, but it is certainly a behaviour in the community.
-GitHub is by far the preferred repository platform (Table~\ref{tab:git_type}), hosting 32 projects and reflecting the trend observed by \citet{fiordelmondo_towards_2025}.
-Table~\ref{tab:git_placement} shows the ways in which authors disseminated source URLs, with footnotes being the most common method. The practice of sharing source repositories has increased over the period considered, but so too has the number of instances of `missing' repositories.
+Of the 96 papers from NIME 2025, 34 intend to share their source, whether software, datasets, or even zines \cite{nime2025_42}. 
+% This is in keeping with the 33\% reported in \citet{calegario_documentation_2021}, which applied a similar process to papers from 2018--2020.
+Figure~\ref{fig:git_placement} shows the ways in which authors disseminated source URLs, with footnotes being the most common method. 
+The practice of sharing source repositories has increased over the period considered, but so too has instances of `missing' repositories.
 
 \subsection{Question 2: Adoption of Open Source}
 
@@ -240,7 +221,7 @@ Table~\ref{tab:git_placement} shows the ways in which authors disseminated sourc
                 grid=major,
                 grid style={dashed,gray!30},
                 legend pos=north west,
-                title={NIME Papers Referencing Git Repositories},
+                title={NIME Papers Referencing git Repositories},
                 thick,
             ]           
             \addplot[
@@ -248,7 +229,7 @@ Table~\ref{tab:git_placement} shows the ways in which authors disseminated sourc
                 mark=*,
                 sharp plot
             ] coordinates {
-                    (9,0) (10,1) (11,2) (12,6) (13,16) (14,14) (15,14) (16,19) (17,22) (18,24) (19,27) (20,29) (21,35) (22,43) (23,48) (24,44) (25,46)
+                    (9,0) (10,1) (11,2) (12,6) (13,16) (14,14) (15,14) (16,19) (17,22) (18,24) (19,27) (20,29) (21,35) (22,39) (23,48) (24,44) (25,46)
                 };
             \addlegendentry{GitHub}              
             \addplot[
@@ -256,7 +237,7 @@ Table~\ref{tab:git_placement} shows the ways in which authors disseminated sourc
                 mark=*,
                 sharp plot
             ] coordinates {
-                    (09,0) (10,1) (11,3) (12,6) (13,16) (14,14) (15,14) (16,19) (17,22) (18,25) (19,31) (20,29) (21,37) (22,43) (23,53) (24,44) (25,52)
+                    (09,0) (10,1) (11,3) (12,6) (13,16) (14,14) (15,14) (16,19) (17,22) (18,25) (19,31) (20,29) (21,37) (22,43) (23,53) (24,45) (25,52)
                 };
             \addlegendentry{git}
              \addplot+[
@@ -274,14 +255,9 @@ Table~\ref{tab:git_placement} shows the ways in which authors disseminated sourc
     \label{fig:git_occurences}
 \end{figure}
 
-To answer the second question, all NIME paper proceedings were searched for references to a git repository with a case-insensitive regular expression \texttt{\textbackslash Wgit}, matching occurrences of git and variants such as `GitHub' and `GitLab', as well as URLs like \texttt{https:/\textbf{/git}hub.com/}. 
+To answer the second question, all NIME paper proceedings were searched for any usage of a git repository as part of a project.
 This approach follows the method of \citet{fiordelmondo_towards_2025}, which counted papers containing terms related to open source repositories from NIME proceedings 2001--2024. 
 One deviation from the previous method was inclusion \texttt{github.io} links. The \texttt{github.io} URL was also  included since authors sometimes link to project pages hosted there and familiarity with git and GitHub can be inferred.  
-The resulting yearly percentages of NIME papers referencing a Git repository are shown in Figure~\ref{fig:git_occurences}.
-% Spike in 2023 may be partially answered with that years theme of `Frugal Music Innovation' emphasising `solving problems with the available resources' a theme with which usage of open source projects would fit.
-There is substantial overlap between git as a technology and GitHub as a platform, suggesting that most interactions with the git VCS occur via GitHub.
-Put in context of Table~\ref{tab:git_placement}, the gap between usage of open source projects and publishing a projects source has gradually increased since NIME 2020.
-
 
 This search approach is not foolproof and can miss instances where a project repository exists but neither the term `git' appears in the URL nor is it referenced directly in the text.
 The search was run multiple times over a directory containing all NIME papers to date, with progressively stricter constraints applied to reduce false positives. The process began with a \texttt{pdfgrep} search, which removed the majority of genuine matches and enabled more efficient pruning of the remaining false positives.%
@@ -290,6 +266,33 @@ The search was run multiple times over a directory containing all NIME papers to
 Examples of false positives were words split across line breaks at “git” (e.g., legitimation broken into ``le-'' and ``\textbf{git}imation''), as well as unrelated terms such as ``gitaroo'' or ``gitarre.''
 The search could not be overly restrictive, however, because it needed to retain valid matches such as ``gitorious,'' a git-based hosting service that was acquired by GitLab and discontinued in 2015 \cite{bjaanes_gitorious_2015}.
 
+\begin{table}
+    \centering
+    \begin{tabular}{r|cccccc}
+               & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} & \textbf{2025} \\ \hline
+        GitHub & 19            & 20            & 16            & 22            & 26            & 32            \\
+        GitLab & 0             & 1             & 1             & 3             & 0             & 0             \\
+        other  & 0             & 0             & 0             & 0             & 1             & 3             \\
+    \end{tabular}
+    \caption{Git service used to host NIME project repositories.}
+    \label{tab:git_type}
+\end{table}
+
+The resulting yearly percentages of NIME papers referencing a git repository are shown in Figure~\ref{fig:git_occurences}.
+% Spike in 2023 may be partially answered with that years theme of `Frugal Music Innovation' emphasising `solving problems with the available resources' a theme with which usage of open source projects would fit.
+%% NOTE: About GitHub and NIME
+% Table~\ref{tab:git_type} and Figure~\ref{fig:git_occurences} both show github as the dominent platform
+%  For Figure~\ref{fig:git_occurences}, a list of papers that reference github was created%
+% \footnote{\texttt{pdfgrep -P 'github' -rli .}}
+% this was crossed referenced with all papers tha reference GitHub and another usage of `git'.%
+% \footnote{\verb$pdfgrep -P 'github' -rli . | xargs  pdfgrep -P '(^|\W)git(?!ch|imation|ter|udinal|arr|al|aroo|a|hub\b)' -rli$}
+% After pruning false positives, the results were subtracted giving the data in Figure~\ref{fig:git_occurences}.
+% In many cases there is a complete overlap of git version control usage for the year.
+% In which case it can be safely called a de facto standard. %whether this \textit{good} thing is left unanswered, but it is certainly a behaviour in the community.
+% GitHub is the dominant repository platform (Table~\ref{tab:git_type}), which reflects the trend observed by \citet{fiordelmondo_towards_2025}.
+There is substantial overlap between git as a technology and GitHub as a platform, suggesting that most interactions with the git VCS occur via GitHub.
+Figure~\ref{fig:git_occurences} also illustrates the growing gap between usage of open source and publishing a project's source has gradually increased since NIME 2020.
+This corroborated by Table~\ref{tab:git_type} which shows the number of project source repositories using GitHub since 2020.
 
 
 \section{An Open Methodology for DMIs}
@@ -303,7 +306,7 @@ The search could not be overly restrictive, however, because it needed to retain
 % \end{itemize}
 
 
-Section~\ref{sec:current-state} shows that open source \emph{use} within NIME has grown steadily, yet the ability to \emph{locate} and \emph{reuse} project materials remains inconsistent. Even when authors intend to share, repository links may be missing, fragile, or indirect (Table~\ref{tab:git_placement}), and a non-trivial portion of projects can only be recovered through manual inference or external search. This adoption--practice gap suggests that the primary barrier is not a lack of willingness to be open, but rather the absence of shared conventions for packaging, signposting, and preserving the heterogeneous materials that constitute a DMI---firmware, schematics, enclosure models, datasets, and documentation. In other words, the challenge is less about whether a project is ``open'' in principle, and more about whether its constituent research products are \emph{findable and reconstructible} in practice. This becomes especially salient for DMIs, where reproducibility depends on multiple interdependent artefacts and where tacit knowledge is encoded across tools, file formats, and incremental design decisions. The remainder of the paper, therefore, shifts from measuring the current state of open source referencing in the proceedings to demonstrating a concrete, end-to-end methodology for making a DMI's source navigable and citable over time.
+Section~\ref{sec:current-state} shows that open source \emph{use} within NIME has grown steadily, yet the ability to \emph{locate} and \emph{reuse} project materials remains inconsistent. Even when authors intend to share, repository links may be missing, fragile, or indirect (Figure~\ref{fig:git_placement}), and a non-trivial portion of projects can only be recovered through manual inference or external search. This adoption--practice gap suggests that the primary barrier is not a lack of willingness to be open, but rather the absence of shared conventions for packaging, signposting, and preserving the heterogeneous materials that constitute a DMI---firmware, schematics, enclosure models, datasets, and documentation. In other words, the challenge is less about whether a project is ``open'' in principle, and more about whether its constituent research products are \emph{findable and reconstructible} in practice. This becomes especially salient for DMIs, where reproducibility depends on multiple interdependent artefacts and where tacit knowledge is encoded across tools, file formats, and incremental design decisions. The remainder of the paper, therefore, shifts from measuring the current state of open source referencing in the proceedings to demonstrating a concrete, end-to-end methodology for making a DMI's source navigable and citable over time.
 
 
 The case study is the open methodology applied to the interface described in \anon{\citet{hamilton_augmentation_2025_activities}}. The interface was created as part of \anon{the NEMUS project}, which is dedicated to making most digital research products open source. From early on, it was apparent that, given the project's involvement, simple open sourcing was not enough, and the project aimed to incorporate best open research practices from the outset \cite{chen_open_2019}.
@@ -379,7 +382,7 @@ Likewise, the future of CAD data is tied to software sustainability: the discont
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{images/modular_archive_1.pdf}
-    \caption{Zenodo’s GitHub integration does not capture data stored in Git submodules. As an alternative, each submodule can be archived independently at the appropriate version, after which the meta-repository referencing these components can be archived, resulting in a collection of linked DOIs.}
+    \caption{Zenodo’s GitHub integration does not capture data stored in git submodules. As an alternative, each submodule can be archived independently at the appropriate version, after which the meta-repository referencing these components can be archived, resulting in a collection of linked DOIs.}
     \label{fig:zenodo-github-integration}
 \end{figure}
 
@@ -389,7 +392,7 @@ Documentation for the project still remains incomplete.
 The firmware was documented as it was created using the Doxygen documentation system \cite{beningo_documenting_2017}, but this does not fill the role of a user manual \cite{stallman_gnu_1992,procida_diataxis_2025}.
 Best practice emphasises the importance of documentation \cite{smith_software_2016}, though it is less prescriptive about form and depth.
 \citet{writethedocs_sowftware_2025} offers comprehensive guidance. 
-A pragmatic rule is that documentation should enable you to still ``understand your code in six months'' \cite{writethedocs_sowftware_2025}, a principle echoed
+A pragmatic rule is that documentation should enable one to still ``understand your code in six months'' \cite{writethedocs_sowftware_2025}, a principle echoed
 in reproducibility studies \cite{perkel_challenge_2020}.
 
 % Documenting all aspects of the work is a considerable undertaking and the constantly developing nature makes it difficult to archive accurately until it is in a much later stage. procida_diataxis_2025The documentation practice for a project may also reveal something within the author's own perception of the work.
