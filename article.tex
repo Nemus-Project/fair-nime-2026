@@ -209,7 +209,6 @@ To answer the second question, all NIME paper proceedings were searched for any 
 This approach follows the method of \citet{fiordelmondo_towards_2025}, which counted papers containing terms related to open source repositories from NIME proceedings 2001--2024.
 One deviation from the previous method was inclusion \texttt{github.io} links. The \texttt{github.io} URL was also  included since authors sometimes link to project pages hosted there and familiarity with git and GitHub can be inferred.
 
-% This search approach is not foolproof and can miss instances where a repository is referenced but the term `git' does not appear in the URL nor is it referenced directly in the text.
 The search was run multiple times over a directory containing all NIME papers to date, with progressively stricter constraints applied to reduce false positives. The process began with a \texttt{pdfgrep} search, which removed the majority of genuine matches and enabled more efficient pruning of the remaining false positives.%
 \footnote{\texttt{pdfgrep -P '\textbackslash Wgit(?!hub|lab)' -ri .}}
 
@@ -233,6 +232,10 @@ There is substantial overlap between git as a technology and GitHub as a platfor
 Figure~\ref{fig:git_occurences} also illustrates the growing gap between usage of open source and publishing a project's source has gradually increased since NIME 2020.
 This corroborated by Table~\ref{tab:git_type} which shows the number of project source repositories using GitHub since 2020.
 
+\section{Open Methodology for DMIs: A Case Study}\label{sec:DMI}
+
+Section~\ref{sec:current-state} indicates that while open source \emph{use} in NIME papers is increasing, access to the underlying project materials remains uneven. Links to repositories are often missing, fragile, or routed through intermediary pages (Figure~\ref{fig:git_placement}), and a subset of projects can only be located via manual inference or web search. For DMIs—where reproducibility depends on multiple interdependent artefacts—this makes “openness” a practical question of navigation and reconstruction rather than intent.
+
 \begin{table}
     \centering
     \begin{tabular}{r|cccccc}
@@ -244,10 +247,6 @@ This corroborated by Table~\ref{tab:git_type} which shows the number of project 
     \caption{Git service used to host NIME project repositories.}
     \label{tab:git_type}
 \end{table}
-
-\section{Open Methodology for DMIs: A Case Study}\label{sec:DMI}
-
-Section~\ref{sec:current-state} indicates that while open source \emph{use} in NIME papers is increasing, access to the underlying project materials remains uneven. Links to repositories are often missing, fragile, or routed through intermediary pages (Figure~\ref{fig:git_placement}), and a subset of projects can only be located via manual inference or web search. For DMIs—where reproducibility depends on multiple interdependent artefacts—this makes “openness” a practical question of navigation and reconstruction rather than intent.
 
 Below is a case study that responds to this findability gap by showing how one DMI can be packaged as a versioned, cross-referenced object—so that the materials implied by the paper can be located, checked out, and cited without recourse to external search. The case study is the open methodology applied to the interface described in \anon{\citet{hamilton_augmentation_2025_activities}}. The interface was created as part of \anon{the NEMUS project}, which is dedicated to making most digital research products open source. From the outset, the project aimed to incorporate best open research practices \cite{chen_open_2019}.
 
@@ -293,7 +292,7 @@ For the original paper, the links to the individual project repositories were in
 
 
 
-As the project developed, two distinct interfaces were created with different applications. One interface was for \anon[an installation]{installation at San Colombano}, while a second model was created for use in research within \anon[another project]{the NEMUS project and the University of Bologna}. Both interfaces use the same core components, but at separate phases in their development. This means the original links no longer accurately reflect the interface as presented in the paper. To address this, the individual repositories were referenced under a single `meta repository' (Figure~\ref{fig:repo-relation}). Referencing is achieved using git's submodules functionality \cite{git_submodule_2025}. The benefit of such an approach is two-fold.
+As the project developed, two distinct interfaces were created with different applications. One interface was for \anon[an installation]{installation at San Colombano}, while a second model was created for use in research within \anon[another project]{the NEMUS project and the University of Bologna}. Both interfaces use the same core components, but at separate phases in their development. This means the original links no longer accurately reflect the interface as presented in the original paper \anon{\cite{hamilton_augmentation_2025_activities}}. To address this, the individual repositories were referenced under a single `meta repository' (Figure~\ref{fig:repo-relation}). Referencing is achieved using git's submodules functionality \cite{git_submodule_2025}. The benefit of such an approach is two-fold.
 To navigate the project's states over time, only a single URL needs to be shared. The individual submodules can be updated or swapped out entirely.
 Version tagging demarcates distinct interface versions, making navigation easier.
 
