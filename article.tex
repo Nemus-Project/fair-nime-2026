@@ -304,7 +304,7 @@ Below is a case study that responds to this findability gap by showing how one D
 
 
 
-Established guidance on open research software converges on a small set of infrastructural elements: publicly accessible source under version control, clear licensing, adequate documentation, and persistent archival identifiers \cite{ssi_checklist_2018, smith_software_2016}. Tools such as the Citation File Format (CFF) \cite{druskat_citation_2021} and hardware-oriented extensions \cite{fiordelmondo_towards_2025} further support formal citation and interoperability. Rather than aiming for exhaustive compliance with every available recommendation, this case study operationalises openness through five practical dimensions that determine whether a DMI can be located, reconstructed, and cited over time.
+Established guidance on open research software converges on a small set of infrastructural elements: publicly accessible source under version control, clear licensing, adequate documentation, and persistent archival identifiers \cite{ssi_checklist_2018, smith_software_2016}. Tools such as the Citation File Format \cite{druskat_citation_2021} and hardware-oriented extensions \cite{fiordelmondo_towards_2025} further support formal citation and interoperability. Rather than aiming for exhaustive compliance with every available recommendation, this case study operationalises openness through five practical dimensions that determine whether a DMI can be located, reconstructed, and cited over time.
 
 Five infrastructural dimensions were identified:
 
@@ -355,7 +355,7 @@ As the project developed, two distinct interfaces were created with different ap
 To navigate the project's states over time, only a single URL needs to be shared. The individual submodules can be updated or swapped out entirely.
 Version tagging demarcates distinct interface versions, making navigation easier.
 
-The function of each component also shifted over time. The CAD component transitioned into files for electronic schematics and PCB manufacture, while the Model component has changed into a repository of documents describing measurements of the enclosure. Renaming either repository would break previous links to the work. The directory name of submodules can be changed in the meta repository, but this situation emphasised the importance of archiving the work.
+The function of each component also shifted over time. The \anon[Schematic]{CAD} component transitioned into files for electronic schematics and PCB manufacture, while the \anon[Enclosure]{Model} component has changed into a repository of documents describing measurements of the enclosure. Renaming either repository would break previous links to the work. The directory name of submodules can be changed in the meta repository, but this situation emphasised the importance of archiving the work.
 Rather than referencing through URLs to a git repository, the project was archived using CERN's digital archiving platform Zenodo \cite{zenodo_2013}.
 Archiving exposed a few practical challenges.
 % Zenodo’s GitHub integration does not yet handle submodules \cite{zenodo_1036_2025}, requiring separate archives for each submodule and manual cross-referencing for the archive of the meta repository  (Figure~\ref{fig:zenodo-github-integration}).
@@ -363,19 +363,19 @@ Zenodo’s GitHub integration does not currently include git submodules when gen
 Likewise, the future of CAD data is tied to software sustainability: the discontinuation of Autodesk EAGLE \cite{autodesk_eagle_2024} effectively freezes its XML format, though conversion to KiCad remains available \cite{kicad_eagle_2024}. These lessons emphasise that openness depends not only on version control and archiving but also on the careful selection of formats and hosting infrastructure.
 
 
-\begin{figure}[b]
+\begin{figure}
     \centering
     \begin{tikzpicture}[
             node distance=0.25cm and 0.25cm,
             box/.style = {draw, minimum width=0.1\linewidth, minimum height=0.5cm, align=center},
             arrow/.style = {-latex,thick},
         ]
-        \node[box] (box1){\textbf{Firmware}\\ \small{12.3456/zenodo.0001}};
-        \node[box, right=of box1] (box2) {\textbf{Schematics}\\\small{12.3456/zenodo.0002}};
-        \node[box, right=of box2] (box3) {\textbf{Enclosure}\\ \small{12.3456/zenodo.0003}};
+        \node[box]                (box1) {\textbf{Firmware}  \\ \small{12.3456/zenodo.0001}};
+        \node[box, right=of box1] (box2) {\textbf{Schematics}\\ \small{12.3456/zenodo.0002}};
+        \node[box, right=of box2] (box3) {\textbf{Enclosure} \\ \small{12.3456/zenodo.0003}};
         \node[box, below=2cm of box2] (bottom) {
             \textbf{Interface}\\
-            12.3456/zenodo.16847981\\
+            12.3456/zenodo.0004\\
             Cross Ref:\\
             12.3456/zenodo.0001\\
             12.3456/zenodo.0002\\
@@ -445,6 +445,6 @@ For DMIs, openness is infrastructural rather than declarative. Version control p
 
 The findings presented here suggest that improving openness at NIME does not primarily require new policies or comprehensive standards. Reducing ambiguity in how repositories are referenced and aligning disclosure with archival practice would already address a substantial portion of the current gap. Small infrastructural adjustments can lower barriers to reuse without overextending contributors, as the long-term reuse of NIME projects may depend on the continued discoverability and citability of their digital artefacts.
 
-
-
-
+Finally, making a project’s source code easy to locate removes unnecessary barriers for readers and a broader audience. 
+NIMEs serve as resources for teaching creative engineering, electronics, musicianship, and HCI, but difficult access limits opportunities for students to engage \cite{nime2021_26}, remix \cite{dasgupta_remixing_2016}, and foster creativity \cite{sharmin_creativity_2021, marin_computational_2024}. 
+By improving discoverability and citability, NIME can better support new contributors, laying ``the groundwork for experiences of practice'' \cite[p. 277]{sennett_craftsman_2008}, and extend its impact across wider communities.
