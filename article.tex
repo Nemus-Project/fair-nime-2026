@@ -382,10 +382,10 @@ Likewise, the future of CAD data is tied to software sustainability: the discont
             12.3456/zenodo.0003
         };
 
-        \draw (bottom.north) -- ++(0,0.65) coordinate (break);
-        \draw (break)++(-0.15,-0.15) -- ++(0.3,0.3);
-        \draw (break)++(0,0.35)coordinate (break2) -- ++(0,0.50);
-        \draw (break2)++(-0.15,-0.15) -- ++(0.3,0.3);
+        \draw[thick] (bottom.north) -- ++(0,0.65) coordinate (break);
+        \draw[thick] (break)++(-0.15,-0.15) -- ++(0.3,0.3);
+        \draw[thick] (break)++(0,0.35)coordinate (break2) -- ++(0,0.50);
+        \draw[thick] (break2)++(-0.15,-0.15) -- ++(0.3,0.3);
         \draw[->] (break)++(0,0.75) -| (box1.south);
         \draw[->] (break)++(0,0.75) -| (box2.south);
         \draw[->] (break)++(0,0.75) -| (box3.south);
