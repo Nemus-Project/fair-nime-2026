@@ -20,7 +20,6 @@ That work is then used to establish a framework for analysing the use of open so
 This is followed by a case study from NIME 2025 that examines the open source practices employed during and after the conference. Based on this analysis and case study, the paper concludes with recommendations aimed at strengthening open research practice and enabling NIME work to be more readily engaged with by a wider community of students, creators and researchers.
 
 \section{Related Work}
-% \section{Open Research at NIME}
 
 Since its inception, NIME has been committed to making its proceedings openly accessible under a CC BY 4.0 licence.
 In parallel, research projects within the NIME community have developed a strong tradition of open research practice, accompanied by ongoing discussions on how to better support, formalise, and sustain open source culture \cite{mcpherson_nimehub_2016}.
@@ -97,10 +96,10 @@ While this combined approach substantially reduces the likelihood of missed refe
                     },
                 nodes near coords,
                 nodes near coords style={
-                        /pgf/number format/1000 sep={}, % optional formatting
-                        anchor=west,   % anchor the text
-                        xshift=3.75pt,    % shift it outside the bar
-                        text=black,    % color
+                        /pgf/number format/1000 sep={},
+                        anchor=west,
+                        xshift=3.75pt,
+                        text=black, 
                     },
             ]
 
@@ -136,19 +135,14 @@ While this combined approach substantially reduces the likelihood of missed refe
     \label{fig:git_placement}
 \end{figure}
 
-
-% 2024 on link through bit.ly
-
 The standards for what qualified as a link to the project's source material were deliberately broad.
 Papers that provided a URL to a web page, containing a link to the source, qualified (e.g., \cite{nime2025_10,nime2025_16,carter_sculpting_2025,nime2025_37,nime2025_67}).
 Cases where the hyperlink was broken in the PDF, but the correct URL could be easily ascertained and typed manually, qualified (e.g., \cite{nime2025_58, nime2025_62}).
 % \footnote{\citet{nime2025_58} has a space in its source URL and \cite{nime2025_62} has missing underscores, \url{https://github.com/MetaBow/MetaBoard} instead of  \url{https://github.com/MetaBow/_MetaBoard_} }
 During the course of the search, an additional category---`missing'---was added. The `missing' category includes cases where the repository was unreachable, entirely empty, or the link was absent, but a web search for the project name returned the repository within the first page of results.
 These repositories qualified and are included in the total percentage of papers with source repositories for that year.
-% but illustrate the potential pitfalls in an unstandardised system for reference project repositories.
 
 Of the 96 papers from NIME 2025, 34 intend to share their source, whether software, datasets, or even zines \cite{nime2025_42}.
-% This is in keeping with the 33\% reported in \citet{calegario_documentation_2021}, which applied a similar process to papers from 2018--2020.
 Figure~\ref{fig:git_placement} shows the ways in which authors disseminated source URLs, with footnotes being the most common method.
 The practice of sharing source repositories has increased over the period considered, but so too has instances of `missing' repositories.
 
