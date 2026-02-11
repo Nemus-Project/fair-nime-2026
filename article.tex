@@ -1,18 +1,5 @@
 \section{Introduction}
 
-% \textbf{Central Argument:}
-% \begin{itemize}
-%     \item there is educational value in recreating and iterating on previous work \cite{dasgupta_remixing_2016}.
-%     \item Creative applications of technology fosters learning of technical skills \cite{sharmin_creativity_2021, marin_computational_2024}. (DMI apprenticeship has already been raised \citet{nime2021_26}
-%     \item Tacit knowledge is encoded within the source work.
-%     \item There is a (growing) open source movement at NIME
-%     \item Authors are having to decide the format in how they disseminate source repositories.
-%     \item but the work can sometimes be too tricky to find.
-%     \item NIME is potentially missing an opportunity to engage with a community of new developers,
-%     \item Inaction is easier than action, which might explain under adoption.
-%     \item the contents of a repository don't need to be perfect, sharing is ``good enough.'' \cite{jensenius_best_2021}
-% \end{itemize}
-
 Over the past decade, academia has increasingly embraced ``open methodology'' \cite{nosek_scientific_2012}, encompassing open science \cite{unesco_open_2021} and FAIR (findable, accessible, interoperable, and reproducible) digital research principles \cite{go_fair_2016}.
 Collectively described here as as `open research practice,' these approaches are essential for ensuring transparency, validation, reuse, and access within scholarly work.
 This movement has raised awareness across research communities and led to the development of widely accepted best-practice frameworks \cite{smith_software_2016}.
@@ -51,8 +38,6 @@ Discussions of ``recreating'' a NIME have predominantly emphasised its role in m
 
 \section{Analysis of Open Research Practice at NIME}\label{sec:current-state}
 
-% The NIME archive currently provides a valuable resource for those wishing to explore creative applications of micro-controllers, electronics and computer programming. 
-% NIME has 2000+ projects available in its open-access archive from which students can draw inspiration and iterate upon. 
 The NIME archive hosts 2,000+ open-access projects that support exploration and iteration in creative microcontroller, electronics, and programming practices.
 Though many of the projects are open source, far too often this is only on condition that the source can be located in the first place.
 Prompted by the analysis in \citet{calegario_documentation_2021} and \citet{fiordelmondo_towards_2025}, two questions were raised.
@@ -61,8 +46,7 @@ Prompted by the analysis in \citet{calegario_documentation_2021} and \citet{fior
     \item ``How often do NIME papers link to source code?''
     \item ``How prevalent is open source practice at NIME?''
 \end{enumerate}
-% Firtly, ``For all papers in NIME, for how many can the source be navigated to from the paper directly?'' 
-% Secondly, ``to what degree has open source practice been adopted at NIME?'' 
+
 Answering these questions may reveal a method that encourages open research practice and fosters engagement with a wider community beyond NIME.
 
 Both questions would be answered through a search of the NIME proceedings up to 2025.
@@ -263,46 +247,9 @@ This corroborated by Table~\ref{tab:git_type} which shows the number of project 
 
 \section{Open Methodology for DMIs: A Case Study}\label{sec:DMI}
 
-% \textbf{Main Points}
-% \begin{itemize}
-%     \item rarely discuss open research practice in depth
-%     \item to further understand an open methodology, discuss a specific instance through the harpsichord project
-%     \item flag some of limitation
-%     \item and explain how they are being addressed
-% \end{itemize}
-
-
 Section~\ref{sec:current-state} indicates that while open source \emph{use} in NIME papers is increasing, access to the underlying project materials remains uneven. Links to repositories are often missing, fragile, or routed through intermediary pages (Figure~\ref{fig:git_placement}), and a subset of projects can only be located via manual inference or web search. For DMIs—where reproducibility depends on multiple interdependent artefacts—this makes “openness” a practical question of navigation and reconstruction rather than intent.
 
 Below is a case study that responds to this findability gap by showing how one DMI can be packaged as a versioned, cross-referenced object—so that the materials implied by the paper can be located, checked out, and cited without recourse to external search. The case study is the open methodology applied to the interface described in \anon{\citet{hamilton_augmentation_2025_activities}}. The interface was created as part of \anon{the NEMUS project}, which is dedicated to making most digital research products open source. From the outset, the project aimed to incorporate best open research practices \cite{chen_open_2019}.
-
-% According to the \citet{ssi_checklist_2018} checklist, the core requirements for an open research
-% software project are: publicly available source code, a VCS, user and developer documentation, an Open Source Institute (OSI) compliant licence \cite{osi_licenses_2025}, and
-% persistent digital object identifiers (DOI). A public VCS implies source
-% availability, though the reverse is not guaranteed. Likewise, a DOI implies some
-% level of digital archiving, but a release archive does not necessitate a DOI.
-% DOIs should be assigned both to the software as a whole and to individual
-% releases \cite{smith_software_2016}; licences should be clearly stated and
-% OSI-compliant \cite{hong_choosing_2025}. To better support complex software
-% citation, \citet{druskat_citation_2021} introduced the Citation File Format
-% (CFF), which standardises metadata for software citations and is supported by
-% both GitHub and Zenodo. Recommendations in \citet{fiordelmondo_towards_2025}
-% extend this to hardware projects, with tools for citation
-% \cite{spaaks_cffconvert_2021}. Beyond these essentials (contribution policies,
-% issue tracking, codes of conduct), more advanced practices presuppose an active
-% repository.
-
-% Five key areas were identified that constitute `best-practice' in open research:
-
-% \begin{enumerate}
-%     \item Source: Defining all the components that constitute the project source.
-%     \item Version Control: the system for  tracking changes to the source over time.
-%     \item Archive: the system for digitally archiving for longevity and citability through digital object identifier (DOI).
-%     \item Documentation: Tutorials, Reference, Explanation, How-To guides.
-%     \item License: Terms under which the work can be used, modified, and shared.
-% \end{enumerate}
-
-
 
 Established guidance on open research software converges on a small set of infrastructural elements: publicly accessible source under version control, clear licensing, adequate documentation, and persistent archival identifiers \cite{ssi_checklist_2018, smith_software_2016}. Tools such as the Citation File Format \cite{druskat_citation_2021} and hardware-oriented extensions \cite{fiordelmondo_towards_2025} further support formal citation and interoperability. Rather than aiming for exhaustive compliance with every available recommendation, this case study operationalises openness through five practical dimensions that determine whether a DMI can be located, reconstructed, and cited over time.
 
@@ -322,11 +269,6 @@ Five infrastructural dimensions were identified:
             box/.style = {draw, minimum width=0.2\linewidth, minimum height=0.5cm, align=center},
             arrow/.style = {-latex', thick}
         ]
-
-        % \node[box] (box1) {Firmware\\sub-module};
-        % \node[box, right=of box1] (box2) {CAD\\sub-module};
-        % \node[box, right=of box2] (box3) {Model Data\\sub-module};
-        % \node[box, below=2cm of box2] (bottom) {Interface\\meta-repository};
 
         \node[box] (box1) {\textbf{Firmware}};
         \node[box, right=of box1] (box2) {\textbf{Schematics}};
@@ -358,7 +300,6 @@ Version tagging demarcates distinct interface versions, making navigation easier
 The function of each component also shifted over time. The \anon[Schematic]{CAD} component transitioned into files for electronic schematics and PCB manufacture, while the \anon[Enclosure]{Model} component has changed into a repository of documents describing measurements of the enclosure. Renaming either repository would break previous links to the work. The directory name of submodules can be changed in the meta repository, but this situation emphasised the importance of archiving the work.
 Rather than referencing through URLs to a git repository, the project was archived using CERN's digital archiving platform Zenodo \cite{zenodo_2013}.
 Archiving exposed a few practical challenges.
-% Zenodo’s GitHub integration does not yet handle submodules \cite{zenodo_1036_2025}, requiring separate archives for each submodule and manual cross-referencing for the archive of the meta repository  (Figure~\ref{fig:zenodo-github-integration}).
 Zenodo’s GitHub integration does not currently include git submodules when generating an archive \cite{zenodo_1036_2025}. As a result, each submodule must be archived independently, after which the meta repository archive must manually reference the corresponding DOIs or original sources to ensure a comprehensive record (Figure~\ref{fig:zenodo-github-integration}).
 Likewise, the future of CAD data is tied to software sustainability: the discontinuation of Autodesk EAGLE \cite{autodesk_eagle_2024} effectively freezes its XML format, though conversion to KiCad remains available \cite{kicad_eagle_2024}. These lessons emphasise that openness depends not only on version control and archiving but also on the careful selection of formats and hosting infrastructure.
 
@@ -394,16 +335,6 @@ Likewise, the future of CAD data is tied to software sustainability: the discont
     \caption{Zenodo’s GitHub integration does not capture data stored in git submodules. As an alternative, each submodule can be archived independently at the appropriate version, after which the meta-repository referencing these components can be archived, resulting in a collection of linked DOIs.}
     \label{fig:zenodo-github-integration}
 \end{figure}
-
-
-% \begin{figure}
-%     \centering
-%     \includegraphics[width=1\linewidth]{images/modular_archive_1.pdf}
-%     \caption{Zenodo’s GitHub integration does not capture data stored in git submodules. As an alternative, each submodule can be archived independently at the appropriate version, after which the meta-repository referencing these components can be archived, resulting in a collection of linked DOIs.}
-%     \label{fig:zenodo-github-integration}
-% \end{figure}
-
-% \subsection{Documentation}
 
 Documentation for the project still remains incomplete.
 The firmware was documented as it was created using the Doxygen documentation system \cite{beningo_documenting_2017}, but this does not fill the role of a user manual \cite{stallman_gnu_1992,procida_diataxis_2025}.
