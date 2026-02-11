@@ -333,9 +333,9 @@ Five infrastructural dimensions were identified:
         \node[box, right=of box2] (box3) {\textbf{Enclosure}};
         \node[box, below=1cm of box2] (bottom) {\textbf{Interface}\\Meta Repository};
 
-        \draw[arrow] (bottom.north) -- ++(0,0.5) -| (box1.south);
-        \draw[arrow] (bottom.north) -- ++(0,0.5) -| (box2.south);
-        \draw[arrow] (bottom.north) -- ++(0,0.5) -| (box3.south);
+        \draw[->] (bottom.north) -- ++(0,0.5) -| (box1.south);
+        \draw[->] (bottom.north) -- ++(0,0.5) -| (box2.south);
+        \draw[->] (bottom.north) -- ++(0,0.5) -| (box3.south);
 
     \end{tikzpicture}
     \caption{The DMI is divided into three submodules, each representing the firmware, electronics schematics and enclosure modelling data. These submodules are collected into a single repository that represents the interface.}
@@ -368,7 +368,7 @@ Likewise, the future of CAD data is tied to software sustainability: the discont
     \begin{tikzpicture}[      
             node distance=0.25cm and 0.25cm,
             box/.style = {draw, minimum width=0.1\linewidth, minimum height=0.5cm, align=center},
-            arrow/.style = {-latex', thick}
+            arrow/.style = {-latex,thick},
         ]
                          \node[box] (box1){\textbf{Firmware}\\ \small{12.3456/zenodo.0001}};
         \node[box, right=of box1] (box2) {\textbf{Schematics}\\\small{12.3456/zenodo.0002}};
@@ -386,9 +386,9 @@ Likewise, the future of CAD data is tied to software sustainability: the discont
         \draw (break)++(-0.15,-0.15) -- ++(0.3,0.3);
         \draw (break)++(0,0.35)coordinate (break2) -- ++(0,0.50);
         \draw (break2)++(-0.15,-0.15) -- ++(0.3,0.3);
-        \draw[arrow] (break)++(0,0.75) -| (box1.south);
-        \draw[arrow] (break)++(0,0.75) -| (box2.south);
-        \draw[arrow] (break)++(0,0.75) -| (box3.south);
+        \draw[->] (break)++(0,0.75) -| (box1.south);
+        \draw[->] (break)++(0,0.75) -| (box2.south);
+        \draw[->] (break)++(0,0.75) -| (box3.south);
 
     \end{tikzpicture}
     \caption{Zenodo’s GitHub integration does not capture data stored in git submodules. As an alternative, each submodule can be archived independently at the appropriate version, after which the meta-repository referencing these components can be archived, resulting in a collection of linked DOIs.}
