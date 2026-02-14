@@ -289,7 +289,9 @@ Renaming either repository would break previous links to the work. The directory
 Rather than referencing through URLs to a git repository, the project was archived using CERN's digital archiving platform Zenodo \cite{zenodo_2013}.
 Archiving exposed a few practical challenges.
 Zenodo’s GitHub integration does not currently include git submodules when generating an archive \cite{zenodo_1036_2025}. As a result, each submodule must be archived independently, after which the meta repository archive must manually reference the corresponding DOIs or original sources to ensure a comprehensive record (Figure~\ref{fig:zenodo-github-integration}).
-Likewise, the future of CAD data is tied to software sustainability: the discontinuation of Autodesk EAGLE \cite{autodesk_eagle_2024} effectively freezes its XML format, though conversion to KiCad remains available \cite{kicad_eagle_2024}. These lessons emphasise that openness depends not only on version control and archiving but also on the careful selection of formats and hosting infrastructure.
+Likewise, the future of CAD data is tied to software sustainability: the discontinuation of Autodesk EAGLE \cite{autodesk_eagle_2024} effectively freezes its XML format, though conversion to KiCad remains available \cite{kicad_eagle_2024}. 
+% In the same manner that Python 2.7 presents an opportunity for adopting an archival programming language \cite{robert_rp_2020}, so to might EAGLE's discontinuation.
+These lessons emphasise that openness depends not only on version control and archiving but also on the careful selection of formats and hosting infrastructure.
 
 
 \begin{figure}
@@ -313,11 +315,11 @@ Likewise, the future of CAD data is tied to software sustainability: the discont
 
         \draw[thick] (bottom.north) -- ++(0,0.65) coordinate (break);
         \draw[thick] (break)++(-0.15,-0.15) -- ++(0.3,0.3);
-        \draw[thick] (break)++(0,0.35)coordinate (break2) -- ++(0,0.50);
+        \draw[thick] (break)++(0,0.35) coordinate (break2) -- ++(0,0.50);
         \draw[thick] (break2)++(-0.15,-0.15) -- ++(0.3,0.3);
-        \draw[->] (break)++(0,0.75) -| (box1.south);
-        \draw[->] (break)++(0,0.75) -| (box2.south);
-        \draw[->] (break)++(0,0.75) -| (box3.south);
+        \draw[->, thick] (break)++(0,0.75) -| (box1.south);
+        \draw[->, thick] (break)++(0,0.75) -| (box2.south);
+        \draw[->, thick] (break)++(0,0.75) -| (box3.south);
 
     \end{tikzpicture}
     \caption{Zenodo’s GitHub integration does not capture data stored in git submodules. As an alternative, each submodule can be archived independently at the appropriate version, after which the meta-repository referencing these components can be archived, resulting in a collection of linked DOIs.}
@@ -325,7 +327,7 @@ Likewise, the future of CAD data is tied to software sustainability: the discont
 \end{figure}
 
 Documentation for the project still remains incomplete.
-The firmware was documented as it was created using the Doxygen documentation system \cite{beningo_documenting_2017}, but this does not fill the role of a user manual \cite{stallman_gnu_1992,procida_diataxis_2025}.
+The firmware was documented using the Doxygen documentation system \cite{beningo_documenting_2017}, but this does not fill the role of a user manual \cite{stallman_gnu_1992,procida_diataxis_2025}.
 Best practice emphasises the importance of documentation \cite{smith_software_2016}, though it is less prescriptive about form and depth.
 \citet{writethedocs_sowftware_2025} offers comprehensive guidance.
 A pragmatic rule is that documentation should enable one to still ``understand your code in six months'' \cite{writethedocs_sowftware_2025}, a principle echoed
@@ -335,13 +337,13 @@ in reproducibility studies \cite{perkel_challenge_2020}.
 
 \section{Discussion}
 
-Section~\ref{sec:current-state} shows that open source usage at NIME has grown steadily, yet dissemination practices remain inconsistent. The issue is less reluctance to share than ambiguity in how project materials are structured and signposted. Repository links appear in heterogeneous locations—footnotes, body text, appendices, indirect project pages, or shortened URLs \cite{carter_sculpting_2025, nime2016_Barrett}—making identification interpretative and error-prone at scale. The burden is distributed across authors deciding how to disseminate materials, researchers analysing practice, and readers attempting to move from paper to artefact.
+Section~\ref{sec:current-state} shows that open source usage at NIME has grown steadily, yet dissemination practices remain inconsistent. The issue is less reluctance to share than ambiguity in how project materials are structured and signposted. Repository links appear in heterogeneous locations—footnotes, body text, appendices, indirect project pages \cite{carter_sculpting_2025}, or shortened URLs \cite{nime2024_86}—making identification interpretative and error-prone at scale. The burden is distributed across authors deciding how to disseminate materials, researchers analysing practice, and readers attempting to move from paper to artefact.
 
 The case study in Section~\ref{sec:DMI} shows that this ambiguity extends beyond link placement to project structure and longevity. As the DMI evolved, repositories were renamed, reorganised, and divided into modular components; references in the original paper no longer mapped cleanly to the current state of the work. Archiving exposed further limitations, including incomplete support for modular repositories and dependencies. These issues do not reflect a lack of openness, but the practical complexity of maintaining intelligible research artefacts over time.
 
 The adoption–practice gap is therefore structural. The difficulty is not simply whether a repository exists, but whether it remains coherent and citable as the project evolves. Proposals such as centralised repositories \cite{mcpherson_nimehub_2016}, replicating officers \cite{calegario_documentation_2021}, or prescriptive repository standards \cite{fiordelmondo_towards_2025} address aspects of this challenge. The case study suggests that even careful structuring and archiving do not eliminate friction. Comprehensive compliance with evolving frameworks may be unrealistic across the diversity of NIME contributions. Encouraging broader uptake of transparent, “good enough” sharing practices \cite{jensenius_best_2021} may therefore be more effective than imposing stricter formal requirements.
 
-Within this context, a minimal intervention could improve consistency: adding a dedicated ``Project URL'' or DOI field to the NIME paper template and metadata (Figure~\ref{fig:project-details}). Standardising this field would clarify authorial intent and reduce ambiguity about whether a link constitutes the project’s source or related material. It would not resolve structural challenges of versioning or preservation, but it would reduce friction at publication and make repository presence explicit and extractable.
+Within this context, a minimal intervention could improve consistency: adding a dedicated ``Project URL'' field to the NIME paper template and metadata (Figure~\ref{fig:project-details}). Standardising this field would clarify authorial intent and reduce ambiguity about whether a link constitutes the project’s source or related material. It would not resolve structural challenges of versioning or preservation, but it would reduce friction at publication and make repository presence explicit and extractable.
 
 
 \begin{figure}
@@ -360,7 +362,7 @@ Within this context, a minimal intervention could improve consistency: adding a 
 
 \section{Conclusion}
 
-For DMIs, openness is infrastructural rather than declarative. Version control provides traceability, but platforms such as GitHub are not preservation systems. Projects intended for reuse require persistent identifiers and archival deposits \cite{smith_software_2016, stall_journal_2023}. Although NIME archives proceedings via Zenodo, supplementary digital deposits remain limited—for example, only a minority of NIME 2025 papers include citable archives \cite{studley_swimtunes_2025}.
+For DMIs, openness is infrastructural rather than declarative. Version control provides traceability, but platforms such as GitHub are not preservation systems. Projects intended for reuse require persistent identifiers and archival deposits \cite{smith_software_2016, stall_journal_2023}. Although NIME archives proceedings via Zenodo, supplementary digital deposits remain limited—for example, only a minority of NIME 2025 papers include citable archives \cite{studley_swimtunes_2025} or accepted the invitation for supplementary materials to archived on the authors' behalf.
 
 The findings presented here suggest that improving openness at NIME does not primarily require new policies or comprehensive standards. Reducing ambiguity in how repositories are referenced and aligning disclosure with archival practice would already address a substantial portion of the current gap. Small infrastructural adjustments can lower barriers to reuse without overextending contributors, as the long-term reuse of NIME projects may depend on the continued discoverability and citability of their digital artefacts.
 
