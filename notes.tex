@@ -7,6 +7,42 @@
 % \citeyear{}
 
 
+\begin{tikzpicture}
+    \begin{axis}[
+            width=\textwidth,
+            height=7cm,
+            xlabel={Inverse $h$},
+            ylabel={Hz},
+            ymin=1359, ymax=1369,
+            xmin=500, xmax=1500,
+            grid=major,
+            grid style={dashed,gray!30},
+            legend pos=north west,
+            title={Mode 5: $h$ vs $h_x$,$h_y$ vs analytical},
+            thick,
+            every axis plot/.append style={
+                    no markers
+                },
+        ]
+        \addplot
+        coordinates {
+                (509.490509,1362.424369) (1498.501499,1362.424369)
+            };
+        \addplot
+        coordinates {
+                (509.490509,1359.015632) (519.480519,1359.146202) (529.470529,1359.269403) (539.460539,1359.385780) (549.450549,1359.495828) (559.440559,1359.599998) (569.430569,1359.698703) (579.420579,1359.792318) (589.410589,1359.881189) (599.400599,1359.965629) (609.390609,1360.045930) (619.380619,1360.122358) (629.370629,1360.195157) (639.360639,1360.264555) (649.350649,1360.330761) (659.340659,1360.393966) (669.330669,1360.454350) (679.320679,1360.512079) (689.310689,1360.567305) (699.300699,1360.620173) (709.290709,1360.670813) (719.280719,1360.719350) (729.270729,1360.765898) (739.260739,1360.810565) (749.250749,1360.853451) (759.240759,1360.894649) (769.230769,1360.934247) (779.220779,1360.972326) (789.210789,1361.008964) (799.200799,1361.044232) (809.190809,1361.078198) (819.180819,1361.110924) (829.170829,1361.142472) (839.160839,1361.172895) (849.150849,1361.202249) (859.140859,1361.230581) (869.130869,1361.257939) (879.120879,1361.284367) (889.110889,1361.309906) (899.100899,1361.334597) (909.090909,1361.358476) (919.080919,1361.381578) (929.070929,1361.403937) (939.060939,1361.425585) (949.050949,1361.446551) (959.040959,1361.466863) (969.030969,1361.486549) (979.020979,1361.505634) (989.010989,1361.524142) (999.000999,1361.542096) (1008.991009,1361.559519) (1018.981019,1361.576430) (1028.971029,1361.592850) (1038.961039,1361.608797) (1048.951049,1361.624290) (1058.941059,1361.639346) (1068.931069,1361.653980) (1078.921079,1361.668210) (1088.911089,1361.682048) (1098.901099,1361.695510) (1108.891109,1361.708609) (1118.881119,1361.721358) (1128.871129,1361.733769) (1138.861139,1361.745854) (1148.851149,1361.757625) (1158.841159,1361.769092) (1168.831169,1361.780266) (1178.821179,1361.791157) (1188.811189,1361.801773) (1198.801199,1361.812125) (1208.791209,1361.822220) (1218.781219,1361.832068) (1228.771229,1361.841677) (1238.761239,1361.851053) (1248.751249,1361.860205) (1258.741259,1361.869139) (1268.731269,1361.877863) (1278.721279,1361.886383) (1288.711289,1361.894705) (1298.701299,1361.902835) (1308.691309,1361.910780) (1318.681319,1361.918544) (1328.671329,1361.926134) (1338.661339,1361.933554) (1348.651349,1361.940810) (1358.641359,1361.947905) (1368.631369,1361.954846) (1378.621379,1361.961636) (1388.611389,1361.968280) (1398.601399,1361.974782) (1408.591409,1361.981146) (1418.581419,1361.987376) (1428.571429,1361.993475) (1438.561439,1361.999447) (1448.551449,1362.005296) (1458.541459,1362.011025) (1468.531469,1362.016638) (1478.521479,1362.022137) (1488.511489,1362.027525) (1498.501499,1362.032806)
+            };
+
+        \addplot
+        coordinates {
+                (509.490509,1362.101805) (519.480519,1360.367269) (529.470529,1368.188939) (539.460539,1366.321327) (549.450549,1364.546430) (559.440559,1362.857523) (569.430569,1361.248513) (579.420579,1368.372542) (589.410589,1366.654506) (599.400599,1365.014738) (609.390609,1363.448023) (619.380619,1361.949598) (629.370629,1360.515102) (639.360639,1366.901850) (649.350649,1365.379290) (659.340659,1363.919506) (669.330669,1362.518707) (679.320679,1361.173399) (689.310689,1367.088814) (699.300699,1365.668612) (709.290709,1364.302902) (719.280719,1362.988618) (729.270729,1361.722920) (739.260739,1367.232264) (749.250749,1365.902063) (759.240759,1364.619584) (769.230769,1363.382317) (779.220779,1362.187921) (789.210789,1361.034215) (799.200799,1366.093151) (809.190809,1364.884726) (819.180819,1363.716345) (829.170829,1362.586060) (839.160839,1361.492044) (849.150849,1366.251539) (859.140859,1365.109358) (869.130869,1364.002883) (879.120879,1362.930472) (889.110889,1361.890585) (899.100899,1366.384282) (909.090909,1365.301662) (919.080919,1364.251072) (929.070929,1363.231116) (939.060939,1362.240482) (949.050949,1366.496631) (959.040959,1365.467820) (969.030969,1364.467897) (979.020979,1363.495667) (989.010989,1362.550003) (999.000999,1361.629835) (1008.991009,1365.612577) (1018.981019,1364.658777) (1028.971029,1363.730130) (1038.961039,1362.825660) (1048.951049,1361.944440) (1058.941059,1365.739627) (1068.931069,1364.827975) (1078.921079,1363.939267) (1088.911089,1363.072653) (1098.901099,1362.227323) (1108.891109,1365.851886) (1118.881119,1364.978885) (1128.871129,1364.126897) (1138.861139,1363.295176) (1148.851149,1362.483011) (1158.841159,1365.951679) (1168.831169,1365.114243) (1178.821179,1364.296120) (1188.811189,1363.496652) (1198.801199,1362.715214) (1208.791209,1361.951205) (1218.781219,1365.236272) (1228.771229,1364.449472) (1238.761239,1363.679900) (1248.751249,1362.927001) (1258.741259,1362.190242) (1268.731269,1365.346801) (1278.721279,1364.589052) (1288.711289,1363.847260) (1298.701299,1363.120932) (1308.691309,1362.409591) (1318.681319,1365.447342) (1328.671329,1364.716606) (1338.661339,1364.000692) (1348.651349,1363.299158) (1358.641359,1362.611576) (1368.631369,1365.539160) (1378.621379,1364.833603) (1388.611389,1364.141849) (1398.601399,1363.463500) (1408.591409,1362.798173) (1418.581419,1362.145499) (1428.571429,1364.941282) (1438.561439,1364.272133) (1448.551449,1363.615510) (1458.541459,1362.971067) (1468.531469,1362.338471) (1478.521479,1365.040699) (1488.511489,1364.392742) (1498.501499,1363.756517)
+            };
+        \addlegendentry{$h$}
+        \addlegendentry{$h_x,h_y$}
+        \addlegendentry{analytical}
+    \end{axis}
+\end{tikzpicture}
+
 
 \section{Notes on papers}
 
@@ -64,7 +100,7 @@
 [3] S. M. Astrid Bin. 2021. Discourse is critical: Towards a collaborative NIME
 history. In Proceedings of the International Conference on New Interfaces for Musical Expression. Shanghai, China, Article 8. https://doi.org/10.21428/ 92fbeb44.ac5d43e1
 
-[8] Filipe Calegario, João Tragtenberg, Christian Frisson, Eduardo Meneses, Joseph
+    [8] Filipe Calegario, João Tragtenberg, Christian Frisson, Eduardo Meneses, Joseph
 Malloch, Vincent Cusson, and Marcelo M. Wanderley. 2021. Documentation and Replicability in the NIME Community. In Proceedings of the International Conference on New Interfaces for Musical Expression. Shanghai, China, Article 4. https://doi.org/10.21428/92fbeb44.dc50e34d
 
 \subsection{papers citing \cite{mcpherson_nimehub_2016}}
@@ -78,20 +114,20 @@ Malloch, Vincent Cusson, and Marcelo M. Wanderley. 2021. Documentation and Repli
 
 \begin{quote}
     For maintaining instruments, we have, in addition to hardware replicability [3], a software layer, usually in the form of
-firmware, to make the hardware work. Maintaining code in
-a research-oriented environment where the creator is often a
-student that will eventually move on to another project or
-topic is difficult. The lack of team continuity is particularly
-detrimental to instrument longevity.
+    firmware, to make the hardware work. Maintaining code in
+    a research-oriented environment where the creator is often a
+    student that will eventually move on to another project or
+    topic is difficult. The lack of team continuity is particularly
+    detrimental to instrument longevity.
 \end{quote}
 
 
 \begin{quote}
-In addition, artists and projects supporting Free and OpenSource Software (FOSS) face another issue: FOSS usually
-focuses on functionality but is not necessarily accessible to
-non-tech-savvy users. I.e., high entry fee to use the tool,
-hard to install/experiment, e.g., LivePose [9]; depends on additional knowledge such as a text-based music programming
-language, e.g., SATIE [1].
+    In addition, artists and projects supporting Free and OpenSource Software (FOSS) face another issue: FOSS usually
+    focuses on functionality but is not necessarily accessible to
+    non-tech-savvy users. I.e., high entry fee to use the tool,
+    hard to install/experiment, e.g., LivePose [9]; depends on additional knowledge such as a text-based music programming
+    language, e.g., SATIE [1].
 \end{quote}
 
 
@@ -99,7 +135,7 @@ language, e.g., SATIE [1].
 
 \begin{quote}
     “it is more sustainable, it allows derivatives
-and offers inspiration to proliferate”.
+    and offers inspiration to proliferate”.
 \end{quote}
 
 
@@ -108,12 +144,12 @@ and offers inspiration to proliferate”.
 
 \begin{quote}
     Recent discussions have highlighted the benefits of replication
-[1, 7] and of engaging with old instruments more broadly [2]
-towards the well-being of NIME practice and research. One major
-theme in these discussions is the difficulty of documentation; it
-is challenging to anticipate what information will be most useful
-to later users and researchers who may wish to replicate an
-instrument
+        [1, 7] and of engaging with old instruments more broadly [2]
+    towards the well-being of NIME practice and research. One major
+    theme in these discussions is the difficulty of documentation; it
+    is challenging to anticipate what information will be most useful
+    to later users and researchers who may wish to replicate an
+    instrument
 \end{quote}
 
 would that process have been facilitated by access to the cad files?
@@ -138,39 +174,39 @@ There is the pragmatic gap of what is explained, what is intended and what is un
 
 \begin{quote}
     the open science community, which
-seems to largely assume that more documentation of the parts of doing science produces a
-stronger science alone
+    seems to largely assume that more documentation of the parts of doing science produces a
+    stronger science alone
 \end{quote}
 
 I think this might be a misreading of open science, the intention in the first instance is the sharing of material \textit{that already exists},
 
 \begin{quote}
     One important question is whether the web and internet
-technologies that exist,48 and the type of documents involved in disseminating explicit know-
-how and know-that knowledge, are embedded within a culture that welcomes treating the
-problem-finding dilemma with the attention it deserves.
+    technologies that exist,48 and the type of documents involved in disseminating explicit know-
+    how and know-that knowledge, are embedded within a culture that welcomes treating the
+    problem-finding dilemma with the attention it deserves.
 \end{quote}
 
 \begin{quote}
     This reductionist way of explaining things by lieu of their physical components (and of
-viewing the world, i.e., defining reality or what is real [the ontological]) was a hallmark of
-positivism and has been common across all domains of knowledge and areas of practice. Several
-years ago I was doing historical work at an institutional archive and reading annual library
-reports from around the mid-twentieth century.37 One of the common problems that the head
-librarian described in those reports concerned the university administration’s view of the library
-as nothing more than a warehouse of books. As the head librarian, Ralph Parker, described it, the
-administration at his institution ignored (or even failed to see) the complexities attached to
-managing and using a library and, as a result, repeatedly failed to invest in the library and the
-librarians who operated it (the practical implication of a reductionist viewpoint). For the
-librarian, the library was more than a warehouse of books; in the process of acquiring,
-describing, managing, shelving, circulating, and using the works in the library, and the library
-itself, something greater emerged or came into existence that was beyond a basic warehouse.
-And the thing that emerged was as real as any of its constitutive parts (e.g., books and shelves),
-even if it could not be reduced to those parts. Thus, even though the administration would agree
-that the library was a real place, it was only real to them as the “cobblestones” of the street are
-real—as opposed to whole streets with their social worlds and other components (the whole is
-reduced to a part that then becomes its perceived entire ontological substance; perhaps we can
-think of this as synecdochic fallacy38)
+    viewing the world, i.e., defining reality or what is real [the ontological]) was a hallmark of
+    positivism and has been common across all domains of knowledge and areas of practice. Several
+    years ago I was doing historical work at an institutional archive and reading annual library
+    reports from around the mid-twentieth century.37 One of the common problems that the head
+    librarian described in those reports concerned the university administration’s view of the library
+    as nothing more than a warehouse of books. As the head librarian, Ralph Parker, described it, the
+    administration at his institution ignored (or even failed to see) the complexities attached to
+    managing and using a library and, as a result, repeatedly failed to invest in the library and the
+    librarians who operated it (the practical implication of a reductionist viewpoint). For the
+    librarian, the library was more than a warehouse of books; in the process of acquiring,
+    describing, managing, shelving, circulating, and using the works in the library, and the library
+    itself, something greater emerged or came into existence that was beyond a basic warehouse.
+    And the thing that emerged was as real as any of its constitutive parts (e.g., books and shelves),
+    even if it could not be reduced to those parts. Thus, even though the administration would agree
+    that the library was a real place, it was only real to them as the “cobblestones” of the street are
+    real—as opposed to whole streets with their social worlds and other components (the whole is
+    reduced to a part that then becomes its perceived entire ontological substance; perhaps we can
+    think of this as synecdochic fallacy38)
 \end{quote}
 
 
@@ -178,12 +214,12 @@ The intention is not to be reductionist, to look at components
 
 
 \begin{quote}
-     If so, is it tacit
-knowledge rather than just implicit in some way; is it the case that there will always be some
-kind of knowledge that will forever resist documentation; and whether, among other things, is it
-worth documenting, or attempting to document, certain kinds of tacit or implicit knowledge,
-because, for example, the cost is high in some important way or the cognitive load of too much
-documentation is burdensome
+    If so, is it tacit
+    knowledge rather than just implicit in some way; is it the case that there will always be some
+    kind of knowledge that will forever resist documentation; and whether, among other things, is it
+    worth documenting, or attempting to document, certain kinds of tacit or implicit knowledge,
+    because, for example, the cost is high in some important way or the cognitive load of too much
+    documentation is burdensome
 \end{quote}
 
 Neither is the goal to place a burden of documentation.
@@ -196,11 +232,11 @@ Neither is the goal to place a burden of documentation.
 
 \begin{quote}
     "Open methods have the same effect [ as open data ] and also facilitate
-progress in reuse, adaptation, and extension for new research" (Nosek et al.,
-p. 624, 2012).
-"Authors cannot identify and report [ in publications ] every detail that may be
-important in a method, but many more parts of the methodology can be
-shared outside of the report itself" (Nosek et al., p. 625, 2012).
+    progress in reuse, adaptation, and extension for new research" (Nosek et al.,
+    p. 624, 2012).
+    "Authors cannot identify and report [ in publications ] every detail that may be
+    important in a method, but many more parts of the methodology can be
+    shared outside of the report itself" (Nosek et al., p. 625, 2012).
 \end{quote}
 
 Nosek, B. A., Spies, J. R., & Motyl, M. (2012). Scientific Utopia: II. Restructuring Incentives and Practices to Promote Truth
@@ -208,14 +244,14 @@ Over Publishability. Perspectives on Psychological Science, 7(6), 615–631. htt
 
 \begin{quote}
     Technologies in place to support open science work flows
-● Electronic Lab Notebooks
-○ LabArchives: https://www.labarchives.com/
-○ OSF: https://osf.io/
-○ Project Jupyter: https://jupyter.org/
-● Data Repositories: Recommended Data Repositories from Nature.com
-● Manuscript Repositories: arXiv.org and others listed on Wikipedia
-● Code Repositories: GitHub, GitLab, and more
-● Social Media (general and specifi
+    ● Electronic Lab Notebooks
+    ○ LabArchives: https://www.labarchives.com/
+    ○ OSF: https://osf.io/
+    ○ Project Jupyter: https://jupyter.org/
+    ● Data Repositories: Recommended Data Repositories from Nature.com
+    ● Manuscript Repositories: arXiv.org and others listed on Wikipedia
+    ● Code Repositories: GitHub, GitLab, and more
+    ● Social Media (general and specifi
 \end{quote}
 
 
@@ -310,22 +346,22 @@ account for preservation, access, and reuse. Open Science
 \cite{unesco_open_2021} provides a foundation by promoting the open sharing not
 only of results%
 \footnote{Examples include original research outputs, research data, software,
-source code, workflows and protocols, and digital representations of pictorial
-and graphical materials \cite{unesco_open_2021}.} but also of the processes
+    source code, workflows and protocols, and digital representations of pictorial
+    and graphical materials \cite{unesco_open_2021}.} but also of the processes
 through which those results are obtained. Digital technologies make such
 openness feasible, yet they also necessitate structure. The FAIR
 principles---Findable, Accessible, Interoperable, Reusable---offer a practical
 framework for managing digital assets \cite{wilkinson_fair_2016}:
 
 \begin{itemize}
-	\item \textbf{Findability:} digital assets should include rich metadata and
-	      persistent identifiers.
-	\item \textbf{Accessibility:} access protocols should be open, free, and
-	      universally implementable.
-	\item \textbf{Interoperability:} data and tools should integrate seamlessly
-	      across heterogeneous systems with minimal effort.
-	\item \textbf{Reusability:} assets should be released with clear, accessible
-	      licensing and provenance.
+    \item \textbf{Findability:} digital assets should include rich metadata and
+          persistent identifiers.
+    \item \textbf{Accessibility:} access protocols should be open, free, and
+          universally implementable.
+    \item \textbf{Interoperability:} data and tools should integrate seamlessly
+          across heterogeneous systems with minimal effort.
+    \item \textbf{Reusability:} assets should be released with clear, accessible
+          licensing and provenance.
 \end{itemize}
 
 For software, FAIR also implies citability \cite{soito_citations_2016}. This
@@ -337,7 +373,7 @@ discoverable and stable. Version control systems (e.g., \texttt{git}) allow
 releases to be tagged, while public repositories (e.g., GitHub) enhance
 discoverability. For long-term reference, archival deposition (e.g., Zenodo)
 provides persistent identifiers (DOIs) \cite{smith_software_2016,
-stall_journal_2023}.
+    stall_journal_2023}.
 
 Persistence is one dimension of sustainability; reproducibility is the other
 \cite{perkel_challenge_2020}. Software should remain functional in the future
@@ -364,7 +400,7 @@ EAGLE’s stable format remains processable by other tools such as KiCad
 ten-year challenge on reviving decade-old research software. Its key
 recommendations---version control, archival deposition, and explicit
 documentation---align with broader best practices \cite{smith_software_2016,
-stall_journal_2023}.
+    stall_journal_2023}.
 
 All digital assets associated with this thesis are released under the GPLv3
 licence, following recommendations to grant permissions as openly as possible
@@ -389,28 +425,28 @@ Rebuilding and Reinterpreting
 \citet{burns_documents_2021}
 \begin{quote}
     Thus, even though the administration would agree
-that the library was a real place, it was only real to them as the “cobblestones” of the street are
-real—as opposed to whole streets with their social worlds and other components (the whole is
-reduced to a part that then becomes its perceived entire ontological substance; perhaps we can
-think of this as synecdochic fallacy38). However, per Polanyi, this is a failure to recognize
-emergence:
-This capacity of a thing to reveal itself in unexpected ways in the future I attribute to the
-fact that the thing observed is an aspect of a reality, possessing a significance that is not
-14
-exhausted by our conception of any single aspect of it…. And since I regard the
-significance of a thing as more important than its tangibility, I shall say that minds and
-problems are more real than cobblestones.39
-If we can apply this lesson to the document, we could state that:
-Thesis 5: Tacit knowledge warns us against treating the digital document as if it is only a
-cobblestone.
-Yet this is what the open science movement does, not by introducing a new paradigm but
-by expanding the task assigned to the document—to document more, for example, under the
-FAIR principle (findable, accessible, interoperable, reusable).40
+    that the library was a real place, it was only real to them as the “cobblestones” of the street are
+    real—as opposed to whole streets with their social worlds and other components (the whole is
+    reduced to a part that then becomes its perceived entire ontological substance; perhaps we can
+    think of this as synecdochic fallacy38). However, per Polanyi, this is a failure to recognize
+    emergence:
+    This capacity of a thing to reveal itself in unexpected ways in the future I attribute to the
+    fact that the thing observed is an aspect of a reality, possessing a significance that is not
+    14
+    exhausted by our conception of any single aspect of it…. And since I regard the
+    significance of a thing as more important than its tangibility, I shall say that minds and
+    problems are more real than cobblestones.39
+    If we can apply this lesson to the document, we could state that:
+    Thesis 5: Tacit knowledge warns us against treating the digital document as if it is only a
+    cobblestone.
+    Yet this is what the open science movement does, not by introducing a new paradigm but
+    by expanding the task assigned to the document—to document more, for example, under the
+    FAIR principle (findable, accessible, interoperable, reusable).40
 \end{quote}
 
 Yet this is what the open science movement does, not by introducing a new paradigm but
 by expanding the task assigned to the document—to document more, for example, under the
-FAIR principle (findable, accessible, interoperable, reusable).40 
+FAIR principle (findable, accessible, interoperable, reusable).40
 Not to document more for the sake of documentation but to share and make open what is already there and what might already be being shared and open, but just done in a deliberate manner.
 work reduced to a cobblestone, be delibarate
 
@@ -446,7 +482,7 @@ if the user gain operational knowledge through use, so to does the builder with 
 
 \cite{sennett_craftsman_2008} Page 272
 \begin{quote}
-    At the heart of consistency lies repetition, the invention of rules that permit games to happen more than once. 
+    At the heart of consistency lies repetition, the invention of rules that permit games to happen more than once.
     Repetition of games in turn lays the groundwork for experiences of practice, going over a procedure again and again. In childhood play, though, children also learn how to modify the rules they make, and this too has adult consequences, as when in repeating a technical practice we can gradually modify, change, or improve it. To get better at a skill we need to change the rules that repeat-the metamorphosis of rules that helped Erin O'Connor develop as a glassblower. In short, play inaugurates practicing, and practicing is a matter both of repetition and of modulation.
 \end{quote}
 
@@ -543,7 +579,7 @@ if the user gain operational knowledge through use, so to does the builder with 
 %         \includegraphics[trim=1.9cm 22.1cm 12cm 2.9cm, clip, width=\linewidth]{images/nime-example-closed.pdf}
 %         \caption{}
 %     \end{subfigure}
-    
+
 %     \caption{Project source as a standard field  in the paper template (a). These details are not obligatory (b) and could be withheld, but the choice to do so becomes a conscious one.}
 %     \label{fig:project-details}
 % \end{figure}
