@@ -190,6 +190,7 @@ done
 ```
 
 Pure mad dead brilliant git occurences
+
 ```sh
 for i in {2001..2025}; do
   cd "${i}"
@@ -198,14 +199,36 @@ for i in {2001..2025}; do
 done
 ```
 
+Including sourceforge
 
+```sh
+for i in {2001..2025}; do
+  cd "${i}"
+  echo "(${i: -2}", $(pdfgrep -P '(\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a|sourceforge\.))' -rli . | wc -l), $(ls | wc -l)  ")"
+  cd - > /dev/null
+done
+```
+
+
+Just source forge
+
+
+```sh
+for i in {2001..2025}; do
+  cd "${i}"
+  echo "(${i: -2}", $(pdfgrep -P 'sourceforge\.' -rli . | wc -l), $(ls | wc -l)  ")"
+  cd - > /dev/null
+done
+```
+
+```
 for i in {2001..2025}; do
   cd "${i}"
   echo "${i}" $(pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)' -rciH . | grep -v ':0$' | sort -t: -k2,2nr | head -3)
   echo ""
   cd - > /dev/null
 done
-
+```
 
 
 NIME 2021 and 2022 are a little more involved to pull the pdfs.
@@ -217,17 +240,36 @@ https://nime.pubpub.org/pub/<PAPER_ID>/download/pdf
 
 The list of PAPER_IDs was pulled from the bib files on the [NIME bibliography git](https://github.com/NIME-conference/NIME-bibliography/tree/master)
 
+Exclusive Github
+```
+for i in {2001..2025}; do
+  cd "${i}"
+  echo "(${i: -2}", $(pdfgrep -P 'github' -rli ./ | wc -l),  $(pdfgrep -P 'github' -rli . | xargs  pdfgrep -P '(^|\W)git(?!ch|imation|ter|udinal|arr|al|aroo|a|hub\b)' -rli | wc -l),$(ls | wc -l)  ")"
+  cd - > /dev/null
+done
+```
+
 ### Grepping
 
 ```sh
+
+
 pdfgrep -P '\Wgit' -rli . | wc -l   
 ```
 
 which return a result the same as 
 
 ```sh
-pdfgrep -P '\b(git|github|gitlab)\b|(https?://|www\.)\S*(git|github|gitlab)\S*' -rli ./ | wc -l
+# (Year, GitHub, GitHub+sth., total)
+for i in {2001..2025}; do
+  cd "${i}"
+  echo "(${i: -2}", $(pdfgrep -P 'github' -rli ./ | wc -l),  $(pdfgrep -P 'github' -rli . | xargs  pdfgrep -P '(^|\W)git(?!ch|imation|ter|udinal|arr|al|aroo|a|hub\b)' -rli | wc -l),$(ls | wc -l)  ")"
+  cd - > /dev/null
+done
+
 ```
+
+
 
 ### Zenodo Archives with Video files
 
