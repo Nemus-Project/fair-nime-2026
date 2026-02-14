@@ -148,6 +148,9 @@ The practice of sharing source repositories has increased over the period consid
 
 \subsection{Question 2: Adoption of Open Source}
 
+\pgfplotstableread[col sep=comma]{data/opensource-use.csv}\datatable
+
+
 \begin{figure}
     \begin{tikzpicture}
         \begin{axis}[
@@ -156,52 +159,41 @@ The practice of sharing source repositories has increased over the period consid
                 xlabel={Year},
                 ylabel={\% of Total Papers},
                 ymin=0, ymax=60,
-                xmin=9, xmax=25,
-                xtick={9,11,13,15,17,19,21,23,25},
-                xticklabel={
-                        20\pgfmathparse{int(\tick)}\ifnum\pgfmathresult<10 0\fi\pgfmathresult
-                    },
-                ytick={0,10,20,30,40,50,60},
+                xmin=2001, xmax=2025,
                 grid=major,
                 grid style={dashed,gray!30},
                 legend pos=north west,
                 title={NIME Papers Referencing git Repositories},
-                thick,
+                thick,   
+                % scaled x ticks=false,
+                xticklabel style={
+                    /pgf/number format/1000 sep=
+                }
             ]
-            \addplot[
-                color=red,
-                mark=*,
-                sharp plot
-            ] coordinates {
-                    (9,0) (10,1) (11,2) (12,6) (13,16) (14,14) (15,14) (16,19) (17,22) (18,24) (19,27) (20,29) (21,35) (22,39) (23,48) (24,44) (25,46)
-                };
-            \addlegendentry{GitHub}
-            \addplot[
-                color=blue,
-                mark=*,
-                sharp plot
-            ] coordinates {
-                    (09,0) (10,1) (11,3) (12,6) (13,16) (14,14) (15,14) (16,19) (17,22) (18,25) (19,31) (20,29) (21,37) (22,43) (23,53) (24,45) (25,52)
-                };
-            \addlegendentry{git}
-            \addplot+[
-                % color=blue,
-                mark=*,
-                sharp plot
-            ] coordinates {
-                    (20,19) (21,24) (22,30) (23,25) (24,29) (25,36)
-                };
-            \addlegendentry{source}
+            \addplot[color=blue,mark=*] table [x=year, y=any] {\datatable};
+            \addplot[color=red,mark=*] table [x=year, y=github] {\datatable};
+            % \addplot[color=green,mark=*] table [x=year, y=git] {\datatable};
+            % \addplot[color=green,mark=*] table [x=year, y=sourceforge] {\datatable};
+            \addplot[color=black,mark=*]  coordinates { 
+                (2020,19.00) (2021,23.86) (2022,30.36) (2023,25.25) (2024,28.72) (2025,36.46)
+            };
+            
+            \addlegendentry{use open source}
+            % \addlegendentry{git}
+            \addlegendentry{use github}        
+            \addlegendentry{shared source}
+            
         \end{axis}
     \end{tikzpicture}
 
-    \caption{Yearly percentage of NIME papers (2009–2025) in three categories: papers referencing only GitHub as a git repository, papers referencing at least one git repository, and papers including a link to project source material. Each line shows the proportion of total papers in that year. Git was initially released in 2005 and NIME papers published between 2001 and 2009 contain no references to it. GitHub was launched in 2008 and does not appear in NIME publications until 2010.}
+    \caption{Yearly percentage of NIME papers (2001–2025) in three categories: papers referencing only GitHub as a git repository, papers referencing at least one open source project using a git or sourceforge repository, and papers including a link to project source material. Each line shows the proportion of total papers in that year. Git was initially released in 2005 and NIME papers published between 2001 and 2009 contain no references to it. GitHub was launched in 2008 and does not appear in NIME publications until 2010.}
     \label{fig:git_occurences}
 \end{figure}
 
-To answer the second question, all NIME paper proceedings were searched for any usage of a git repository as part of a project.
-This approach follows the method of \citet{fiordelmondo_towards_2025}, which counted papers containing terms related to open source repositories from NIME proceedings 2001--2024.
+To answer the second question, all NIME paper proceedings were searched for any usage of open source projects as part of a paper.
+The search was to match any reference to git or SourceForge repositories, following the method of \citet{fiordelmondo_towards_2025} which counted papers containing terms related to open source repositories from NIME proceedings 2001--2024.
 A deviation from this previous method was the inclusion of \texttt{github.io} links, as authors often use GitHub Pages to host sites linking to project source repositories, therefore familiarity with git and GitHub can be inferred.
+The search also included usage of SorceForge repositories,
 
 The search was run over a directory containing all NIME papers to date, iteratively applying stricter constraints to reduce false positives. 
 The process began with a \texttt{pdfgrep} search which removed the majority of obvious genuine matches%
@@ -209,8 +201,8 @@ The process began with a \texttt{pdfgrep} search which removed the majority of o
 and enabled more efficient pruning of the remaining false positives.%
 
 Examples of false positives were words split across line breaks at “git” (e.g., legitimation, with its word fragments broken across lines into ``le-'' and ``\textbf{git}imation''), as well as unrelated terms such as ``gitaroo'' or ``gitarre.''
-The search could not be overly restrictive, however, because it needed to retain valid matches such as ``gitorious,'' a git-based hosting service that was acquired by GitLab and discontinued in 2015 \cite{bjaanes_gitorious_2015}.
-% Final search term was: \verb$pdfgrep -P '(^|\W)git(?!ch|imation|ter|udinal|arr|al|aroo|a|hub\b)' -ri$
+The search could not be overly restrictive, however, because it needed to retain valid matches such as ``gitorious,'' a git-based hosting service that was acquired by GitLab and discontinued in 2015 \cite{bjaanes_gitorious_2015}.%
+\footnote{regular expression pruning false positives:\\ \texttt{(\textbackslash Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a)|sourceforge\textbackslash .)}}
 
 The resulting yearly percentages of NIME papers referencing a git repository are shown in Figure~\ref{fig:git_occurences}.
 % Spike in 2023 may be partially answered with that years theme of `Frugal Music Innovation' emphasising `solving problems with the available resources' a theme with which usage of open source projects would fit.
@@ -224,9 +216,9 @@ The resulting yearly percentages of NIME papers referencing a git repository are
 % In many cases there is a complete overlap of git version control usage for the year.
 % In which case it can be safely called a de facto standard. %whether this \textit{good} thing is left unanswered, but it is certainly a behaviour in the community.
 % GitHub is the dominant repository platform (Table~\ref{tab:git_type}), which reflects the trend observed by \citet{fiordelmondo_towards_2025}.
-There is substantial overlap between git as a technology and GitHub as a platform, suggesting that most interactions with the git VCS occur via GitHub.
-Figure~\ref{fig:git_occurences} also illustrates the growing gap between usage of open source and publishing a project's source has gradually increased since NIME 2020.
-This is corroborated by Table~\ref{tab:git_type} which shows the number of project source repositories using GitHub since 2020.
+There is substantial overlap between git as a technology and GitHub as a platform, suggesting that most interactions with open source projects occurs via GitHub.
+Figure~\ref{fig:git_occurences} also illustrates the gradually increasing gap between usage of open source and publishing a project's source since NIME 2020.
+This is corroborated by Table~\ref{tab:git_type} which shows the number of project source repositories using GitHub since NIME 2020.
 
 \section{Open Methodology for DMIs: A Case Study}\label{sec:DMI}
 
