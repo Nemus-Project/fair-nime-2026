@@ -159,35 +159,34 @@ The practice of sharing source repositories has increased over the period consid
                 xlabel={Year},
                 ylabel={\% of Total Papers},
                 ymin=0, ymax=60,
-                xmin=9, xmax=25,
-                xtick={9,11,13,15,17,19,21,23,25},
-                xticklabel={
-                        20\pgfmathparse{int(\tick)}\ifnum\pgfmathresult<10 0\fi\pgfmathresult
-                    },
-                % ytick={0,10,20,30,40,50,60},
+                xmin=2001, xmax=2025,
                 grid=major,
                 grid style={dashed,gray!30},
                 legend pos=north west,
                 title={NIME Papers Referencing git Repositories},
-                thick,                
-                % cycle list name=exotic
+                thick,   
+                % scaled x ticks=false,
+                xticklabel style={
+                    /pgf/number format/1000 sep=
+                }
             ]
             \addplot[color=blue,mark=*] table [x=year, y=any] {\datatable};
             \addplot[color=red,mark=*] table [x=year, y=github] {\datatable};
             % \addplot[color=green,mark=*] table [x=year, y=git] {\datatable};
+            % \addplot[color=green,mark=*] table [x=year, y=sourceforge] {\datatable};
             \addplot[color=black,mark=*]  coordinates { 
-                (20,19.00) (21,23.86) (22,30.36) (23,25.25) (24,28.72) (25,36.46)
+                (2020,19.00) (2021,23.86) (2022,30.36) (2023,25.25) (2024,28.72) (2025,36.46)
             };
             
-            \addlegendentry{any}
+            \addlegendentry{use open source}
             % \addlegendentry{git}
-            \addlegendentry{github}        
-            \addlegendentry{source}
+            \addlegendentry{use github}        
+            \addlegendentry{shared source}
             
         \end{axis}
     \end{tikzpicture}
 
-    \caption{Yearly percentage of NIME papers (2009–2025) in three categories: papers referencing only GitHub as a git repository, papers referencing at least one open source project using a git or sourceforge repository, and papers including a link to project source material. Each line shows the proportion of total papers in that year. Git was initially released in 2005 and NIME papers published between 2001 and 2009 contain no references to it. GitHub was launched in 2008 and does not appear in NIME publications until 2010.}
+    \caption{Yearly percentage of NIME papers (2001–2025) in three categories: papers referencing only GitHub as a git repository, papers referencing at least one open source project using a git or sourceforge repository, and papers including a link to project source material. Each line shows the proportion of total papers in that year. Git was initially released in 2005 and NIME papers published between 2001 and 2009 contain no references to it. GitHub was launched in 2008 and does not appear in NIME publications until 2010.}
     \label{fig:git_occurences}
 \end{figure}
 
@@ -203,7 +202,7 @@ and enabled more efficient pruning of the remaining false positives.%
 
 Examples of false positives were words split across line breaks at “git” (e.g., legitimation, with its word fragments broken across lines into ``le-'' and ``\textbf{git}imation''), as well as unrelated terms such as ``gitaroo'' or ``gitarre.''
 The search could not be overly restrictive, however, because it needed to retain valid matches such as ``gitorious,'' a git-based hosting service that was acquired by GitLab and discontinued in 2015 \cite{bjaanes_gitorious_2015}.%
-\footnote{regular expression after pruning false positives:\\ \texttt{(\textbackslash Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a)|sourceforge\textbackslash .)}}
+\footnote{regular expression pruning false positives:\\ \texttt{(\textbackslash Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a)|sourceforge\textbackslash .)}}
 
 The resulting yearly percentages of NIME papers referencing a git repository are shown in Figure~\ref{fig:git_occurences}.
 % Spike in 2023 may be partially answered with that years theme of `Frugal Music Innovation' emphasising `solving problems with the available resources' a theme with which usage of open source projects would fit.
