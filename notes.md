@@ -264,7 +264,7 @@ which return a result the same as
 # (Year, GitHub, GitHub+sth., total)
 for i in {2001..2025}; do
   cd "${i}"
-  echo "(${i: -2}", $(pdfgrep -P 'github' -rli ./ | wc -l),  $(pdfgrep -P 'github' -rli . | xargs  pdfgrep -P '(^|\W)git(?!ch|imation|ter|udinal|arr|al|aroo|a|hub\b)' -rli | wc -l),$(ls | wc -l)  ")"
+  echo "(${i: -2}", $(pdfgrep -P 'github' -rli ./ | wc -l),  $(pdfgrep -P 'github' -rli . | xargs  pdfgrep -P '(^|\W)git(?!ch|imation|ter|udinal|arr|al|aroo|a|hub\b)' -rli | wc -l), $(ls | wc -l)  ")"
   cd - > /dev/null
 done
 
