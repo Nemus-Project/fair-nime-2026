@@ -193,7 +193,6 @@ The practice of sharing source repositories has increased over the period consid
 To answer the second question, all NIME paper proceedings were searched for any usage of open source projects as part of a paper.
 The search was to match any reference to git or SourceForge repositories, following the method of \citet{fiordelmondo_towards_2025} which counted papers containing terms related to open source repositories from NIME proceedings 2001--2024.
 A deviation from this previous method was the inclusion of \texttt{github.io} links, as authors often use GitHub Pages to host sites linking to project source repositories, therefore familiarity with git and GitHub can be inferred.
-The search also included usage of SorceForge repositories,
 
 The search was run over a directory containing all NIME papers to date, iteratively applying stricter constraints to reduce false positives. 
 The process began with a \texttt{pdfgrep} search which removed the majority of obvious genuine matches%
@@ -201,8 +200,9 @@ The process began with a \texttt{pdfgrep} search which removed the majority of o
 and enabled more efficient pruning of the remaining false positives.%
 
 Examples of false positives were words split across line breaks at “git” (e.g., legitimation, with its word fragments broken across lines into ``le-'' and ``\textbf{git}imation''), as well as unrelated terms such as ``gitaroo'' or ``gitarre.''
-The search could not be overly restrictive, however, because it needed to retain valid matches such as ``gitorious,'' a git-based hosting service that was acquired by GitLab and discontinued in 2015 \cite{bjaanes_gitorious_2015}.%
+The search could not be overly restrictive,% 
 \footnote{regular expression pruning false positives:\\ \texttt{(\textbackslash Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a)|sourceforge\textbackslash .)}}
+however, because it needed to retain valid matches such as ``gitorious,'' a git-based hosting service that was acquired by GitLab and discontinued in 2015 \cite{bjaanes_gitorious_2015}.%
 
 The resulting yearly percentages of NIME papers referencing a git repository are shown in Figure~\ref{fig:git_occurences}.
 % Spike in 2023 may be partially answered with that years theme of `Frugal Music Innovation' emphasising `solving problems with the available resources' a theme with which usage of open source projects would fit.
@@ -334,10 +334,10 @@ A pragmatic rule is that documentation should enable one to still ``understand y
 in reproducibility studies \cite{perkel_challenge_2020}.
 
 
-
 \section{Discussion}
 
-Section~\ref{sec:current-state} shows that open source usage at NIME has grown steadily, yet dissemination practices remain inconsistent. The issue is less reluctance to share than ambiguity in how project materials are structured and signposted. Repository links appear in heterogeneous locations—footnotes, body text, appendices, indirect project pages \cite{carter_sculpting_2025}, or shortened URLs \cite{nime2024_86}—making identification interpretative and error-prone at scale. The burden is distributed across authors deciding how to disseminate materials, researchers analysing practice, and readers attempting to move from paper to artefact.
+Section~\ref{sec:current-state} shows that open source usage at NIME has grown steadily, yet dissemination practices remain inconsistent. The issue is less reluctance to share than ambiguity in how project materials are structured and signposted. Repository links appear in heterogeneous locations—footnotes, body text, appendices, indirect project pages \cite{carter_sculpting_2025}, or shortened URLs \cite{nime2024_86}---making identification interpretative and error-prone at scale. The burden is distributed across authors deciding how to disseminate materials, researchers analysing practice, and readers attempting to move from paper to artefact.
+% Link-shortening services such as \texttt{bit.ly} and TinyURL introduce an inherent ephemerality to the work---an advantage only when that transience is deliberate.
 
 The case study in Section~\ref{sec:DMI} shows that this ambiguity extends beyond link placement to project structure and longevity. As the DMI evolved, repositories were renamed, reorganised, and divided into modular components; references in the original paper no longer mapped cleanly to the current state of the work. Archiving exposed further limitations, including incomplete support for modular repositories and dependencies. These issues do not reflect a lack of openness, but the practical complexity of maintaining intelligible research artefacts over time.
 
