@@ -241,10 +241,11 @@ https://nime.pubpub.org/pub/<PAPER_ID>/download/pdf
 The list of PAPER_IDs was pulled from the bib files on the [NIME bibliography git](https://github.com/NIME-conference/NIME-bibliography/tree/master)
 
 Exclusive Github
-```
+
+```sh
 for i in {2001..2025}; do
   cd "${i}"
-  echo "(${i: -2}", $(pdfgrep -P 'github' -rli ./ | wc -l),  $(pdfgrep -P 'github' -rli . | xargs  pdfgrep -P '(^|\W)git(?!ch|imation|ter|udinal|arr|al|aroo|a|hub\b)' -rli | wc -l),$(ls | wc -l)  ")"
+  echo "(${i: -2}", $(pdfgrep -P 'github' -rli ./ | wc -l),  $(pdfgrep -P 'github' -rli . | xargs  pdfgrep -P '((^|\W)git(?!ch|imation|ter|udinal|arr|al|aroo|a|hub\b)|sourceforge\.)' -rli | wc -l),$(ls | wc -l)  ")"
   cd - > /dev/null
 done
 ```
