@@ -202,7 +202,7 @@ and enabled more efficient pruning of the remaining false positives.%
 
 Examples of false positives were words split across line breaks at “git” (e.g., legitimation, with its word fragments broken across lines into ``le-'' and ``\textbf{git}imation''), as well as unrelated terms such as ``gitaroo'' or ``gitarre.''
 The search could not be overly restrictive,% 
-\footnote{regular expression pruning false positives:\\ \texttt{(\textbackslash Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a)|sourceforge\textbackslash .)}}
+% \footnote{regular expression pruning false positives:\\ \texttt{(\textbackslash Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a)|sourceforge\textbackslash .)}}
 however, because it needed to retain valid matches such as ``gitorious,'' a git-based hosting service that was acquired by GitLab and discontinued in 2015 \cite{bjaanes_gitorious_2015}.%
 
 The resulting yearly percentages of NIME papers referencing a git repository are shown in Figure~\ref{fig:git_occurences}.
@@ -290,9 +290,10 @@ Renaming either repository would break previous links to the work. The directory
 Rather than referencing through URLs to a git repository, the project was archived using CERN's digital archiving platform Zenodo \cite{zenodo_2013}.
 Archiving exposed a few practical challenges.
 Zenodo’s GitHub integration does not currently include git submodules when generating an archive \cite{zenodo_1036_2025}. As a result, each submodule must be archived independently, after which the meta repository archive must manually reference the corresponding DOIs or original sources to ensure a comprehensive record (Figure~\ref{fig:zenodo-github-integration}).
-Likewise, the future of CAD data is tied to software sustainability: the discontinuation of Autodesk EAGLE \cite{autodesk_eagle_2024} effectively freezes its XML format, though conversion to KiCad remains available \cite{kicad_eagle_2024}. 
-% In the same manner that Python 2.7 presents an opportunity for adopting an archival programming language \cite{robert_rp_2020}, so to might EAGLE's discontinuation.
-These lessons emphasise that openness depends not only on version control and archiving but also on the careful selection of formats and hosting infrastructure.
+Likewise, the future of data is tied to software sustainability. 
+The PCB CAD for the project is in the XML format used  by the Autodesk EAGLE software which has been discontinued \cite{autodesk_eagle_2024}. 
+Conversion from EAGLE to KiCad remains available \cite{kicad_eagle_2024}, but
+this emphasise that openness depends not only on version control and archiving but also on the careful selection of formats and hosting infrastructure.
 
 
 \begin{figure}
@@ -368,7 +369,7 @@ For DMIs, openness is infrastructural rather than declarative. Version control p
 The findings presented here suggest that improving openness at NIME does not primarily require new policies or comprehensive standards. Reducing ambiguity in how repositories are referenced and aligning disclosure with archival practice would already address a substantial portion of the current gap. Small infrastructural adjustments can lower barriers to reuse without overextending contributors, as the long-term reuse of NIME projects may depend on the continued discoverability and citability of their digital artefacts.
 
 Finally, making a project’s source code easy to locate removes unnecessary barriers for readers and a broader audience. 
-NIMEs serve as resources for teaching creative engineering, electronics, musicianship, and HCI, but difficult access limits opportunities for students to engage \cite{nime2021_26}, remix \cite{dasgupta_remixing_2016}, and foster creativity \cite{sharmin_creativity_2021, marin_computational_2024}. 
+NIMEs serve as a resource for teaching creative engineering, electronics, musicianship, and HCI, but difficult access limits opportunities for students to engage \cite{nime2021_26}, remix \cite{dasgupta_remixing_2016}, and foster creativity \cite{sharmin_creativity_2021, marin_computational_2024}. 
 By improving discoverability and citability, NIME can better support new contributors, laying ``the groundwork for experiences of practice'' \cite[p. 277]{sennett_craftsman_2008}, and extend its impact across wider communities.
 
 % this will be anonymised and the acks environment is used as part of the NIME
