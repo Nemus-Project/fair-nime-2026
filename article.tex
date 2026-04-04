@@ -105,41 +105,19 @@ While this combined approach substantially reduces the likelihood of missed refe
                     },
             ]
 
-     % 100 2020
-     %  88 2021
-     %  56 2022
-     %  99 2023
-     %  94 2024
-     %  96 2025
-            \addplot coordinates {
-                    (2020,8) (2021,12) (2022,5) (2023,12) (2024,13) (2025,18)
-                    % (2020,8) (2021,13.6) (2022,8.9) (2023,12.12) (2024,13.8) (2025,18.75)
-                };
+            \addplot table [x=Year, y=Footnote, col sep=comma] {data/cite-methods.csv};
             \addlegendentry{Footnote}
-
-            \addplot coordinates {
-                    (2020,9) (2021,5) (2022,7) (2023,8) (2024,6) (2025,6)
-                    % (2020,9) (2021,5.681818182) (2022,12.5) (2023,8.88) (2024,6.38) (2025,6.25)
-                };
+            
+            \addplot table [x=Year, y=Body, col sep=comma] {data/cite-methods.csv};
             \addlegendentry{Body}
-
-            \addplot coordinates {
-                    (2020,0) (2021,2) (2022,1) (2023,1) (2024,3) (2025,2)
-                    % (2020,0) (2021,2.27) (2022,1.78) (2023,1.11) (2024,3.19) (2025,2.08)
-                };
+            
+            \addplot table [x=Year, y=Citation, col sep=comma] {data/cite-methods.csv};
             \addlegendentry{Citation}
-
-            \addplot coordinates {
-                    (2020,0) (2021,0) (2022,2) (2023,1) (2024,1) (2025,3)
-                    % (2020,0) (2021,0) (2022,3.57) (2023,1.11) (2024,1.06) (2025,3.125)
-                };
+            
+            \addplot table [x=Year, y=Appendix, col sep=comma] {data/cite-methods.csv};
             \addlegendentry{Appendix}
-
-            \addplot [color=red,
-            ] coordinates {
-                    (2020,2) (2021,2) (2022,2) (2023,3) (2024,4) (2025,6)
-                    % (2020,2) (2021,2.27) (2022,3.57) (2023,3.33) (2024,4.25) (2025,6.25)
-                };
+            
+            \addplot [red] table [x=Year, y=Missing, col sep=comma] {data/cite-methods.csv};
             \addlegendentry{Missing}
 
         \end{axis}
