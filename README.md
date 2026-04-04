@@ -81,6 +81,8 @@ See [`./data`](./data) directory for set of `.csv` and markdown tables listing p
 
 ## Grepping
 
+Grepping of PDFs achieved  with [`pdfgrep`](https://gitlab.com/pdfgrep/pdfgrep).
+
 ```sh
 pdfgrep -P '\Wgit' -rli . | wc -l   
 ```
@@ -116,7 +118,7 @@ for i in {2001..2025}; do
 done
 ```
 
-```
+```sh
 for i in {2001..2025}; do
   cd "${i}"
   echo "(${i: -2}",$(( $(pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b|hub\.io)' -rli . | wc -l) * 100 / $(ls | wc -l) ))")"
@@ -124,7 +126,7 @@ for i in {2001..2025}; do
 done
 ```
 
-```
+```sh
 for i in {2001..2025}; do
   cd "${i}"
   echo "(${i: -2}",$(pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)' -rli . | wc -l)")"
@@ -133,7 +135,8 @@ done
 ```
 
 For GitHub reference
-```
+
+```sh
 for i in {2001..2025}; do
   cd "${i}"
   echo "(${i: -2}",$(( $(pdfgrep -P 'github' -rli . | wc -l) * 100 / $(ls | wc -l) ))")"
@@ -141,7 +144,7 @@ for i in {2001..2025}; do
 done
 ```
 
-```
+```sh
 for i in {2001..2025}; do
   cd "${i}"
   echo "(${i: -2}",$(( $(pdfgrep -P 'github(?!\.io)' -rli . | wc -l) * 100 / $(ls | wc -l) ))")"
@@ -149,7 +152,7 @@ for i in {2001..2025}; do
 done
 ```
 
-```
+```sh
 for i in {2001..2025}; do
   cd "${i}"
   echo "(${i: -2}",$(( $(pdfgrep -P 'github\.io' -rli . | wc -l) * 100 / $(ls | wc -l) ))")"
@@ -157,7 +160,7 @@ for i in {2001..2025}; do
 done
 ```
 
-```
+```sh
 for i in {2001..2025}; do
   cd "${i}"
   echo "(${i: -2}",$(( $(pdfgrep -P '(open source|open-source)' -rli . | wc -l) * 100 / $(ls | wc -l) ))")"
@@ -197,7 +200,7 @@ for i in {2001..2025}; do
 done
 ```
 
-```
+```sh
 for i in {2001..2025}; do
   cd "${i}"
   echo "${i}" $(pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)' -rciH . | grep -v ':0$' | sort -t: -k2,2nr | head -3)
