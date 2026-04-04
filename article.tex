@@ -7,7 +7,7 @@ While these frameworks have primarily focused on scientific research \cite{unesc
 
 The FAIR principles and open science are not just a benefit to the longevity and reuse of digital academic research, but they also allow for wider engagement, study and recreation  of research at an educational level.
 Despite these benefits, open research practice is not yet standard practice within the humanities \cite{taylor_shaping_2022}.
-The underlying materials of research—such as datasets, source code, design files, and other artefacts that are often regarded as disposable—are, in fact, critical for understanding how a project was constructed and the rationale behind key decisions. These research outputs embed tacit knowledge of engineering practice \cite{schindler_expertise_2015}, knowledge that is seldom explicitly documented yet remains highly valuable for skill development and future comprehension.
+The underlying materials of research—such as datasets, source code, design files, and other artefacts that are often regarded as disposable—are, in fact, critical for understanding how a project was constructed and the rationale behind key decisions. These research outputs embed tacit knowledge of engineering practice~\cite{schindler_expertise_2015}, knowledge that is seldom explicitly documented yet remains highly valuable for skill development and future comprehension.
 
 
 As a student, there is educational value and knowledge to be gained in recreating and iterating on work as a means of learning skills through practice \cite{dasgupta_remixing_2016}.
@@ -85,6 +85,7 @@ While this combined approach substantially reduces the likelihood of missed refe
                 ymax=36,
                 ytick distance=5,
                 ylabel={Number of papers},
+                % ylabel={percentae of papers},
                 symbolic x coords={2020,2021,2022,2023,2024,2025},
                 xtick=data,
                 grid=major,
@@ -104,29 +105,40 @@ While this combined approach substantially reduces the likelihood of missed refe
                     },
             ]
 
+     % 100 2020
+     %  88 2021
+     %  56 2022
+     %  99 2023
+     %  94 2024
+     %  96 2025
             \addplot coordinates {
                     (2020,8) (2021,12) (2022,5) (2023,12) (2024,13) (2025,18)
+                    % (2020,8) (2021,13.6) (2022,8.9) (2023,12.12) (2024,13.8) (2025,18.75)
                 };
             \addlegendentry{Footnote}
 
             \addplot coordinates {
                     (2020,9) (2021,5) (2022,7) (2023,8) (2024,6) (2025,6)
+                    % (2020,9) (2021,5.681818182) (2022,12.5) (2023,8.88) (2024,6.38) (2025,6.25)
                 };
             \addlegendentry{Body}
 
             \addplot coordinates {
                     (2020,0) (2021,2) (2022,1) (2023,1) (2024,3) (2025,2)
+                    % (2020,0) (2021,2.27) (2022,1.78) (2023,1.11) (2024,3.19) (2025,2.08)
                 };
             \addlegendentry{Citation}
 
             \addplot coordinates {
                     (2020,0) (2021,0) (2022,2) (2023,1) (2024,1) (2025,3)
+                    % (2020,0) (2021,0) (2022,3.57) (2023,1.11) (2024,1.06) (2025,3.125)
                 };
             \addlegendentry{Appendix}
 
             \addplot [color=red,
             ] coordinates {
                     (2020,2) (2021,2) (2022,2) (2023,3) (2024,4) (2025,6)
+                    % (2020,2) (2021,2.27) (2022,3.57) (2023,3.33) (2024,4.25) (2025,6.25)
                 };
             \addlegendentry{Missing}
 
@@ -143,7 +155,7 @@ Cases where the hyperlink was broken in the PDF, but the correct URL could be ea
 During the course of the search, an additional category---`missing'---was added. The `missing' category includes cases where the repository was unreachable, entirely empty, or the link was absent, but a web search for the project name returned the repository within the first page of results.
 These repositories qualified and are included in the total percentage of papers with source repositories for that year.
 
-Of the 96 papers from NIME 2025, 34 intend to share their source, whether software, datasets, or even zines \cite{nime2025_42}.
+Of the 96 papers from NIME 2025, 35 intend to share their source, whether software, datasets, or even zines \cite{nime2025_42}.
 Figure~\ref{fig:git_placement} shows the ways in which authors disseminated source URLs, with footnotes being the most common method.
 The practice of sharing source repositories has increased over the period considered, but so too has instances of `missing' repositories.
 
@@ -201,7 +213,7 @@ The process began with a \texttt{pdfgrep} search which removed the majority of o
 and enabled more efficient pruning of the remaining false positives.%
 
 Examples of false positives were words split across line breaks at “git” (e.g., legitimation, with its word fragments broken across lines into ``le-'' and ``\textbf{git}imation''), as well as unrelated terms such as ``gitaroo'' or ``gitarre.''
-The search could not be overly restrictive,% 
+The search could not be overly restrictive, 
 % \footnote{regular expression pruning false positives:\\ \texttt{(\textbackslash Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a)|sourceforge\textbackslash .)}}
 however, because it needed to retain valid matches such as ``gitorious,'' a git-based hosting service that was acquired by GitLab and discontinued in 2015 \cite{bjaanes_gitorious_2015}.%
 
@@ -292,8 +304,7 @@ Archiving exposed a few practical challenges.
 Zenodo’s GitHub integration does not currently include git submodules when generating an archive \cite{zenodo_1036_2025}. As a result, each submodule must be archived independently, after which the meta repository archive must manually reference the corresponding DOIs or original sources to ensure a comprehensive record (Figure~\ref{fig:zenodo-github-integration}).
 Likewise, the future of data is tied to software sustainability. 
 The PCB CAD for the project is in the XML format used  by the Autodesk EAGLE software which has been discontinued \cite{autodesk_eagle_2024}. 
-Conversion from EAGLE to KiCad remains available \cite{kicad_eagle_2024}, but
-this emphasise that openness depends not only on version control and archiving but also on the careful selection of formats and hosting infrastructure.
+Conversion from EAGLE to KiCad remains available \cite{kicad_eagle_2024}, emphasising that openness depends not only on version control and archiving but also on the careful selection of formats and hosting infrastructure.
 
 
 \begin{figure}
@@ -364,13 +375,13 @@ Within this context, a minimal intervention could improve consistency: adding a 
 
 \section{Conclusion}
 
-For DMIs, openness is infrastructural rather than declarative. Version control provides traceability, but platforms such as GitHub are not preservation systems. Projects intended for reuse require persistent identifiers and archival deposits \cite{smith_software_2016, stall_journal_2023}. Although NIME archives proceedings via Zenodo, supplementary digital deposits remain limited—for example, only a minority of NIME 2025 papers include citable archives \cite{studley_swimtunes_2025} or accepted the invitation for supplementary materials to archived on the authors' behalf.
+For DMIs, openness is infrastructural rather than declarative. Version control provides traceability, but platforms such as GitHub are not preservation systems. Projects intended for reuse require persistent identifiers and archival deposits \cite{smith_software_2016, stall_journal_2023}. Although NIME archives proceedings via Zenodo, supplementary digital deposits remain limited—for example, only a minority of NIME 2025 papers include citable archives \cite{studley_swimtunes_2025} or accepted the invitation for supplementary materials to be archived on the authors' behalf.
 
 The findings presented here suggest that improving openness at NIME does not primarily require new policies or comprehensive standards. Reducing ambiguity in how repositories are referenced and aligning disclosure with archival practice would already address a substantial portion of the current gap. Small infrastructural adjustments can lower barriers to reuse without overextending contributors, as the long-term reuse of NIME projects may depend on the continued discoverability and citability of their digital artefacts.
 
 Finally, making a project’s source code easy to locate removes unnecessary barriers for readers and a broader audience. 
 NIMEs serve as a resource for teaching creative engineering, electronics, musicianship, and HCI, but difficult access limits opportunities for students to engage \cite{nime2021_26}, remix \cite{dasgupta_remixing_2016}, and foster creativity \cite{sharmin_creativity_2021, marin_computational_2024}. 
-By improving discoverability and citability, NIME can better support new contributors, laying ``the groundwork for experiences of practice'' \cite[p. 277]{sennett_craftsman_2008}, and extend its impact across wider communities.
+By improving discoverability and citability, NIME can better support new contributors, laying ``the groundwork for experiences of practice'' \cite[]{sennett_craftsman_2008}, and extend its impact across wider communities.
 
 % this will be anonymised and the acks environment is used as part of the NIME
 % archiving process
