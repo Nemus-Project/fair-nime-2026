@@ -19,6 +19,61 @@ This paper first reviews work within the NIME community that addresses open rese
 That work is then used to establish a framework for analysing the use of open source at NIME through 2025.
 This is followed by a case study from NIME 2025 that examines the open source practices employed during and after the conference. Based on this analysis and case study, the paper concludes with recommendations aimed at strengthening open research practice and enabling NIME work to be more readily engaged with by a wider community of students, creators and researchers.
 
+%% xBar graph
+% \begin{figure*}
+%     \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%                 xbar stacked,
+%                 bar width=12pt,
+%                 width=\linewidth,
+%                 height=9.00cm,
+%                 xmin=0,
+%                 xmax=40,
+%                 xtick distance=5,                
+%                 xlabel={\% of papers},
+%                 symbolic y coords={2020,2021,2022,2023,2024,2025},
+%                 ytick=data,
+%                 grid=major,
+%                 y dir=reverse,
+%                 ymajorgrids=false,
+%                 grid style={dashed,gray!30},
+%                 legend style={
+%                         at={(0.95,0.85)},
+%                         anchor=east,
+%                         legend columns=3
+%                     },
+%                 nodes near coords,
+%                 nodes near coords style={
+%                         /pgf/number format/1000 sep={}, % suppress separators for the groups of thousands
+%                         /pgf/number format/precision=1,
+%                         anchor=center,
+%                         % yshift=-3.75pt,
+%                         text=black, 
+%                     },
+%             ]
+
+%             \addplot table [y=Year, x=FootnotePct, col sep=comma] {data/cite-methods.csv};
+%             \addlegendentry{Footnote}
+            
+%             \addplot table [y=Year, x=BodyPct, col sep=comma] {data/cite-methods.csv};
+%             \addlegendentry{Body}
+            
+%             \addplot table [y=Year, x=CitationPct, col sep=comma] {data/cite-methods.csv};
+%             \addlegendentry{Citation}
+            
+%             \addplot [fill=darkgray, nodes near coords style={text=white}] table [y=Year, x=AppendixPct, col sep=comma] {data/cite-methods.csv};
+%             \addlegendentry{Appendix}
+            
+%             \addplot [red] table [y=Year, x =MissingPct, col sep=comma] {data/cite-methods.csv};
+%             \addlegendentry{Missing}
+
+%         \end{axis}
+%     \end{tikzpicture}
+%     \caption{Methods used to share project source URLs in NIME 2020–2025 papers. ``Missing'' includes incorrect URLs, empty repositories, or extant repositories inferred via web search at the time of analysis.}
+%     \label{fig:git_placement}
+% \end{figure*}
+
 \section{Related Work}
 
 Since its inception, NIME has been committed to making its proceedings openly accessible under a CC BY 4.0 licence.
@@ -34,6 +89,7 @@ Subsequent discussions of open research at NIME have largely focused on methodol
 Both \citet{mcpherson_nimehub_2016} and \citet{fiordelmondo_towards_2025} highlight the importance of repository structure, with the latter proposing a prescriptive framework applicable across DMI projects. Research outputs in the form of open hardware or open software can, and should, leverage existing platforms designed for the distribution and maintenance of such work.
 
 Discussions of ``recreating'' a NIME have predominantly emphasised its role in musical practice \citep{ajin_rebuilding_2019, masu_nime_2023, west_towards_2025}. However, an equally valid motivation for recreation lies in acquiring operational knowledge and developing craft through the act of building itself \citep{calegario_documentation_2021}, rather than solely through performance or use \citep{magnusson_epistemic_2009}.
+
 
 
 \section{Analysis of Open Research Practice at NIME}\label{sec:current-state}
@@ -98,9 +154,10 @@ While this combined approach substantially reduces the likelihood of missed refe
                     },
                 nodes near coords,
                 nodes near coords style={
-                        /pgf/number format/1000 sep={},
-                        anchor=west,
-                        xshift=3.75pt,
+                        font=\small,
+                        /pgf/number format/1000 sep={}, % suppress separators for the groups of thousands   
+                        anchor=center,
+                        % xshift=3.75pt,
                         text=black, 
                     },
             ]
@@ -114,7 +171,7 @@ While this combined approach substantially reduces the likelihood of missed refe
             \addplot table [x=Year, y=Citation, col sep=comma] {data/cite-methods.csv};
             \addlegendentry{Citation}
             
-            \addplot table [x=Year, y=Appendix, col sep=comma] {data/cite-methods.csv};
+            \addplot [fill=darkgray, nodes near coords style={text=white}] table [x=Year, y=Appendix, col sep=comma] {data/cite-methods.csv};
             \addlegendentry{Appendix}
             
             \addplot [red] table [x=Year, y=Missing, col sep=comma] {data/cite-methods.csv};
@@ -125,6 +182,61 @@ While this combined approach substantially reduces the likelihood of missed refe
     \caption{Methods used to share project source URLs in NIME 2020–2025 papers. ``Missing'' includes incorrect URLs, empty repositories, or extant repositories inferred via web search at the time of analysis.}
     \label{fig:git_placement}
 \end{figure}
+
+% %% xBar graph
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%                 ybar stacked,
+%                 bar width=12pt,
+%                 width=\linewidth,
+%                 height=9.00cm,
+%                 ymin=0,
+%                 ymax=40,
+%                 ytick distance=5,                
+%                 ylabel={\% of papers},
+%                 symbolic x coords={2020,2021,2022,2023,2024,2025},
+%                 xtick=data,
+%                 grid=major,                
+%                 xmajorgrids=false,
+%                 grid style={dashed,gray!30},
+%                 legend style={
+%                         at={(0.38,0.96)},
+%                         anchor=north    ,
+%                         legend columns=3
+%                     },
+%                 nodes near coords,
+%                 nodes near coords style={
+%                         font=\footnotesize,
+%                         /pgf/number format/1000 sep={}, % suppress separators for the groups of thousands
+%                         /pgf/number format/precision=1,
+%                         anchor=center,
+%                         % xshift=3.75pt,    
+%                         text=black, 
+%                     },
+%             ]
+
+%             \addplot table [x=Year, y=FootnotePct, col sep=comma] {data/cite-methods.csv};
+%             \addlegendentry{Footnote}
+            
+%             \addplot table [x=Year, y=BodyPct, col sep=comma] {data/cite-methods.csv};
+%             \addlegendentry{Body}
+            
+%             \addplot table [x=Year, y=CitationPct, col sep=comma] {data/cite-methods.csv};
+%             \addlegendentry{Citation}
+            
+%             \addplot [fill=darkgray, nodes near coords style={text=white}] table [x=Year, y=AppendixPct, col sep=comma] {data/cite-methods.csv};
+%             \addlegendentry{Appendix}
+            
+%             \addplot [red] table [x=Year, y=MissingPct, col sep=comma] {data/cite-methods.csv};
+%             \addlegendentry{Missing}
+
+%         \end{axis}
+%     \end{tikzpicture}
+%     \caption{Methods used to share project source URLs in NIME 2020–2025 papers. ``Missing'' includes incorrect URLs, empty repositories, or extant repositories inferred via web search at the time of analysis.}
+%     \label{fig:git_placement}
+% \end{figure}
 
 The standards for what qualified as a link to the project's source material were deliberately broad.
 Papers that provided a URL to a web page, containing a link to the source, qualified (e.g., \cite{nime2025_10,nime2025_16,carter_sculpting_2025,nime2025_37,nime2025_67}).
@@ -221,7 +333,7 @@ Section~\ref{sec:current-state} indicates that while open source \emph{use} in N
                & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} & \textbf{2025} \\ \hline
         GitHub & 19            & 20            & 16            & 22            & 26            & 32            \\
         GitLab & 0             & 1             & 1             & 3             & 0             & 0             \\
-        other  & 0             & 0             & 0             & 0             & 1             & 3             \\
+        other  & 0             & 0             & 0             & 0             & 1             & 3             \\        
     \end{tabular}
     \caption{Git service used to host NIME project repositories.}
     \label{tab:git_type}
