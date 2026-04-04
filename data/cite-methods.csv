@@ -1,4 +1,4 @@
-Year,Total,Footnote,Body,Citation,Appendix,Missing,Footnote%,Body%,Citation%,Appendix%,Missing%
+Year,Total,Footnote,Body,Citation,Appendix,Missing,FootnotePct,BodyPct,CitationPct,AppendixPct,MissingPct
 2020,100,8,9,0,0,2,8,9,0,0,2
 2021,88,12,5,2,0,2,13.6363636363636,5.68181818181818,2.27272727272727,0,2.27272727272727
 2022,56,5,7,1,2,2,8.92857142857143,12.5,1.78571428571429,3.57142857142857,3.57142857142857
