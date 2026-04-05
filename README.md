@@ -1,5 +1,5 @@
 
-# Towards a FAIR and open methodology at NIME [working title]
+# "See Link for More Details": Towards a FAIR and Open Methodology at NIME
 
 ## Abstract
 
