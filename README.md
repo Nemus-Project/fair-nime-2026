@@ -183,7 +183,7 @@ done
 ```sh
 for i in {2001..2025}; do
   cd "${i}"
-  echo "(${i: -2}", $(pdfgrep -P '(\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a|sourceforge\.))' -rli . | wc -l), $(ls | wc -l)  ")"
+  echo "(${i: -2}", $(pdfgrep -P '(\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a)|sourceforge\.)' -rli . | wc -l), $(ls | wc -l)  ")"
   cd - > /dev/null
 done
 ```
