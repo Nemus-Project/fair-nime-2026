@@ -300,10 +300,12 @@ To answer the second question, all NIME paper proceedings were searched for any 
 The search was to match any reference to git or SourceForge repositories, following the method of \citet{fiordelmondo_towards_2025} which counted papers containing terms related to open source repositories from NIME proceedings 2001--2024.
 A deviation from this previous method was the inclusion of \texttt{github.io} links, as authors often use GitHub Pages to host sites linking to project source repositories, therefore familiarity with git and GitHub can be inferred.
 
-The search was run over a directory containing all NIME papers to date, iteratively applying stricter constraints to reduce false positives. 
-The process began with a \texttt{pdfgrep} search which removed the majority of obvious genuine matches%
+The search was run over a directory containing all NIME papers to date, iteratively applying stricter constraints to prune false positives. 
+The process began with a \texttt{pdfgrep} search which removed the majority of obvious genuine matches.%
 \footnote{\texttt{pdfgrep -P '\textbackslash Wgit(?!hub|lab)' -ri .}}
-and enabled more efficient pruning of the remaining false positives.%
+The false positives could then be more easily identified, after which an appropriate regular expression was applied to filter results.%
+\footnote{The process yielded the regular expression:\\ \texttt{\textbackslash Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\textbackslash b)}}
+ 
 
 Examples of false positives were words split across line breaks at “git” (e.g., legitimation, with its word fragments broken across lines into ``le-'' and ``\textbf{git}imation''), as well as unrelated terms such as ``gitaroo'' or ``gitarre.''
 The search could not be overly restrictive, 
