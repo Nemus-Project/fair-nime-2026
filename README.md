@@ -62,7 +62,9 @@ done
 
 See [`./data`](./data) directory for set of `.csv` and markdown tables listing papers, their repos and the link context.
 
-### Zenodo Archives with Video files
+### NIME 2025 Zenodo Archives with Additional Files
+
+All additional files are video
 
 - https://zenodo.org/records/15699550
 - https://zenodo.org/records/15699591
