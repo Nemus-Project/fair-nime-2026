@@ -36,6 +36,8 @@ Below are a collection of script snippets and notes used for analysing the NIME 
 > ```
 >
 > This is currently broken. Pulling pdfs for these years will require another approach.
+> Potentially the URLs can be openened in a web browser programtically and then transferred afterwards. 
+> You will need to prep your download location first.
 
 
 ```sh
@@ -255,3 +257,14 @@ for i in {2001..2025}; do
   cd - > /dev/null
 done
 ```
+
+## Lessons Learned
+
+- PDFs aren't great for this kind of analysis
+  - Finding specific text can have some interesting edge cases 
+  - finding the context (body, footnote, appendix &c.) requires looking at something like fontsize.
+- TeX is better for this kind of analysis
+  - PubPub offers a LaTeX export.
+  - currently can't `curl` PDFs from PubPub where you could previously. Instead, the download URL can be opened programatically.
+  - identifying footnotes, URLs and citation is far easier
+  - reference contained in bib entries need to be accounted for
