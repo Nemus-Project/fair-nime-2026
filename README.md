@@ -105,16 +105,25 @@ Assuming the NIME archive has been downloaded [using the structure above](#downl
 
 #### Prune Search
 
-##### Remove false positives
-
-```sh
-pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)' -ri .
-```
 
 ##### Remove false positives and obvious references
 
+This was used to more easily identify false positives as github and gitlab made up the bulk of references.
+
+This helped find cases such as gitorious and smaller institute git repositories.
+
+It still captures github / gitlab URLs ending in `.git` but there were far fewer instances and could be removed manually.
+
 ```sh
 pdfgrep -P '\Wgit(?!hub|lab|ch|imation|ter|udinal|arr|al|aroo|a\b)' -ri .
+```
+
+##### Remove false positives
+
+Final pruned search term so only git and git urls were captured.
+
+```sh
+pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)' -ri .
 ```
 
 #### General Git References Count
