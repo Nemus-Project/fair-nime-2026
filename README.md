@@ -1,4 +1,5 @@
 # "See Link for More Details": Towards a Pragmatic Open Methodology at NIME
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.194436176.svg)](https://doi.org/10.5281/zenodo.19443616)
 
 ## Abstract
 
