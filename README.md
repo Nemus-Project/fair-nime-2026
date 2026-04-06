@@ -268,3 +268,5 @@ done
   - currently can't `curl` PDFs from PubPub where you could previously. Instead, the download URL can be opened programatically.
   - identifying footnotes, URLs and citation is far easier
   - reference contained in bib entries need to be accounted for
+- A markup language, like HTML, is even better
+  - Still blocked by PubPub
