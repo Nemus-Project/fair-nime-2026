@@ -41,7 +41,7 @@ Below are a collection of script snippets and notes used for analysing the NIME 
 
 
 ```sh
-for year in {2002..2025}; do  
+for year in {2001..2025}; do  
   mkdir "${year}"
   for paper in $(curl "https://raw.githubusercontent.com/NIME-conference/NIME-bibliography/refs/heads/master/paper_proceedings/nime${year}.bib"| grep -E "url\s+=\s+{" | grep -o -E "http.*"); do    
   paper="${paper:0:-2}"
