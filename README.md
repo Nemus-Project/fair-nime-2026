@@ -1,5 +1,4 @@
-
-# "See Link for More Details": Towards a FAIR and Open Methodology at NIME
+# "See Link for More Details": Towards a Pragmatic Open Methodology at NIME
 
 ## Abstract
 
