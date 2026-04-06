@@ -24,7 +24,7 @@
         - [Git term use count](#git-term-use-count)
         - [Git and SourceForge count](#git-and-sourceforge-count)
         - [SourceForge only count](#sourceforge-only-count)
-        - [Gradual Pruning](#gradual-pruning)
+        - [Total Reference per year / paper](#total-reference-per-year--paper)
         - [Exclusive Github](#exclusive-github)
   - [Lessons Learned](#lessons-learned)
 
@@ -257,9 +257,9 @@ done
 ```
 
 
-##### Gradual Pruning
+##### Total Reference per year / paper
 
-List the count each year where there is a match and the total number to help pruning search
+List the total count of git reference each year. Help identify instances of high term usage in a paper / year.
 
 ```sh
 for i in {2001..2025}; do
