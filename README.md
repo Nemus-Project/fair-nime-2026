@@ -20,6 +20,30 @@ All dates are 23:59 AoE (Anywhere on Earth).
 - [ ] 23 June 2026: NIME Workshops and Student Consortium
 - [ ] 24-26 June 2026: NIME Conference
 
+## Data
+
+See [`./data`](./data) directory for set of `.csv` and markdown tables listing papers, their repos and the link context.
+
+### NIME 2025 Zenodo Archives with Additional Files
+
+All additional files are video
+
+- https://zenodo.org/records/15699550
+- https://zenodo.org/records/15699591
+- https://zenodo.org/records/15699598
+- https://zenodo.org/records/15699614
+- https://zenodo.org/records/15699626
+- https://zenodo.org/records/15699633
+- https://zenodo.org/records/15699645
+- https://zenodo.org/records/15699652
+- https://zenodo.org/records/15698912
+- https://zenodo.org/records/15699656
+- https://zenodo.org/records/15698936
+- https://zenodo.org/records/15699662
+- https://zenodo.org/records/15698970
+- https://zenodo.org/records/15698972
+- https://zenodo.org/records/15698986
+- https://zenodo.org/records/15699671
 
 ## Audit
 
@@ -58,32 +82,7 @@ for year in {2001..2025}; do
 done
 ```
 
-## Data
-
-See [`./data`](./data) directory for set of `.csv` and markdown tables listing papers, their repos and the link context.
-
-### NIME 2025 Zenodo Archives with Additional Files
-
-All additional files are video
-
-- https://zenodo.org/records/15699550
-- https://zenodo.org/records/15699591
-- https://zenodo.org/records/15699598
-- https://zenodo.org/records/15699614
-- https://zenodo.org/records/15699626
-- https://zenodo.org/records/15699633
-- https://zenodo.org/records/15699645
-- https://zenodo.org/records/15699652
-- https://zenodo.org/records/15698912
-- https://zenodo.org/records/15699656
-- https://zenodo.org/records/15698936
-- https://zenodo.org/records/15699662
-- https://zenodo.org/records/15698970
-- https://zenodo.org/records/15698972
-- https://zenodo.org/records/15698986
-- https://zenodo.org/records/15699671
-
-## Grepping
+### Grepping
 
 Grepping of PDFs achieved  with [`pdfgrep`](https://gitlab.com/pdfgrep/pdfgrep).
 
