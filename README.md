@@ -1,6 +1,34 @@
 # "See Link for More Details": Towards a Pragmatic Open Methodology at NIME
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.194436176.svg)](https://doi.org/10.5281/zenodo.19443616)
 
+- ["See Link for More Details": Towards a Pragmatic Open Methodology at NIME](#see-link-for-more-details-towards-a-pragmatic-open-methodology-at-nime)
+  - [Abstract](#abstract)
+  - [Important Dates:](#important-dates)
+  - [Data](#data)
+    - [NIME 2025 Zenodo Archives with Additional Files](#nime-2025-zenodo-archives-with-additional-files)
+  - [Audit](#audit)
+    - [Download NIME papers](#download-nime-papers)
+    - [Grepping](#grepping)
+    - [Searching for URLs](#searching-for-urls)
+      - [Prune Search](#prune-search)
+        - [Remove false positives and obvious references](#remove-false-positives-and-obvious-references)
+        - [Remove false positives](#remove-false-positives)
+      - [General Git References Count](#general-git-references-count)
+        - [Git URLs %  (pruned)](#git-urls---pruned)
+        - [Git URLs % (pruned) no github.io](#git-urls--pruned-no-githubio)
+        - [Git URLs count (pruned)](#git-urls-count-pruned)
+        - [GitHub term use %](#github-term-use-)
+        - [GitHub term use % (no github.io)](#github-term-use--no-githubio)
+        - [github.io use %](#githubio-use-)
+        - [Open Source term use %](#open-source-term-use-)
+        - [Git term use count](#git-term-use-count)
+        - [Git and SourceForge count](#git-and-sourceforge-count)
+        - [SourceForge only count](#sourceforge-only-count)
+        - [Gradual Pruning](#gradual-pruning)
+        - [Exclusive Github](#exclusive-github)
+  - [Lessons Learned](#lessons-learned)
+
+
 ## Abstract
 
 Since its inception, NIME has been committed to open research, with a strong tradition of open source practice running through its history. In the context of the NIME 2026 theme of communities, this paper examines current open research practices at NIME and explores how they might be developed to better engage a new generation of creators beyond the conference itself.
