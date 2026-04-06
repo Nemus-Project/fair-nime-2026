@@ -118,18 +118,6 @@ Grepping of PDFs achieved  with [`pdfgrep`](https://gitlab.com/pdfgrep/pdfgrep).
 pdfgrep -P '\Wgit' -rli . | wc -l   
 ```
 
-which return a result the same as 
-
-```sh
-# (Year, GitHub, GitHub+sth., total)
-for i in {2001..2025}; do
-  cd "${i}"
-  echo "(${i: -2}", $(pdfgrep -P 'github' -rli ./ | wc -l),  $(pdfgrep -P 'github' -rli . | xargs  pdfgrep -P '(^|\W)git(?!ch|imation|ter|udinal|arr|al|aroo|a|hub\b)' -rli | wc -l), $(ls | wc -l)  ")"
-  cd - > /dev/null
-done
-```
-
-
 ### Searching for URLs
 
 Assuming the NIME archive has been downloaded [using the structure above](#download-nime-papers), you can run these zshell snippets to get some data.
