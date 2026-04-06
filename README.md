@@ -124,6 +124,7 @@ Assuming the NIME archive has been downloaded [using the structure above](#downl
 
 #### Prune Search
 
+Search results are pruned for false positives using a gradual developed regular expression.
 
 ##### Remove false positives and obvious references
 
