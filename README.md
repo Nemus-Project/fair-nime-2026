@@ -98,17 +98,30 @@ for i in {2001..2025}; do
 done
 ```
 
-### Trim Search
+
+### Searching for URLs
+
+Assuming the NIME archive has been downloaded [using the structure above](#download-nime-papers), you can run these zshell snippets to get some data.
+
+#### Prune Search
+
+##### Remove false positives
 
 ```sh
-pdfgrep -P '\Wgit(?!hub|lab|ch|imation|ter|udinal|arr|al|aroo|a\b)' -ri .
 pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)' -ri .
 ```
 
-### Counting URLs
+##### Remove false positives and obvious references
 
-#### General Git References
+```sh
+pdfgrep -P '\Wgit(?!hub|lab|ch|imation|ter|udinal|arr|al|aroo|a\b)' -ri .
+```
 
+#### General Git References Count
+
+Most of these are fomratted for direct use in a [tikz pgfplot](https://tikz.dev/pgfplots/). The article uses the same data in CSV format from [`data/opensource-use.csv`](./data/opensource-use.csv).
+
+##### Git URLs %  (pruned)
 
 ```sh
 for i in {2001..2025}; do
@@ -118,6 +131,8 @@ for i in {2001..2025}; do
 done
 ```
 
+##### Git URLs % (pruned) no github.io
+
 ```sh
 for i in {2001..2025}; do
   cd "${i}"
@@ -125,6 +140,8 @@ for i in {2001..2025}; do
   cd - > /dev/null
 done
 ```
+
+##### Git URLs count (pruned)
 
 ```sh
 for i in {2001..2025}; do
@@ -134,7 +151,7 @@ for i in {2001..2025}; do
 done
 ```
 
-For GitHub reference
+##### GitHub term use percentage
 
 ```sh
 for i in {2001..2025}; do
@@ -144,6 +161,8 @@ for i in {2001..2025}; do
 done
 ```
 
+##### GitHub term use percentage (no github.io)
+
 ```sh
 for i in {2001..2025}; do
   cd "${i}"
@@ -151,6 +170,8 @@ for i in {2001..2025}; do
   cd - > /dev/null
 done
 ```
+
+##### github.io use percentage
 
 ```sh
 for i in {2001..2025}; do
@@ -160,6 +181,8 @@ for i in {2001..2025}; do
 done
 ```
 
+##### Open Source term use percentage
+
 ```sh
 for i in {2001..2025}; do
   cd "${i}"
@@ -168,7 +191,7 @@ for i in {2001..2025}; do
 done
 ```
 
-#### Git occurences
+##### Git term use count
 
 ```sh
 for i in {2001..2025}; do
@@ -178,7 +201,7 @@ for i in {2001..2025}; do
 done
 ```
 
-#### Including sourceforge
+##### Git and SourceForge count
 
 ```sh
 for i in {2001..2025}; do
@@ -188,9 +211,7 @@ for i in {2001..2025}; do
 done
 ```
 
-
-#### Just SourceForge
-
+##### SourceForge only count
 
 ```sh
 for i in {2001..2025}; do
@@ -199,6 +220,11 @@ for i in {2001..2025}; do
   cd - > /dev/null
 done
 ```
+
+
+##### Gradual Pruning
+
+List the count each year where there is a match and the total number to help pruning search
 
 ```sh
 for i in {2001..2025}; do
@@ -209,7 +235,9 @@ for i in {2001..2025}; do
 done
 ```
 
-#### Exclusive Github
+##### Exclusive Github
+
+Papers that have exclusively used github and no other git service or source forge repository.
 
 ```sh
 for i in {2001..2025}; do
