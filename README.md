@@ -138,7 +138,8 @@ Most of these are fomratted for direct use in a [tikz pgfplot](https://tikz.dev/
 ```sh
 for i in {2001..2025}; do
   cd "${i}"
-  echo "(${i: -2}",$(( $(pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)' -rli . | wc -l) * 100 / $(ls | wc -l) ))")"
+  percent=$(echo "scale=2; $(pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)' -rli . | wc -l) * 100 / $(ls | wc -l)" | bc)
+  echo "(${i: -2},${percent})"
   cd - > /dev/null
 done
 ```
@@ -148,7 +149,8 @@ done
 ```sh
 for i in {2001..2025}; do
   cd "${i}"
-  echo "(${i: -2}",$(( $(pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b|hub\.io)' -rli . | wc -l) * 100 / $(ls | wc -l) ))")"
+  percent=$(echo "scale=2; $(pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b|hub\.io)' -rli . | wc -l) * 100 / $(ls | wc -l)" | bc)
+  echo "(${i: -2},${percent})"
   cd - > /dev/null
 done
 ```
@@ -163,42 +165,46 @@ for i in {2001..2025}; do
 done
 ```
 
-##### GitHub term use percentage
+##### GitHub term use %
 
 ```sh
 for i in {2001..2025}; do
   cd "${i}"
-  echo "(${i: -2}",$(( $(pdfgrep -P 'github' -rli . | wc -l) * 100 / $(ls | wc -l) ))")"
+  percent=$(echo "scale=2; $(pdfgrep -P 'github' -rli . | wc -l) * 100 / $(ls | wc -l)" | bc)
+  echo "(${i: -2},${percent})"
   cd - > /dev/null
 done
 ```
 
-##### GitHub term use percentage (no github.io)
+##### GitHub term use % (no github.io)
 
 ```sh
 for i in {2001..2025}; do
   cd "${i}"
-  echo "(${i: -2}",$(( $(pdfgrep -P 'github(?!\.io)' -rli . | wc -l) * 100 / $(ls | wc -l) ))")"
+  percent=$(echo "scale=2; $(pdfgrep -P 'github(?!\.io)' -rli . | wc -l) * 100 / $(ls | wc -l)" | bc)
+  echo "(${i: -2},${percent})"
   cd - > /dev/null
 done
 ```
 
-##### github.io use percentage
+##### github.io use %
 
 ```sh
 for i in {2001..2025}; do
   cd "${i}"
-  echo "(${i: -2}",$(( $(pdfgrep -P 'github\.io' -rli . | wc -l) * 100 / $(ls | wc -l) ))")"
+  percent=$(echo "scale=2; $(pdfgrep -P 'github\.io' -rli . | wc -l) * 100 / $(ls | wc -l)" | bc)
+  echo "(${i: -2},${percent})"
   cd - > /dev/null
 done
 ```
 
-##### Open Source term use percentage
+##### Open Source term use %
 
 ```sh
 for i in {2001..2025}; do
   cd "${i}"
-  echo "(${i: -2}",$(( $(pdfgrep -P '(open source|open-source)' -rli . | wc -l) * 100 / $(ls | wc -l) ))")"
+  percent=$(echo "scale=2; $(pdfgrep -P '(open source|open-source)' -rli . | wc -l) * 100 / $(ls | wc -l)" | bc)
+  echo "(${i: -2},${percent})"
   cd - > /dev/null
 done
 ```
