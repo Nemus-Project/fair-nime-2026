@@ -338,3 +338,4 @@ done
 - A markup language, like HTML, is even better
   - Still blocked by PubPub
 - Using TinyUrl and bit.ly might not be a good idea
+  - also hyperlinks
