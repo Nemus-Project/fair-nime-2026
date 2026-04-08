@@ -339,3 +339,7 @@ done
   - Still blocked by PubPub
 - Using TinyUrl and bit.ly might not be a good idea
   - also hyperlinks
+- Perhaps still some confusion as the meaning of "open source"
+  - e.g. free binaries are not open source
+  - also, ideally the source is presented
+- Latex loves to break links
