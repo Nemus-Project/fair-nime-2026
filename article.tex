@@ -96,10 +96,14 @@ Discussions of ``recreating'' a NIME have predominantly emphasised its role in m
 
 The NIME archive hosts 2,000+ open-access projects that support exploration and iteration in creative microcontroller, electronics, and programming practices.
 Though many of the projects are open source, far too often this is only on condition that the source can be located in the first place.
+% Similar analysis of open source practice in NIME proceedings, notably \citet{calegario_documentation_2021} anc \citet{fiordelmondo_towards_2025}.
+% \citet{calegario_documentation_2021} considered NIME 2018--2020 as a whole and the number of papers providing additional documentation of their artefacts and of what that documentation was comprised.
+% \citet{fiordelmondo_towards_2025} reviewed the percentage of papers using open source repositories by the type of service (e.g., GitHub, GitLab, Google Drive \&c.) across NIME's entire archive as well as touching upon the number of source material repositories created for NIME papers for years 2022--2024.
 Prompted by the analysis in \citet{calegario_documentation_2021} and \citet{fiordelmondo_towards_2025}, two questions were raised.
+% expanding on the time frame.
 
 \begin{enumerate}
-    \item ``How often do NIME papers link to source code?''
+    \item ``How and how often do NIME papers link to source code?''
     \item ``How prevalent is open source practice at NIME?''
 \end{enumerate}
 
@@ -121,11 +125,11 @@ Over the past decade, the git version control system (VCS) has become a de facto
 Nevertheless, the search was designed to be as forgiving as was practical, since not all papers contain or reference the term ``git'' or its variants with respect to their source repositories (e.g., \cite{carter_sculpting_2025, nime2025_32}).
 
 The search began with the regular expression ``\textbackslash Wgit,'' which matches references to, and URLs of, repositories using the git VCS.
-If no results were found, additional searches were made using keywords ``source,'' ``code,'' ``http,''  and ``doi''.
-Each year's proceedings, from 2020 to 2025, were searched individually.
+If no results were found, additional searches were made using regular expressions \texttt{`(open source|open-source)'} \texttt{`source code'} and \texttt{`repository'}.
+Each year's proceedings, from 2019 to 2025, were searched individually.
 When a link to a project's source repository was found, the URL and the context in which it was used were recorded, after which the paper was removed from the search pool.
 Upon failing to find any result, the remaining papers from that year were manually read to identify if an alternate method was used to reference the source repository.
-NIME 2020 -- 2025 consisted of a total of 532 papers. This was a small enough number that a combined automated/manual approach of the entire proceedings was achievable in just over ten hours.
+NIME 2019 -- 2025 consisted of a total of 621 papers. This was a small enough number that a combined automated/manual approach of the proceedings was achievable in just over 15 hours.
 While this combined approach substantially reduces the likelihood of missed references, the results should be interpreted as conservative estimates rather than exhaustive counts.
 
 %% Bar graph
@@ -304,23 +308,16 @@ The search was run over a directory containing all NIME papers to date, iterativ
 The process began with a \texttt{pdfgrep} search which removed the majority of obvious genuine matches.%
 \footnote{\texttt{pdfgrep -P '\textbackslash Wgit(?!hub|lab)' -ri .}}
 The false positives could then be more easily identified, after which an appropriate regular expression was applied to filter results.%
-\footnote{The process yielded the regular expression:\\ \texttt{\textbackslash Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\textbackslash b)}}
  
-
 Examples of false positives were words split across line breaks at “git” (e.g., legitimation, with its word fragments broken across lines into ``le-'' and ``\textbf{git}imation''), as well as unrelated terms such as ``gitaroo'' or ``gitarre.''
 The search could not be overly restrictive, 
-% \footnote{regular expression pruning false positives:\\ \texttt{(\textbackslash Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a)|sourceforge\textbackslash .)}}
 however, because it needed to retain valid matches such as ``gitorious,'' a git-based hosting service that was acquired by GitLab and discontinued in 2015 \cite{bjaanes_gitorious_2015}.%
+\footnote{The process yielded the regular expression:\\ \texttt{\textbackslash Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\textbackslash b)}}
 
 The resulting yearly percentages of NIME papers referencing a git repository are shown in Figure~\ref{fig:git_occurences}, which incorporates the data from Figure~\ref{fig:git_placement}.
 % Spike in 2023 may be partially answered with that years theme of `Frugal Music Innovation' emphasising `solving problems with the available resources' a theme with which usage of open source projects would fit.
 %% NOTE: About GitHub and NIME
 % Table~\ref{tab:git_type} and Figure~\ref{fig:git_occurences} both show github as the dominent platform
-%  For Figure~\ref{fig:git_occurences}, a list of papers that reference github was created%
-% \footnote{\texttt{pdfgrep -P 'github' -rli .}}
-% this was crossed referenced with all papers tha reference GitHub and another usage of `git'.%
-% \footnote{\verb$pdfgrep -P 'github' -rli . | xargs  pdfgrep -P '(^|\W)git(?!ch|imation|ter|udinal|arr|al|aroo|a|hub\b)' -rli$}
-% After pruning false positives, the results were subtracted giving the data in Figure~\ref{fig:git_occurences}.
 % In many cases there is a complete overlap of git version control usage for the year.
 % In which case it can be safely called a de facto standard. %whether this \textit{good} thing is left unanswered, but it is certainly a behaviour in the community.
 % GitHub is the dominant repository platform (Table~\ref{tab:git_type}), which reflects the trend observed by \citet{fiordelmondo_towards_2025}.
