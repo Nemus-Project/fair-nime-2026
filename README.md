@@ -26,6 +26,8 @@
         - [SourceForge only count](#sourceforge-only-count)
         - [Total Reference per year / paper](#total-reference-per-year--paper)
         - [Exclusive Github](#exclusive-github)
+        - [Count NIME Papers](#count-nime-papers)
+  - [NIME Stats](#nime-stats)
   - [Lessons Learned](#lessons-learned)
 
 
@@ -282,6 +284,47 @@ for i in {2001..2025}; do
 done
 ```
 
+
+##### Count NIME Papers
+
+```sh
+for i in {2001..2025}; do
+  cd "${i}"
+  echo "(${i: -2}", $(ls *.pdf | wc -l)")"
+  cd - > /dev/null
+done
+```
+
+## NIME Stats
+
+| Year | Total Papers |
+| :--: | :----------: |
+| 2001 |      14      |
+| 2002 |      48      |
+| 2003 |      48      |
+| 2004 |      54      |
+| 2005 |      77      |
+| 2006 |      86      |
+| 2007 |     104      |
+| 2008 |      87      |
+| 2009 |     110      |
+| 2010 |     111      |
+| 2011 |     130      |
+| 2012 |     129      |
+| 2013 |     118      |
+| 2014 |     148      |
+| 2015 |     103      |
+| 2016 |      84      |
+| 2017 |     105      |
+| 2018 |      92      |
+| 2019 |      88      |
+| 2020 |     100      |
+| 2021 |      88      |
+| 2022 |      56      |
+| 2023 |      99      |
+| 2024 |      94      |
+| 2025 |      96      |
+
 ## Lessons Learned
 
 - PDFs aren't great for this kind of analysis
@@ -294,3 +337,4 @@ done
   - reference contained in bib entries need to be accounted for
 - A markup language, like HTML, is even better
   - Still blocked by PubPub
+- Using TinyUrl and bit.ly might not be a good idea
