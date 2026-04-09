@@ -30,6 +30,7 @@
         - [Count NIME Papers](#count-nime-papers)
   - [NIME Stats](#nime-stats)
   - [Lessons Learned](#lessons-learned)
+    - [Recommendations](#recommendations)
 
 
 ## Abstract
@@ -54,6 +55,17 @@ All dates are 23:59 AoE (Anywhere on Earth).
 ## Data
 
 See [`./data`](./data) directory for set of `.csv` and markdown tables listing papers, their repos and the link context.
+
+> [!NOTE]
+> **Data Format**
+>
+> The "placement" field for the repository data referes to where in the paper the link was shared. In some cases there is an additional value in round braces denoting if the link was shared using link shortening, a hyperlink (obfuscating the URL from text search) or `missing`. In the `missing` case, this typically means that the URL leads to some kind of server error or to an authentication page. For the `data/cite-methods.csv` "missing" takes precedence e.g., `footnote (missing)` would be counted as `missing` not as `footnote`.
+>
+> The data is also not fully standardised. Originally there was an `inferred` category for extant repositories that were not in the paper. Instead this is should now be consolidated into the `missing` category.
+>
+> For instances where the source material link is shared more than once, a semicolon is used to delimit.
+>
+> `reference` and `citation` have been used interchangeably. This will be consolidated into `citation` in a future update.
 
 ### NIME 2025 Zenodo Archives with Additional Files
 
@@ -366,4 +378,14 @@ xychart-beta
 - Perhaps still some confusion as the meaning of "open source"
   - e.g. free binaries are not open source
   - also, ideally the source is presented
-- Latex loves to break links
+- Latex loves to break links in the PDF
+
+
+### Recommendations
+
+- Adding a repo link field in the paper template and metadata would make it much easier to find
+  - it would also make it easier to flag 'openwashing'
+- A markup language version of NIME papers would be more permissive to analysis
+  - it would also avoid links breaking by insertion of spaces and line breaks
+  - it would allow unwieldy links to be hyperlinked, avoiding the need for link shortening services, the use of which should be discouraged
+- If NIME welcomes analysis, need to make sure the text can be accessed programatically
