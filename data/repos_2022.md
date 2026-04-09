@@ -1,15 +1,15 @@
 | paper                                                     | repo                                                                                               | page | placement                     |
 | --------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ---- | ----------------------------- |
 | 0nl57935.pdf                                              | syntex.sonicthings.org                                                                             |      | footnote                      |
-| 3o62rlch.pdf                                              | https://github.com/sambilbow/polaris                                                               |      | body                          |
+| 3o62rlch.pdf                                              | github.com/sambilbow/polaris                                                               |      | body                          |
 | 4b8l5iqc.pdf                                              | github.com/gibber-cc/gibber                                                                        | 18   | body                          |
 | a6hj6dr4.pdf                                              | github.com/rodneydup/CHON                                                                          | last | body                          |
-| ahhqdi2a.pdf                                              | https://norns.community/authors/anthony-t-marasco/ch-norns                                         |      | footnote (missing)            |
+| ahhqdi2a.pdf                                              | norns.community/authors/anthony-t-marasco/ch-norns                                         |      | footnote (missing)            |
 | bchhb87h.pdf                                              | github.com/Daniel-Chin/A-V-H-General-Music-Tutoring-2022                                           |      | appendix                      |
 | cavi.pdf                                                  | github.com/cerdemo/cavi                                                                            |      | citation                      |
-| h9u2ynt0.pdf                                              | https://github.com/pd-l2ork/pd-l2ork                                                               |      | missing                       |
+| h9u2ynt0.pdf                                              | github.com/pd-l2ork/pd-l2ork                                                               |      | missing                       |
 | jtdpakvp.pdf                                              | gitlab.com/ForceHost/ForceHost                                                                     | 26   | table                         |
-| kanchayyupana.pdf                                         | https://github.com/lpatriciacadavid/Kanchay_Yupana_                                                |      | inferred                      |
+| kanchayyupana.pdf                                         | github.com/lpatriciacadavid/Kanchay_Yupana_                                                |      | inferred                      |
 | kmn0rbyp.pdf                                              | github.com/aceglia/biosiglive                                                                      | 11   | body                          |
 | langspil.pdf                                              | github.com/Intelligent-Instruments-Lab/proto-langspil                                              | 7    | footnote                      |
 | lrhx3rpu.pdf                                              | github.com/bboettcher3/Mapper4Live                                                                 | 1    | footnote                      |
@@ -19,4 +19,4 @@
 | r6v6lhyf.pdf                                              | github.com/jacksongoode/NIME-proceedings-analyzer                                                  |      | footnote                      |
 | ttree.pdf                                                 | github.com/IDMIL/T-Tree/                                                                           |      | appendix                      |
 | user-friendly-midi-in-the-web-browser.pdf                 | github.com/djipco/webmidi                                                                          |      | inferred                      |
-| z0lli2w0.pdf                                              | https://github.com/gewhere/bottom-up-live-coding                                                   |      | footnote                      |
+| z0lli2w0.pdf                                              | github.com/gewhere/bottom-up-live-coding                                                   |      | footnote                      |
