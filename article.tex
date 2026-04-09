@@ -20,59 +20,61 @@ That work is then used to establish a framework for analysing the use of open so
 This is followed by a case study of a project from NIME 2025, examining the open source practices employed before and after the conference. Based on this analysis and case study, the paper concludes with recommendations aimed at strengthening open research practice and enabling NIME work to be more readily engaged with by a wider community of students, creators and researchers.
 
 %% xBar graph
-% \begin{figure*}
-%     \centering
-%     \begin{tikzpicture}
-%         \begin{axis}[
-%                 xbar stacked,
-%                 bar width=12pt,
-%                 width=\linewidth,
-%                 height=9.00cm,
-%                 xmin=0,
-%                 xmax=40,
-%                 xtick distance=5,                
-%                 xlabel={\% of papers},
-%                 symbolic y coords={2020,2021,2022,2023,2024,2025},
-%                 ytick=data,
-%                 grid=major,
-%                 y dir=reverse,
-%                 ymajorgrids=false,
-%                 grid style={dashed,gray!30},
-%                 legend style={
-%                         at={(0.95,0.85)},
-%                         anchor=east,
-%                         legend columns=3
-%                     },
-%                 nodes near coords,
-%                 nodes near coords style={
-%                         /pgf/number format/1000 sep={}, % suppress separators for the groups of thousands
-%                         /pgf/number format/precision=1,
-%                         anchor=center,
-%                         % yshift=-3.75pt,
-%                         text=black, 
-%                     },
-%             ]
+\begin{figure*}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+                xbar stacked,
+                bar width=12pt,
+                width=\linewidth,
+                height=9.00cm,
+                xmin=0,
+                xmax=40,
+                xtick distance=5,                
+                xlabel={\% of papers},
+                % symbolic y coords={2020,2021,2022,2023,2024,2025},
+                ytick=data,
+                grid=major,
+                y dir=reverse,
+                ymajorgrids=false,
+                grid style={dashed,gray!30},
+                legend style={
+                        at={(0.95,0.85)},
+                        anchor=east,
+                        legend columns=3
+                    },
+                nodes near coords,
+                nodes near coords style={                      
+                        /pgf/number format/precision=1,
+                        anchor=center,                        
+                        text=black, 
+                    },
+                /pgf/number format/.cd,
+                use comma,
+                1000 sep={},
+            ]
 
-%             \addplot table [y=Year, x=FootnotePct, col sep=comma] {data/cite-methods.csv};
-%             \addlegendentry{Footnote}
+            \addplot table [y=Year, x=FootnotePct, col sep=comma] {data/cite-methods.csv};
+            \addlegendentry{Footnote}
             
-%             \addplot table [y=Year, x=BodyPct, col sep=comma] {data/cite-methods.csv};
-%             \addlegendentry{Body}
+            \addplot table [y=Year, x=BodyPct, col sep=comma] {data/cite-methods.csv};
+            \addlegendentry{Body}
             
-%             \addplot table [y=Year, x=CitationPct, col sep=comma] {data/cite-methods.csv};
-%             \addlegendentry{Citation}
+            \addplot table [y=Year, x=CitationPct, col sep=comma] {data/cite-methods.csv};
+            \addlegendentry{Citation}
             
-%             \addplot [fill=darkgray, nodes near coords style={text=white}] table [y=Year, x=AppendixPct, col sep=comma] {data/cite-methods.csv};
-%             \addlegendentry{Appendix}
+            \addplot [fill=darkgray, nodes near coords style={text=white}] table [y=Year, x=AppendixPct, col sep=comma] {data/cite-methods.csv};
+            \addlegendentry{Appendix}
             
-%             \addplot [red] table [y=Year, x =MissingPct, col sep=comma] {data/cite-methods.csv};
-%             \addlegendentry{Missing}
+            \addplot [red] table [y=Year, x =MissingPct, col sep=comma] {data/cite-methods.csv};
+            \addlegendentry{Missing}
 
-%         \end{axis}
-%     \end{tikzpicture}
-%     \caption{Methods used to share project source URLs in NIME 2020–2025 papers. ``Missing'' includes incorrect URLs, empty repositories, or extant repositories inferred via web search at the time of analysis.}
-%     \label{fig:git_placement}
-% \end{figure*}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Methods used to share project source URLs in NIME 2017--2025 papers. ``Missing'' includes incorrect URLs, empty repositories, or extant repositories inferred via web search at the time of analysis.}
+    \label{fig:git_placement}
+    \Description{}
+\end{figure*}
 
 \section{Related Work}
 
@@ -115,9 +117,9 @@ The text of the PDF files would then be searched using the the open source softw
 
 \subsection{Question 1: Navigating to Source}
 
-To answer the first question, a search was conducted on the NIME proceedings from 2020 to 2025.
+To answer the first question, a search was conducted on the NIME proceedings from 2017 to 2025.
 Open source research practice has evolved since 2001, and guidance for best practices in academia has matured through recommendations in open science \cite{go_fair_2016,unesco_open_2021}, open hardware \cite{oshwa_best_2013}, and, more specifically, open research practice at NIME \cite{mcpherson_nimehub_2016,jensenius_open_2019,fiordelmondo_longevity_2024}.
-Therefore, NIME 2020–2025 should showcase the strongest examples of open research practice.
+With the addition of the open source clause to NIME's ethical guidelines in 2020 \cite{nime_ethics_2020}, NIME proceedings 2020--2025 should showcase the strongest examples of open research practice.
 
 The presence of a URL in a paper --- that links to source material --- was taken as a marker of the authors' intention to make the project accessible. Using this criterion, we followed the approach of \citet{calegario_documentation_2021} and Review B from \citet{fiordelmondo_longevity_2024} as the framework for a source material URL search. It was not necessary that the source be buildable, executable, or complete—only that there was a clear effort to share additional material in a repository representing the work described in the paper.
 
@@ -126,123 +128,11 @@ Nevertheless, the search was designed to be as forgiving as was practical, since
 
 The search began with the regular expression ``\textbackslash Wgit,'' which matches references to, and URLs of, repositories using the git VCS.
 If no results were found, additional searches were made using regular expressions \texttt{`(open source|open-source)'} \texttt{`source code'} and \texttt{`repository'}.
-Each year's proceedings, from 2019 to 2025, were searched individually.
+Each year's proceedings, from 2017 to 2025, were searched individually.
 When a link to a project's source repository was found, the URL and the context in which it was used were recorded, after which the paper was removed from the search pool.
 Upon failing to find any result, the remaining papers from that year were manually read to identify if an alternate method was used to reference the source repository.
-NIME 2019 -- 2025 consisted of a total of 621 papers. This was a small enough number that a combined automated/manual approach of the proceedings was achievable in just over 15 hours.
+NIME 2017--2025 consisted of a total of 818 papers. This was a small enough number that a combined automated/manual approach of the proceedings was achievable in just over 18 hours.
 While this combined approach substantially reduces the likelihood of missed references, the results should be interpreted as conservative estimates rather than exhaustive counts.
-
-%% Bar graph
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-                ybar stacked,
-                bar width=12pt,
-                width=\linewidth,
-                height=9.00cm,
-                ymin=0,
-                ymax=36,
-                ytick distance=5,
-                ylabel={Number of papers},
-                % ylabel={percentae of papers},
-                symbolic x coords={2020,2021,2022,2023,2024,2025},
-                xtick=data,
-                grid=major,
-                xmajorgrids=false,
-                grid style={dashed,gray!30},
-                legend style={
-                        at={(0.38,0.96)},
-                        anchor=north,
-                        legend columns=3
-                    },
-                nodes near coords,
-                nodes near coords style={
-                        font=\small,
-                        /pgf/number format/1000 sep={}, % suppress separators for the groups of thousands   
-                        anchor=center,
-                        % xshift=3.75pt,
-                        text=black, 
-                    },
-            ]
-
-            \addplot table [x=Year, y=Footnote, col sep=comma] {data/cite-methods.csv};
-            \addlegendentry{Footnote}
-            
-            \addplot table [x=Year, y=Body, col sep=comma] {data/cite-methods.csv};
-            \addlegendentry{Body}
-            
-            \addplot table [x=Year, y=Citation, col sep=comma] {data/cite-methods.csv};
-            \addlegendentry{Citation}
-            
-            \addplot [fill=darkgray, nodes near coords style={text=white}] table [x=Year, y=Appendix, col sep=comma] {data/cite-methods.csv};
-            \addlegendentry{Appendix}
-            
-            \addplot [red] table [x=Year, y=Missing, col sep=comma] {data/cite-methods.csv};
-            \addlegendentry{Missing}
-
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Methods used to share project source URLs in NIME 2020–2025 papers. ``Missing'' includes incorrect URLs, empty repositories, or extant repositories inferred via web search at the time of analysis.}
-    \label{fig:git_placement}
-    \Description{}
-\end{figure}
-
-% %% xBar graph
-% \begin{figure}
-%     \centering
-%     \begin{tikzpicture}
-%         \begin{axis}[
-%                 ybar stacked,
-%                 bar width=12pt,
-%                 width=\linewidth,
-%                 height=9.00cm,
-%                 ymin=0,
-%                 ymax=40,
-%                 ytick distance=5,                
-%                 ylabel={\% of papers},
-%                 symbolic x coords={2020,2021,2022,2023,2024,2025},
-%                 xtick=data,
-%                 grid=major,                
-%                 xmajorgrids=false,
-%                 grid style={dashed,gray!30},
-%                 legend style={
-%                         at={(0.38,0.96)},
-%                         anchor=north    ,
-%                         legend columns=3
-%                     },
-%                 nodes near coords,
-%                 nodes near coords style={
-%                         font=\footnotesize,
-%                         /pgf/number format/1000 sep={}, % suppress separators for the groups of thousands
-%                         /pgf/number format/precision=1,
-%                         anchor=center,
-%                         % xshift=3.75pt,    
-%                         text=black, 
-%                     },
-%             ]
-
-%             \addplot table [x=Year, y=FootnotePct, col sep=comma] {data/cite-methods.csv};
-%             \addlegendentry{Footnote}
-            
-%             \addplot table [x=Year, y=BodyPct, col sep=comma] {data/cite-methods.csv};
-%             \addlegendentry{Body}
-            
-%             \addplot table [x=Year, y=CitationPct, col sep=comma] {data/cite-methods.csv};
-%             \addlegendentry{Citation}
-            
-%             \addplot [fill=darkgray, nodes near coords style={text=white}] table [x=Year, y=AppendixPct, col sep=comma] {data/cite-methods.csv};
-%             \addlegendentry{Appendix}
-            
-%             \addplot [red] table [x=Year, y=MissingPct, col sep=comma] {data/cite-methods.csv};
-%             \addlegendentry{Missing}
-
-%         \end{axis}
-%     \end{tikzpicture}
-%     \caption{Methods used to share project source URLs in NIME 2020–2025 papers. ``Missing'' includes incorrect URLs, empty repositories, or extant repositories inferred via web search at the time of analysis.}
-%     \label{fig:git_placement}
-% \Description{}
-% \end{figure}
 
 The standards for what qualified as a link to the project's source material were deliberately broad.
 Papers that provided a URL to a web page, containing a link to the source, qualified (e.g., \cite{nime2025_10,nime2025_16,carter_sculpting_2025,nime2025_37,nime2025_67}).
@@ -329,18 +219,29 @@ This is corroborated by Table~\ref{tab:git_type} which shows the number of proje
 
 Section~\ref{sec:current-state} indicates that while open source \emph{use} in NIME papers is increasing, access to the underlying project materials remains uneven. Links to repositories are often missing, fragile, or routed through intermediary pages (Figure~\ref{fig:git_placement}), and a subset of projects can only be located via manual inference or web search. For DMIs—where reproducibility depends on multiple interdependent artefacts—this makes “openness” a practical question of navigation and reconstruction rather than intent.
 
-\begin{table}
+\begin{table*}
     \centering
-    \begin{tabular}{r|cccccc}
-               & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} & \textbf{2025} \\ \hline
-        GitHub & 19            & 20            & 16            & 22            & 26            & 32            \\
-        GitLab & 0             & 1             & 1             & 3             & 0             & 0             \\
-        other  & 0             & 0             & 0             & 0             & 1             & 3             \\        
+    \begin{tabular}{r|ccccccccc}
+               & \textbf{2017} & \textbf{2018} & \textbf{2019} & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} & \textbf{2025} \\ \hline
+        GitHub & 15            & 17            & 20            & 18            & 21            & 18            & 31            & 25            & 31            \\
+        GitLab & 1             & 0             & 3             & 0             & 1             & 1             & 3             & 0             & 0             \\
+        Other  & 1             & 5             & 2             & 1             & 0             & 2             & 0             & 2             & 5             \\
     \end{tabular}
     \caption{Git service used to host NIME project repositories.}
     \label{tab:git_type}
     \Description{}
-\end{table}
+\end{table*}
+
+% \begin{table}[h]
+% \centering
+% \pgfplotstabletypeset[
+%     col sep=comma,
+%     string type,
+%     columns={0,Name,Age,City},
+%     columns/0/.style={column name={}}
+% ]{data/repo-platform.csv}
+% \caption{Imported CSV table}
+% \end{table}
 
 Below is a case study that responds to this findability gap by showing how one DMI can be packaged as a versioned, cross-referenced object—so that the materials implied by the paper can be located, checked out, and cited without recourse to external search. The case study is the open methodology applied to the interface described in \anon{\citet{hamilton_augmentation_2025_activities}}. The interface was created as part of \anon{the NEMUS project}, which is dedicated to making most digital research products open source. From the outset, the project aimed to incorporate best open research practices \cite{chen_open_2019}.
 
