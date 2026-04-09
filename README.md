@@ -162,6 +162,7 @@ for i in {2001..2025}; do
   cd - > /dev/null
 done
 ```
+
 #### General Git References Count
 
 Most of these are fomratted for direct use in a [tikz pgfplot](https://tikz.dev/pgfplots/). The article uses the same data in CSV format from [`data/opensource-use.csv`](./data/opensource-use.csv).
