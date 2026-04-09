@@ -13,6 +13,7 @@
       - [Prune Search](#prune-search)
         - [Remove false positives and obvious references](#remove-false-positives-and-obvious-references)
         - [Remove false positives](#remove-false-positives)
+      - [Finding Source Repositories](#finding-source-repositories)
       - [General Git References Count](#general-git-references-count)
         - [Git URLs %  (pruned)](#git-urls---pruned)
         - [Git URLs % (pruned) no github.io](#git-urls--pruned-no-githubio)
@@ -148,6 +149,15 @@ Final pruned search term so only git and git urls were captured.
 pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)' -ri .
 ```
 
+#### Finding Source Repositories
+
+```sh
+for i in {2001..2025}; do
+  cd "${i}"
+  pdfgrep -P '(\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)|open source|open-source)' -rli . | sort > ../repo_search_2017.txt
+  cd - > /dev/null
+done
+```
 #### General Git References Count
 
 Most of these are fomratted for direct use in a [tikz pgfplot](https://tikz.dev/pgfplots/). The article uses the same data in CSV format from [`data/opensource-use.csv`](./data/opensource-use.csv).
