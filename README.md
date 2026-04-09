@@ -151,10 +151,14 @@ pdfgrep -P '\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)' -ri .
 
 #### Finding Source Repositories
 
+This was used as starting point to identify a pool of papers most likely to provide a source material repo.
+papers not on this list were subsequently searched for `http` and `www` then skim read manually in case hyper links were used.
+
 ```sh
 for i in {2001..2025}; do
   cd "${i}"
-  pdfgrep -P '(\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)|open source|open-source)' -rli . | sort > ../repo_search_2017.txt
+  echo Searching $i
+  pdfgrep -P '(\Wgit(?!ch|imation|ter|udinal|arr|al|aroo|a\b)|open source|open-source)' -rli . | sort > "../repo_search_${i}.txt"
   cd - > /dev/null
 done
 ```
