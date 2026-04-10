@@ -50,16 +50,16 @@ This is followed by a case study of a project from NIME 2025, examining the open
                 1000 sep={},
             ]
 
-            \addplot table [y=Year, x=FootnotePct, col sep=comma] {data/cite-methods.csv};
+            \addplot [fill=cbIndigo, nodes near coords style={text=white}] table [y=Year, x=FootnotePct, col sep=comma] {data/cite-methods.csv};
             \addlegendentry{Footnote}
             
-            \addplot table [y=Year, x=BodyPct, col sep=comma] {data/cite-methods.csv};
+            \addplot [fill=cbYellow] table [y=Year, x=BodyPct, col sep=comma] {data/cite-methods.csv};
             \addlegendentry{Body}
             
-            \addplot table [y=Year, x=CitationPct, col sep=comma] {data/cite-methods.csv};
+            \addplot [fill=cbGreen, nodes near coords style={text=white}] table [y=Year, x=CitationPct, col sep=comma] {data/cite-methods.csv};
             \addlegendentry{Citation}
             
-            \addplot [fill=darkgray, nodes near coords style={text=white}] table [y=Year, x=AppendixPct, col sep=comma] {data/cite-methods.csv};
+            \addplot [fill=cbAzure] table [y=Year, x=AppendixPct, col sep=comma] {data/cite-methods.csv};
             \addlegendentry{Appendix}
             
             \addplot [red] table [y=Year, x =MissingPct, col sep=comma] {data/cite-methods.csv};
@@ -167,11 +167,11 @@ The practice of sharing source repositories has increased over the period consid
                     /pgf/number format/1000 sep=
                 }
             ]
-            \addplot[color=blue,mark=*] table [x=year, y=any] {\datatable};
-            \addplot[color=red,mark=*] table [x=year, y=github] {\datatable};
+            \addplot[color=highContrast1,mark=o] table [x=year, y=any] {\datatable};
+            \addplot[color=highContrast2,mark=triangle] table [x=year, y=github] {\datatable};
             % \addplot[color=green,mark=*] table [x=year, y=git] {\datatable};
             % \addplot[color=green,mark=*] table [x=year, y=sourceforge] {\datatable};
-            \addplot[color=black,mark=*]  coordinates { 
+            \addplot[color=highContrast3,mark=*]  coordinates { 
                 (2017,16.1) (2018,23.9) (2019,28.4) (2020,19.0) (2021,25.0) (2022,35.7) (2023,33.3) (2024,30.8) (2025,38.5)
             };
             
