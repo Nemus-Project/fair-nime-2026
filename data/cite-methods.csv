@@ -1,4 +1,4 @@
-Year,Total,Footnote,Body,Citation,Appendix,Missing,Total,FootnotePct,BodyPct,CitationPct,AppendixPct,MissingPct,TotalPct
+Year,TotalPapers,Footnote,Body,Citation,Appendix,Missing,TotalSource,FootnotePct,BodyPct,CitationPct,AppendixPct,MissingPct,TotalSourcePct
 2017,105,7,3,0,0,7,17,6.67,2.86,0.00,0.00,6.67,16.19
 2018,92,12,4,0,2,4,22,13.04,4.35,0.00,2.17,4.35,23.91
 2019,88,12,3,5,1,4,25,13.64,3.41,5.68,1.14,4.55,28.41
