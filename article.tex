@@ -69,7 +69,7 @@ This is followed by a case study of a project from NIME 2025, examining the open
     \end{tikzpicture}
     \caption{Methods used to share project source URLs in NIME 2017--2025 papers. `Missing' includes incorrect URLs, empty repositories, or extant repositories inferred via web search at the time of analysis.}
     \label{fig:git_placement}
-    \Description{}
+    \Description{A horizontal stacked bar chart is shown, one stacked bar for NIME 2017 to 2025. The segments of the stacked bar are the five categories of source URL, footnote, body, citation , appendix and missing. Trend shows that context has remained relatively fixed, with footnote being the most popular, followed by body, with appendix and citation being roughly interchangeable. The percentage of repositories that are missing drops around 2020 but has started to increase again up to 2025. }
 \end{figure*}
 
 \section{Related Work}
@@ -128,7 +128,7 @@ Each year's proceedings, from 2017 to 2025, were searched individually.
 When a link to a project's source repository was found, the URL and the context in which it was used were recorded, after which the paper was removed from the search pool.
 Upon failing to find any result, the remaining papers from that year were manually read to identify if an alternate method was used to reference the source repository.
 It became apparent during the initial stage of the search that the context in which source repositories were shared varied from paper to paper.
-These contexts were recorded---alongside the source repository URL---and placed into one of four categories: `footnote,' `body,' `citation,' and `appendix.'
+These contexts were recorded alongside the source repository URL and placed into one of four categories: `footnote,' `body,' `citation,' and `appendix.'
 NIME 2017--2025 consisted of a total of 818 papers. This was a small enough number that a combined automated/manual approach of the proceedings was achievable in just over 20 hours.
 While this combined approach substantially reduces the likelihood of missed references, the results should be interpreted as conservative estimates rather than exhaustive counts.
 
@@ -185,7 +185,7 @@ The practice of sharing source repositories has increased over the period consid
 
     \caption{Yearly percentage of NIME papers (2009--2025) in three categories: papers referencing at least one open source project using a git or SourceForge repository, papers referencing exclusively GitHub repositories, and papers that included a link to their source material. Each plot is the percentage of total papers in that year. Git was initially released in 2005 and NIME papers published between 2001 and 2009 contain no references to it. GitHub was launched in 2008 and does not appear in NIME publications until 2010.}
     \label{fig:git_occurences}
-    \Description{}
+    \Description{Three plots for NIME 2009 to 2025 are shown on the same figure. The plot showing what percentage of papers reference at least on open source repository climbs from three percent to 52 percent. Exclusive github usage starts at zero percent and ends at 42 percent. The next plot is partial, beginning in 2017 and shows the percentage of papers sharing repositories going from 16 percent to 38 percent.}
 \end{figure}
 
 To answer the second question, all NIME paper proceedings were searched for any usage of open source projects as part of a paper.
@@ -233,7 +233,7 @@ Section~\ref{sec:current-state} indicates that while open source \emph{use} in N
     \end{tabular}
     \caption{Service used to host NIME source material repositories. Since GitLab is open source software, the GitLab column includes private and institutional servers.}
     \label{tab:git_type}
-    \Description{}
+    \Description{Table shows the type of service to store source material. GitHub is by far the most popular. Gitlab is the only platform with recurring usage, but it is small and interchangeable with all other methods.}
 \end{table}
 
 
@@ -281,7 +281,7 @@ Five infrastructural dimensions were identified:
     \end{tikzpicture}
     \caption{The DMI is divided into three submodules, each representing the firmware, electronics schematics and enclosure modelling data. These submodules are collected into a single repository that represents the interface.}
     \label{fig:repo-relation}
-    \Description{}
+    \Description{A box diagram showing the interconnection between three submodule repositories and a single meta-repository which encapsulates them.}
 \end{figure}
 
 
@@ -337,7 +337,7 @@ Conversion from EAGLE to KiCad remains available \cite{kicad_eagle_2024}, emphas
     \end{tikzpicture}
     \caption{Zenodo’s GitHub integration does not capture data stored in git submodules. As an alternative, each submodule can be archived independently at the appropriate version, after which the meta-repository referencing these components can be archived, resulting in a collection of linked DOIs.}
     \label{fig:zenodo-github-integration}
-    \Description{}
+    \Description{The same box diagram as the previous figure except the connection is broken. This is to illustrate the broken connection between the submodule functionality of git and the Github / Zenodo integration which does not ingest submodules at the given commit. Instead, DOIs are shown to be manually entered to provided a parity between the living git meta-repository and the static archived format which is appropriate for citation.}
 \end{figure}
 
 Documentation for the project still remains incomplete.
@@ -372,7 +372,7 @@ Within this context, a minimal intervention could improve consistency: adding a 
     \end{subfigure}
     \caption{Project source as a standard field in the paper template (a). These details are not obligatory (b) and could be withheld, but the choice to do so becomes a conscious one.}
     \label{fig:project-details}
-    \Description{}
+    \Description{Two examples of a NIME paper template are shown each with a new field titled Project Source. The top example image shows a github URL in the new field while the bottom example shows "not available."}
 \end{figure}
 
 \section{Conclusion}
