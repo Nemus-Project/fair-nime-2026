@@ -421,10 +421,9 @@ xychart
   - also, ideally the source is presented
 - Latex loves to break links in the PDF
 - pgf-tikz's pgfplots is great
-  - Data stays with the document (unlike a images or vector graphics†)
+  - Data stays with the document (unlike images or vector graphics)
   - in fact any plotting system, like mermaid, that provides both the visual representation and underlying raw data is preferable
 
-_† Yes, a vector could be reveresed but there is a lot of margins for error._
 ### Recommendations
 
 - Adding a repo link field in the paper template and metadata would make it much easier to find
