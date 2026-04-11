@@ -109,7 +109,7 @@ Below are a collection of script snippets and notes used for analysing the NIME 
 > ```
 >
 > This is currently broken. Pulling pdfs for these years will require another approach.
-> Potentially the URLs can be openened in a web browser programtically and then transferred afterwards. 
+> Potentially the URLs can be openened in a web browser programmatically and then transferred afterwards. 
 > You will need to prep your download location first.
 
 
