@@ -28,7 +28,12 @@
         - [Total Reference per year / paper](#total-reference-per-year--paper)
         - [Exclusive Github](#exclusive-github)
         - [Count NIME Papers](#count-nime-papers)
+    - [Reference Counting](#reference-counting)
+      - [List reference](#list-reference)
+      - [Count references](#count-references)
   - [NIME Stats](#nime-stats)
+    - [Number of Papers](#number-of-papers)
+    - [Average Number of References per Paper](#average-number-of-references-per-paper)
   - [Lessons Learned](#lessons-learned)
     - [Recommendations](#recommendations)
 
@@ -322,36 +327,58 @@ for i in {2001..2025}; do
 done
 ```
 
-## NIME Stats
+### Reference Counting
 
-| Year  | Num Papers |
-| :---: | :--------: |
-| 2001  |     14     |
-| 2002  |     48     |
-| 2003  |     48     |
-| 2004  |     54     |
-| 2005  |     77     |
-| 2006  |     86     |
-| 2007  |    104     |
-| 2008  |     87     |
-| 2009  |    110     |
-| 2010  |    111     |
-| 2011  |    130     |
-| 2012  |    129     |
-| 2013  |    118     |
-| 2014  |    148     |
-| 2015  |    103     |
-| 2016  |     84     |
-| 2017  |    105     |
-| 2018  |     92     |
-| 2019  |     88     |
-| 2020  |    100     |
-| 2021  |     88     |
-| 2022  |     56     |
-| 2023  |     99     |
-| 2024  |     94     |
-| 2025  |     96     |
-| Total |    2269    |
+#### List reference
+
+```sh
+for i in {2001..2025}; do
+  cd "${i}"
+  pdfgrep -P '\[\d{1,3}\]' -ri . > "../references_${i}.txt"
+  cd - > /dev/null
+done
+```
+
+#### Count references
+
+```py
+import re 
+
+ref_counts_by_year = {}
+
+for year in range(2001,2026):
+  if year not in ref_counts_by_year:
+    ref_counts_by_year[year] = {}
+  with open(f"references_{year}.txt") as ref_file:
+    for line in ref_file:
+      if not line.startswith('./'):
+        continue
+      id = line[2:line.find(":")]
+      if id not in ref_counts_by_year[year]:        
+        ref_counts_by_year[year][id] = 0;
+      ref_num = int(re.search('\[(\d{1,3})\]', line)[1])
+      ref_counts_by_year[year][id] = ref_num if ref_num > ref_counts_by_year[year][id] else ref_counts_by_year[year][id];
+
+print(f"year,total,mean,median")
+
+for year in range(2001,2026):
+  ref_list = []
+  year_total = 0;
+  year_mean = 0;
+  
+  for key in ref_counts_by_year[year]:
+    year_total += ref_counts_by_year[year][key]
+    ref_list.append(ref_counts_by_year[year][key])
+  
+  ref_list.sort()
+  year_mean = year_total / len(ref_counts_by_year[year].items())
+  year_median = ref_list[len(ref_list)//2]
+  print(f"{year},{year_total},{year_mean:.1f},{year_median}")
+
+```
+
+## NIME Stats
+### Number of Papers
 
 ```mermaid
 xychart-beta
@@ -360,6 +387,17 @@ xychart-beta
     y-axis "Total Papers" 0 --> 160
     bar [14, 48, 48, 54, 77, 86, 104, 87, 110, 111, 130, 129, 118, 148, 103, 84, 105, 92, 88, 100, 88, 56, 99, 94, 96]
     
+```
+
+### Average Number of References per Paper
+
+```
+xychart
+    title "Average References"
+    x-axis ["'01", "'02", "'03", "'04", "'05", "'06", "'07", "'08", "'09", "'10", "'11", "'12", "'13", "'14", "'15", "'16", "'17", "'18", "'19", "'20", "'21", "'22", "'23", "'24", "'25"]
+    y-axis "num references" 0 --> 35    
+    line [10.6, 9.0, 16.7, 12.0, 13.0, 15.2, 14.7, 13.8, 10.9, 14.5, 13.8, 14.4, 15.8, 15.9, 15.3, 25.8, 22.0, 19.7, 19.9, 20.5, 25.0, 31.9, 28.9, 30.2, 31.7]
+    line [13, 8, 13, 11, 11, 16, 14, 13, 10, 13, 13, 13, 15, 15, 14, 19, 17, 18, 17, 19, 22, 28, 23, 27, 28]
 ```
 
 ## Lessons Learned
