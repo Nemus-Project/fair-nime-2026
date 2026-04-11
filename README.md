@@ -388,6 +388,28 @@ xychart-beta
     bar [14, 48, 48, 54, 77, 86, 104, 87, 110, 111, 130, 129, 118, 148, 103, 84, 105, 92, 88, 100, 88, 56, 99, 94, 96] 
 ```
 
+### Source Material URL Context Distribution
+
+```mermaid
+xychart
+title "URL Context Percentage Distribution"
+x-axis "Year" ["'17", "'18", "'19", "'20", "'21", "'22", "'23", "'24", "'25"]
+y-axis "Overall %" 0 --> 100
+%% Blue
+bar [100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00]
+%% Green
+bar [100.00, 88.89, 95.24, 100.00, 100.00, 86.67, 96.55, 95.83, 90.00]
+%% Red
+bar [100.00, 88.89, 71.43, 100.00, 90.00, 80.00, 93.10, 83.33, 83.33]
+%% Yellow
+bar [70.00, 66.67, 57.14, 47.06, 65.00, 40.00, 55.17, 58.33, 60.00]
+```
+
+- 🟨 Footnote
+- 🟥 Body
+- 🟩 Citation
+- 🟦 Appendix
+
 ### Average Number of References per Paper
 
 ```mermaid
