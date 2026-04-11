@@ -33,6 +33,7 @@
       - [Count references](#count-references)
   - [NIME Stats](#nime-stats)
     - [Number of Papers](#number-of-papers)
+    - [Source Material URL Context Distribution](#source-material-url-context-distribution)
     - [Average Number of References per Paper](#average-number-of-references-per-paper)
   - [Lessons Learned](#lessons-learned)
     - [Recommendations](#recommendations)
