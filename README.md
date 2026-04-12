@@ -100,34 +100,11 @@ Below are a collection of script snippets and notes used for analysing the NIME 
 
 ### Download NIME papers
 
->[!NOTE]
-> NIME 2021 and 2022 are a little more involved to pull the pdfs.
-> You ~can~ could `curl` a PubPub article with 
-> 
-> ```
-> https://nime.pubpub.org/pub/<PAPER_ID>/download/pdf
-> ```
->
-> This is currently broken. Pulling pdfs for these years will require another approach.
-> Potentially the URLs can be openened in a web browser programmatically and then transferred afterwards. 
-> You will need to prep your download location first.
-
-
 ```sh
 for year in {2001..2025}; do  
-  mkdir "${year}"
-  for paper in $(curl "https://raw.githubusercontent.com/NIME-conference/NIME-bibliography/refs/heads/master/paper_proceedings/nime${year}.bib"| grep -E "url\s+=\s+{" | grep -o -E "http.*"); do    
-  paper="${paper:0:-2}"
-  [[ $paper != https://* ]] && paper="https${paper:4}"    
-    if [[ ${paper} == *"pubpub"* ]]; then
-      curl "${paper}/download/pdf" -o "${paper:28}.pdf" --output-dir "${year}"
-    elif [[ ${paper} == *"doi.org"* ]]; then         
-      paperurl="$(curl -s ${paper} | grep -m 1 -o -E "https://nime.pubpub.org/pub/\w+" | tail -1)/download/pdf" 
-      curl "${paperurl}" -o "${paperurl:28:-13}.pdf" --output-dir "${year}"
-    else
-      curl "${paper}" -O --output-dir "${year}"
-    fi
-  done  
+  curl https://www.nime.org/proceedings/ZIPs/${year}.zip -O
+  unzip "${year}.zip" -d ./
+  rm "${year}.zip"
 done
 ```
 
