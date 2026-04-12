@@ -103,7 +103,22 @@ Below are a collection of script snippets and notes used for analysing the NIME 
 ```sh
 for year in {2001..2025}; do  
   curl https://www.nime.org/proceedings/ZIPs/${year}.zip -O
-  unzip "${year}.zip" -d ./
+done
+
+gzip_years=(2011 2013 2014 2017)
+zip_years=(2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2012 2016 2019 2020 2021 2022 2023 2024 2025)
+
+for year in "${zip_years[@]}"; do
+  unzip "${year}.zip" -d ./test
+done
+
+for year in "${gzip_years[@]}"; do
+  tar -xf "${year}.zip" -C ./test
+done
+
+unzip "2015.zip" -d ./test/2015/
+
+for year in {2001..2025}; do  
   rm "${year}.zip"
 done
 ```
