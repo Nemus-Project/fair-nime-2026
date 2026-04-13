@@ -1,7 +1,7 @@
 \section{Introduction}
 
 Over the past decade, academia has increasingly embraced ``open methodology'' \cite{nosek_scientific_2012}, encompassing open science \cite{unesco_open_2021} and FAIR (findable, accessible, interoperable, and reproducible) digital research principles \cite{go_fair_2016}.
-Collectively described here as as `open research practice,' these approaches are essential for ensuring transparency, validation, reuse, and access within scholarly work.
+Collectively described here as `open research practice,' these approaches are essential for ensuring transparency, validation, reuse, and access within scholarly work.
 This movement has raised awareness across research communities and led to the development of widely accepted best-practice frameworks \cite{smith_software_2016}.
 While these frameworks have primarily focused on scientific research \cite{unesco_open_2021}, their adoption is increasingly evident within the humanities \cite{jensenius_best_2021}.
 
@@ -109,7 +109,7 @@ Answering these questions may reveal a method that encourages open research prac
 
 Both questions would be answered through a search of the NIME proceedings up to 2025.
 This first required the download of all PDF files in the NIME paper archive, which were organised into subdirectories by year.
-The text of the PDF files would then be searched using the the open source software \texttt{pdfgrep} \cite{deifel_pdfgrep_2024}.
+The text of the PDF files would then be searched using the open source software \texttt{pdfgrep} \cite{deifel_pdfgrep_2024}.
 
 \subsection{Question 1: Navigating to Source}
 
@@ -126,9 +126,8 @@ The search began with the regular expression `\textbackslash Wgit,' which matche
 If no results were found, additional searches were made using regular expressions \texttt{`(open source|open-source)'} \texttt{`source code'} and \texttt{`repository'}.
 Each year's proceedings, from 2017 to 2025, were searched individually.
 When a link to a project's source repository was found, the URL and the context in which it was used were recorded, after which the paper was removed from the search pool.
+In the initial stages of the search, the context in which the URL appeared was classified into one of four categories: `footnote,' `body,' `citation,' and `appendix.'
 Upon failing to find any result, the remaining papers from that year were manually read to identify if an alternate method was used to reference the source repository.
-It became apparent during the initial stage of the search that the context in which source repositories were shared varied from paper to paper.
-These contexts were recorded alongside the source repository URL and placed into one of four categories: `footnote,' `body,' `citation,' and `appendix.'
 NIME 2017--2025 consisted of a total of 818 papers. This was a small enough number that a combined automated/manual approach of the proceedings was achievable in just over 20 hours.
 While this combined approach substantially reduces the likelihood of missed references, the results should be interpreted as conservative estimates rather than exhaustive counts.
 
@@ -141,7 +140,7 @@ These repositories qualified and are included in the total percentage of papers 
 
 Of the 96 papers from NIME 2025, 37 intend to share their source, whether software, datasets, or even zines \cite{nime2025_42}.
 Figure~\ref{fig:git_placement} shows the ways in which authors disseminated source URLs, with footnotes being the most common method.
-The practice of sharing source repositories has increased over the period considered, but so too has instances of `missing' repositories.
+The practice of sharing source repositories has increased over the period considered, but so too have instances of `missing' repositories.
 
 \subsection{Question 2: Adoption of Open Source}
 
@@ -177,18 +176,18 @@ The practice of sharing source repositories has increased over the period consid
             
             \addlegendentry{use open source}
             % \addlegendentry{git}
-            \addlegendentry{use only github}        
+            \addlegendentry{exclusively GitHub}        
             \addlegendentry{share source}
             
         \end{axis}
     \end{tikzpicture}
 
-    \caption{Yearly percentage of NIME papers (2009--2025) in three categories: papers referencing at least one open source project using a git or SourceForge repository, papers referencing exclusively GitHub repositories, and papers that included a link to their source material. Each plot is the percentage of total papers in that year. Git was initially released in 2005 and NIME papers published between 2001 and 2009 contain no references to it. GitHub was launched in 2008 and does not appear in NIME publications until 2010.}
+    \caption{Yearly percentage of NIME papers (2009--2025) in three categories: papers referencing at least one open source project using a git or SourceForge repository, papers referencing exclusively GitHub repositories, and papers that included a link to their source material. Each plot is the percentage of total papers in that year. Git was initially released in 2005 and NIME papers published 2001--2009 contain no references to it. GitHub was launched in 2008 and does not appear in NIME publications until 2010.}
     \label{fig:git_occurences}
-    \Description{Three plots for NIME 2009 to 2025 are shown on the same figure. The plot showing what percentage of papers reference at least on open source repository climbs from three percent to 52 percent. Exclusive github usage starts at zero percent and ends at 42 percent. The next plot is partial, beginning in 2017 and shows the percentage of papers sharing repositories going from 16 percent to 38 percent.}
+    \Description{Three plots for NIME 2009 to 2025 are shown on the same figure. The plot showing what percentage of papers reference at least on open source repository climbs from three percent to 52 percent. Exclusive GitHub usage starts at zero percent and ends at 42 percent. The next plot is partial, beginning in 2017 and shows the percentage of papers sharing repositories going from 16 percent to 38 percent.}
 \end{figure}
 
-To answer the second question, all NIME paper proceedings were searched for any usage of open source projects as part of a paper.
+To answer the second question, all NIME paper proceedings were searched for any direct link to source code of open source projects as part of a paper.
 The search was to match any reference to git or SourceForge repositories, following the method of \citet{fiordelmondo_towards_2025} which counted papers containing terms related to open source repositories from NIME proceedings 2001--2024.
 A deviation from this previous method was the inclusion of \texttt{github.io} links, as authors often use GitHub Pages to host sites linking to project source repositories, therefore familiarity with git and GitHub can be inferred.
 
@@ -210,8 +209,8 @@ The resulting yearly percentages of NIME papers referencing a git repository are
 % In which case it can be safely called a de facto standard. %whether this \textit{good} thing is left unanswered, but it is certainly a behaviour in the community.
 % GitHub is the dominant repository platform (Table~\ref{tab:git_type}), which reflects the trend observed by \citet{fiordelmondo_towards_2025}.
 There is substantial overlap between git as a technology and GitHub as a service, suggesting that most interactions with open source projects occurs via GitHub.
-Figure~\ref{fig:git_occurences} also illustrates the gradually increasing gap between usage of open source and publishing a project's source since NIME 2017.
 This is corroborated by Table~\ref{tab:git_type} which shows the number of project source repositories using GitHub since NIME 2020.
+Figure~\ref{fig:git_occurences} also illustrates the gradually increasing gap between usage of open source and publishing a project's source since NIME 2017.
 
 \section{Open Methodology for DMIs: A Case Study}\label{sec:DMI}
 
@@ -231,9 +230,9 @@ Section~\ref{sec:current-state} indicates that while open source \emph{use} in N
         \textbf{2024} & 25              & 0               & 2              \\
         \textbf{2025} & 31              & 0               & 5              \\
     \end{tabular}
-    \caption{Service used to host NIME source material repositories. Since GitLab is open source software, the GitLab column includes private and institutional servers.}
+    \caption{Services used to host NIME source material. The GitLab column includes both \url{gitlab.com} and self-hosted instances.}
     \label{tab:git_type}
-    \Description{Table shows the type of service to store source material. GitHub is by far the most popular. Gitlab is the only platform with recurring usage, but it is small and interchangeable with all other methods.}
+    \Description{Table shows the type of service to store source material. GitHub is by far the most popular. GitLab is the only platform with recurring usage, but it is small and interchangeable with all other methods.}
 \end{table}
 
 
@@ -270,8 +269,8 @@ Five infrastructural dimensions were identified:
         ]
 
         \node[box] (box1) {\textbf{Firmware}};
-        \node[box, right=of box1] (box2) {\textbf{Schematics}};
-        \node[box, right=of box2] (box3) {\textbf{Enclosure}};
+        \node[box, right=of box1] (box2) {\textbf{CAD}};
+        \node[box, right=of box2] (box3) {\textbf{Model}};
         \node[box, below=1cm of box2] (bottom) {\textbf{Interface}\\Meta Repository};
 
         \draw[->] (bottom.north) -- ++(0,0.5) -| (box1.south);
@@ -315,8 +314,8 @@ Conversion from EAGLE to KiCad remains available \cite{kicad_eagle_2024}, emphas
             arrow/.style = {-latex,thick},
         ]
         \node[box]                (box1) {\textbf{Firmware}  \\ \small{12.3456/zenodo.0001}};
-        \node[box, right=of box1] (box2) {\textbf{Schematics}\\ \small{12.3456/zenodo.0002}};
-        \node[box, right=of box2] (box3) {\textbf{Enclosure} \\ \small{12.3456/zenodo.0003}};
+        \node[box, right=of box1] (box2) {\textbf{CAD}\\ \small{12.3456/zenodo.0002}};
+        \node[box, right=of box2] (box3) {\textbf{Model} \\ \small{12.3456/zenodo.0003}};
         \node[box, below=2cm of box2] (bottom) {
             \textbf{Interface}\\
             12.3456/zenodo.0004\\
@@ -372,7 +371,7 @@ Within this context, a minimal intervention could improve consistency: adding a 
     \end{subfigure}
     \caption{Project source as a standard field in the paper template (a). These details are not obligatory (b) and could be withheld, but the choice to do so becomes a conscious one.}
     \label{fig:project-details}
-    \Description{Two examples of a NIME paper template are shown each with a new field titled Project Source. The top example image shows a github URL in the new field while the bottom example shows "not available."}
+    \Description{Two examples of a NIME paper template are shown each with a new field titled Project Source. The top example image shows a GitHub URL in the new field while the bottom example shows "not available."}
 \end{figure}
 
 \section{Conclusion}
@@ -383,7 +382,7 @@ The findings presented here suggest that improving openness at NIME does not pri
 
 Finally, making a project’s source code easy to locate removes unnecessary barriers for readers and a broader audience. 
 NIMEs serve as a resource for teaching creative engineering, electronics, musicianship, and HCI, but difficult access limits opportunities for students to engage \cite{nime2021_26}, remix \cite{dasgupta_remixing_2016}, and foster creativity \cite{sharmin_creativity_2021, marin_computational_2024}. 
-By improving discoverability and citability, NIME can better support new contributors, laying ``the groundwork for experiences of practice'' \cite[]{sennett_craftsman_2008}, and extend its impact across wider communities.
+By improving discoverability and citability, NIME can better support new contributors, laying ``the groundwork for experiences of practice'' \cite[p. 277]{sennett_craftsman_2008}, and extend its impact across wider communities.
 
 % this will be anonymised and the acks environment is used as part of the NIME
 % archiving process
