@@ -29,8 +29,8 @@
         - [Exclusive Github](#exclusive-github)
         - [Count NIME Papers](#count-nime-papers)
     - [Reference Counting](#reference-counting)
-      - [List reference](#list-reference)
-      - [Count references](#count-references)
+      - [List Reference](#list-reference)
+      - [Count References (Python)](#count-references-python)
   - [NIME Stats](#nime-stats)
     - [Number of Papers](#number-of-papers)
     - [Source Material URL Context Distribution](#source-material-url-context-distribution)
@@ -65,9 +65,9 @@ See [`./data`](./data) directory for set of `.csv` and markdown tables listing p
 > [!NOTE]
 > **Data Format**
 >
-> The "placement" field for the repository data referes to where in the paper the link was shared. In some cases there is an additional value in round braces denoting if the link was shared using link shortening, a hyperlink (obfuscating the URL from text search) or `missing`. In the `missing` case, this typically means that the URL leads to some kind of server error or to an authentication page. For the `data/cite-methods.csv` "missing" takes precedence e.g., `footnote (missing)` would be counted as `missing` not as `footnote`.
+> The "placement" field for the repository data referes to where in the paper the link was shared. In some cases there is an additional value in round braces denoting if the link was shared using link shortening, a hyperlink (obfuscating the URL from text search) or `missing`. In the `missing` case, this typically means that the URL leads to some kind of server error or to an authentication page. For the `data/cite-methods.csv`, `missing` takes precedence e.g., `footnote (missing)` would be counted as `missing` not as `footnote`.
 >
-> The data is also not fully standardised. Originally there was an `inferred` category for extant repositories that were not in the paper. Instead this is should now be consolidated into the `missing` category.
+> The data is also not yet fully standardised. Originally there was an `inferred` category for extant repositories that were not linked to in the paper. The `inferred` case should will be consolidated into the `missing` category.
 >
 > For instances where the source material link is shared more than once, a semicolon is used to delimit.
 >
@@ -113,7 +113,7 @@ for year in "${zip_years[@]}"; do
 done
 
 for year in "${tar_years[@]}"; do
-  tar -xf "${year}.zip" -C ./test
+  tar -xf "${year}.zip" -C ./
 done
 
 unzip "2015.zip" -d ./2015/
@@ -133,7 +133,7 @@ pdfgrep -P '\Wgit' -rli . | wc -l
 
 ### Searching for URLs
 
-Assuming the NIME archive has been downloaded [using the structure above](#download-nime-papers), you can run these zshell snippets to get some data.
+Assuming the NIME archive has been downloaded [using the directory structure above](#download-nime-papers), you can run these zshell snippets to get some data.
 
 #### Prune Search
 
@@ -322,7 +322,7 @@ done
 
 ### Reference Counting
 
-#### List reference
+#### List Reference
 
 ```sh
 for i in {2001..2025}; do
@@ -332,7 +332,7 @@ for i in {2001..2025}; do
 done
 ```
 
-#### Count references
+#### Count References (Python)
 
 ```py
 import re 
