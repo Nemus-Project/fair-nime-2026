@@ -418,7 +418,7 @@ for year in range(2001,2026):
 for year in range(2001,2026):
     a = """
     ```mermaid
-    xychart-beta
+    xychart
         title "{}"
         x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
         y-axis "Freq. Reference Percent" 0 --> 100
@@ -432,7 +432,7 @@ for year in range(2001,2026):
 ### Number of Papers
 
 ```mermaid
-xychart-beta
+xychart
     title "NIME Proceedings (Total Papers: 2269)"
     x-axis ["'01", "'02", "'03", "'04", "'05", "'06", "'07", "'08", "'09", "'10", "'11", "'12", "'13", "'14", "'15", "'16", "'17", "'18", "'19", "'20", "'21", "'22", "'23", "'24", "'25"]
     y-axis "Total Papers" 0 --> 160
@@ -478,7 +478,7 @@ xychart
 ### Reference Distributions
 
 ```mermaid
-xychart-beta
+xychart
     title "2001"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -487,7 +487,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2002"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -496,7 +496,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2003"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -505,7 +505,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2004"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -514,7 +514,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2005"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -523,7 +523,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2006"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -532,7 +532,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2007"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -541,7 +541,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2008"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -550,7 +550,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2009"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -559,7 +559,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2010"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -568,7 +568,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2011"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -577,7 +577,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2012"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -586,7 +586,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2013"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -595,7 +595,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2014"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -604,7 +604,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2015"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -613,7 +613,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2016"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -622,7 +622,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2017"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -631,7 +631,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2018"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -640,7 +640,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2019"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -649,7 +649,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2020"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -658,7 +658,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2021"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -667,7 +667,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2022"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -676,7 +676,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2023"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -685,7 +685,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2024"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
@@ -694,7 +694,7 @@ xychart-beta
 
 
 ```mermaid
-xychart-beta
+xychart
     title "2025"
     x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70+"]
     y-axis "Freq. Reference Percent" 0 --> 40
