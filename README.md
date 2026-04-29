@@ -352,7 +352,8 @@ for year in range(2001,2026):
       if id not in ref_counts_by_year[year]:        
         ref_counts_by_year[year][id] = 0;
       ref_num = int(re.search('\[(\d{1,3})\]', line)[1])
-      ref_counts_by_year[year][id] = ref_num if ref_num > ref_counts_by_year[year][id] else ref_counts_by_year[year][id];
+      if ref_num < 200:
+        ref_counts_by_year[year][id] = ref_num if ref_num > ref_counts_by_year[year][id] else ref_counts_by_year[year][id];
 
 print(f"year,total,mean,median")
 
@@ -467,7 +468,7 @@ xychart
     title "Average References"
     x-axis ["'01", "'02", "'03", "'04", "'05", "'06", "'07", "'08", "'09", "'10", "'11", "'12", "'13", "'14", "'15", "'16", "'17", "'18", "'19", "'20", "'21", "'22", "'23", "'24", "'25"]
     y-axis "num references" 0 --> 35    
-    line [10.6, 9.0, 16.7, 12.0, 13.0, 15.2, 14.7, 13.8, 10.9, 14.5, 13.8, 14.4, 15.8, 15.9, 15.3, 25.8, 22.0, 19.7, 19.9, 20.5, 25.0, 31.9, 28.9, 30.2, 31.7]
+    line [10.6, 9.0, 16.7, 12.0, 13.0, 15.2, 14.7, 13.8, 10.9, 14.5, 13.8, 14.4, 15.8, 15.9, 15.3, 19.8, 17.3, 19.7, 19.9, 20.5, 25.0, 31.9, 28.9, 30.2, 31.7]
     line [13, 8, 13, 11, 11, 16, 14, 13, 10, 13, 13, 13, 15, 15, 14, 19, 17, 18, 17, 19, 22, 28, 23, 27, 28]
 ```
 
