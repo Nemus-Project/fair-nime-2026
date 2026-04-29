@@ -31,10 +31,12 @@
     - [Reference Counting](#reference-counting)
       - [List Reference](#list-reference)
       - [Count References (Python)](#count-references-python)
+      - [Frequency (Python)](#frequency-python)
   - [NIME Stats](#nime-stats)
     - [Number of Papers](#number-of-papers)
     - [Source Material URL Context Distribution](#source-material-url-context-distribution)
     - [Average Number of References per Paper](#average-number-of-references-per-paper)
+    - [Reference Distributions](#reference-distributions)
   - [Lessons Learned](#lessons-learned)
     - [Recommendations](#recommendations)
 
@@ -370,8 +372,59 @@ for year in range(2001,2026):
 
 ```
 
+#### Frequency (Python)
+
+```py
+ref_counts_by_year = {}
+
+for year in range(2001,2026):
+  if year not in ref_counts_by_year:
+    ref_counts_by_year[year] = {}
+  with open(f"references_{year}.txt") as ref_file:
+    for line in ref_file:
+      if not line.startswith('./'):
+        continue
+      id = line[2:line.find(":")]
+      if id not in ref_counts_by_year[year]:        
+        ref_counts_by_year[year][id] = 0;
+      ref_num = int(re.search('\[(\d{1,3})\]', line)[1])
+      ref_counts_by_year[year][id] = ref_num if ref_num > ref_counts_by_year[year][id] else ref_counts_by_year[year][id];
+
+# min, max
+bins = ((0,5),(5,10),(10,15),(15,20),(20,30),(30,40),(40,50),(50,60),(60,70),(70,100),(100,1000))
+
+freq_dist = {year:{bin:0 for bin  in bins} for year in ref_counts_by_year}
+
+for year in ref_counts_by_year:
+  for paper in ref_counts_by_year[year]:
+      num_refs = ref_counts_by_year[year][paper]
+      for bin in bins:
+        if num_refs >= bin[0] and num_refs < bin[1]:
+          freq_dist[year][bin] += 1
+          continue
+for year in range(2001,2026):
+    a = """
+    ```mermaid
+    xychart-beta
+        title "{}"
+        x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+        y-axis "Freq. Reference" 0 --> 40
+        bar {}
+    ```    
+    """.format(year,list(freq_dist[year].values()))
+    print(a)  
+```
+
 ## NIME Stats
 ### Number of Papers
+
+```mermaid
+xychart-beta
+    title "n"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [2, 3, 2, 3, 0, 0, 0, 0, 0, 0, 0]
+```
 
 ```mermaid
 xychart-beta
@@ -416,6 +469,233 @@ xychart
 
 - 🟦 Mean
 - 🟩 Median
+
+### Reference Distributions
+
+```mermaid
+xychart-beta
+    title "2001"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [2, 3, 2, 3, 0, 0, 0, 0, 0, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2002"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [9, 14, 10, 8, 0, 0, 0, 0, 0, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2003"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [4, 12, 8, 7, 11, 2, 1, 2, 0, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2004"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [6, 18, 13, 7, 6, 2, 0, 0, 0, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2005"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [8, 14, 25, 14, 8, 0, 0, 0, 1, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2006"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [3, 16, 17, 21, 14, 3, 0, 0, 0, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2007"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [9, 15, 26, 16, 17, 2, 2, 0, 0, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2008"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [5, 23, 20, 21, 10, 3, 0, 0, 0, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2009"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [11, 32, 25, 12, 7, 1, 0, 0, 0, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2010"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [3, 25, 34, 27, 18, 2, 1, 0, 0, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2011"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [5, 34, 41, 26, 20, 2, 1, 0, 0, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2012"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [7, 18, 47, 32, 22, 1, 0, 0, 1, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2013"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [4, 21, 30, 33, 18, 9, 1, 0, 0, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2014"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [4, 28, 42, 26, 43, 4, 0, 0, 1, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2015"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [3, 24, 26, 28, 13, 6, 1, 1, 0, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2016"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [0, 7, 15, 20, 28, 9, 2, 0, 0, 0, 1]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2017"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [6, 12, 24, 25, 25, 10, 1, 0, 0, 0, 1]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2018"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [4, 7, 28, 13, 24, 10, 5, 1, 0, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2019"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [1, 10, 20, 19, 23, 9, 6, 0, 0, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2020"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [2, 10, 12, 29, 31, 9, 3, 2, 0, 0, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2021"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [0, 8, 13, 13, 29, 10, 9, 4, 0, 1, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2022"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [0, 1, 6, 9, 14, 14, 5, 5, 0, 1, 1]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2023"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [0, 4, 15, 18, 27, 13, 10, 5, 2, 1, 3]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2024"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [0, 4, 13, 10, 26, 18, 10, 3, 8, 1, 0]
+```    
+
+
+```mermaid
+xychart-beta
+    title "2025"
+    x-axis ["0-5", "5-10", "10-15", "15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "80-100", "100+"]
+    y-axis "Freq. Reference" 0 --> 40
+    bar [0, 4, 10, 15, 26, 15, 10, 7, 4, 2, 0]
+```    
+
 
 ## Lessons Learned
 
