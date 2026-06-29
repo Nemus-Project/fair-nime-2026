@@ -1,35 +1,36 @@
 paper,repo,page,placement
-nime2019_paper005,https://github.com/belljonathan50/SmartVox0.1,,footnote
-nime2019_paper006,https://github.com/idmil/bletests,,footnote
-nime2019_paper016,https://github.com/edrukar/intelligent_instrument,,footnote
-nime2019_paper017,https://github.com/angelofraietta/StellarCommand,,citation
-nime2019_paper020,https://www.nathanturczan.com/visualizer/index.html,,footnote (missing)
-nime2019_paper026,https://github.com/ketchupok/half-physler.git,,footnote
-nime2019_paper029,https://github.com/fsguiglia/MNTm,,footnote
-nime2019_paper034,https://github.com/brunorohde/ESMERIL,,appendix
-nime2019_paper036,https://gitlab.doc.gold.ac.uk/biomusic/continuous-gesture-sound-interaction,,footnote
-nime2019_paper038,https://www.soundcontrolsoftware.com,,footnote (missing)
+nime2019_paper005,github.com/belljonathan50/SmartVox0.1,,footnote
+nime2019_paper006,github.com/idmil/bletests,,footnote
+nime2019_paper016,github.com/edrukar/intelligent_instrument,,footnote
+nime2019_paper017,github.com/angelofraietta/StellarCommand,,citation
+nime2019_paper020,www.nathanturczan.com/visualizer/index.html,,footnote (missing)
+nime2019_paper026,github.com/ketchupok/half-physler.git,,footnote
+nime2019_paper029,github.com/fsguiglia/MNTm,,footnote
+nime2019_paper034,github.com/brunorohde/ESMERIL,,appendix
+nime2019_paper036,gitlab.doc.gold.ac.uk/biomusic/continuous-gesture-sound-interaction,,footnote
+nime2019_paper038,www.soundcontrolsoftware.com,,footnote (missing)
 nime2019_paper040,github.com/behzadhaki/discogs-youtube-dl /qtHarmonicPercussiveSeparatorTranscriber /drum_bassline_dataset,,footnote
-nime2019_paper042,https://github.com/axambo/physical-computing-workshop,,footnote
-nime2019_paper046,https://github.com/nlamounier/wearable-tech-reversa,,body
-nime2019_paper050,https://github.com/cpmpercussion/impsy/,,footnote
-nime2019_paper057,https://github.com/sensel/morph-docs,,citation
-nime2019_paper059,https://github.com/buggyyang/representation_demo,,body
-nime2019_paper060,https://github.com/flucoma/FluidCorpusMap,,body
-nime2019_paper061,https://github.com/kronoslang/kronos,,body (missing)
-nime2019_paper072,https://github.com/NiccoloGranieri/Reach,,footnote
-nime2019_paper073,https://gitlab.com/J_piano/womensLabor.,,citation (missing)
-nime2019_paper074,https://github.com/hmusiclanguage/hmusic,,citation
-nime2019_paper075,https://github.com/angelofraietta/StellarCommand,,citation
-nime2019_paper076,https://gitlab.zhdk.ch/TPF /tpf-client/ /tpf-server,,citation
-nime2019_paper083,https://github.com/bgenchel/pypadberg,,footnote
-nime2019_paper085,https://github.com/JeffGregorio/TimbreMap,,footnotenime2020_paper16,github.com/imui-org/SnoeSky,,footnote
+nime2019_paper042,github.com/axambo/physical-computing-workshop,,footnote
+nime2019_paper046,github.com/nlamounier/wearable-tech-reversa,,body
+nime2019_paper050,github.com/cpmpercussion/impsy/,,footnote
+nime2019_paper057,github.com/sensel/morph-docs,,citation
+nime2019_paper059,github.com/buggyyang/representation_demo,,body
+nime2019_paper060,github.com/flucoma/FluidCorpusMap,,body
+nime2019_paper061,github.com/kronoslang/kronos,,body (missing)
+nime2019_paper072,github.com/NiccoloGranieri/Reach,,footnote
+nime2019_paper073,gitlab.com/J_piano/womensLabor.,,citation (missing)
+nime2019_paper074,github.com/hmusiclanguage/hmusic,,citation
+nime2019_paper075,github.com/angelofraietta/StellarCommand,,citation
+nime2019_paper076,gitlab.zhdk.ch/TPF /tpf-client/ /tpf-server,,citation
+nime2019_paper083,github.com/bgenchel/pypadberg,,footnote
+nime2019_paper085,github.com/JeffGregorio/TimbreMap,,footnote
+nime2020_paper16,github.com/imui-org/SnoeSky,,footnote
 nime2020_paper19,github.com/giuliomoro/flute-key/,,footnote
 nime2020_paper29,github.com/pccadaptiveinstrumentsteam/,,body
 nime2020_paper39,github.com/Harri-Renney/ThereAndBackAgain-NIME,,body
 nime2020_paper42,github.com/adampultz/faab_nime_2020,,footnote
 nime2020_paper43,github.com/gwendal-le-vaillant/MIEM_Experiments,,body
-nime2020_paper45,miem.laras.be,,body (dead)
+nime2020_paper45,miem.laras.be,,body (missing)
 nime2020_paper46,github.com/alexmlucas/d1,,footnote
 nime2020_paper52,github.com/IDMIL/TorqueTuner,,body
 nime2020_paper54,github.com/probatio,,footnote
@@ -42,108 +43,110 @@ nime2020_paper71,github.com/postnature/delta-control,,body
 nime2020_paper76,github.com/KonVas/Ipsosboard,,body
 nime2020_paper98,github.com/satvik-venkatesh/,,footnote
 nime2020_paper99,github.com/fdch/pathosonic,,footnote
-0u3ruj23,https://github.com/electro-smith/oopsy,,footnote
-2pqbusk7,https://github.com/mathiasbredholt/MapLooper,,footnote
-3zeala6v,https://github.com/amstramgrame/amstramgrame,,footnote
-4bbl5lod,https://gitlab.com/johnnyvenom/eco_nime_keywords,,footnote
-8jaqbl7m,https://github.com/awwbees/BespokeSynth,,footnote
-bj2w1gdx,https://github.com/imui-org/LoopBlocks,,footnote
-czq0nt9i,https://github.com/bgenchel/pypadberg,,footnote
-d72sylsq,https://github.com/alexmlucas/Instrument_One,,footnote (unreachable, rep name changed)
-dzlsifz6,https://github.com/WorldViews/KinAudio,,footnote
-eshr,https://github.com/Daniel-Chin/HHF,,footnote
-g7avj1a7,https://github.com/mir-aidj/transition-analysis,,footnote
-i1rx1t2e,https://github.com/valerianF/ISI-Database,,citation
-in6wsc9t,https://github.com/ldzhangyx/music-nlp-chatbot,,footnote
-kdahf9fq,https://github.com/ripolleslab/chiller,,body
-oiwz8bb7,https://github.com/derekxkwan/talea-vis/,,body
-q5oc20wg,https://github.com/jRoshLam,,body
-quadrant,https://github.com/chronopoulos/quadrant-board,,citation
-s3x60926,https://github.com/jrgillick/groove,,body (unreachable)
-uh1zfz1f,https://github.com/IDMIL/le-baton,,body
-y1y5jolp,https://github.com/lisandlop/SENSITIV-Interactive-Dance,,footnote
-zd2z1evu,https://github.com/JRegimbal/mmi,,footnote
-zpdgg2fg,https://github.com/mirlca/code  0nl57935.pdf,syntex.sonicthings.org,,footnote                      
-3o62rlch.pdf,https://github.com/sambilbow/polaris,,body                          
-4b8l5iqc.pdf,github.com/gibber-cc/gibber,18,body                          
-a6hj6dr4.pdf,github.com/rodneydup/CHON,last,body                          
-ahhqdi2a.pdf,https://norns.community/authors/anthony-t-marasco/ch-norns,,footnote (missing)            
-bchhb87h.pdf,github.com/Daniel-Chin/A-V-H-General-Music-Tutoring-2022,,appendix                      
-cavi.pdf,github.com/cerdemo/cavi,,citation                      
-h9u2ynt0.pdf,https://github.com/pd-l2ork/pd-l2ork,,missing                       
-jtdpakvp.pdf,gitlab.com/ForceHost/ForceHost,26,table                         
-kanchayyupana.pdf,https://github.com/lpatriciacadavid/Kanchay_Yupana_,,inferred                      
-kmn0rbyp.pdf,github.com/aceglia/biosiglive,11,body                          
-langspil.pdf,github.com/Intelligent-Instruments-Lab/proto-langspil,7,footnote                      
-lrhx3rpu.pdf,github.com/bboettcher3/Mapper4Live,1,footnote                      
-ludxkhhz.pdf,github.com/Harri-Renney/-NIME2022---InstrumentOne github.com/Harri-Renney/NIME2022---InstrumentTwo,,footnote                      
-mubone2022.pdf,github.com/DocSunset/mubone,,body                          
-pitch-fingering-systems-and-the-search-for-perfection.pdf,github.com/DocSunset/pitch-fingering-brute,,body (hyperlink,unreachable) 
-r6v6lhyf.pdf,github.com/jacksongoode/NIME-proceedings-analyzer,,footnote                      
-ttree.pdf,github.com/IDMIL/T-Tree/,,appendix                      
-user-friendly-midi-in-the-web-browser.pdf,github.com/djipco/webmidi,,inferred                      
-z0lli2w0.pdf,https://github.com/gewhere/bottom-up-live-coding,,footnote
-nime2023_3.pdf,https://github.com/nathanshaw/Explorator,4,body
-nime2023_5.pdf,https://github.com/nathanshaw/Legatus,4,footnote
-nime2023_7.pdf,https://github.com/inria-emeraude/syfala,,footnote
-nime2023_11.pdf,https://github.com/Puara,4,footnote
-nime2023_13.pdf,https://github.com/bboettcher3/MapperVST,2,footnote
-nime2023_16.pdf,https://github.com/tedmoore/Serge-Modular-Archive-Instrument,1,body
-nime2023_17.pdf,https://github.com/YichenWangs/cubing-sound-release,2,footnote
-nime2023_20.pdf,https://github.com/ return-nihil/Live_Coding/tree/main/Duo,,body (missing)
-nime2023_21.pdf,https://github.com/IDMIL/T-Tree/,,footnote
-nime2023_27.pdf,https://github.com/chihauccisoilconte/chowndolo-V2/,,footnote
-nime2023_28.pdf,https://github.com/ccrma/webchuck,,inferred
-nime2023_29.pdf,https://cm-gitlab.stanford.edu/audio/,3,footnote
-nime2023_32.pdf,https://github.com/victor-shepardson/living-looper,,footnote
-nime2023_36.pdf,https://github.com/erikstifjell/FLAPIBox,,footnote
-nime2023_37.pdf,https://github.com/alexdrymonitis/LiveLily,,body
-nime2023_38.pdf,https://github.com/mojtabak-rob/Zrob,3,footnote
-nime2023_39.pdf,https://github.com/VincentCusson/eTube,1,footnote
-nime2023_41.pdf,https://github.com/victorzappi/LDSP,,body
-nime2023_44.pdf,https://github.com/GLepri/Oscillations,,footnote
-nime2023_59.pdf,https://github.com/malloyca/steelpan-pitch,,footnote (empty)
-nime2023_60.pdf,https://github.com/ideoforms/abletonosc,last,body
-nime2023_61.pdf,https://github.com/adanlbenito/bend_sensor_breakout,,footnote
-nime2023_64.pdf,https://github.com/huriphoonado/laptopclass/,,inferred
-nime2023_65.pdf,https://gitlab.com/redspills/,,footnote
-nime2023_66.pdf,https://github.com/eringee/BioData,,citation
-nime2023_67.pdf,https://gitlab.huma-num.fr/bbdmi/bbdmi,1,body
-nime2023_68.pdf,https://github.com/Hughav92/feedback_mop_cello,1,footnote
-nime2023_72.pdf,https://github.com/echo-lab/sharp,,inferred
-nime2023_75.pdf,https://yewlife.github.io/MuGeVI/,1,body
-nime2023_80.pdf,https://github.com/RebelTechnology/BioSignals,,body
-nime2023_88.pdf,https://asciml.github.io/ASCIML/,1,body
-nime2023_95.pdf,https://github.com/SFRL/sketchsynth,,body
-nime2023_96.pdf,https://github.com/aquietlife/harvester,,appendix
-nime2023_98.pdf,https://github.com/Barnard-PL-Labs/MaxPy,2,bodynime2024_12.pdf,https://github.com/cerdemo/2groove,9,body
-nime2024_14.pdf,https://github.com/yannseznec/periodInstrument,5,footnote
-nime2024_15.pdf,https://github.com/DillonSimeone/Gestolumina,4,footnote
-nime2024_16.pdf,https://github.com/hathuwic/CordChord,1,footnote
-nime2024_21.pdf,https://zeynepozcan.github.io/juggling/,3,footnote
-nime2024_24.pdf,https://github.com/musicinmotion-dev/MiM,3,footnote
-nime2024_37.pdf,https://github.com/EllDy96/Augmented-Guitar-Pedalboard,3,footnote
-nime2024_39.pdf,https://groovetransformer.github.io/,4,body
-nime2024_42.pdf,https://github.com/Intelligent-Instruments-Lab/tolvera,1,footnote
-nime2024_45.pdf,https://github.com/timeFliesWhenYoureHavingFun/Baremin,2,body
-nime2024_52.pdf,https://github.com/ccrma/chugl,,inferred
-nime2024_55.pdf,https://jordieshier.com/projects/nime2024/,,footnote (missing)
-nime2024_56.pdf,https://git.iem.at/sidlab/dextoria,,citation
-nime2024_59.pdf,https://github.com/ayuusweetfish/Malletwand,,appendix
-nime2024_64.pdf,https://github.com/AudioGroupCologne/IVES,last,body
-nime2024_65.pdf,https://github.com/grundton/grain_bau/,,citation
-nime2024_68.pdf,https://zenodo.org/records/11047599,,footnote
-nime2024_69.pdf,https://github.com/shx-vhs/xyborg,1,footnote
-nime2024_71.pdf,https://github.com/DocSunset/sygaldry,,inferred
-nime2024_72.pdf,https://github.com/CIMIL/Esteso,2,footnote
-nime2024_74.pdf,https://github.com/muses-dmi/dmi-design-study,3,footnote
-nime2024_75.pdf,https://ctechfilmuniversity.github.io/project_ClimaSynth/,2,footnote (inferred)
-nime2024_76.pdf,https://github.com/Intelligent-Instruments-Lab/about-time-patches,4,footnote
-nime2024_80.pdf,https://github.com/ccrma/chuck,,inferred
-nime2024_83.pdf,https://github.com/aschmidt99/LorentzLapBrass,2,body
-nime2024_86.pdf,https://github.com/jasper-zheng/unsupervised-sketch-to-sound,3,footnote (through https://bit.ly/sketch-to-sound-code)
-nime2024_87.pdf,https://github.com/IDMIL/Haptic-Toolkit,last,body
-nime2024_90.pdf,https://github.com/zeroonefoursix/frugalcmossynthesis,,citationnime2025_9,github.com/BelaPlatform/pybela,1,footnote
+0u3ruj23,github.com/electro-smith/oopsy,,footnote
+2pqbusk7,github.com/mathiasbredholt/MapLooper,,footnote
+3zeala6v,github.com/amstramgrame/amstramgrame,,footnote
+4bbl5lod,gitlab.com/johnnyvenom/eco_nime_keywords,,footnote
+8jaqbl7m,github.com/awwbees/BespokeSynth,,footnote
+bj2w1gdx,github.com/imui-org/LoopBlocks,,footnote
+czq0nt9i,github.com/bgenchel/pypadberg,,footnote
+d72sylsq,github.com/alexmlucas/Instrument_One,,footnote (missing)
+dzlsifz6,github.com/WorldViews/KinAudio,,footnote
+eshr,github.com/Daniel-Chin/HHF,,footnote
+g7avj1a7,github.com/mir-aidj/transition-analysis,,footnote
+i1rx1t2e,github.com/valerianF/ISI-Database,,citation
+in6wsc9t,github.com/ldzhangyx/music-nlp-chatbot,,footnote
+kdahf9fq,github.com/ripolleslab/chiller,,body
+oiwz8bb7,github.com/derekxkwan/talea-vis/,,body
+q5oc20wg,github.com/jRoshLam,,body
+quadrant,github.com/chronopoulos/quadrant-board,,citation
+s3x60926,github.com/jrgillick/groove,,body (missing)
+uh1zfz1f,github.com/IDMIL/le-baton,,body
+y1y5jolp,github.com/lisandlop/SENSITIV-Interactive-Dance,,footnote
+zd2z1evu,github.com/JRegimbal/mmi,,footnote
+zpdgg2fg,github.com/mirlca/code,,footnote
+3o62rlch.pdf,github.com/sambilbow/polaris,,body
+4b8l5iqc.pdf,github.com/gibber-cc/gibber,18,body
+a6hj6dr4.pdf,github.com/rodneydup/CHON,last,body
+ahhqdi2a.pdf,norns.community/authors/anthony-t-marasco/ch-norns,,footnote (missing)
+bchhb87h.pdf,github.com/Daniel-Chin/A-V-H-General-Music-Tutoring-2022,,appendix
+cavi.pdf,github.com/cerdemo/cavi,,citation
+h9u2ynt0.pdf,github.com/pd-l2ork/pd-l2ork,,missing
+jtdpakvp.pdf,gitlab.com/ForceHost/ForceHost,26,table
+kanchayyupana.pdf,github.com/lpatriciacadavid/Kanchay_Yupana_,,inferred
+kmn0rbyp.pdf,github.com/aceglia/biosiglive,11,body
+langspil.pdf,github.com/Intelligent-Instruments-Lab/proto-langspil,7,footnote
+lrhx3rpu.pdf,github.com/bboettcher3/Mapper4Live,1,footnote
+ludxkhhz.pdf,github.com/Harri-Renney/-NIME2022---InstrumentOne github.com/Harri-Renney/NIME2022---InstrumentTwo,,footnote
+mubone2022.pdf,github.com/DocSunset/mubone,,body
+pitch-fingering-systems-and-the-search-for-perfection.pdf,github.com/DocSunset/pitch-fingering-brute,,body (missing)
+r6v6lhyf.pdf,github.com/jacksongoode/NIME-proceedings-analyzer,,footnote
+ttree.pdf,github.com/IDMIL/T-Tree/,,appendix
+user-friendly-midi-in-the-web-browser.pdf,github.com/djipco/webmidi,,inferred
+z0lli2w0.pdf,github.com/gewhere/bottom-up-live-coding,,footnote
+nime2023_3.pdf,github.com/nathanshaw/Explorator,4,body
+nime2023_5.pdf,github.com/nathanshaw/Legatus,4,footnote
+nime2023_7.pdf,github.com/inria-emeraude/syfala,,footnote
+nime2023_11.pdf,github.com/Puara,4,footnote
+nime2023_13.pdf,github.com/bboettcher3/MapperVST,2,footnote
+nime2023_16.pdf,github.com/tedmoore/Serge-Modular-Archive-Instrument,1,body
+nime2023_17.pdf,github.com/YichenWangs/cubing-sound-release,2,footnote
+nime2023_20.pdf,github.com/ return-nihil/Live_Coding/tree/main/Duo,,body (missing)
+nime2023_21.pdf,github.com/IDMIL/T-Tree/,,footnote
+nime2023_27.pdf,github.com/chihauccisoilconte/chowndolo-V2/,,footnote
+nime2023_28.pdf,github.com/ccrma/webchuck,,inferred
+nime2023_29.pdf,cm-gitlab.stanford.edu/audio/,3,footnote
+nime2023_32.pdf,github.com/victor-shepardson/living-looper,,footnote
+nime2023_36.pdf,github.com/erikstifjell/FLAPIBox,,footnote
+nime2023_37.pdf,github.com/alexdrymonitis/LiveLily,,body
+nime2023_38.pdf,github.com/mojtabak-rob/Zrob,3,footnote
+nime2023_39.pdf,github.com/VincentCusson/eTube,1,footnote
+nime2023_41.pdf,github.com/victorzappi/LDSP,,body
+nime2023_44.pdf,github.com/GLepri/Oscillations,,footnote
+nime2023_59.pdf,github.com/malloyca/steelpan-pitch,,footnote (missing)
+nime2023_60.pdf,github.com/ideoforms/abletonosc,last,body
+nime2023_61.pdf,github.com/adanlbenito/bend_sensor_breakout,,footnote
+nime2023_64.pdf,github.com/huriphoonado/laptopclass/,,inferred
+nime2023_65.pdf,gitlab.com/redspills/,,footnote
+nime2023_66.pdf,github.com/eringee/BioData,,citation
+nime2023_67.pdf,gitlab.huma-num.fr/bbdmi/bbdmi,1,body
+nime2023_68.pdf,github.com/Hughav92/feedback_mop_cello,1,footnote
+nime2023_72.pdf,github.com/echo-lab/sharp,,inferred
+nime2023_75.pdf,yewlife.github.io/MuGeVI/,1,body
+nime2023_80.pdf,github.com/RebelTechnology/BioSignals,,body
+nime2023_88.pdf,asciml.github.io/ASCIML/,1,body
+nime2023_95.pdf,github.com/SFRL/sketchsynth,,body
+nime2023_96.pdf,github.com/aquietlife/harvester,,appendix
+nime2023_98.pdf,github.com/Barnard-PL-Labs/MaxPy,2,body
+nime2024_12.pdf,github.com/cerdemo/2groove,9,body
+nime2024_14.pdf,github.com/yannseznec/periodInstrument,5,footnote
+nime2024_15.pdf,github.com/DillonSimeone/Gestolumina,4,footnote
+nime2024_16.pdf,github.com/hathuwic/CordChord,1,footnote
+nime2024_21.pdf,zeynepozcan.github.io/juggling/,3,footnote
+nime2024_24.pdf,github.com/musicinmotion-dev/MiM,3,footnote
+nime2024_37.pdf,github.com/EllDy96/Augmented-Guitar-Pedalboard,3,footnote
+nime2024_39.pdf,groovetransformer.github.io/,4,body
+nime2024_42.pdf,github.com/Intelligent-Instruments-Lab/tolvera,1,footnote
+nime2024_45.pdf,github.com/timeFliesWhenYoureHavingFun/Baremin,2,body
+nime2024_52.pdf,github.com/ccrma/chugl,,inferred
+nime2024_55.pdf,jordieshier.com/projects/nime2024/,,footnote (missing)
+nime2024_56.pdf,git.iem.at/sidlab/dextoria,,citation
+nime2024_59.pdf,github.com/ayuusweetfish/Malletwand,,appendix
+nime2024_64.pdf,github.com/AudioGroupCologne/IVES,last,body
+nime2024_65.pdf,github.com/grundton/grain_bau/,,citation
+nime2024_68.pdf,zenodo.org/records/11047599,,footnote
+nime2024_69.pdf,github.com/shx-vhs/xyborg,1,footnote
+nime2024_71.pdf,github.com/DocSunset/sygaldry,,inferred
+nime2024_72.pdf,github.com/CIMIL/Esteso,2,footnote
+nime2024_74.pdf,github.com/muses-dmi/dmi-design-study,3,footnote
+nime2024_75.pdf,ctechfilmuniversity.github.io/project_ClimaSynth/,2,footnote
+nime2024_76.pdf,github.com/Intelligent-Instruments-Lab/about-time-patches,4,footnote
+nime2024_80.pdf,github.com/ccrma/chuck,,inferred
+nime2024_83.pdf,github.com/aschmidt99/LorentzLapBrass,2,body
+nime2024_86.pdf,github.com/jasper-zheng/unsupervised-sketch-to-sound,3,footnote
+nime2024_87.pdf,github.com/IDMIL/Haptic-Toolkit,last,body
+nime2024_90.pdf,github.com/zeroonefoursix/frugalcmossynthesis,,citation
+nime2025_9,github.com/BelaPlatform/pybela,1,footnote
 nime2025_10,fcaspe.github.io/BravePlugin,1,footnote
 nime2025_14,github.com/nbrochec/nime2025,3,footnote
 nime2025_15,github.com/lewiswolf/drum-modal-feedback,4,footnote
@@ -178,5 +181,6 @@ nime2025_79,red-x-silver.github.io/the-drum-machine-of-tao/,1,footnote (missing)
 nime2025_74,github.com/mitmedialab/mindcube- rave,3,footnote (missing)
 nime2025_91,github.com/ijc8/glitchgate,1,footnote (missing)
 nime2025_92,github.com/ccrma/smuck,,missing
-nime2025_7,github.com/gguueesstt/pattern-organ,,bodynime2026_31.pdf,github.com/nemus-project/fair-nime-2026,appendix
-nime2026_159,https://codeberg.org/Anonymus_Submission/Performing_Sequences.git,,footnote
+nime2025_7,github.com/gguueesstt/pattern-organ,,body
+nime2026_31,github.com/nemus-project/fair-nime-2026,appendix
+nime2026_159,codeberg.org/Anonymus_Submission/Performing_Sequences.git,,footnote
